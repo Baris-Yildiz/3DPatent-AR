@@ -14,10 +14,10 @@ def convert_step_iges():
         ImportGui.insert(model_path, "ImportScene")
         
         #export root objects, exporting all objects causes problems
-        ImportGui.export(doc.RootObjects, u"out.glb")
+        ImportGui.export(doc.RootObjects, os.environ.get("OUTPUT_PATH"))
 
         FreeCAD.closeDocument(doc.Name)
     except Exception as e:
-        print("An Error Occured.")
+        print(f"An Error Occured: {str(e)}")
     
 convert_step_iges()

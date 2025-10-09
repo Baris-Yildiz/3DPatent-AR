@@ -7,32 +7,31 @@ def empty_blender_scene():
     bpy.ops.object.delete(use_global=False)
 
 #converts .obj files to .glb.
-def convert_obj():
+def convert_obj(file_path, output_path):
     empty_blender_scene()
     bpy.ops.wm.obj_import(filepath=file_path)
     bpy.ops.export_scene.gltf(filepath=output_path, export_format='GLB')
 
 #converts .fbx files to .glb.
-def convert_fbx():
+def convert_fbx(file_path, output_path):
     empty_blender_scene()
     bpy.ops.wm.fbx_import(filepath=file_path)
     bpy.ops.export_scene.gltf(filepath=output_path, export_format='GLB', export_materials='EXPORT')
 
 #converts .stl files to .glb.
-def convert_stl():
+def convert_stl(file_path, output_path):
     empty_blender_scene()
     bpy.ops.wm.stl_import(filepath=file_path)
     bpy.ops.export_scene.gltf(filepath=output_path, export_format='GLB', export_materials='EXPORT')
 
-file_path = os.environ.get("MODEL_PATH")
-output_path = f"out.glb"
-file_type = os.environ.get("MODEL_TYPE")
+def convert_non_cad(file_path, file_type):
 
-if file_type == ".obj":
-    convert_obj()
-elif file_type == ".fbx":
-    convert_fbx()
-elif file_type == ".stl":
-    convert_stl()
-else:
-    print("Error: Unsupported 3D model type!")
+    output_path = os.environ.get("OUTPUT_PATH")
+    if file_type == ".obj":
+        convert_obj(file_path, output_path)
+    elif file_type == ".fbx":
+        convert_fbx(file_path, output_path)
+    elif file_type == ".stl":
+        convert_stl(file_path, output_path)
+    else:
+        print("Error: Unsupported 3D model type!")

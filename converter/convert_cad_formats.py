@@ -1,9 +1,9 @@
-import FreeCADGui
 import FreeCAD
+import FreeCADGui
 import os
 
 MACRO_SCRIPT_NAME = "freecad_converter.py"
-def run_converter_macro():
+def convert_cad():
 
     #start gui
     FreeCADGui.showMainWindow()
@@ -12,5 +12,3 @@ def run_converter_macro():
     macro_name = FreeCADGui.Command.createCustomCommand(macro_script_path)
 
     FreeCADGui.runCommand(macro_name)
-
-run_converter_macro()
