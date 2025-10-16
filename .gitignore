@@ -97,3 +97,56 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+
+# --- Additional recommended ignores ---
+
+# Bee build system intermediates
+/[Ll]ibrary/Bee/
+
+# Burst compilation artifacts
+/[Ll]ibrary/BurstCache/
+[Bb]urstDebugInformation_DoNotShip/
+
+# IL2CPP build cache
+/[Ll]ibrary/Il2cppBuildCache/
+
+# Player build cache
+/[Ll]ibrary/PlayerDataCache/
+
+# Script compilation cache (sometimes missed)
+*.rsp
+*.response
+
+# Local package cache
+/[Pp]ackages/com.unity.package-manager/
+
+# Package Manager local state
+/[Pp]ackages/packages-lock.json
+
+# Local development packages (if you use embedded custom packages)
+# Uncomment if you use embedded packages and don’t want to commit them
+# /Packages/
+
+# Crash dumps and profiling data
+*.dmp
+*.heap
+*.stackdump
+/[Pp]rofiling/
+
+# Editor-only settings (local machine)
+*.swp
+*.swm
+*.tmp
+*.bak
+*.orig
+
+# Rider / VSCode settings (local machine)
+.idea/
+.vscode/
+
+# Unity Collaborate and Plastic SCM local data
+/[Cc]ollab/
+PlasticSCM/
+
+# Platform-specific build caches
+/[Ll]ibrary/Artifacts/
