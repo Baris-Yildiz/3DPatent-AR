@@ -60,9 +60,13 @@ public class ObjectSpawnerAR : MonoBehaviour
         {
             activePatent = Instantiate(patent, position, patent.transform.rotation);
         }
+        else
+        {
+            activePatent.transform.position = position;
+        }
 
-        
-        
+
+
     }
 
     void spawnWithRaycast(Pose hitPose)
@@ -70,6 +74,10 @@ public class ObjectSpawnerAR : MonoBehaviour
         if (activePatent == null)
         {
             activePatent = Instantiate(patent, hitPose.position, patent.transform.rotation);
+        }
+        else
+        {
+            activePatent.transform.position = hitPose.position;
         }
     }
 

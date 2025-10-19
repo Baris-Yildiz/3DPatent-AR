@@ -93,4 +93,27 @@ public class RaycastHandler : MonoBehaviour
         }
     }
 
+    public void changePlaneDetection(bool isOn)
+    {
+        if (isOn == usePlaneDetection) return;
+        
+        usePlaneDetection = isOn;
+        if (isOn)
+        {
+            planeManager.subsystem?.Start();
+            planeManager.requestedDetectionMode = PlaneDetectionMode.Horizontal;
+        }
+        else
+        {
+            planeManager.requestedDetectionMode = PlaneDetectionMode.None;
+        }
+        foreach (ARPlane plane in planeManager.trackables)
+        {
+            plane.gameObject.SetActive(isOn);
+                    
+        }
+    }
+
+   
+
 }
