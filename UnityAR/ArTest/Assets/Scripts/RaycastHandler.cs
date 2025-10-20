@@ -50,6 +50,7 @@ public class RaycastHandler : MonoBehaviour
     {
         //Debug.Log("gagagaga");
         HandleClick();
+        text.text = Camera.main.transform.position.ToString();
     }
 
     void HandleClick()
@@ -65,7 +66,7 @@ public class RaycastHandler : MonoBehaviour
      void CheckInput(InputAction.CallbackContext ctx)
      {
          touchCount++;
-         text.text = "Clicked Amount: " + touchCount.ToString();
+        // text.text = "Clicked Amount: " + touchCount.ToString();
         if (positionAction.action != null)
         {
             touchPosition = positionAction.action.ReadValue<Vector2>();

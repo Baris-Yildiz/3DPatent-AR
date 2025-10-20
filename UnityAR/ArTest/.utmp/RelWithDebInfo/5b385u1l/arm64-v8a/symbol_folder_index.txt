@@ -1,0 +1,1 @@
+C:\Users\said cetin\Desktop\Github\3DPatent-AR\UnityAR\ArTest\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\cxx\RelWithDebInfo\5b385u1l\obj\arm64-v8a

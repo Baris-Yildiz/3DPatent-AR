@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
-
+using TMPro;
 
 enum PlacementMode
 {
@@ -16,7 +16,10 @@ public class ObjectSpawnerAR : MonoBehaviour
     [SerializeField] private GameObject patent;
     [SerializeField] private float centerPlacementY = 1.1f;
     [SerializeField] private float frontPlacementZ = 2f;
+    [SerializeField]private TextMeshProUGUI scaleText;
+    [SerializeField]private TextMeshProUGUI positionText;
     private GameObject activePatent;
+    public bool spawnWithinScreen = true;
     private void OnEnable()
     {
         RaycastHandler.clickEvent += SpawnObject;
@@ -59,12 +62,15 @@ public class ObjectSpawnerAR : MonoBehaviour
         if (activePatent == null)
         {
             activePatent = Instantiate(patent, position, patent.transform.rotation);
+           
         }
         else
         {
             activePatent.transform.position = position;
+           
         }
-
+        FitScreen();
+        positionText.text = "X: " + activePatent.transform.position.x.ToString() + " Y: " + activePatent.transform.position.y.ToString() + " Z : " + activePatent.transform.position.z.ToString();
 
 
     }
@@ -74,11 +80,25 @@ public class ObjectSpawnerAR : MonoBehaviour
         if (activePatent == null)
         {
             activePatent = Instantiate(patent, hitPose.position, patent.transform.rotation);
+            
         }
         else
         {
             activePatent.transform.position = hitPose.position;
+            
         }
+        FitScreen();
+        positionText.text = "X: " + activePatent.transform.position.x.ToString() + " Y: " + activePatent.transform.position.y.ToString() + " Z : " + activePatent.transform.position.z.ToString();
+    }
+
+    private void FitScreen()
+    {
+        if (!spawnWithinScreen) return;
+        float scaleAmount = ScreenScaler.instance.FitScreen(activePatent);
+        activePatent.transform.localScale *= scaleAmount;
+        scaleText.text ="Scale:          " + activePatent.transform.localScale.y.ToString()  ;
+        Debug.Log(scaleAmount);
+        
     }
 
     public GameObject getActivePatent()
