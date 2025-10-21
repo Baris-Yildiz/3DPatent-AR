@@ -3,55 +3,59 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.XR.ARFoundation;
 using ZXing;
+using ZXing.QrCode;
 
 public class QRScanner : MonoBehaviour
 {
     Texture2D currentFrame;
-    RawImage debugRenderer;
     public TextMeshProUGUI outputText;
-    int width = Screen.width;
-    int height = Screen.height;
 
-    string QrCode = string.Empty;
+    int width;
+    int height;
 
-    void Start()
+    public string QrCode { get;  private set; }
+
+    IBarcodeReader m_BarcodeReader;
+
+    private void Start()
     {
-        debugRenderer = GetComponent<RawImage>(); //for debugging: show camera view
-        StartCoroutine(GetQRCode());
+        m_BarcodeReader = new BarcodeReader();
+
+        width = Screen.width;
+        height = Screen.height;
+        QrCode = string.Empty;
     }
-    
-    IEnumerator GetQRCode()
+
+    public string ScanScreen()
     {
-        IBarcodeReader barCodeReader = new BarcodeReader();
+        StartCoroutine(ScanFrameForQRCode());
+        return QrCode;
+    }
 
-        while (string.IsNullOrEmpty(QrCode))
+    IEnumerator ScanFrameForQRCode()
+    {
+        currentFrame = new Texture2D(width, height, TextureFormat.ARGB32, false);
+        yield return new WaitForEndOfFrame();
+
+        try
         {
-            currentFrame = new Texture2D(width, height, TextureFormat.ARGB32, false); //snap is a single capture of camera video frame
-            yield return new WaitForEndOfFrame();
-            try
-            {
-                
-                currentFrame.ReadPixels(new Rect(0, 0, width, height), 0, 0);
-                currentFrame.Apply();
-                debugRenderer.texture = currentFrame;
+            currentFrame.ReadPixels(new Rect(0, 0, width, height), 0, 0);
+            currentFrame.Apply();
 
-                var Result = barCodeReader.Decode(currentFrame.GetRawTextureData(), width, height, RGBLuminanceSource.BitmapFormat.ARGB32);
-                if (Result != null)
+            var Result = m_BarcodeReader.Decode(currentFrame.GetRawTextureData(), width, height, RGBLuminanceSource.BitmapFormat.ARGB32);
+
+            if (Result != null)
+            {
+                QrCode = Result.Text;
+                if (!string.IsNullOrEmpty(QrCode))
                 {
-                    QrCode = Result.Text;
-                    if (!string.IsNullOrEmpty(QrCode))
-                    {
-                        outputText.text = "DECODED TEXT FROM QR: " + QrCode;
-                        break;
-                    }
+                    outputText.text = "DECODED TEXT FROM QR: " + QrCode;
                 }
             }
-            catch (Exception ex) { Debug.LogWarning(ex.Message); }
-
-            yield return null;
         }
+        catch (Exception ex) { Debug.LogWarning(ex.Message); }
 
+        yield return null;
     }
 }
