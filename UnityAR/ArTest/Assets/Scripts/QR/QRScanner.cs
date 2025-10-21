@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
+using System.Runtime.InteropServices.WindowsRuntime;
 using TMPro;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
 using ZXing;
@@ -16,6 +18,7 @@ public class QRScanner : MonoBehaviour
     public string QrCode { get;  private set; }
 
     IBarcodeReader m_BarcodeReader;
+    StateMachine m_StateMachine;
 
     private void Start()
     {
@@ -24,6 +27,8 @@ public class QRScanner : MonoBehaviour
         width = Screen.width;
         height = Screen.height;
         QrCode = string.Empty;
+
+        m_StateMachine = GameObject.FindWithTag("StateMachine").GetComponent<StateMachine>();
     }
 
     public void ResetScanner()
@@ -33,24 +38,34 @@ public class QRScanner : MonoBehaviour
 
     public void ScanScreen()
     {
-        StartCoroutine(ScanFrameForQRCode());
+        StartCoroutine(ScanFrameForQRCode(60));
     }
 
-    IEnumerator ScanFrameForQRCode()
+    IEnumerator ScanFrameForQRCode(int waitframeCount)
     {
-        currentFrame = new Texture2D(width, height, TextureFormat.ARGB32, false);
-        yield return new WaitForEndOfFrame();
-
-        try
+        while (string.IsNullOrEmpty(QrCode) && m_StateMachine.CurrentStateName == StateMachine.States.QR_SCAN_STATE)
         {
-            currentFrame.ReadPixels(new Rect(0, 0, width, height), 0, 0);
-            currentFrame.Apply();
+            currentFrame = new Texture2D(width, height, TextureFormat.ARGB32, false);
 
-            var Result = m_BarcodeReader.Decode(currentFrame.GetRawTextureData(), width, height, RGBLuminanceSource.BitmapFormat.ARGB32);
-            QrCode = Result?.Text;
+            for (int i = 0; i < waitframeCount; i++)
+            {
+                yield return new WaitForEndOfFrame();
+            }
+
+            try
+            {
+                currentFrame.ReadPixels(new Rect(0, 0, width, height), 0, 0);
+                currentFrame.Apply();
+
+                var Result = m_BarcodeReader.Decode(currentFrame.GetRawTextureData(), width, height, RGBLuminanceSource.BitmapFormat.ARGB32);
+                QrCode = Result?.Text;
+            }
+            catch (Exception ex) { Debug.LogWarning(ex.Message); }
         }
-        catch (Exception ex) { Debug.LogWarning(ex.Message); }
-
-        yield return null;
+        if (!string.IsNullOrEmpty(QrCode))
+        {
+            m_StateMachine.SetState(StateMachine.States.QR_SCAN_COMPLETE_STATE);
+        }
+        
     }
 }
