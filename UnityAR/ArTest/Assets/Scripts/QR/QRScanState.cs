@@ -17,6 +17,7 @@ public class QRScanState : IState
     public void Enter()
     {
         m_QRButton.GetComponentInChildren<TextMeshProUGUI>().text = "Stop QR Scan";
+        m_QRScanner.ResetScanner();
     }
 
     public void Exit()
@@ -26,8 +27,8 @@ public class QRScanState : IState
 
     public void Update()
     {
-        string QrCode = m_QRScanner.ScanScreen();
-        if (!string.IsNullOrEmpty(QrCode))
+        m_QRScanner.ScanScreen();
+        if (!string.IsNullOrEmpty(m_QRScanner.QrCode))
         {
             m_StateMachine.SetState(StateMachine.States.QR_SCAN_COMPLETE_STATE);
         }

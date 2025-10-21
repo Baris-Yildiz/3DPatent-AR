@@ -9,7 +9,6 @@ using ZXing.QrCode;
 public class QRScanner : MonoBehaviour
 {
     Texture2D currentFrame;
-    public TextMeshProUGUI outputText;
 
     int width;
     int height;
@@ -27,10 +26,14 @@ public class QRScanner : MonoBehaviour
         QrCode = string.Empty;
     }
 
-    public string ScanScreen()
+    public void ResetScanner()
+    {
+        QrCode = string.Empty;
+    }
+
+    public void ScanScreen()
     {
         StartCoroutine(ScanFrameForQRCode());
-        return QrCode;
     }
 
     IEnumerator ScanFrameForQRCode()
@@ -44,15 +47,7 @@ public class QRScanner : MonoBehaviour
             currentFrame.Apply();
 
             var Result = m_BarcodeReader.Decode(currentFrame.GetRawTextureData(), width, height, RGBLuminanceSource.BitmapFormat.ARGB32);
-
-            if (Result != null)
-            {
-                QrCode = Result.Text;
-                if (!string.IsNullOrEmpty(QrCode))
-                {
-                    outputText.text = "DECODED TEXT FROM QR: " + QrCode;
-                }
-            }
+            QrCode = Result?.Text;
         }
         catch (Exception ex) { Debug.LogWarning(ex.Message); }
 

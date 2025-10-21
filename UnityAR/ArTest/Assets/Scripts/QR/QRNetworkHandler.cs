@@ -4,14 +4,20 @@ using UnityEditor.Overlays;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class QRNetworkHandler : MonoBehaviour
 {
     QRScanner m_QRScanner;
+    GameObject m_QRModelDownloadScreen;
+    StateMachine m_StateMachine;
 
     private void Start()
     {
         m_QRScanner = GameObject.FindWithTag("QRScanner").GetComponent<QRScanner>();
+        m_QRModelDownloadScreen = GameObject.FindWithTag("QRModelDownloadScreen");
+        m_QRModelDownloadScreen.SetActive(false);
+        m_StateMachine = GameObject.FindWithTag("StateMachine").GetComponent<StateMachine>();
     }
 
     public void StartDownloadingModel()
@@ -21,13 +27,13 @@ public class QRNetworkHandler : MonoBehaviour
 
     private void OnDownloadProgress(UnityWebRequest www)
     {
-        print(www.downloadProgress.ToString("0.000000"));
+        m_QRModelDownloadScreen.GetComponentInChildren<Slider>().value = www.downloadProgress;
     }
 
     private IEnumerator DownloadModel(string uri)
     {
-        
-        using(UnityWebRequest www = UnityWebRequest.Get(uri))
+        m_QRModelDownloadScreen.SetActive(true);
+        using (UnityWebRequest www = UnityWebRequest.Get(uri))
         {
             www.SendWebRequest();
             
@@ -49,5 +55,7 @@ public class QRNetworkHandler : MonoBehaviour
                 Debug.Log("File downloaded at path: " + path);
             }
         }
+        m_QRModelDownloadScreen.SetActive(false);
+        m_StateMachine.SetState(StateMachine.States.IDLE_STATE);
     }
 }

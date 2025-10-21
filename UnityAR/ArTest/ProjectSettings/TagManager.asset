@@ -8,6 +8,7 @@ TagManager:
   - StateMachine
   - QRScanner
   - QRNetworkHandler
+  - QRModelDownloadScreen
   layers:
   - Default
   - TransparentFX
