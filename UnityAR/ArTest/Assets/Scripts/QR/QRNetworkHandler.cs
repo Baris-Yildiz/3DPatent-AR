@@ -14,7 +14,7 @@ public class QRNetworkHandler : MonoBehaviour
     QRScanner m_QRScanner;
     GameObject m_QRModelDownloadScreen;
     StateMachine m_StateMachine;
-    GameObject m_LoadedModel;
+    public GameObject LoadedModel;
 
     private void Start()
     {
@@ -22,7 +22,7 @@ public class QRNetworkHandler : MonoBehaviour
         m_QRModelDownloadScreen = GameObject.FindWithTag("QRModelDownloadScreen");
         m_QRModelDownloadScreen.SetActive(false);
         m_StateMachine = GameObject.FindWithTag("StateMachine").GetComponent<StateMachine>();
-        m_LoadedModel = null;
+        LoadedModel = null;
     }
 
     public void StartDownloadingModel()
@@ -38,7 +38,7 @@ public class QRNetworkHandler : MonoBehaviour
 
     private void ResetNetworkHandler()
     {
-        m_LoadedModel = null;
+        LoadedModel = null;
     }
 
     private async Task LoadGLBObject(byte[] data)
@@ -54,7 +54,7 @@ public class QRNetworkHandler : MonoBehaviour
             if (success)
             {
                 Debug.Log("Model loaded successfully!");
-                m_LoadedModel = spawnParent.GetChild(0).gameObject;
+                LoadedModel = spawnParent.GetChild(0).gameObject;
                 return;
             }
         }
