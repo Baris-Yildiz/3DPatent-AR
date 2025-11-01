@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using TMPro;
+using Unity.XR.CoreUtils;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
@@ -38,11 +40,6 @@ public class RaycastHandler : MonoBehaviour
     private void OnDisable()
     {
         tapAction.action.performed -= CheckInput;
-        tapAction.action.Disable();
-        if (positionAction.action != null)
-        {
-            positionAction.action.Disable();
-        }
     }
 
     // Update is called once per frame
@@ -50,7 +47,7 @@ public class RaycastHandler : MonoBehaviour
     {
         //Debug.Log("gagagaga");
         HandleClick();
-        text.text = Camera.main.transform.position.ToString();
+       // text.text = Camera.main.transform.position.ToString();
     }
 
     void HandleClick()
@@ -65,7 +62,19 @@ public class RaycastHandler : MonoBehaviour
 
      void CheckInput(InputAction.CallbackContext ctx)
      {
+           
          touchCount++;
+         int pointerId = -1;
+         if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.isPressed)
+         {
+             pointerId = Touchscreen.current.primaryTouch.touchId.ReadValue();
+             
+         }
+         if (EventSystem.current.IsPointerOverGameObject(pointerId))
+         {
+             text.text = "Clicked on UI " + touchCount.ToString();
+             return;
+         }
         // text.text = "Clicked Amount: " + touchCount.ToString();
         if (positionAction.action != null)
         {
@@ -76,6 +85,7 @@ public class RaycastHandler : MonoBehaviour
             touchPosition = Mouse.current.position.ReadValue();
         }
 
+        text.text = "Clicked on gameobject " + touchCount.ToString();
         touched = true;
 
     }

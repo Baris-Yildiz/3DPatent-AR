@@ -1,10 +1,10 @@
 using System;
 using System.Collections;
-using System.Runtime.InteropServices.WindowsRuntime;
+
 using TMPro;
-using UnityEditorInternal;
+
 using UnityEngine;
-using UnityEngine.UI;
+
 using ZXing;
 using ZXing.QrCode;
 
@@ -19,7 +19,7 @@ public class QRScanner : MonoBehaviour
 
     IBarcodeReader m_BarcodeReader;
     StateMachine m_StateMachine;
-
+    public TextMeshProUGUI scanText;
     private void Start()
     {
         m_BarcodeReader = new BarcodeReader();
@@ -56,9 +56,19 @@ public class QRScanner : MonoBehaviour
             {
                 currentFrame.ReadPixels(new Rect(0, 0, width, height), 0, 0);
                 currentFrame.Apply();
-
-                var Result = m_BarcodeReader.Decode(currentFrame.GetRawTextureData(), width, height, RGBLuminanceSource.BitmapFormat.ARGB32);
+                var pixelData = currentFrame.GetRawTextureData();
+                var Result = m_BarcodeReader.Decode(pixelData, width, height, RGBLuminanceSource.BitmapFormat.ARGB32);
                 QrCode = Result?.Text;
+                if (Result != null)
+                {
+                    scanText.text = QrCode;    
+                }
+                else
+                {
+                    scanText.text = "baba patlarrr";
+                }
+
+
             }
             catch (Exception ex) { Debug.LogWarning(ex.Message); }
         }

@@ -5,11 +5,13 @@ using UnityEngine.UI;
 
 public  class ScreenScaler : MonoBehaviour
 {
+    
     public static ScreenScaler instance;
     public TextMeshProUGUI txt;
     private Camera cam;
     private Vector3 originalSize = Vector3.negativeInfinity;
     private Vector3 originalCenter = Vector3.negativeInfinity;
+    private bool isScreenFitOn = true;
     [SerializeField] [Range(0.1f, 1f)] private float scaleAmount;
     [SerializeField] private Slider slider;
     private void Awake()
@@ -25,6 +27,11 @@ public  class ScreenScaler : MonoBehaviour
         }
     }
 
+    public void SetScreenFit(bool isOn)
+    {
+        isScreenFitOn = isOn;
+    }
+    
 
     void Update()
     {
@@ -33,35 +40,32 @@ public  class ScreenScaler : MonoBehaviour
 
     public float FitScreen(GameObject patent)
     {
-        if (patent == null || cam == null)
+        if (patent == null || cam == null || !isScreenFitOn)
         {
             Debug.Log("bir şeyler null kardeşim");
             return -1;
         }
-        BoxCollider collider = patent.GetComponentInChildren<BoxCollider>();
-        Bounds bounds = collider.bounds;
+       // BoxCollider collider = patent.GetComponentInChildren<BoxCollider>();
+        patent.transform.localScale = Vector3.one;
+        Bounds bounds = patent.GetComponentInChildren<MeshRenderer>().bounds;
         if (originalCenter == Vector3.negativeInfinity && originalSize == Vector3.negativeInfinity)
         {
             originalCenter = bounds.center;
             originalSize = bounds.size;
-        }
-
-        
-        Vector3 vectorToPatent = (bounds.center ) - cam.transform.position;
-        float projectedDistance = Math.Abs(Vector3.Dot(vectorToPatent, cam.transform.forward));
-       // float targetDistance = Vector3.Distance(cam.transform.position, bounds.center);
+        } 
+       // Vector3 vectorToPatent = (bounds.min ) - cam.transform.position;
+        //float projectedDistance = Math.Abs(Vector3.Dot(vectorToPatent, cam.transform.forward));
+        float projectedDistance = Vector3.Distance(cam.transform.position, patent.transform.position);
         float verticalFOVRadians = cam.fieldOfView * Mathf.Deg2Rad;
         float viewHeightWorld = 2.0f * projectedDistance * Mathf.Tan(verticalFOVRadians * 0.5f);
         float viewWidthWorld = viewHeightWorld * cam.aspect;
         
        //txt.text ="Bounds center : " +  bounds.center.ToString() + " Bounds Min: " + bounds.min.ToString() + " View Height : " + viewHeightWorld;
-       txt.text = "Projected Distance : " + projectedDistance.ToString() + " View Height : " + viewHeightWorld;
+       txt.text = "Projected Distance : " + projectedDistance.ToString() + " View Height : " + viewHeightWorld + " Bounds: " + bounds.min.ToString();
         
-        float scaleNeededX = (viewWidthWorld * scaleAmount) / Mathf.Max(bounds.size.x , bounds.size.y);
+        float scaleNeededX = (viewWidthWorld * scaleAmount) / Math.Max(bounds.size.z , bounds.size.x);
         float scaleNeededY = (viewHeightWorld * scaleAmount) / bounds.size.y;
-        
         float smallestScale = Mathf.Min(scaleNeededX, scaleNeededY);
-        
         return smallestScale;
     }
     

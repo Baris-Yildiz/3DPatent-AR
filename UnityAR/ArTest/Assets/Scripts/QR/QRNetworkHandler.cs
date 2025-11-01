@@ -3,11 +3,10 @@ using System.Collections;
 using System.IO;
 using System.Threading.Tasks;
 using TMPro;
-using UnityEditor.Overlays;
 using UnityEngine;
 using UnityEngine.Networking;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
+
 
 public class QRNetworkHandler : MonoBehaviour
 {
@@ -15,13 +14,14 @@ public class QRNetworkHandler : MonoBehaviour
     GameObject m_QRModelDownloadScreen;
     StateMachine m_StateMachine;
     public GameObject LoadedModel;
-
+    private ObjectSpawnerAR _objectSpawnerAR;
     private void Start()
     {
         m_QRScanner = GameObject.FindWithTag("QRScanner").GetComponent<QRScanner>();
         m_QRModelDownloadScreen = GameObject.FindWithTag("QRModelDownloadScreen");
         m_QRModelDownloadScreen.SetActive(false);
         m_StateMachine = GameObject.FindWithTag("StateMachine").GetComponent<StateMachine>();
+        _objectSpawnerAR = FindAnyObjectByType<ObjectSpawnerAR>();
         LoadedModel = null;
     }
 
@@ -49,12 +49,14 @@ public class QRNetworkHandler : MonoBehaviour
 
         if (success)
         {
-            Transform spawnParent = GameObject.Find("QR").transform; //as an example, download the model onto the qr code
+            Transform spawnParent = transform; //as an example, download the model onto the qr code
             success = await gltf.InstantiateMainSceneAsync(spawnParent);
             if (success)
             {
                 Debug.Log("Model loaded successfully!");
                 LoadedModel = spawnParent.GetChild(0).gameObject;
+                LoadedModel.transform.rotation = Quaternion.identity;
+                _objectSpawnerAR.SetActivePatent(LoadedModel);
                 return;
             }
         }

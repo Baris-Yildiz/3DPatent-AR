@@ -39,7 +39,7 @@ public class PatentTransformer : MonoBehaviour
     {
         if (dragDeltaAction.action != null) dragDeltaAction.action.performed += onDragDelta;
         if (pinchDeltaAction.action != null) pinchDeltaAction.action.performed += onPinchDelta;
-        if (twistDeltaAction.action != null) twistDeltaAction.action.performed += onTwistDelta;
+        //if (twistDeltaAction.action != null) twistDeltaAction.action.performed += onTwistDelta;
     }
 
     private void OnDisable()
@@ -47,25 +47,27 @@ public class PatentTransformer : MonoBehaviour
         if (dragDeltaAction.action != null)
         {
             dragDeltaAction.action.performed -= onDragDelta;
-            dragDeltaAction.action.Disable();
+         
         }
         if (pinchDeltaAction.action != null)
         {
             pinchDeltaAction.action.performed -= onPinchDelta;
-            pinchDeltaAction.action.Disable();
+            
         }
-        if (twistDeltaAction.action != null)
-        {
-            twistDeltaAction.action.performed -= onTwistDelta;
-            twistDeltaAction.action.Disable();
-        }
+        // if (twistDeltaAction.action != null)
+        // {
+        //     twistDeltaAction.action.performed -= onTwistDelta;
+        //     
+        // }
     }
 
     void onDragDelta(InputAction.CallbackContext ctx)
     {
         Vector2 delta = ctx.ReadValue<Vector2>();
         float yDegrees = -delta.x * dragRotationSpeed; // negative so drag-right rotates right (tweak if needed)
-        rotateAroundUp(yDegrees);
+        float xDegrees = -delta.y * dragRotationSpeed;
+        rotateAroundUp(yDegrees , xDegrees);
+        
     }
 
     void onPinchDelta(InputAction.CallbackContext ctx)
@@ -75,18 +77,25 @@ public class PatentTransformer : MonoBehaviour
         changeScale(scaleFactor);
     }
 
-    void onTwistDelta(InputAction.CallbackContext ctx)
-    {
-        float twistDelta = ctx.ReadValue<float>();
-        float yDegrees = twistDelta * twistRotationSpeed;
-        rotateAroundUp(yDegrees);
-    }
+    // void onTwistDelta(InputAction.CallbackContext ctx)
+    // {
+    //     float twistDelta = ctx.ReadValue<float>();
+    //     float yDegrees = twistDelta * twistRotationSpeed;
+    //     rotateAroundUp(yDegrees);
+    // }
     
-    void rotateAroundUp(float degrees)
+    void rotateAroundUp(float degreesY , float degreesX)
     {
         Transform targetTransform = spawner.getActivePatent().transform;
         if (targetTransform == null) return;
-        targetTransform.Rotate(Vector3.up, degrees, Space.World);
+        if (Mathf.Abs(degreesY) >= Mathf.Abs(degreesX))
+        {
+            targetTransform.Rotate(Vector3.up, degreesY, Space.World);     
+        }
+        else
+        {
+            targetTransform.Rotate(Vector3.right , degreesX , Space.World);   
+        }
     }
     void changeScale(float scale)
     {
