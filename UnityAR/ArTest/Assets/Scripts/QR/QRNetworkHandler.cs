@@ -1,6 +1,7 @@
 using GLTFast;
 using System.Collections;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
@@ -10,30 +11,75 @@ using UnityEngine.UI;
 
 public class QRNetworkHandler : MonoBehaviour
 {
-    QRScanner m_QRScanner;
     GameObject m_QRModelDownloadScreen;
     StateMachine m_StateMachine;
     public GameObject LoadedModel;
     private ObjectSpawnerAR _objectSpawnerAR;
+
+    private const string ProgressBarPath = "Progress Bar";
+    private GameObject m_ProgressBar;
+
+    public static QRNetworkHandler Instance
+    {
+        get; private set;
+    }
+
+    public void DisplayModelDownloadScreen()
+    {
+        if (m_QRModelDownloadScreen != null)
+        {
+            m_QRModelDownloadScreen.SetActive(true);
+            return;
+        }
+
+        PopupBuilder builder = PopupBuilder.Create();
+
+        m_QRModelDownloadScreen = builder
+            .WithHeader("MODEL ÝNDÝRÝLÝYOR")
+            .WithFooterButton("Ýptal Et", PopupWindow.BUTTON_COLOR_CANCEL, CancelDownload)
+            .WithContent(m_ProgressBar)
+            .Get();
+    }
+
+    private void SetToQRScanState()
+    {
+        StateMachine.Instance.SetState(StateMachine.States.QR_SCAN_STATE);
+    }
+
+    private void CancelDownload()
+    {
+        StopAllCoroutines();
+        Invoke(nameof(SetToQRScanState), 5f);
+        m_QRModelDownloadScreen.SetActive(false);
+    }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private void Start()
     {
-        m_QRScanner = GameObject.FindWithTag("QRScanner").GetComponent<QRScanner>();
-        m_QRModelDownloadScreen = GameObject.FindWithTag("QRModelDownloadScreen");
-        m_QRModelDownloadScreen.SetActive(false);
-        m_StateMachine = GameObject.FindWithTag("StateMachine").GetComponent<StateMachine>();
+        StateMachine.Instance.GetState(StateMachine.States.QR_SCAN_COMPLETE_STATE).
+            OnStateEnter += () => StartDownloadingModel();
+
         _objectSpawnerAR = FindAnyObjectByType<ObjectSpawnerAR>();
         LoadedModel = null;
+
+        m_ProgressBar = Instantiate( Resources.Load<GameObject>(ProgressBarPath) );
+        m_ProgressBar.SetActive(false);
     }
 
     public void StartDownloadingModel()
     {
         ResetNetworkHandler();
-        StartCoroutine(DownloadModel(m_QRScanner.QrCode));
+        StartCoroutine(DownloadModel(QRScanner.Instance.QrCode));
     }
 
-    private void OnDownloadProgress(UnityWebRequest www)
+    private void OnDownloadProgress(float progress)
     {
-        m_QRModelDownloadScreen.GetComponentInChildren<Slider>().value = www.downloadProgress;
+        m_QRModelDownloadScreen.GetComponentInChildren<QRProgressBarManager>().Slider.value = progress;
+        m_QRModelDownloadScreen.GetComponentInChildren<QRProgressBarManager>().ProgressText.text = string.Format("{0:F2}%", progress * 100f);
     }
 
     private void ResetNetworkHandler()
@@ -44,7 +90,6 @@ public class QRNetworkHandler : MonoBehaviour
     private async Task LoadGLBObject(byte[] data)
     {
         var gltf = new GltfImport();
-        m_QRModelDownloadScreen.GetComponentInChildren<TextMeshProUGUI>().text = "Loading Model";
         bool success = await gltf.Load(data);
 
         if (success)
@@ -66,15 +111,15 @@ public class QRNetworkHandler : MonoBehaviour
 
     private IEnumerator DownloadModel(string uri)
     {
-        m_QRModelDownloadScreen.SetActive(true);
-        m_QRModelDownloadScreen.GetComponentInChildren<TextMeshProUGUI>().text = "Downloading Model";
+        DisplayModelDownloadScreen();
+        
         using (UnityWebRequest www = UnityWebRequest.Get(uri))
         {
             www.SendWebRequest();
             
             while (www.downloadProgress < 1)
             {
-                OnDownloadProgress(www);
+                OnDownloadProgress(www.downloadProgress);
                 yield return new WaitForEndOfFrame();
             }
 
@@ -94,6 +139,6 @@ public class QRNetworkHandler : MonoBehaviour
         }
         
         m_QRModelDownloadScreen.SetActive(false);
-        m_StateMachine.SetState(StateMachine.States.IDLE_STATE);
+        StateMachine.Instance.SetState(StateMachine.States.IDLE_STATE);
     }
 }

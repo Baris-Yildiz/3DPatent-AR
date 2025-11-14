@@ -9,6 +9,7 @@ TagManager:
   - QRScanner
   - QRNetworkHandler
   - QRModelDownloadScreen
+  - PopupParent
   layers:
   - Default
   - TransparentFX

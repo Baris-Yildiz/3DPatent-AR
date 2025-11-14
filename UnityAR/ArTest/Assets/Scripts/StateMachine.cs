@@ -3,24 +3,35 @@ using UnityEngine;
 
 public class StateMachine : MonoBehaviour
 {
+
+    public static StateMachine Instance
+    {
+        get; private set;
+    }
+
     public enum States
     {
         IDLE_STATE,
         QR_SCAN_STATE,
-        QR_SCAN_COMPLETE_STATE
+        QR_SCAN_COMPLETE_STATE,
     }
 
-    private Dictionary<States, IState> m_StateMap = new();
+    private Dictionary<States, State> m_StateMap = new();
 
-    private IState m_CurrentState;
+    private State m_CurrentState;
 
     public States CurrentStateName;
 
+    private void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
-        m_StateMap[States.IDLE_STATE] = new IdleState();
-        m_StateMap[States.QR_SCAN_STATE] = new QRScanState();
-        m_StateMap[States.QR_SCAN_COMPLETE_STATE] = new QRScanCompleteState();
+
+        m_StateMap[States.IDLE_STATE] = new State();
+        m_StateMap[States.QR_SCAN_STATE] = new State();
+        m_StateMap[States.QR_SCAN_COMPLETE_STATE] = new State();
 
         SetState(States.IDLE_STATE);
         
@@ -34,12 +45,15 @@ public class StateMachine : MonoBehaviour
         CurrentStateName = stateName;
 
         m_CurrentState.Enter();
+    }
 
+    public State GetState(States stateName)
+    {
+        return m_StateMap[stateName];
     }
 
     void Update()
     {
-
         m_CurrentState.Update();
     }
 }

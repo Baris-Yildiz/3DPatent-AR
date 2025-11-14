@@ -16,34 +16,47 @@ public class QRScanner : MonoBehaviour
     int height;
 
     public string QrCode { get;  private set; }
+    public static QRScanner Instance
+    {
+        get; private set;
+    }
 
     IBarcodeReader m_BarcodeReader;
-    StateMachine m_StateMachine;
-    public TextMeshProUGUI scanText;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private void Start()
     {
         m_BarcodeReader = new BarcodeReader();
 
+        StateMachine.Instance.GetState(StateMachine.States.QR_SCAN_STATE)
+            .OnStateEnter += () => StartScanner();
+
         width = Screen.width;
         height = Screen.height;
         QrCode = string.Empty;
-
-        m_StateMachine = GameObject.FindWithTag("StateMachine").GetComponent<StateMachine>();
     }
 
-    public void ResetScanner()
+    public void StartScanner()
+    {
+        ResetScanner();
+        ScanScreen();
+    }
+    private void ResetScanner()
     {
         QrCode = string.Empty;
     }
-
-    public void ScanScreen()
+    private void ScanScreen()
     {
         StartCoroutine(ScanFrameForQRCode(60));
     }
 
     IEnumerator ScanFrameForQRCode(int waitframeCount)
     {
-        while (string.IsNullOrEmpty(QrCode) && m_StateMachine.CurrentStateName == StateMachine.States.QR_SCAN_STATE)
+        while (string.IsNullOrEmpty(QrCode) && StateMachine.Instance.CurrentStateName == StateMachine.States.QR_SCAN_STATE)
         {
             currentFrame = new Texture2D(width, height, TextureFormat.ARGB32, false);
 
@@ -59,22 +72,12 @@ public class QRScanner : MonoBehaviour
                 var pixelData = currentFrame.GetRawTextureData();
                 var Result = m_BarcodeReader.Decode(pixelData, width, height, RGBLuminanceSource.BitmapFormat.ARGB32);
                 QrCode = Result?.Text;
-                if (Result != null)
-                {
-                    scanText.text = QrCode;    
-                }
-                else
-                {
-                    scanText.text = "baba patlarrr";
-                }
-
-
             }
             catch (Exception ex) { Debug.LogWarning(ex.Message); }
         }
         if (!string.IsNullOrEmpty(QrCode))
         {
-            m_StateMachine.SetState(StateMachine.States.QR_SCAN_COMPLETE_STATE);
+            StateMachine.Instance.SetState(StateMachine.States.QR_SCAN_COMPLETE_STATE);
         }
         
     }
