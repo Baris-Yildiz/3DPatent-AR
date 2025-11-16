@@ -3896,6 +3896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoadedModel: {fileID: 0}
+  ModelLoadTransform: {fileID: 0}
 --- !u!23 &3325862034809982679
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4245,7 +4246,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baad2b1a4fde7cd4d978183646dfd02d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scanText: {fileID: 0}
 --- !u!1 &4383179120484167927
 GameObject:
   m_ObjectHideFlags: 0

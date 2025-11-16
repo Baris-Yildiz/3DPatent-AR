@@ -8,15 +8,16 @@ public class ModelTransformManager : MonoBehaviour
     public Button LockModelButton;
     public Button ResetModelTransformButton;
     public Button DeleteModelTransformButton;
+    
+    public static ModelTransformManager Instance { get; private set; }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
-        StateMachine.Instance.GetState(StateMachine.States.QR_SCAN_COMPLETE_STATE)
-            .OnStateExit += () => { gameObject.SetActive(true); };
-
-        StateMachine.Instance.GetState(StateMachine.States.QR_SCAN_STATE)
-            .OnStateEnter += () => { gameObject.SetActive(false); };
-
         gameObject.SetActive(false);
     }
 

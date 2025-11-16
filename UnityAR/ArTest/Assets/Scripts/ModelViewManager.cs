@@ -5,15 +5,17 @@ public class ModelViewManager : MonoBehaviour
 {
     public Button NormalViewButton;
     public Button OneToOneViewButton;
+
+    public static ModelViewManager Instance { get; private set; }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StateMachine.Instance.GetState(StateMachine.States.QR_SCAN_COMPLETE_STATE)
-            .OnStateExit += () => { gameObject.SetActive(true); };
-
-        StateMachine.Instance.GetState(StateMachine.States.QR_SCAN_STATE)
-            .OnStateEnter += () => { gameObject.SetActive(false); };
-
         NormalViewButton.onClick.AddListener(SetNormalView);
         OneToOneViewButton.onClick.AddListener(SetOneToOneView);
 

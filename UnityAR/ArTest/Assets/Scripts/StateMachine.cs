@@ -25,16 +25,12 @@ public class StateMachine : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-    }
-    void Start()
-    {
 
         m_StateMap[States.IDLE_STATE] = new State();
         m_StateMap[States.QR_SCAN_STATE] = new State();
         m_StateMap[States.QR_SCAN_COMPLETE_STATE] = new State();
 
         SetState(States.IDLE_STATE);
-        
     }
 
     public void SetState(States stateName)

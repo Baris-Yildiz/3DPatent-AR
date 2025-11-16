@@ -19,6 +19,8 @@ public class QRNetworkHandler : MonoBehaviour
     private const string ProgressBarPath = "Progress Bar";
     private GameObject m_ProgressBar;
 
+    public Transform ModelLoadTransform;
+
     public static QRNetworkHandler Instance
     {
         get; private set;
@@ -60,6 +62,7 @@ public class QRNetworkHandler : MonoBehaviour
 
     private void Start()
     {
+        ModelLoadTransform = transform;
         StateMachine.Instance.GetState(StateMachine.States.QR_SCAN_COMPLETE_STATE).
             OnStateEnter += () => StartDownloadingModel();
 
@@ -134,7 +137,12 @@ public class QRNetworkHandler : MonoBehaviour
                 File.WriteAllBytes(path, www.downloadHandler.data);
                 Debug.Log("File downloaded at path: " + path);
                 Task loadTask = LoadGLBObject(www.downloadHandler.data);
-                yield return loadTask.IsCompleted;
+
+                while (!loadTask.IsCompleted)
+                {
+                    yield return null;
+                }
+
             }
         }
         

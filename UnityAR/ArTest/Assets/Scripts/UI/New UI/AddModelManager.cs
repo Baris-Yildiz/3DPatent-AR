@@ -14,9 +14,10 @@ public class AddModelManager : MonoBehaviour
         m_AddModelButton = GetComponent<Button>();
         m_AddModelButton.onClick.AddListener(DisplayAddModelPopup);
 
+        //TODO: Instead of interactable=false, can convert to a "cancel qr" button
         StateMachine.Instance.GetState(StateMachine.States.QR_SCAN_STATE)
             .OnStateEnter += () => { m_AddModelButton.interactable = false; };
-
+        
         StateMachine.Instance.GetState(StateMachine.States.QR_SCAN_COMPLETE_STATE)
             .OnStateExit += () => { m_AddModelButton.interactable = true; };
 
