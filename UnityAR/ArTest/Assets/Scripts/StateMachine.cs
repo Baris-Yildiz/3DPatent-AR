@@ -11,9 +11,10 @@ public class StateMachine : MonoBehaviour
 
     public enum States
     {
-        IDLE_STATE,
+        NO_MODEL_VIEW_STATE,
         QR_SCAN_STATE,
         QR_SCAN_COMPLETE_STATE,
+        MODEL_VIEW_STATE
     }
 
     private Dictionary<States, State> m_StateMap = new();
@@ -26,11 +27,12 @@ public class StateMachine : MonoBehaviour
     {
         Instance = this;
 
-        m_StateMap[States.IDLE_STATE] = new State();
+        m_StateMap[States.NO_MODEL_VIEW_STATE] = new State();
         m_StateMap[States.QR_SCAN_STATE] = new State();
         m_StateMap[States.QR_SCAN_COMPLETE_STATE] = new State();
+        m_StateMap[States.MODEL_VIEW_STATE] = new State();
 
-        SetState(States.IDLE_STATE);
+        SetState(States.NO_MODEL_VIEW_STATE);
     }
 
     public void SetState(States stateName)

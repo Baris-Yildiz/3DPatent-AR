@@ -8,11 +8,11 @@ public class UIVisibilityManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     List<GameObject> m_ObjectsToModifyVisibility;
-    private Toggle m_ToggleComponent;
+    private UIToggle m_UIToggleComponent;
 
     void Start()
     {
-        m_ToggleComponent = GetComponent<Toggle>();
+        m_UIToggleComponent = GetComponent<UIToggle>();
 
         GameObject modelViewObject = ModelViewManager.Instance.gameObject;
         GameObject modelTransformObject = ModelTransformManager.Instance.gameObject;
@@ -34,17 +34,16 @@ public class UIVisibilityManager : MonoBehaviour
                 miscOptionsObject.SetActive(false);
             };
 
-        StateMachine.Instance.GetState(StateMachine.States.QR_SCAN_COMPLETE_STATE)
-            .OnStateExit += () =>
+        StateMachine.Instance.GetState(StateMachine.States.MODEL_VIEW_STATE)
+            .OnStateEnter += () =>
             {
                 modelViewObject.SetActive(true);
                 modelTransformObject.SetActive(true);
                 miscOptionsObject.SetActive(true);
-                m_ToggleComponent.isOn = false;
+                GetComponent<Toggle>().isOn = false;
             };
 
-        m_ToggleComponent.onValueChanged.AddListener(SetUIObjectVisibility);
-
+        m_UIToggleComponent.OnToggleValueChanged += (bool isOn) => { SetUIObjectVisibility(isOn); };
     }
 
     private void SetUIObjectVisibility(bool isOn)

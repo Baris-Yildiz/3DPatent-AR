@@ -15,8 +15,8 @@ public class MiniModelDisplayManager : MonoBehaviour
 
     void Start()
     {
-        StateMachine.Instance.GetState(StateMachine.States.QR_SCAN_COMPLETE_STATE)
-            .OnStateExit += () => DisplayMiniObject();
+        StateMachine.Instance.GetState(StateMachine.States.MODEL_VIEW_STATE)
+            .OnStateEnter += () => DisplayMiniObject();
 
         StateMachine.Instance.GetState(StateMachine.States.QR_SCAN_STATE)
             .OnStateEnter += () => ResetDisplay();

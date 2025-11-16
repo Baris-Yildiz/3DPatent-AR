@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class ModelPlaneDetectionManager : MonoBehaviour
@@ -7,26 +8,27 @@ public class ModelPlaneDetectionManager : MonoBehaviour
     GameObject m_Parent;
 
     public static ModelPlaneDetectionManager Instance { get; private set; }
-    public event Action<bool> OnPlaneDetectionChange;
+    public event UnityAction<bool> OnPlaneDetectionChange;
+
+    private UIToggle m_UIToggleComponent;
 
     private void Awake()
     {
         Instance = this;
     }
 
-    private Toggle m_ToggleComponent;
-
     void Start()
     {
+        m_UIToggleComponent = GetComponent<UIToggle>();
+        
+        m_UIToggleComponent.OnToggleValueChanged += (bool isOn) => { OnPlaneDetectionChange?.Invoke(isOn); };
+
+        OnPlaneDetectionChange += (bool isOn) => { print("plane detection pressed"); };
+
+        StateMachine.Instance.GetState(StateMachine.States.MODEL_VIEW_STATE)
+            .OnStateEnter += () => { GetComponent<Toggle>().isOn = false; };
+
         m_Parent = gameObject.transform.parent.gameObject;
         m_Parent.SetActive(false);
-
-        m_ToggleComponent = GetComponent<Toggle>();
-    }
-
-    public void OnPlaneDetectionToggleChange(bool isOn)
-    {
-        OnPlaneDetectionChange?.Invoke(isOn);
-        //planeDetectionToggleChange?.Invoke(isOn);
     }
 }

@@ -43,15 +43,10 @@ public class QRNetworkHandler : MonoBehaviour
             .Get();
     }
 
-    private void SetToQRScanState()
-    {
-        StateMachine.Instance.SetState(StateMachine.States.QR_SCAN_STATE);
-    }
-
     private void CancelDownload()
     {
         StopAllCoroutines();
-        Invoke(nameof(SetToQRScanState), 5f);
+        StateMachine.Instance.SetState(StateMachine.States.NO_MODEL_VIEW_STATE);
         m_QRModelDownloadScreen.SetActive(false);
     }
 
@@ -131,6 +126,7 @@ public class QRNetworkHandler : MonoBehaviour
                 www.result == UnityWebRequest.Result.DataProcessingError)
             {
                 Debug.LogError("Error: " + www.error);
+                StateMachine.Instance.SetState(StateMachine.States.NO_MODEL_VIEW_STATE);
             } else
             {
                 string path = Path.Combine(Application.persistentDataPath, "test.glb");
@@ -142,11 +138,11 @@ public class QRNetworkHandler : MonoBehaviour
                 {
                     yield return null;
                 }
-
+                StateMachine.Instance.SetState(StateMachine.States.MODEL_VIEW_STATE);
             }
         }
         
         m_QRModelDownloadScreen.SetActive(false);
-        StateMachine.Instance.SetState(StateMachine.States.IDLE_STATE);
+        
     }
 }
