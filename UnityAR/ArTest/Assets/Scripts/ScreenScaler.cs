@@ -45,7 +45,7 @@ public  class ScreenScaler : MonoBehaviour
             Debug.Log("bir şeyler null kardeşim");
             return -1;
         }
-       // BoxCollider collider = patent.GetComponentInChildren<BoxCollider>();
+        // BoxCollider collider = patent.GetComponentInChildren<BoxCollider>();
         patent.transform.localScale = Vector3.one;
         Bounds bounds = patent.GetComponentInChildren<MeshRenderer>().bounds;
         if (originalCenter == Vector3.negativeInfinity && originalSize == Vector3.negativeInfinity)
@@ -53,7 +53,7 @@ public  class ScreenScaler : MonoBehaviour
             originalCenter = bounds.center;
             originalSize = bounds.size;
         } 
-       // Vector3 vectorToPatent = (bounds.min ) - cam.transform.position;
+        // Vector3 vectorToPatent = (bounds.min ) - cam.transform.position;
         //float projectedDistance = Math.Abs(Vector3.Dot(vectorToPatent, cam.transform.forward));
         float projectedDistance = Vector3.Distance(cam.transform.position, patent.transform.position);
         float verticalFOVRadians = cam.fieldOfView * Mathf.Deg2Rad;
@@ -68,6 +68,8 @@ public  class ScreenScaler : MonoBehaviour
         float smallestScale = Mathf.Min(scaleNeededX, scaleNeededY);
         return smallestScale;
     }
+    
+    
     
     
 }

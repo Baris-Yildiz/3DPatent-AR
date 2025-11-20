@@ -13,7 +13,7 @@ enum PlacementMode
 public class ObjectSpawnerAR : MonoBehaviour
 {
     [SerializeField] private PlacementMode _placementMode = PlacementMode.Front;
-    private GameObject patent;
+    [SerializeField]private GameObject patent;
     [SerializeField] private float centerPlacementY = 1.1f;
     [SerializeField] private float frontPlacementZ = 2f;
     [SerializeField]private TextMeshProUGUI scaleText;
@@ -115,11 +115,25 @@ public class ObjectSpawnerAR : MonoBehaviour
     public void ResetPatentTransform()
     {
         if (patent == null) return;
-        
+        Camera cam = Camera.main;
         patent.transform.localScale = Vector3.one;
         patent.transform.rotation = Quaternion.identity;
         activePatent.transform.localScale = Vector3.one;
+        Quaternion prevRot = activePatent.transform.rotation;
         activePatent.transform.rotation = Quaternion.identity;
+        Vector3 pos = cam.transform.position + cam.transform.forward * frontPlacementZ;
+        pos.y = 0;
+        //activePatent.transform.position = new Vector3(pos.x, activePatent.transform.position.y, pos.z);
+         Vector3 offSet = PivotSetter.CalculateOffSet(activePatent.GetComponent<MeshRenderer>(), 0.1f);
+         activePatent.transform.position += (offSet + pos);
+         activePatent.transform.rotation = prevRot;
 
+
+         // offSet.z += 1;
+         // activePatent.transform.position += offSet;
     }
+    
+    
+    
+    
 }

@@ -2266,6 +2266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _placementMode: 0
+  patent: {fileID: 5075132777721321545, guid: acaddc2ee0265614fb65c61d9020d380, type: 3}
   centerPlacementY: 1.1
   frontPlacementZ: 2
   scaleText: {fileID: 1417440847}
