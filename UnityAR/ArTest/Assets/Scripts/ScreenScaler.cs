@@ -47,7 +47,7 @@ public  class ScreenScaler : MonoBehaviour
         }
         // BoxCollider collider = patent.GetComponentInChildren<BoxCollider>();
         patent.transform.localScale = Vector3.one;
-        Bounds bounds = patent.GetComponentInChildren<MeshRenderer>().bounds;
+        Bounds bounds = PivotSetter.GetBounds(patent);
         if (originalCenter == Vector3.negativeInfinity && originalSize == Vector3.negativeInfinity)
         {
             originalCenter = bounds.center;

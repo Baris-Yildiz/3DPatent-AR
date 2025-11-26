@@ -1376,6 +1376,7 @@ MonoBehaviour:
       type: 3}
   dragRotationSpeed: 0.25
   twistRotationSpeed: 1
+  minRotationAmount: 0.01
   pinchScaleSpeed: 0.01
   minScale: 0.01
   maxScale: 3
@@ -2266,7 +2267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _placementMode: 0
-  patent: {fileID: 5075132777721321545, guid: acaddc2ee0265614fb65c61d9020d380, type: 3}
+  patent: {fileID: 7912550490280498178, guid: b445c28588324414bb000acb7a72b467, type: 3}
   centerPlacementY: 1.1
   frontPlacementZ: 2
   scaleText: {fileID: 1417440847}

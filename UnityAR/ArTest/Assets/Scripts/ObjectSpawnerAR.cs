@@ -62,6 +62,7 @@ public class ObjectSpawnerAR : MonoBehaviour
         if (activePatent == null)
         {
             activePatent = Instantiate(patent, position, patent.transform.rotation);
+            
            
         }
         else
@@ -70,6 +71,7 @@ public class ObjectSpawnerAR : MonoBehaviour
            
         }
         FitScreen();
+        PivotSetter.SnapToYOffset(activePatent , false);
         positionText.text = "X: " + activePatent.transform.position.x.ToString() + " Y: " + activePatent.transform.position.y.ToString() + " Z : " + activePatent.transform.position.z.ToString();
 
 
@@ -88,6 +90,7 @@ public class ObjectSpawnerAR : MonoBehaviour
             
         }
         FitScreen();
+        PivotSetter.SnapToYOffset(activePatent , true);
         positionText.text = "X: " + activePatent.transform.position.x.ToString() + " Y: " + activePatent.transform.position.y.ToString() + " Z : " + activePatent.transform.position.z.ToString();
     }
 

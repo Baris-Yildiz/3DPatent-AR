@@ -52,7 +52,7 @@ public static class PivotSetter
         return calculatedOffSet;
     }
 
-    private static Bounds GetBounds(GameObject patent)
+    public static Bounds GetBounds(GameObject patent)
     {
         MeshRenderer[] meshRenderers = patent.GetComponentsInChildren<MeshRenderer>();
         if (meshRenderers.Length == 0)
@@ -67,6 +67,21 @@ public static class PivotSetter
         }
 
         return bounds;
+    }
+
+    public static void SnapToYOffset(GameObject patent , bool toGround)
+    {
+        if (patent == null)
+        {
+            Debug.Log("patent is null from pivot setter");
+            return;
+        }
+
+        Bounds bounds = GetBounds(patent);
+
+        float target = toGround ? bounds.min.y : bounds.center.y;
+        Transform t = patent.transform;
+        t.position = new Vector3(t.position.x, 2 * t.position.y - target, t.position.z);
     }
 
 

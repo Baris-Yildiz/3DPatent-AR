@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 
@@ -11,21 +12,19 @@ public class ScalingModeController : MonoBehaviour
 {
 
     [SerializeField] private ScalingMode mode = ScalingMode.FitScreen;
-    
-    
-    void Start()
+    public static event Action<bool> modeChanged;
+    public void ChangeMode(bool isOneToOne)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void ChangeMode(ScalingMode mode)
-    {
+        if (isOneToOne && mode != ScalingMode.OneToOne)
+        {
+            mode = ScalingMode.OneToOne;
+            modeChanged?.Invoke(true);
+        }
+        else if (!isOneToOne && mode != ScalingMode.FitScreen)
+        {
+            mode = ScalingMode.FitScreen;
+            modeChanged?.Invoke(false);
+        }
         
     }
 }
