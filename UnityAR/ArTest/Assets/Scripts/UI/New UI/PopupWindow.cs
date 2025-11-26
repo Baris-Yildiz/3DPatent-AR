@@ -3,9 +3,6 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using static System.Net.Mime.MediaTypeNames;
-
-
 
 public class PopupWindow : MonoBehaviour
 {
@@ -13,10 +10,13 @@ public class PopupWindow : MonoBehaviour
     [SerializeField] private GameObject m_Header;
     [SerializeField] private GameObject m_Footer;
 
+    [SerializeField] private GameObject m_ButtonSample;
+
     public static Color BUTTON_COLOR_CANCEL = new (0.7529412f, 0.2235294f, 0.1686275f);
-    public static Color BUTTON_COLOR_OK = new (0.4980392f, 0.5490196f, 0.5529412f);
+    public static Color BUTTON_COLOR_OK = new (0.1529412f, 0.682353f, 0.3764706f);
 
     private static int m_LastWindowID = -1;
+
     public int WindowID { get; private set; }
 
     private void Start()
@@ -63,24 +63,25 @@ public class PopupWindow : MonoBehaviour
 
     public void AddFooterButton(string buttonText, Color buttonColor, UnityAction callback)
     {
-        GameObject button = new GameObject();
-        button.transform.SetParent(m_Footer.transform, false);
+        GameObject button = Instantiate(m_ButtonSample, m_Footer.transform, false);
 
-        UnityEngine.UI.Image imageComponent = button.AddComponent<UnityEngine.UI.Image>();
+        //GameObject button = new GameObject();
+        button.transform.SetParent(m_Footer.transform, false);
+        Image imageComponent = button.GetComponent<Image>();
+
+        //UnityEngine.UI.Image imageComponent = button.AddComponent<UnityEngine.UI.Image>();
         imageComponent.color = buttonColor;
-        imageComponent.sprite = AssetDatabase.GetBuiltinExtraResource<Sprite>("UI/Skin/Background.psd");
+        //imageComponent.sprite = AssetDatabase.GetBuiltinExtraResource<Sprite>("UI/Skin/Background.psd");
 
         RectTransform rectTransform = button.GetComponent<RectTransform>();
         rectTransform.sizeDelta = new Vector2(150f, 50f);
 
-        Button buttonComponent = button.AddComponent<Button>();
+        Button buttonComponent = button.GetComponent<Button>();
 
         buttonComponent.onClick.AddListener(callback);
 
-        GameObject child = new GameObject();
-        child.transform.SetParent(button.transform, false);
 
-        TextMeshProUGUI textComponent = child.AddComponent<TextMeshProUGUI>();
+        TextMeshProUGUI textComponent = button.GetComponentInChildren<TextMeshProUGUI>();
         textComponent.alignment = TextAlignmentOptions.Midline;
         textComponent.enableAutoSizing = true;
 

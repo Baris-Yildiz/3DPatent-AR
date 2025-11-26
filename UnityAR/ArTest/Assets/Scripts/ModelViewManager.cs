@@ -1,38 +1,62 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ModelViewManager : MonoBehaviour
 {
-    public Button NormalViewButton;
-    public Button OneToOneViewButton;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public UIToggle NormalViewUIToggle;
+    public UIToggle OneToOneViewUIToggle;
+
+    private Toggle NormalViewToggle;
+    private Toggle OneToOneViewToggle;
+
+
+    public static ModelViewManager Instance { get; private set; }
+
+    public event Action OnNormalViewToggle;
+    public event Action OnOneToOneViewToggle;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     void Start()
     {
-        StateMachine.Instance.GetState(StateMachine.States.QR_SCAN_COMPLETE_STATE)
-            .OnStateExit += () => { gameObject.SetActive(true); };
+        NormalViewToggle = NormalViewUIToggle.gameObject.GetComponent<Toggle>();
+        OneToOneViewToggle = OneToOneViewUIToggle.gameObject.GetComponent<Toggle>();
 
-        StateMachine.Instance.GetState(StateMachine.States.QR_SCAN_STATE)
-            .OnStateEnter += () => { gameObject.SetActive(false); };
+        NormalViewUIToggle.OnToggleValueChanged += (bool isOn) => { SetNormalView(isOn); };
+        OneToOneViewUIToggle.OnToggleValueChanged += (bool isOn) => { SetOneToOneView(isOn); };
 
-        NormalViewButton.onClick.AddListener(SetNormalView);
-        OneToOneViewButton.onClick.AddListener(SetOneToOneView);
+        OnNormalViewToggle += () => { print("switch normal view"); };
+        OnOneToOneViewToggle += () => { print("switch 11 view"); };
+
+        StateMachine.Instance.GetState(StateMachine.States.MODEL_VIEW_STATE)
+            .OnStateEnter += () => { NormalViewToggle.isOn = true; };
 
         gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void SetNormalView(bool isOn)
     {
-        
+        if (isOn)
+        {
+            OneToOneViewToggle.isOn = false;
+            OnNormalViewToggle?.Invoke();
+            NormalViewToggle.interactable = false;
+            OneToOneViewToggle.interactable = true;
+        } 
     }
 
-    private void SetNormalView()
+    private void SetOneToOneView(bool isOn)
     {
-
-    }
-
-    private void SetOneToOneView()
-    {
-
+        if (isOn)
+        {
+            NormalViewToggle.isOn = false;
+            OnOneToOneViewToggle?.Invoke();
+            OneToOneViewToggle.interactable = false;
+            NormalViewToggle.interactable = true;
+        }
     }
 }

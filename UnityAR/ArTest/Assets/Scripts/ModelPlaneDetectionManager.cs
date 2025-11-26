@@ -1,24 +1,34 @@
+using System;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class ModelPlaneDetectionManager : MonoBehaviour
 {
     GameObject m_Parent;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    public static ModelPlaneDetectionManager Instance { get; private set; }
+    public event UnityAction<bool> OnPlaneDetectionChange;
+
+    private UIToggle m_UIToggleComponent;
+
+    private void Awake()
     {
-        m_Parent = gameObject.transform.parent.gameObject;
-        m_Parent.SetActive(false);
-
-        StateMachine.Instance.GetState(StateMachine.States.QR_SCAN_COMPLETE_STATE)
-            .OnStateExit += () => { m_Parent.SetActive(true); };
-
-        StateMachine.Instance.GetState(StateMachine.States.QR_SCAN_STATE)
-            .OnStateEnter += () => { m_Parent.SetActive(false); };
+        Instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
+        m_UIToggleComponent = GetComponent<UIToggle>();
         
+        m_UIToggleComponent.OnToggleValueChanged += (bool isOn) => { OnPlaneDetectionChange?.Invoke(isOn); };
+
+        OnPlaneDetectionChange += (bool isOn) => { print("plane detection pressed"); };
+
+        StateMachine.Instance.GetState(StateMachine.States.MODEL_VIEW_STATE)
+            .OnStateEnter += () => { GetComponent<Toggle>().isOn = false; };
+
+        m_Parent = gameObject.transform.parent.gameObject;
+        m_Parent.SetActive(false);
     }
 }

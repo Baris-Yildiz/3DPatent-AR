@@ -6,6 +6,7 @@ public class PlaneDetectionController : MonoBehaviour
 {
     
     private Text toggleText;
+
     private Toggle toggle;
     public event Action<bool> planeDetectionToggleChange; 
 

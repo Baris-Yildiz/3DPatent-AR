@@ -19,6 +19,8 @@ public class QRNetworkHandler : MonoBehaviour
     private const string ProgressBarPath = "Progress Bar";
     private GameObject m_ProgressBar;
 
+    public Transform ModelLoadTransform;
+
     public static QRNetworkHandler Instance
     {
         get; private set;
@@ -41,15 +43,10 @@ public class QRNetworkHandler : MonoBehaviour
             .Get();
     }
 
-    private void SetToQRScanState()
-    {
-        StateMachine.Instance.SetState(StateMachine.States.QR_SCAN_STATE);
-    }
-
     private void CancelDownload()
     {
         StopAllCoroutines();
-        Invoke(nameof(SetToQRScanState), 5f);
+        StateMachine.Instance.SetState(StateMachine.States.NO_MODEL_VIEW_STATE);
         m_QRModelDownloadScreen.SetActive(false);
     }
 
@@ -60,6 +57,7 @@ public class QRNetworkHandler : MonoBehaviour
 
     private void Start()
     {
+        ModelLoadTransform = transform;
         StateMachine.Instance.GetState(StateMachine.States.QR_SCAN_COMPLETE_STATE).
             OnStateEnter += () => StartDownloadingModel();
 
@@ -128,17 +126,23 @@ public class QRNetworkHandler : MonoBehaviour
                 www.result == UnityWebRequest.Result.DataProcessingError)
             {
                 Debug.LogError("Error: " + www.error);
+                StateMachine.Instance.SetState(StateMachine.States.NO_MODEL_VIEW_STATE);
             } else
             {
                 string path = Path.Combine(Application.persistentDataPath, "test.glb");
                 File.WriteAllBytes(path, www.downloadHandler.data);
                 Debug.Log("File downloaded at path: " + path);
                 Task loadTask = LoadGLBObject(www.downloadHandler.data);
-                yield return loadTask.IsCompleted;
+
+                while (!loadTask.IsCompleted)
+                {
+                    yield return null;
+                }
+                StateMachine.Instance.SetState(StateMachine.States.MODEL_VIEW_STATE);
             }
         }
         
         m_QRModelDownloadScreen.SetActive(false);
-        StateMachine.Instance.SetState(StateMachine.States.IDLE_STATE);
+        
     }
 }

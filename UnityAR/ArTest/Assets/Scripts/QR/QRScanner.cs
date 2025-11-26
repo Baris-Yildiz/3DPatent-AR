@@ -45,6 +45,13 @@ public class QRScanner : MonoBehaviour
         ResetScanner();
         ScanScreen();
     }
+
+    public void StopScanner()
+    {
+        ResetScanner();
+        StopAllCoroutines();
+    }
+
     private void ResetScanner()
     {
         QrCode = string.Empty;
