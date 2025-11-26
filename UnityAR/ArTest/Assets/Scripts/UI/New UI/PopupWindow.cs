@@ -15,14 +15,16 @@ public class PopupWindow : MonoBehaviour
     public static Color BUTTON_COLOR_CANCEL = new (0.7529412f, 0.2235294f, 0.1686275f);
     public static Color BUTTON_COLOR_OK = new (0.1529412f, 0.682353f, 0.3764706f);
 
-    private static int m_LastWindowID = -1;
+    public static GameObject PopupLayer;
 
-    public int WindowID { get; private set; }
-
-    private void Start()
+    private void OnEnable()
     {
-        m_LastWindowID++;
-        WindowID = m_LastWindowID;
+        PopupLayer.SetActive(true);
+    }
+
+    private void OnDisable()
+    {
+        PopupLayer.SetActive(false);
     }
 
     public void AddContentText(string content)

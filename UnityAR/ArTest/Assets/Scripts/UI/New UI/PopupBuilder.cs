@@ -15,10 +15,12 @@ public class PopupBuilder
 
     private PopupBuilder()
     {
+        
         m_PopupWindowPrefab = Resources.Load<GameObject>(m_PopupWindowPrefabPath);
         m_PopupWindowPrefab = GameObject.Instantiate(m_PopupWindowPrefab, GameObject.FindWithTag("PopupParent").transform);
         
         m_PopupWindowScript = m_PopupWindowPrefab.GetComponent<PopupWindow>();
+        PopupWindow.PopupLayer = GameObject.FindWithTag("PopupLayer");
     }
 
     public PopupBuilder WithContentText(string text)
