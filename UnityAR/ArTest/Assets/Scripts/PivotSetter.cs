@@ -2,40 +2,73 @@ using UnityEngine;
 
 public static class PivotSetter 
 {
-    public static Vector3 CalculateOffSet(MeshRenderer renderer , float offSet)
+    public static Vector3 ChangeToOneOneMode(GameObject patent ,Transform camTransform, float offSet)
     {
-        if (renderer == null)
+        if (patent == null)
         {
-            Debug.Log("Renderer null");
+            Debug.Log("Patent is null");
             return Vector3.positiveInfinity;
         }
-
         Vector3 calculatedOffSet = Vector3.zero;
-        Bounds bounds = renderer.bounds;
-
-        Vector3 objPosition = renderer.gameObject.transform.position;
-
+        Bounds bounds = GetBounds(patent);
+        
         Vector3 mins = bounds.min;
         Vector3 maxs = bounds.max;
         Vector3 center = bounds.center;
-        Debug.Log("min max info");
-        Debug.Log(mins);
-        Debug.Log(maxs);
-        if (objPosition.x - center.x >= Mathf.Abs(offSet))
+        
+        float minX = mins.x;
+        float maxX = maxs.x;
+        float minZ = mins.z;
+        float maxZ = maxs.z;
+
+        float camX = camTransform.position.x;
+        float camZ = camTransform.position.z;
+        
+        
+        bool isInsideX = camX >= minX && camX <= maxX;
+        bool isInsideZ = camZ >= minZ && camZ <= maxZ;
+
+        if (isInsideX && isInsideZ)
         {
-            calculatedOffSet.x = -(objPosition.x - center.x);
+
+            Vector2 boundsCenterXZ = new Vector2(center.x, center.z);
+            Vector2 cameraXZ = new Vector2(camX, camZ);
+            
+            Vector2 pushDir = (boundsCenterXZ - cameraXZ).normalized;
+            
+            if (pushDir == Vector2.zero) pushDir = new Vector2(camTransform.forward.x, camTransform.forward.z).normalized;
+            
+            float objectRadius = new Vector2(bounds.extents.x, bounds.extents.z).magnitude;
+            
+            float targetDistance = objectRadius + offSet;
+            
+            Vector2 newCenterXZ = cameraXZ + (pushDir * targetDistance);
+            
+            Vector2 movementDelta = newCenterXZ - boundsCenterXZ;
+            
+            patent.transform.position += new Vector3(movementDelta.x, 0, movementDelta.y);
         }
-        if (objPosition.y - mins.y >= Mathf.Abs(offSet))
-        {
-            calculatedOffSet.y = -(objPosition.y - mins.y);
-        }
-        if (objPosition.z - maxs.z >= Mathf.Abs(offSet))
-        {
-            calculatedOffSet.z = -(objPosition.z - maxs.z);
-        }
+        
         return calculatedOffSet;
     }
-    
-    
-    
+
+    private static Bounds GetBounds(GameObject patent)
+    {
+        MeshRenderer[] meshRenderers = patent.GetComponentsInChildren<MeshRenderer>();
+        if (meshRenderers.Length == 0)
+        {
+            return new Bounds(patent.transform.position, Vector3.zero);
+        }
+
+        Bounds bounds = meshRenderers[0].bounds;
+        foreach (var mesh in meshRenderers)
+        {
+            bounds.Encapsulate(mesh.bounds);
+        }
+
+        return bounds;
+    }
+
+
+
 }

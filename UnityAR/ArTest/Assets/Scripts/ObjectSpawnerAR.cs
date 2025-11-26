@@ -98,7 +98,6 @@ public class ObjectSpawnerAR : MonoBehaviour
         activePatent.transform.localScale *= scaleAmount;
         scaleText.text ="Scale:          " + activePatent.transform.localScale.y.ToString()  ;
         Debug.Log(scaleAmount);
-        
     }
 
     public void SetActivePatent(GameObject downloaded_patent)
@@ -117,20 +116,8 @@ public class ObjectSpawnerAR : MonoBehaviour
         if (patent == null) return;
         Camera cam = Camera.main;
         patent.transform.localScale = Vector3.one;
-        patent.transform.rotation = Quaternion.identity;
         activePatent.transform.localScale = Vector3.one;
-        Quaternion prevRot = activePatent.transform.rotation;
-        activePatent.transform.rotation = Quaternion.identity;
-        Vector3 pos = cam.transform.position + cam.transform.forward * frontPlacementZ;
-        pos.y = 0;
-        //activePatent.transform.position = new Vector3(pos.x, activePatent.transform.position.y, pos.z);
-         Vector3 offSet = PivotSetter.CalculateOffSet(activePatent.GetComponent<MeshRenderer>(), 0.1f);
-         activePatent.transform.position += (offSet + pos);
-         activePatent.transform.rotation = prevRot;
-
-
-         // offSet.z += 1;
-         // activePatent.transform.position += offSet;
+        Vector3 offSet = PivotSetter.ChangeToOneOneMode(activePatent,cam.transform,1f);
     }
     
     
