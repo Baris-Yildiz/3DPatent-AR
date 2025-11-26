@@ -50,7 +50,7 @@ public class AddModelManager : MonoBehaviour
         });   
     }
 
-    public void DisplayAddModelPopup()
+    private void DisplayAddModelPopup()
     {
         m_AddModelButton.interactable = false;
 
