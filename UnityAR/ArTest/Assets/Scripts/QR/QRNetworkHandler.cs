@@ -17,37 +17,13 @@ public class QRNetworkHandler : MonoBehaviour
     private ObjectSpawnerAR _objectSpawnerAR;
 
     private const string ProgressBarPath = "Progress Bar";
-    private GameObject m_ProgressBar;
+    private GameObject m_ProgressBarPrefab;
 
     public Transform ModelLoadTransform;
 
     public static QRNetworkHandler Instance
     {
         get; private set;
-    }
-
-    public void DisplayModelDownloadScreen()
-    {
-        if (m_QRModelDownloadScreen != null)
-        {
-            m_QRModelDownloadScreen.SetActive(true);
-            return;
-        }
-
-        PopupBuilder builder = PopupBuilder.Create();
-
-        m_QRModelDownloadScreen = builder
-            .WithHeader("MODEL ÝNDÝRÝLÝYOR")
-            .WithFooterButton("Ýptal Et", PopupWindow.BUTTON_COLOR_CANCEL, CancelDownload)
-            .WithContent(m_ProgressBar)
-            .Get();
-    }
-
-    private void CancelDownload()
-    {
-        StopAllCoroutines();
-        StateMachine.Instance.SetState(StateMachine.States.NO_MODEL_VIEW_STATE);
-        m_QRModelDownloadScreen.SetActive(false);
     }
 
     private void Awake()
@@ -61,11 +37,37 @@ public class QRNetworkHandler : MonoBehaviour
         StateMachine.Instance.GetState(StateMachine.States.QR_SCAN_COMPLETE_STATE).
             OnStateEnter += () => StartDownloadingModel();
 
+        StateMachine.Instance.GetState(StateMachine.States.MODEL_VIEW_STATE).
+            OnStateEnter += () => { if (m_QRModelDownloadScreen != null) m_QRModelDownloadScreen.SetActive(false); };
+
+        StateMachine.Instance.GetState(StateMachine.States.NO_MODEL_VIEW_STATE).
+            OnStateEnter += () => { if (m_QRModelDownloadScreen != null) m_QRModelDownloadScreen.SetActive(false); };
+
         _objectSpawnerAR = FindAnyObjectByType<ObjectSpawnerAR>();
         LoadedModel = null;
 
-        m_ProgressBar = Instantiate( Resources.Load<GameObject>(ProgressBarPath) );
-        m_ProgressBar.SetActive(false);
+        m_ProgressBarPrefab = Resources.Load<GameObject>(ProgressBarPath);
+        
+    }
+
+    public void DisplayModelDownloadScreen()
+    {
+        if (m_QRModelDownloadScreen != null)
+        {
+            m_QRModelDownloadScreen.SetActive(true);
+            return;
+        }
+
+        PopupBuilder builder = PopupBuilder.Create();
+
+        GameObject progressBar = Instantiate(m_ProgressBarPrefab);
+        progressBar.SetActive(false);
+
+        m_QRModelDownloadScreen = builder
+            .WithHeader("MODEL ÝNDÝRÝLÝYOR")
+            .WithFooterButton("Ýptal Et", PopupWindow.BUTTON_COLOR_CANCEL, CancelDownload)
+            .WithContent(progressBar)
+            .Get();
     }
 
     public void StartDownloadingModel()
@@ -73,6 +75,13 @@ public class QRNetworkHandler : MonoBehaviour
         ResetNetworkHandler();
         StartCoroutine(DownloadModel(QRScanner.Instance.QrCode));
     }
+
+    private void CancelDownload()
+    {
+        StopAllCoroutines();
+        StateMachine.Instance.SetState(StateMachine.States.NO_MODEL_VIEW_STATE);
+        Destroy(m_QRModelDownloadScreen); //destroy because there are two types of popups: error and progress
+    }  
 
     private void OnDownloadProgress(float progress)
     {
@@ -107,6 +116,21 @@ public class QRNetworkHandler : MonoBehaviour
         Debug.LogError("Model load failed");
     }
 
+    private void OnDownloadError(string error)
+    {
+        Debug.LogError("Error: " + error);
+
+        Destroy(m_QRModelDownloadScreen);
+
+        PopupBuilder builder = PopupBuilder.Create();
+
+        m_QRModelDownloadScreen = builder
+            .WithHeader("HATA")
+            .WithFooterButton("Tamam", PopupWindow.BUTTON_COLOR_OK, CancelDownload)
+            .WithContentText(string.Format("Model yüklenirken bir hata oluþtu: {0}", error))
+            .Get();
+    }
+
     private IEnumerator DownloadModel(string uri)
     {
         DisplayModelDownloadScreen();
@@ -125,8 +149,7 @@ public class QRNetworkHandler : MonoBehaviour
                 www.result == UnityWebRequest.Result.ProtocolError ||
                 www.result == UnityWebRequest.Result.DataProcessingError)
             {
-                Debug.LogError("Error: " + www.error);
-                StateMachine.Instance.SetState(StateMachine.States.NO_MODEL_VIEW_STATE);
+                OnDownloadError(www.error);
             } else
             {
                 string path = Path.Combine(Application.persistentDataPath, "test.glb");
@@ -140,9 +163,6 @@ public class QRNetworkHandler : MonoBehaviour
                 }
                 StateMachine.Instance.SetState(StateMachine.States.MODEL_VIEW_STATE);
             }
-        }
-        
-        m_QRModelDownloadScreen.SetActive(false);
-        
+        }        
     }
 }
