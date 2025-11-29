@@ -1138,7 +1138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1aafed8f78cf16469d903184f65d9a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TapDuration: 0.5
+  m_TapDuration: 0.2
 --- !u!114 &631141576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1376,7 +1376,6 @@ MonoBehaviour:
       type: 3}
   dragRotationSpeed: 0.25
   twistRotationSpeed: 1
-  minRotationAmount: 0.01
   pinchScaleSpeed: 0.01
   minScale: 0.01
   maxScale: 3
@@ -2267,7 +2266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _placementMode: 0
-  patent: {fileID: 7912550490280498178, guid: b445c28588324414bb000acb7a72b467, type: 3}
+  patent: {fileID: 8982929503308312471, guid: 63f003398e06e9a45b68f8585770c7e4, type: 3}
   centerPlacementY: 1.1
   frontPlacementZ: 2
   scaleText: {fileID: 1417440847}

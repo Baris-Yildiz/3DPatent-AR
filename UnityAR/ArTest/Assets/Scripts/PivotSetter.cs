@@ -80,8 +80,9 @@ public static class PivotSetter
         Bounds bounds = GetBounds(patent);
 
         float target = toGround ? bounds.min.y : bounds.center.y;
+        Vector2 xzCenter = new Vector2(bounds.center.x, bounds.center.z);
         Transform t = patent.transform;
-        t.position = new Vector3(t.position.x, 2 * t.position.y - target, t.position.z);
+        t.position = new Vector3(2*t.position.x - xzCenter.x, 2 * t.position.y - target, 2*t.position.z - xzCenter.y);
     }
 
 

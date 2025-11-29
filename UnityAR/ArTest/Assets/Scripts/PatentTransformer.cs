@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class PatentTransformer : MonoBehaviour
 {
     [SerializeField] private ObjectSpawnerAR spawner;
+    private GameObject patent;
     
     [SerializeField]private InputActionProperty dragDeltaAction;   
     [SerializeField]private InputActionProperty pinchDeltaAction;  
@@ -11,7 +12,6 @@ public class PatentTransformer : MonoBehaviour
     
     [SerializeField]private float dragRotationSpeed = 0.25f;
     [SerializeField]private float twistRotationSpeed = 1f;
-    [SerializeField] private float minRotationAmount = 0.01f;
     
     [SerializeField]private float pinchScaleSpeed = 0.01f;
     [SerializeField]private float minScale = 0.05f;
@@ -28,21 +28,21 @@ public class PatentTransformer : MonoBehaviour
     {
         spawner = FindFirstObjectByType<ObjectSpawnerAR>();
     }
-    
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 
     private void OnEnable()
     {
-        ScalingModeController.modeChanged += onModeChanged;
-        EnableInputs();
+        if (dragDeltaAction.action != null) dragDeltaAction.action.performed += onDragDelta;
+        if (pinchDeltaAction.action != null) pinchDeltaAction.action.performed += onPinchDelta;
+        //if (twistDeltaAction.action != null) twistDeltaAction.action.performed += onTwistDelta;
     }
 
     private void OnDisable()
-    {
-        ScalingModeController.modeChanged -= onModeChanged;
-        DisableInputs();
-    }
-
-    void DisableInputs()
     {
         if (dragDeltaAction.action != null)
         {
@@ -54,24 +54,11 @@ public class PatentTransformer : MonoBehaviour
             pinchDeltaAction.action.performed -= onPinchDelta;
             
         }
-    }
-
-    void onModeChanged(bool isOneToOne)
-    {
-        if (isOneToOne)
-        {
-            DisableInputs();
-        }
-        else
-        {
-            EnableInputs();
-        }
-    }
-
-    void EnableInputs()
-    {
-        if (dragDeltaAction.action != null) dragDeltaAction.action.performed += onDragDelta;
-        if (pinchDeltaAction.action != null) pinchDeltaAction.action.performed += onPinchDelta;
+        // if (twistDeltaAction.action != null)
+        // {
+        //     twistDeltaAction.action.performed -= onTwistDelta;
+        //     
+        // }
     }
 
     void onDragDelta(InputAction.CallbackContext ctx)
@@ -79,7 +66,7 @@ public class PatentTransformer : MonoBehaviour
         Vector2 delta = ctx.ReadValue<Vector2>();
         float yDegrees = -delta.x * dragRotationSpeed; // negative so drag-right rotates right (tweak if needed)
         float xDegrees = -delta.y * dragRotationSpeed;
-        rotateAround(yDegrees , xDegrees);
+        rotateAroundUp(yDegrees , xDegrees);
         
     }
 
@@ -97,21 +84,18 @@ public class PatentTransformer : MonoBehaviour
     //     rotateAroundUp(yDegrees);
     // }
     
-    void rotateAround(float degreesY , float degreesX)
+    void rotateAroundUp(float degreesY , float degreesX)
     {
-        GameObject patent = spawner.getActivePatent();
-        if (patent == null) return;
-        Bounds bounds = PivotSetter.GetBounds(spawner.getActivePatent());
-        Transform t = spawner.transform;
-        if (Mathf.Abs(degreesY) > minRotationAmount)
+        Transform targetTransform = spawner.getActivePatent().transform;
+        if (targetTransform == null) return;
+        if (Mathf.Abs(degreesY) >= Mathf.Abs(degreesX))
         {
-            t.RotateAround(bounds.center , t.up , -degreesY*dragRotationSpeed);
+            targetTransform.Rotate(Vector3.up, degreesY, Space.World);     
         }
-        if (Mathf.Abs(degreesX) > minRotationAmount)
+        else
         {
-            t.RotateAround(bounds.center , t.right , -degreesX*dragRotationSpeed);
+            targetTransform.Rotate(Vector3.right , degreesX , Space.World);   
         }
-        
     }
     void changeScale(float scale)
     {
