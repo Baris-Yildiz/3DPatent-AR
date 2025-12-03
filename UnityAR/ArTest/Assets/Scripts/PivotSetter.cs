@@ -37,13 +37,19 @@ public static class PivotSetter
             Vector2 pushDir = (boundsCenterXZ - cameraXZ).normalized;
             
             if (pushDir == Vector2.zero) pushDir = new Vector2(camTransform.forward.x, camTransform.forward.z).normalized;
+            float distToEdgeX = (Mathf.Abs(pushDir.x) > 0.001f) 
+                ? bounds.extents.x / Mathf.Abs(pushDir.x) 
+                : float.MaxValue;
+
             
-            float objectRadius = new Vector2(bounds.extents.x, bounds.extents.z).magnitude;
+            float distToEdgeZ = (Mathf.Abs(pushDir.y) > 0.001f) 
+                ? bounds.extents.z / Mathf.Abs(pushDir.y) 
+                : float.MaxValue;
             
-            float targetDistance = objectRadius + offSet;
+            float exactDistanceToEdge = Mathf.Min(distToEdgeX, distToEdgeZ);
+            float targetDistance = exactDistanceToEdge + offSet;
             
             Vector2 newCenterXZ = cameraXZ + (pushDir * targetDistance);
-            
             Vector2 movementDelta = newCenterXZ - boundsCenterXZ;
             
             patent.transform.position += new Vector3(movementDelta.x, 0, movementDelta.y);

@@ -28,13 +28,28 @@ public class GameManager : MonoBehaviour
             Destroy(this);
         }
         
-        DontDestroyOnLoad(this);
+      
     }
 
     void Start()
     {
         raycastHandler = FindAnyObjectByType<RaycastHandler>();
+        StateMachine.Instance.GetState(StateMachine.States.MODEL_VIEW_STATE).OnStateEnter += ActivatePatentParts;
+        StateMachine.Instance.GetState(StateMachine.States.NO_MODEL_VIEW_STATE).OnStateEnter += ActivateQrParts;
         ActivateQrParts();
+        
+    }
+
+    private void OnEnable()
+    {
+       
+    }
+
+    private void OnDisable()
+    {
+        StateMachine.Instance.GetState(StateMachine.States.MODEL_VIEW_STATE).OnStateEnter -= ActivatePatentParts;
+        StateMachine.Instance.GetState(StateMachine.States.NO_MODEL_VIEW_STATE).OnStateEnter -= ActivateQrParts;
+        
     }
 
     public void ChangeMode()
@@ -69,7 +84,6 @@ public class GameManager : MonoBehaviour
     {
         raycastHandler.changePlaneDetection(active);
         raycastHandler.enabled = active;
-        
     }
 
 }

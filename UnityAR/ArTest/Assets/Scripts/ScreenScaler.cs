@@ -12,7 +12,7 @@ public  class ScreenScaler : MonoBehaviour
     private Vector3 originalSize = Vector3.negativeInfinity;
     private Vector3 originalCenter = Vector3.negativeInfinity;
     private bool isScreenFitOn = true;
-    [SerializeField] [Range(0.1f, 1f)] private float scaleAmount;
+    [SerializeField] [Range(0.1f, 1f)] private float scaleAmount = 0.8f;
     [SerializeField] private Slider slider;
     private void Awake()
     {
@@ -33,17 +33,17 @@ public  class ScreenScaler : MonoBehaviour
     }
     
 
-    void Update()
-    {
-        scaleAmount = slider.value;
-    }
+    // void Update()
+    // {
+    //     scaleAmount = slider.value;
+    // }
 
     public float FitScreen(GameObject patent)
     {
         if (patent == null || cam == null || !isScreenFitOn)
         {
             Debug.Log("bir şeyler null kardeşim");
-            return -1;
+            return -1f;
         }
         // BoxCollider collider = patent.GetComponentInChildren<BoxCollider>();
         patent.transform.localScale = Vector3.one;
@@ -61,7 +61,7 @@ public  class ScreenScaler : MonoBehaviour
         float viewWidthWorld = viewHeightWorld * cam.aspect;
         
        //txt.text ="Bounds center : " +  bounds.center.ToString() + " Bounds Min: " + bounds.min.ToString() + " View Height : " + viewHeightWorld;
-       txt.text = "Projected Distance : " + projectedDistance.ToString() + " View Height : " + viewHeightWorld + " Bounds: " + bounds.min.ToString();
+       //txt.text = "Projected Distance : " + projectedDistance.ToString() + " View Height : " + viewHeightWorld + " Bounds: " + bounds.min.ToString();
         
         float scaleNeededX = (viewWidthWorld * scaleAmount) / Math.Max(bounds.size.z , bounds.size.x);
         float scaleNeededY = (viewHeightWorld * scaleAmount) / bounds.size.y;

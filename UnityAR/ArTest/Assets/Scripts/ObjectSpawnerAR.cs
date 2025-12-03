@@ -18,21 +18,30 @@ public class ObjectSpawnerAR : MonoBehaviour
     [SerializeField] private float frontPlacementZ = 2f;
     [SerializeField]private TextMeshProUGUI scaleText;
     [SerializeField]private TextMeshProUGUI positionText;
+    public static event Action<bool> objectSpawnedEvent; 
     private GameObject activePatent;
     public bool spawnWithinScreen = true;
+
+
+
+  
     private void OnEnable()
     {
         RaycastHandler.clickEvent += SpawnObject;
+        
     }
-
+    
     private void OnDisable()
     {
         RaycastHandler.clickEvent -= SpawnObject;
     }
+
     
+
     void SpawnObject(List<ARRaycastHit> hits)
     {
         Debug.Log("trying to spawn");
+        if (PatentManager.Instance.Patent == null || PatentManager.Instance.ActivePatent != null) return;
         if (hits == null)
         {
             spawnWithNoRaycast();
@@ -42,6 +51,7 @@ public class ObjectSpawnerAR : MonoBehaviour
             Pose hitPose = hits[0].pose;
             spawnWithRaycast(hitPose);
         }
+        
     }
 
     void spawnWithNoRaycast()
@@ -59,39 +69,35 @@ public class ObjectSpawnerAR : MonoBehaviour
                 break;
         }
 
-        if (activePatent == null)
+        if (PatentManager.Instance.ActivePatent == null)
         {
-            activePatent = Instantiate(patent, position, patent.transform.rotation);
-            
-           
+            PatentManager.Instance.ActivePatent = Instantiate(PatentManager.Instance.Patent, position, PatentManager.Instance.Patent.transform.rotation);
         }
-        else
-        {
-            activePatent.transform.position = position;
-           
-        }
-        FitScreen();
-        PivotSetter.SnapToYOffset(activePatent , false);
-        positionText.text = "X: " + activePatent.transform.position.x.ToString() + " Y: " + activePatent.transform.position.y.ToString() + " Z : " + activePatent.transform.position.z.ToString();
+        // else
+        // {
+        //     activePatent.transform.position = position;
+        //    
+        // }
+        objectSpawnedEvent?.Invoke(false);
+      //  positionText.text = "X: " + activePatent.transform.position.x.ToString() + " Y: " + activePatent.transform.position.y.ToString() + " Z : " + activePatent.transform.position.z.ToString();
 
 
     }
 
     void spawnWithRaycast(Pose hitPose)
     {
-        if (activePatent == null)
+        if (PatentManager.Instance.ActivePatent == null)
         {
-            activePatent = Instantiate(patent, hitPose.position, patent.transform.rotation);
+            PatentManager.Instance.ActivePatent = Instantiate(PatentManager.Instance.Patent, hitPose.position, PatentManager.Instance.Patent.transform.rotation);
             
         }
-        else
-        {
-            activePatent.transform.position = hitPose.position;
-            
-        }
-        FitScreen();
-        PivotSetter.SnapToYOffset(activePatent , true);
-        positionText.text = "X: " + activePatent.transform.position.x.ToString() + " Y: " + activePatent.transform.position.y.ToString() + " Z : " + activePatent.transform.position.z.ToString();
+        // else
+        // {
+        //     activePatent.transform.position = hitPose.position;
+        //     
+        // }
+        objectSpawnedEvent?.Invoke(true);
+     //   positionText.text = "X: " + activePatent.transform.position.x.ToString() + " Y: " + activePatent.transform.position.y.ToString() + " Z : " + activePatent.transform.position.z.ToString();
     }
 
     private void FitScreen()
@@ -108,7 +114,7 @@ public class ObjectSpawnerAR : MonoBehaviour
         patent = downloaded_patent;
         Debug.Log("settedddd");
     }
-
+    
     public GameObject getActivePatent()
     {
         return activePatent;

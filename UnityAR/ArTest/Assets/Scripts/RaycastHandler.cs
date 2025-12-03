@@ -31,6 +31,12 @@ public class RaycastHandler : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+        ScalingModeController.Instance.modeChanged += OnModeChange;
+        ModelPlaneDetectionManager.Instance.OnPlaneDetectionChange += changePlaneDetection;
+    }
+    
     private void OnEnable()
     {
         
@@ -40,6 +46,11 @@ public class RaycastHandler : MonoBehaviour
     private void OnDisable()
     {
         tapAction.action.performed -= CheckInput;
+    }
+
+    public void OnModeChange(bool isOneToOne)
+    {
+        changePlaneDetection(!isOneToOne);
     }
 
     // Update is called once per frame
@@ -70,11 +81,11 @@ public class RaycastHandler : MonoBehaviour
              pointerId = Touchscreen.current.primaryTouch.touchId.ReadValue();
              
          }
-         if (EventSystem.current.IsPointerOverGameObject(pointerId))
-         {
-             text.text = "Clicked on UI " + touchCount.ToString();
-             return;
-         }
+         // if (EventSystem.current.IsPointerOverGameObject(pointerId))
+         // {
+         //     //text.text = "Clicked on UI " + touchCount.ToString();
+         //     return;
+         // }
         // text.text = "Clicked Amount: " + touchCount.ToString();
         if (positionAction.action != null)
         {
@@ -85,7 +96,7 @@ public class RaycastHandler : MonoBehaviour
             touchPosition = Mouse.current.position.ReadValue();
         }
 
-        text.text = "Clicked on gameobject " + touchCount.ToString();
+        //text.text = "Clicked on gameobject " + touchCount.ToString();
         touched = true;
 
     }

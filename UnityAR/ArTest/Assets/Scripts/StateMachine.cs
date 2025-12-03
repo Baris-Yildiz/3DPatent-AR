@@ -25,8 +25,15 @@ public class StateMachine : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
-
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else if (Instance != null)
+        {
+            Destroy(this);
+        }
+       
         m_StateMap[States.NO_MODEL_VIEW_STATE] = new State();
         m_StateMap[States.QR_SCAN_STATE] = new State();
         m_StateMap[States.QR_SCAN_COMPLETE_STATE] = new State();

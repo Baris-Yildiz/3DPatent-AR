@@ -64,8 +64,8 @@ public class QRNetworkHandler : MonoBehaviour
         progressBar.SetActive(false);
 
         m_QRModelDownloadScreen = builder
-            .WithHeader("MODEL ÝNDÝRÝLÝYOR")
-            .WithFooterButton("Ýptal Et", PopupWindow.BUTTON_COLOR_CANCEL, CancelDownload)
+            .WithHeader("MODEL ï¿½NDï¿½Rï¿½Lï¿½YOR")
+            .WithFooterButton("ï¿½ptal Et", PopupWindow.BUTTON_COLOR_CANCEL, CancelDownload)
             .WithContent(progressBar)
             .Get();
     }
@@ -108,7 +108,8 @@ public class QRNetworkHandler : MonoBehaviour
                 Debug.Log("Model loaded successfully!");
                 LoadedModel = spawnParent.GetChild(0).gameObject;
                 LoadedModel.transform.rotation = Quaternion.identity;
-                _objectSpawnerAR.SetActivePatent(LoadedModel);
+                PatentManager.Instance.Patent = LoadedModel;
+                //_objectSpawnerAR.SetActivePatent(LoadedModel);
                 return;
             }
         }
@@ -127,7 +128,7 @@ public class QRNetworkHandler : MonoBehaviour
         m_QRModelDownloadScreen = builder
             .WithHeader("HATA")
             .WithFooterButton("Tamam", PopupWindow.BUTTON_COLOR_OK, CancelDownload)
-            .WithContentText(string.Format("Model yüklenirken bir hata oluþtu: {0}", error))
+            .WithContentText(string.Format("Model yï¿½klenirken bir hata oluï¿½tu: {0}", error))
             .Get();
     }
 
