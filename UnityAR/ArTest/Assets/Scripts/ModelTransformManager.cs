@@ -50,10 +50,10 @@ public class ModelTransformManager : MonoBehaviour
         PopupBuilder builder = PopupBuilder.Create();
 
         m_ResetTransformPopupWindow = builder
-            .WithContentText("Bu iþlem modelinizin boyutlarýný ve yönelimini ilk haline getirecektir")
-            .WithHeader("EMÝN MÝSÝNÝZ")
+            .WithContentText("Bu iï¿½lem modelinizin boyutlarï¿½nï¿½ ve yï¿½nelimini ilk haline getirecektir")
+            .WithHeader("EMï¿½N Mï¿½Sï¿½Nï¿½Z")
             .WithFooterButton("Tamam", PopupWindow.BUTTON_COLOR_OK, OnResetTransformPopupOK)
-            .WithFooterButton("Ýptal Et", PopupWindow.BUTTON_COLOR_CANCEL, OnResetTransformPopupCancel)
+            .WithFooterButton("ï¿½ptal Et", PopupWindow.BUTTON_COLOR_CANCEL, OnResetTransformPopupCancel)
             .Get();
     }
 
@@ -84,10 +84,10 @@ public class ModelTransformManager : MonoBehaviour
         PopupBuilder builder = PopupBuilder.Create();
 
         m_DeleteModelPopupWindow = builder
-            .WithContentText("Bu iþlem modelinizi silecektir.")
-            .WithHeader("EMÝN MÝSÝNÝZ")
+            .WithContentText("Bu iï¿½lem modelinizi silecektir.")
+            .WithHeader("EMï¿½N Mï¿½Sï¿½Nï¿½Z")
             .WithFooterButton("Tamam", PopupWindow.BUTTON_COLOR_OK, OnDeleteModelPopupOK)
-            .WithFooterButton("Ýptal Et", PopupWindow.BUTTON_COLOR_CANCEL, OnDeleteModelPopupCancel)
+            .WithFooterButton("ï¿½ptal Et", PopupWindow.BUTTON_COLOR_CANCEL, OnDeleteModelPopupCancel)
             .Get();
     }
 
@@ -95,6 +95,7 @@ public class ModelTransformManager : MonoBehaviour
     {
         DeleteModelTransformButton.interactable = true;
         m_DeleteModelPopupWindow.SetActive(false);
+        PatentManager.Instance.DeleteActivePatent();
         OnDeleteModel?.Invoke();
     }
 

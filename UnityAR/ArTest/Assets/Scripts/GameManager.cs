@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
         raycastHandler = FindAnyObjectByType<RaycastHandler>();
         StateMachine.Instance.GetState(StateMachine.States.MODEL_VIEW_STATE).OnStateEnter += ActivatePatentParts;
         StateMachine.Instance.GetState(StateMachine.States.NO_MODEL_VIEW_STATE).OnStateEnter += ActivateQrParts;
+        StateMachine.Instance.GetState(StateMachine.States.QR_SCAN_STATE).OnStateEnter += ActivateQrParts;
         ActivateQrParts();
         
     }
@@ -68,6 +69,7 @@ public class GameManager : MonoBehaviour
     {
         patentScene.SetActive(false);
         setPatentScripts(false);
+        raycastHandler.changePlaneDetection(false);
         qrScene.SetActive(true);
         currMode = ArMode.Qr;
     }
@@ -82,7 +84,7 @@ public class GameManager : MonoBehaviour
 
     private void setPatentScripts(bool active)
     {
-        raycastHandler.changePlaneDetection(active);
+       // raycastHandler.changePlaneDetection(active);
         raycastHandler.enabled = active;
     }
 

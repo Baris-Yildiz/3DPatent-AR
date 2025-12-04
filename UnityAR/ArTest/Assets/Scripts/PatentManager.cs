@@ -6,7 +6,10 @@ public class PatentManager : MonoBehaviour
     public static PatentManager Instance;
     [SerializeField] private GameObject patent;
     private GameObject activePatent;
-    public static event Action patentDeletedEvent;
+    public event Action patentDeletedEvent;
+
+    public Vector3 initialScale { get; private set; }
+    public Quaternion initialRotation { get; private set; }
 
     private void Awake()
     {
@@ -20,6 +23,12 @@ public class PatentManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        StateMachine.Instance.GetState(StateMachine.States.NO_MODEL_VIEW_STATE).OnStateEnter += OnScanEnter;
+        StateMachine.Instance.GetState(StateMachine.States.QR_SCAN_STATE).OnStateEnter += OnScanEnter;
+    }
+
     public GameObject Patent
     {
         set => patent = value;
@@ -28,7 +37,11 @@ public class PatentManager : MonoBehaviour
     
     public GameObject ActivePatent
     {
-        set =>  activePatent = value;
+
+        
+         set => activePatent = value;
+            
+         
         get => activePatent;
     }
 
@@ -44,6 +57,10 @@ public class PatentManager : MonoBehaviour
         patentDeletedEvent?.Invoke();
     }
 
-
+    public void SetInitialTransform()
+    {
+        initialRotation = activePatent.transform.rotation;
+        initialScale = activePatent.transform.localScale;
+    }
 
 }

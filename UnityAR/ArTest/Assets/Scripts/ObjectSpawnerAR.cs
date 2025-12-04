@@ -79,6 +79,7 @@ public class ObjectSpawnerAR : MonoBehaviour
         //    
         // }
         objectSpawnedEvent?.Invoke(false);
+        PatentManager.Instance.SetInitialTransform();
       //  positionText.text = "X: " + activePatent.transform.position.x.ToString() + " Y: " + activePatent.transform.position.y.ToString() + " Z : " + activePatent.transform.position.z.ToString();
 
 
@@ -97,6 +98,7 @@ public class ObjectSpawnerAR : MonoBehaviour
         //     
         // }
         objectSpawnedEvent?.Invoke(true);
+        PatentManager.Instance.SetInitialTransform();
      //   positionText.text = "X: " + activePatent.transform.position.x.ToString() + " Y: " + activePatent.transform.position.y.ToString() + " Z : " + activePatent.transform.position.z.ToString();
     }
 

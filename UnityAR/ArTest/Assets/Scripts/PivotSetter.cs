@@ -9,6 +9,9 @@ public static class PivotSetter
             Debug.Log("Patent is null");
             return Vector3.positiveInfinity;
         }
+
+        Physics.SyncTransforms();
+            
         Vector3 calculatedOffSet = Vector3.zero;
         Bounds bounds = GetBounds(patent);
         
@@ -34,8 +37,8 @@ public static class PivotSetter
             Vector2 boundsCenterXZ = new Vector2(center.x, center.z);
             Vector2 cameraXZ = new Vector2(camX, camZ);
             
-            Vector2 pushDir = (boundsCenterXZ - cameraXZ).normalized;
-            
+           // Vector2 pushDir = (boundsCenterXZ - cameraXZ).normalized;
+           Vector2 pushDir = new Vector2(camTransform.forward.x, camTransform.forward.z).normalized;
             if (pushDir == Vector2.zero) pushDir = new Vector2(camTransform.forward.x, camTransform.forward.z).normalized;
             float distToEdgeX = (Mathf.Abs(pushDir.x) > 0.001f) 
                 ? bounds.extents.x / Mathf.Abs(pushDir.x) 
