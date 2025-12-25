@@ -108,8 +108,10 @@ public class QRNetworkHandler : MonoBehaviour
                 Debug.Log("Model loaded successfully!");
                 LoadedModel = spawnParent.GetChild(0).gameObject;
                 LoadedModel.transform.rotation = Quaternion.identity;
+                LoadedModel.AddComponent<GenerateLOD>();
                 PatentManager.Instance.Patent = LoadedModel;
                 //_objectSpawnerAR.SetActivePatent(LoadedModel);
+                
                 return;
             }
         }
