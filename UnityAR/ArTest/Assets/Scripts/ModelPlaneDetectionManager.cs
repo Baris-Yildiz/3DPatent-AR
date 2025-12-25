@@ -17,18 +17,15 @@ public class ModelPlaneDetectionManager : MonoBehaviour
         Instance = this;
     }
 
-    void Start()
+    public void Initialize()
     {
         m_UIToggleComponent = GetComponent<UIToggle>();
-        
+
         m_UIToggleComponent.OnToggleValueChanged += (bool isOn) => { OnPlaneDetectionChange?.Invoke(isOn); };
 
         OnPlaneDetectionChange += (bool isOn) => { print("plane detection pressed"); };
 
         StateMachine.Instance.GetState(StateMachine.States.MODEL_VIEW_STATE)
             .OnStateEnter += () => { GetComponent<Toggle>().isOn = false; };
-
-        m_Parent = gameObject.transform.parent.gameObject;
-        m_Parent.SetActive(false);
     }
 }

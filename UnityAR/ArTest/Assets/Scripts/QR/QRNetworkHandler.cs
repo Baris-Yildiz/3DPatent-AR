@@ -64,8 +64,8 @@ public class QRNetworkHandler : MonoBehaviour
         progressBar.SetActive(false);
 
         m_QRModelDownloadScreen = builder
-            .WithHeader("MODEL �ND�R�L�YOR")
-            .WithFooterButton("�ptal Et", PopupWindow.BUTTON_COLOR_CANCEL, CancelDownload)
+            .WithHeader("DOWNLOADING MODEL")
+            .WithFooterButton("Cancel", PopupWindow.BUTTON_COLOR_CANCEL, CancelDownload)
             .WithContent(progressBar)
             .Get();
     }
@@ -126,9 +126,9 @@ public class QRNetworkHandler : MonoBehaviour
         PopupBuilder builder = PopupBuilder.Create();
 
         m_QRModelDownloadScreen = builder
-            .WithHeader("HATA")
-            .WithFooterButton("Tamam", PopupWindow.BUTTON_COLOR_OK, CancelDownload)
-            .WithContentText(string.Format("Model y�klenirken bir hata olu�tu: {0}", error))
+            .WithHeader("ERROR")
+            .WithFooterButton("OK", PopupWindow.BUTTON_COLOR_OK, CancelDownload)
+            .WithContentText(string.Format("An error occured: {0}", error))
             .Get();
     }
 

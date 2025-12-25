@@ -50,10 +50,10 @@ public class ModelTransformManager : MonoBehaviour
         PopupBuilder builder = PopupBuilder.Create();
 
         m_ResetTransformPopupWindow = builder
-            .WithContentText("Bu i�lem modelinizin boyutlar�n� ve y�nelimini ilk haline getirecektir")
-            .WithHeader("EM�N M�S�N�Z")
-            .WithFooterButton("Tamam", PopupWindow.BUTTON_COLOR_OK, OnResetTransformPopupOK)
-            .WithFooterButton("�ptal Et", PopupWindow.BUTTON_COLOR_CANCEL, OnResetTransformPopupCancel)
+            .WithContentText("This will reset your model back to the original scale.")
+            .WithHeader("WARNING")
+            .WithFooterButton("OK", PopupWindow.BUTTON_COLOR_OK, OnResetTransformPopupOK)
+            .WithFooterButton("Cancel", PopupWindow.BUTTON_COLOR_CANCEL, OnResetTransformPopupCancel)
             .Get();
     }
 
@@ -84,10 +84,10 @@ public class ModelTransformManager : MonoBehaviour
         PopupBuilder builder = PopupBuilder.Create();
 
         m_DeleteModelPopupWindow = builder
-            .WithContentText("Bu i�lem modelinizi silecektir.")
-            .WithHeader("EM�N M�S�N�Z")
-            .WithFooterButton("Tamam", PopupWindow.BUTTON_COLOR_OK, OnDeleteModelPopupOK)
-            .WithFooterButton("�ptal Et", PopupWindow.BUTTON_COLOR_CANCEL, OnDeleteModelPopupCancel)
+            .WithContentText("Your model will be deleted.")
+            .WithHeader("WARNING")
+            .WithFooterButton("OK", PopupWindow.BUTTON_COLOR_OK, OnDeleteModelPopupOK)
+            .WithFooterButton("Cancel", PopupWindow.BUTTON_COLOR_CANCEL, OnDeleteModelPopupCancel)
             .Get();
     }
 
