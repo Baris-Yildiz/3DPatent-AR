@@ -29,8 +29,14 @@ public class ScalingModeController : MonoBehaviour
 
     private void Start()
     {
-        ModelViewManager.Instance.OnOneToOneViewToggle += ChangeModeToOneToOne;
-        ModelViewManager.Instance.OnNormalViewToggle += ChangeModeToNormalView;
+        if (ModelViewManager.Instance != null)
+        {
+            ModelViewManager.Instance.OnOneToOneViewToggle += ChangeModeToOneToOne;
+            ModelViewManager.Instance.OnNormalViewToggle += ChangeModeToNormalView;
+        }
+
+        
+        
     }
 
     public void ChangeModeToOneToOne()

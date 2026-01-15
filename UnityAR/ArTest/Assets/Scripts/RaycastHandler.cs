@@ -33,8 +33,17 @@ public class RaycastHandler : MonoBehaviour
 
     private void Start()
     {
-        ScalingModeController.Instance.modeChanged += OnModeChange;
-        ModelPlaneDetectionManager.Instance.OnPlaneDetectionChange += changePlaneDetection;
+        if (ScalingModeController.Instance != null)
+        {
+            ScalingModeController.Instance.modeChanged += OnModeChange;
+        }
+
+        if (ModelPlaneDetectionManager.Instance != null)
+        {
+            ModelPlaneDetectionManager.Instance.OnPlaneDetectionChange += changePlaneDetection;
+        }
+
+        
         changePlaneDetection(false);
     }
     

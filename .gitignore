@@ -144,3 +144,11 @@ InitTestScene*.unity*
 
 # Platform-specific build caches
 /UnityAR/ArTest/[Ll]ibrary/Artifacts/
+UnityAR/ArTest/Assets/Prefabs/sample_interior.prefab.meta
+UnityAR/ArTest/Assets/Prefabs/sample_interior.prefab
+UnityAR/ArTest/Assets/Prefabs/Patent/VASE_02 (1).glb.meta
+UnityAR/ArTest/Assets/Prefabs/Patent/VASE_02 (1).glb
+UnityAR/ArTest/Assets/Prefabs/Patent/sample_interior.glb.meta
+UnityAR/ArTest/Assets/Prefabs/Patent/sample_interior.glb
+UnityAR/ArTest/Assets/Prefabs/Patent/fbx sample interior 3.meta
+UnityAR/ArTest/.utmp/RelWithDebInfo/5b385u1l/arm64-v8a/configure_fingerprint.bin

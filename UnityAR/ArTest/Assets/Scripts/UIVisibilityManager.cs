@@ -19,7 +19,7 @@ public class UIVisibilityManager : MonoBehaviour
         GameObject miscOptionsObject = ModelPlaneDetectionManager.Instance.gameObject.transform.parent.gameObject;
 
         GameObject modelPlaneDetectionObject = ModelPlaneDetectionManager.Instance.gameObject;
-
+        Debug.Log("1");
         m_ObjectsToModifyVisibility = new List<GameObject> { 
             modelViewObject, 
             modelTransformObject, 
@@ -32,6 +32,7 @@ public class UIVisibilityManager : MonoBehaviour
                 modelViewObject.SetActive(false);
                 modelTransformObject.SetActive(false);
                 miscOptionsObject.SetActive(false);
+                Debug.Log("2");
             };
 
         StateMachine.Instance.GetState(StateMachine.States.MODEL_VIEW_STATE)
@@ -41,6 +42,7 @@ public class UIVisibilityManager : MonoBehaviour
                 modelTransformObject.SetActive(true);
                 miscOptionsObject.SetActive(true);
                 GetComponent<Toggle>().isOn = false;
+                Debug.Log("3");
             };
 
         m_UIToggleComponent.OnToggleValueChanged += (bool isOn) => { SetUIObjectVisibility(isOn); };

@@ -29,7 +29,17 @@ public class PatentTransformer : MonoBehaviour
     private void Start()
     {
         patentManager = PatentManager.Instance;
-        ScalingModeController.Instance.modeChanged += OnModeChange;
+        if (ScalingModeController.Instance != null)
+        {
+            ScalingModeController.Instance.modeChanged += OnModeChange;    
+        }
+
+        if (ModelTransformManager.Instance != null)
+        {
+            ModelTransformManager.Instance.OnResetModelTransform += ResetRotation;    
+        }
+
+        ObjectSpawnerAR.objectSpawnedEvent += HandleSpawnPosition;
         
         // spawner = FindFirstObjectByType<ObjectSpawnerAR>();
     }
@@ -42,7 +52,6 @@ public class PatentTransformer : MonoBehaviour
         if (dragDeltaAction.action != null) dragDeltaAction.action.performed += onDragDelta;
         if (pinchDeltaAction.action != null) pinchDeltaAction.action.performed += onPinchDelta;
         ObjectSpawnerAR.objectSpawnedEvent += HandleSpawnPosition;
-        ModelTransformManager.Instance.OnResetModelTransform += ResetRotation;
         //if (twistDeltaAction.action != null) twistDeltaAction.action.performed += onTwistDelta;
     }
 
@@ -71,7 +80,12 @@ public class PatentTransformer : MonoBehaviour
             
         }
         ObjectSpawnerAR.objectSpawnedEvent -= HandleSpawnPosition;
-        ModelTransformManager.Instance.OnResetModelTransform -= ResetRotation;
+        if (ModelTransformManager.Instance != null)
+        {
+            ModelTransformManager.Instance.OnResetModelTransform -= ResetRotation;
+        }
+
+       
         // if (twistDeltaAction.action != null)
         // {
         //     twistDeltaAction.action.performed -= onTwistDelta;
@@ -104,14 +118,14 @@ public class PatentTransformer : MonoBehaviour
     
     void rotateAroundUp(float degreesY , float degreesX)
     {
+        if (patentManager.ActivePatent == null) return;
         Transform targetTransform = patentManager.ActivePatent.transform;
         if (targetTransform == null) return;
 
-        // 1. Record where the center is NOW
+      
         Vector3 centerBefore = PivotSetter.GetBounds(patentManager.ActivePatent).center;
 
-        // 2. Rotate the Transform normally
-        // Note: We use Space.World so we can combine World Up with Camera Right
+    
         if (Mathf.Abs(degreesY) > 0.001f)
         {
             targetTransform.Rotate(Vector3.up, degreesY, Space.World);
@@ -121,18 +135,18 @@ public class PatentTransformer : MonoBehaviour
             targetTransform.Rotate(Camera.main.transform.right, degreesX, Space.World);
         }
 
-        // 3. Force update to calculate new bounds
+
         Physics.SyncTransforms();
 
-        // 4. Record where the center moved to (because of the offset pivot)
+        
         Vector3 centerAfter = PivotSetter.GetBounds(patentManager.ActivePatent).center;
-
-        // 5. Move the object back by the difference
+        
         Vector3 drift = centerAfter - centerBefore;
         targetTransform.position -= drift;
     }
     void changeScale(float scale)
     {
+        if (patentManager.ActivePatent == null) return;
         Transform targetTransform = patentManager.ActivePatent.transform;
         if (targetTransform == null) return;
         Vector3 newScale = targetTransform.localScale * scale;
@@ -155,8 +169,10 @@ public class PatentTransformer : MonoBehaviour
 
     public void HandleSpawnPosition(bool toGround)
     {
+        Debug.Log("ulalala");
         GameObject activePatent = patentManager.ActivePatent;
         if (activePatent == null) return;
+        Debug.Log("lalalalal");
         float scale = ScreenScaler.instance.FitScreen(patentManager.ActivePatent);
         Transform t = activePatent.transform;
         if (scale > 0)

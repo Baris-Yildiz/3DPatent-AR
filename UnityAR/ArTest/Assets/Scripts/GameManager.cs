@@ -46,12 +46,12 @@ public class GameManager : MonoBehaviour
        
     }
 
-    private void OnDisable()
-    {
-        StateMachine.Instance.GetState(StateMachine.States.MODEL_VIEW_STATE).OnStateEnter -= ActivatePatentParts;
-        StateMachine.Instance.GetState(StateMachine.States.NO_MODEL_VIEW_STATE).OnStateEnter -= ActivateQrParts;
-        
-    }
+    // private void OnDisable()
+    // {
+    //     StateMachine.Instance.GetState(StateMachine.States.MODEL_VIEW_STATE).OnStateEnter -= ActivatePatentParts;
+    //     StateMachine.Instance.GetState(StateMachine.States.NO_MODEL_VIEW_STATE).OnStateEnter -= ActivateQrParts;
+    //     
+    // }
 
     public void ChangeMode()
     {

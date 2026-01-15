@@ -25,18 +25,22 @@ public class ObjectSpawnerAR : MonoBehaviour
 
 
   
-    private void OnEnable()
+    // private void OnEnable()
+    // {
+    //     RaycastHandler.clickEvent += SpawnObject;
+    //     
+    // }
+    //
+    // private void OnDisable()
+    // {
+    //     RaycastHandler.clickEvent -= SpawnObject;
+    // }
+
+    private void Start()
     {
         RaycastHandler.clickEvent += SpawnObject;
-        
-    }
-    
-    private void OnDisable()
-    {
-        RaycastHandler.clickEvent -= SpawnObject;
     }
 
-    
 
     void SpawnObject(List<ARRaycastHit> hits)
     {
