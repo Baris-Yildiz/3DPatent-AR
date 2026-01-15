@@ -10,7 +10,7 @@ public class UIVisibilityManager : MonoBehaviour
     List<GameObject> m_ObjectsToModifyVisibility;
     private UIToggle m_UIToggleComponent;
 
-    void Start()
+    public void Initialize()
     {
         m_UIToggleComponent = GetComponent<UIToggle>();
 
@@ -19,20 +19,19 @@ public class UIVisibilityManager : MonoBehaviour
         GameObject miscOptionsObject = ModelPlaneDetectionManager.Instance.gameObject.transform.parent.gameObject;
 
         GameObject modelPlaneDetectionObject = ModelPlaneDetectionManager.Instance.gameObject;
-        Debug.Log("1");
-        m_ObjectsToModifyVisibility = new List<GameObject> { 
-            modelViewObject, 
-            modelTransformObject, 
-            modelPlaneDetectionObject 
+
+        m_ObjectsToModifyVisibility = new List<GameObject> {
+            modelViewObject,
+            modelTransformObject,
+            modelPlaneDetectionObject
         };
 
         StateMachine.Instance.GetState(StateMachine.States.QR_SCAN_STATE)
             .OnStateEnter += () =>
-            {                
+            {
                 modelViewObject.SetActive(false);
                 modelTransformObject.SetActive(false);
                 miscOptionsObject.SetActive(false);
-                Debug.Log("2");
             };
 
         StateMachine.Instance.GetState(StateMachine.States.MODEL_VIEW_STATE)
@@ -42,7 +41,6 @@ public class UIVisibilityManager : MonoBehaviour
                 modelTransformObject.SetActive(true);
                 miscOptionsObject.SetActive(true);
                 GetComponent<Toggle>().isOn = false;
-                Debug.Log("3");
             };
 
         m_UIToggleComponent.OnToggleValueChanged += (bool isOn) => { SetUIObjectVisibility(isOn); };

@@ -63,11 +63,11 @@ public class AddModelManager : MonoBehaviour
         PopupBuilder builder = PopupBuilder.Create();
 
         m_AddModelPopupWindow = builder
-            .WithContentText("Yeni bir model yerleþtirmek istiyor musunuz?")
-            .WithContentText("Modelin QR kodunu okutmaya yönlendirilecceksiniz.")
-            .WithHeader("BÝLGÝ")
-            .WithFooterButton("QR Kod Okut", PopupWindow.BUTTON_COLOR_OK, OnAddModelPopupOK)
-            .WithFooterButton("Ýptal Et", PopupWindow.BUTTON_COLOR_CANCEL, OnAddModelPopupCancel)
+            .WithContentText("Do you want to view another model?")
+            .WithContentText("You will need to scan the QR code of the model.")
+            .WithHeader("INFO")
+            .WithFooterButton("Scan QR Code", PopupWindow.BUTTON_COLOR_OK, OnAddModelPopupOK)
+            .WithFooterButton("Cancel", PopupWindow.BUTTON_COLOR_CANCEL, OnAddModelPopupCancel)
             .Get();
     }
 
