@@ -11,6 +11,8 @@ public class PatentManager : MonoBehaviour
     public Vector3 initialScale { get; private set; }
     public Quaternion initialRotation { get; private set; }
 
+    public Vector3 initialPosition { get; private set; }
+
     private void Awake()
     {
         if (Instance == null)
@@ -29,12 +31,6 @@ public class PatentManager : MonoBehaviour
         StateMachine.Instance.GetState(StateMachine.States.QR_SCAN_STATE).OnStateEnter += OnScanEnter;
     }
 
-    public GameObject Patent
-    {
-        set => patent = value;
-        get => patent;
-    }
-    
     public GameObject ActivePatent
     {
 
@@ -45,6 +41,12 @@ public class PatentManager : MonoBehaviour
         get => activePatent;
     }
 
+    public GameObject Patent
+    {
+        set => patent = value;
+        get => patent;
+    }
+
     public void DeleteActivePatent()
     {
         Destroy(activePatent);
@@ -52,8 +54,10 @@ public class PatentManager : MonoBehaviour
 
     public void OnScanEnter()
     {
+        Debug.Log("ualalalala5551515");
         DeleteActivePatent();
-        patent = null;
+        Patent = null;
+        ActivePatent = null;
         patentDeletedEvent?.Invoke();
     }
 
@@ -61,6 +65,6 @@ public class PatentManager : MonoBehaviour
     {
         initialRotation = activePatent.transform.rotation;
         initialScale = activePatent.transform.localScale;
+        initialPosition = activePatent.transform.position;
     }
-
 }

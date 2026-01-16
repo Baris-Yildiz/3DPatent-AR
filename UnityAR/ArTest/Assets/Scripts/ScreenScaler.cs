@@ -12,7 +12,7 @@ public  class ScreenScaler : MonoBehaviour
     private Vector3 originalSize = Vector3.negativeInfinity;
     private Vector3 originalCenter = Vector3.negativeInfinity;
     private bool isScreenFitOn = true;
-    [SerializeField] [Range(0.1f, 1f)] private float scaleAmount = 0.8f;
+    [SerializeField] [Range(0.1f, 1f)] private float scaleAmount = 0.6f;
     [SerializeField] private Slider slider;
     private void Awake()
     {
@@ -53,16 +53,10 @@ public  class ScreenScaler : MonoBehaviour
             originalCenter = bounds.center;
             originalSize = bounds.size;
         } 
-        // Vector3 vectorToPatent = (bounds.min ) - cam.transform.position;
-        //float projectedDistance = Math.Abs(Vector3.Dot(vectorToPatent, cam.transform.forward));
         float projectedDistance = Vector3.Distance(cam.transform.position, patent.transform.position);
         float verticalFOVRadians = cam.fieldOfView * Mathf.Deg2Rad;
         float viewHeightWorld = 2.0f * projectedDistance * Mathf.Tan(verticalFOVRadians * 0.5f);
         float viewWidthWorld = viewHeightWorld * cam.aspect;
-        
-       //txt.text ="Bounds center : " +  bounds.center.ToString() + " Bounds Min: " + bounds.min.ToString() + " View Height : " + viewHeightWorld;
-       //txt.text = "Projected Distance : " + projectedDistance.ToString() + " View Height : " + viewHeightWorld + " Bounds: " + bounds.min.ToString();
-        
         float scaleNeededX = (viewWidthWorld * scaleAmount) / Math.Max(bounds.size.z , bounds.size.x);
         float scaleNeededY = (viewHeightWorld * scaleAmount) / bounds.size.y;
         float smallestScale = Mathf.Min(scaleNeededX, scaleNeededY);

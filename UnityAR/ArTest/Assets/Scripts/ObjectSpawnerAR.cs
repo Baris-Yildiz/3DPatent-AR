@@ -76,15 +76,11 @@ public class ObjectSpawnerAR : MonoBehaviour
         if (PatentManager.Instance.ActivePatent == null)
         {
             PatentManager.Instance.ActivePatent = Instantiate(PatentManager.Instance.Patent, position, PatentManager.Instance.Patent.transform.rotation);
+            PatentManager.Instance.ActivePatent.SetActive(true);
         }
-        // else
-        // {
-        //     activePatent.transform.position = position;
-        //    
-        // }
         objectSpawnedEvent?.Invoke(false);
         PatentManager.Instance.SetInitialTransform();
-      //  positionText.text = "X: " + activePatent.transform.position.x.ToString() + " Y: " + activePatent.transform.position.y.ToString() + " Z : " + activePatent.transform.position.z.ToString();
+    
 
 
     }
@@ -94,16 +90,11 @@ public class ObjectSpawnerAR : MonoBehaviour
         if (PatentManager.Instance.ActivePatent == null)
         {
             PatentManager.Instance.ActivePatent = Instantiate(PatentManager.Instance.Patent, hitPose.position, PatentManager.Instance.Patent.transform.rotation);
+            PatentManager.Instance.ActivePatent.SetActive(true);
             
         }
-        // else
-        // {
-        //     activePatent.transform.position = hitPose.position;
-        //     
-        // }
         objectSpawnedEvent?.Invoke(true);
         PatentManager.Instance.SetInitialTransform();
-     //   positionText.text = "X: " + activePatent.transform.position.x.ToString() + " Y: " + activePatent.transform.position.y.ToString() + " Z : " + activePatent.transform.position.z.ToString();
     }
 
     private void FitScreen()

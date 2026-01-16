@@ -63,35 +63,77 @@ public static class PivotSetter
 
     public static Bounds GetBounds(GameObject patent)
     {
-        MeshRenderer[] meshRenderers = patent.GetComponentsInChildren<MeshRenderer>();
-        if (meshRenderers.Length == 0)
-        {
-            return new Bounds(patent.transform.position, Vector3.zero);
-        }
+        MeshFilter[] meshFilters = patent.GetComponentsInChildren<MeshFilter>();
+        if (meshFilters.Length == 0) return new Bounds(Vector3.zero, Vector3.zero);
 
-        Bounds bounds = meshRenderers[0].bounds;
-        foreach (var mesh in meshRenderers)
-        {
-            bounds.Encapsulate(mesh.bounds);
-        }
+        Bounds combinedBounds = new Bounds();
+        bool hasBounds = false;
 
-        return bounds;
+        foreach (MeshFilter mf in meshFilters)
+        {
+            Mesh mesh = mf.sharedMesh;
+            if (mesh == null) continue;
+
+            // Get the mesh's local bounds
+            Bounds b = mesh.bounds;
+
+            // Matrix that converts Child-Local to Root-Local
+            // We use GetRelativeMatrix to ensure we don't accidentally include 
+            // the root's own world scale/rotation in the calculation
+            Matrix4x4 childToRootMatrix = patent.transform.InverseTransformPoint(mf.transform.position) == Vector3.zero 
+                ? mf.transform.localToWorldMatrix 
+                : patent.transform.worldToLocalMatrix * mf.transform.localToWorldMatrix;
+
+            Vector3[] corners = new Vector3[8];
+            Vector3 min = b.min;
+            Vector3 max = b.max;
+        
+            corners[0] = new Vector3(min.x, min.y, min.z);
+            corners[1] = new Vector3(min.x, min.y, max.z);
+            corners[2] = new Vector3(min.x, max.y, min.z);
+            corners[3] = new Vector3(min.x, max.y, max.z);
+            corners[4] = new Vector3(max.x, min.y, min.z);
+            corners[5] = new Vector3(max.x, min.y, max.z);
+            corners[6] = new Vector3(max.x, max.y, min.z);
+            corners[7] = new Vector3(max.x, max.y, max.z);
+
+            for (int i = 0; i < 8; i++)
+            {
+                Vector3 cornerInRootSpace = childToRootMatrix.MultiplyPoint3x4(corners[i]);
+                if (!hasBounds)
+                {
+                    combinedBounds = new Bounds(cornerInRootSpace, Vector3.zero);
+                    hasBounds = true;
+                }
+                else
+                {
+                    combinedBounds.Encapsulate(cornerInRootSpace);
+                }
+            }
+        }
+        return combinedBounds;
     }
 
     public static void SnapToYOffset(GameObject patent , bool toGround)
     {
-        if (patent == null)
-        {
-            Debug.Log("patent is null from pivot setter");
-            return;
-        }
+        if (patent == null) return;
 
-        Bounds bounds = GetBounds(patent);
+        
+        Bounds localBounds = GetBounds(patent);
 
-        float target = toGround ? bounds.min.y : bounds.center.y;
-        Vector2 xzCenter = new Vector2(bounds.center.x, bounds.center.z);
-        Transform t = patent.transform;
-        t.position = new Vector3(2*t.position.x - xzCenter.x, 2 * t.position.y - target, 2*t.position.z - xzCenter.y);
+        Vector3 localTargetPoint = new Vector3(
+            localBounds.center.x, 
+            toGround ? localBounds.min.y : localBounds.center.y, 
+            localBounds.center.z
+        );
+
+
+        Vector3 worldTargetPoint = patent.transform.TransformPoint(localTargetPoint);
+
+
+        Vector3 offset = patent.transform.position - worldTargetPoint;
+        
+        patent.transform.position += offset;
     }
 
 

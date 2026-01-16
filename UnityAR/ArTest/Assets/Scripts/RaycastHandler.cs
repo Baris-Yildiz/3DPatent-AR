@@ -66,9 +66,7 @@ public class RaycastHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("gagagaga");
         HandleClick();
-       // text.text = Camera.main.transform.position.ToString();
     }
 
     void HandleClick()
@@ -84,30 +82,31 @@ public class RaycastHandler : MonoBehaviour
      void CheckInput(InputAction.CallbackContext ctx)
      {
            
-         touchCount++;
          int pointerId = -1;
+         
          if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.isPressed)
          {
              pointerId = Touchscreen.current.primaryTouch.touchId.ReadValue();
-             
          }
-         // if (EventSystem.current.IsPointerOverGameObject(pointerId))
-         // {
-         //     //text.text = "Clicked on UI " + touchCount.ToString();
-         //     return;
-         // }
-        // text.text = "Clicked Amount: " + touchCount.ToString();
-        if (positionAction.action != null)
-        {
-            touchPosition = positionAction.action.ReadValue<Vector2>();
-        }
-        else
-        {
-            touchPosition = Mouse.current.position.ReadValue();
-        }
 
-        //text.text = "Clicked on gameobject " + touchCount.ToString();
-        touched = true;
+         if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject(pointerId))
+         {
+             Debug.Log("UI Click Detected - Ignoring Scene Raycast");
+             return; 
+         }
+         
+         touchCount++;
+
+         if (positionAction.action != null)
+         {
+             touchPosition = positionAction.action.ReadValue<Vector2>();
+         }
+         else
+         {
+             touchPosition = Mouse.current.position.ReadValue();
+         }
+
+         touched = true;
 
     }
 
