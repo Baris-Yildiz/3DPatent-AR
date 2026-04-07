@@ -1,8 +1,6 @@
 import bpy
 import ufbx
 import os
-import time
-import gc
 from mathutils import Matrix
 
 
@@ -11,12 +9,12 @@ from mathutils import Matrix
 def setup_texture_chain(nodes, links, tex_map, fbx_prop, is_data=False):
     """
     Helper to handle ufbx texture layers and return the final output socket.
-    is_data=True sets the image to 'Non-Color' (crucial for Roughness/Normal/Metallic).
+    is_data=True sets the image to 'Non-Color' (for Roughness/Normal/Metallic).
     """
     
     if not fbx_prop.texture:
         return None
-    print("tex")
+
     BLEND_MAP = {
         ufbx.BlendMode.TRANSLUCENT: 'MIX',
         ufbx.BlendMode.ADDITIVE: 'ADD',
@@ -33,12 +31,12 @@ def setup_texture_chain(nodes, links, tex_map, fbx_prop, is_data=False):
         if not tex_obj or not tex_obj.has_file:
             continue
         
-        print(tex_obj.file_index)
+
         bl_image = tex_map.get(tex_obj.file_index)
         if not bl_image:
             continue
         
-        # CRITICAL: Data maps (Normal/Roughness) must not use sRGB color management
+        # For roughness metallic and normal.
         if is_data:
             bl_image.colorspace_settings.name = 'Non-Color'
 
@@ -60,55 +58,62 @@ def setup_texture_chain(nodes, links, tex_map, fbx_prop, is_data=False):
             
     return last_output
 
-textures = []
-materials:ufbx.MaterialList = []
-mesh_materials = {}
-mesh_instances = {}
-mesh_vertices = {}
-mesh_faces = {}
-meshes = []
+class UFBXDataContainers:
+    textures = []
+    materials:ufbx.MaterialList = []
+    mesh_materials = {}
+    mesh_instances = {}
+    mesh_vertices = {}
+    mesh_faces = {}
+    meshes = []
 
-def scene_data(fbx_path):    
-    # ufbx bufferları unstable olduğu için onları önce python listlerine çevirmek memory errorlerini ortadan kaldırıyor.
+def initialize_scene_data(fbx_path, containers:UFBXDataContainers):    
+
+    # preload ufbx data to python containers. needed for avoiding memory leaks and crashes. load all needed data.
     bpy.ops.wm.read_factory_settings(use_empty=True)
+    
     scene = ufbx.load_file(fbx_path)
+
+    print(len(scene.texture_files))
 
     for tex in scene.texture_files:
-        textures.append(tex)
-    
+        containers.textures.append(tex)
     for mesh in scene.meshes:
-        meshes.append(mesh)
-        mesh_instances[mesh.typed_id] = mesh.instances
-        mesh_vertices[mesh.typed_id] = mesh.vertices
-        mesh_faces[mesh.typed_id] = mesh.faces
+        containers.meshes.append(mesh)
+        containers.mesh_instances[mesh.typed_id] = mesh.instances
+        containers.mesh_vertices[mesh.typed_id] = mesh.vertices
+        containers.mesh_faces[mesh.typed_id] = mesh.faces
 
 
-        for mat in mesh.materials:              #Mat objeleri aynı memory adresinde ise (ikisi art arda, nadir) o zaman typed_id ye erişim crash verdiriyor.
-            materials.append(mat)
-            if mesh.typed_id not in mesh_materials:
-                mesh_materials[mesh.typed_id] = []
-            mesh_materials[mesh.typed_id].append(mat.typed_id)
+        for mat in mesh.materials:    
+            containers.materials.append(mat)
+            if mesh.typed_id not in containers.mesh_materials:
+                containers.mesh_materials[mesh.typed_id] = []
+            containers.mesh_materials[mesh.typed_id].append(mat.typed_id)
 
-def build_blender_scene_from_ufbx(fbx_path):
-    scene = ufbx.load_file(fbx_path)
+def convert_fbx_to_glb(fbx_path, output_path, DRACO_COMPRESS_LEVEL, DRACO_QUANTIZATION_SETTINGS):
+    print("Running FBX to GLB conversion with ufbx...")
     
-    # FBX default is often 1.0 (cm). Blender/GLTF want 0.01 (m).
-    # ufbx provides settings.unit_meters to help with this.
-    unit_scale = scene.settings.unit_meters 
+    containers = UFBXDataContainers()
+    initialize_scene_data(fbx_path, containers)
 
-    # If unit_meters is 1.0, and the file is in cm, 
-    # you usually need to multiply by 0.01.
-    if unit_scale == 0: # Fallback if not defined
+    scene = ufbx.load_file(fbx_path)
+    unit_scale = scene.settings.unit_meters #blender gltf = 0.01
+
+    if unit_scale == 0:
         unit_scale = 0.01
 
     tex_map = {}
     
-
+    script_dir = os.path.dirname(os.path.abspath(__file__))    
+    os.chdir(script_dir)
+    
     #Creating blender image buffers
-    for tex in textures:
+    for tex in containers.textures:
         if tex.content:
             
-            temp_path = os.path.abspath(f"{tex.index}.jpg") #TODO: change path later
+            temp_path = os.path.abspath(f"{tex.index}.jpg") #Temporary write in this path
+
             with open(temp_path, "wb") as f:
                 f.write(tex.content)
 
@@ -116,22 +121,22 @@ def build_blender_scene_from_ufbx(fbx_path):
             img.pack()  
             tex_map[tex.index] = img
             
-            print(tex.index)
-            os.remove(temp_path)
 
+            os.remove(temp_path)
+    
     mat_map = {}
-    #Create blender material buffers
-    for fbx_mat in materials:
+    #Create blender material buffers: Get all materials in ufbx scene and convert to blender materials.
+    for fbx_mat in containers.materials:
         mat = bpy.data.materials.new(name=fbx_mat.name)
         mat.use_nodes = True
         nodes = mat.node_tree.nodes
         links = mat.node_tree.links
         bsdf = nodes.get("Principled BSDF")
-        for prop in fbx_mat.props.props:
+        #for prop in fbx_mat.props.props:
             # This will print things like 'VRay_Diffuse', 'Corona_Glossiness', etc.
-            print(f"Property found: {prop.name}") 
+            #print(f"Property found: {prop.name}") 
 
-        # 1. BASE COLOR (Your existing logic)
+        # 1. BASE COLOR 
         pbr = fbx_mat.pbr
         if pbr.base_color.has_value:
             col = pbr.base_color.value_vec4
@@ -144,19 +149,18 @@ def build_blender_scene_from_ufbx(fbx_path):
 
         # 2. METALLIC
         if pbr.metalness.has_value:
-            bsdf.inputs['Metallic'].default_value = pbr.metalness.value_int
+            bsdf.inputs['Metallic'].default_value = pbr.metalness.value_vec4[0]
         met_tex = setup_texture_chain(nodes, links, tex_map, pbr.metalness, is_data=True)
         if met_tex:
             links.new(met_tex, bsdf.inputs['Metallic'])
-
         # 3. ROUGHNESS
         if pbr.roughness.has_value:
-            bsdf.inputs['Roughness'].default_value = pbr.roughness.value_int
+            bsdf.inputs['Roughness'].default_value = pbr.roughness.value_vec4[0]
         rough_tex = setup_texture_chain(nodes, links, tex_map, pbr.roughness, is_data=True)
         if rough_tex:
             links.new(rough_tex, bsdf.inputs['Roughness'])
 
-        # 4. NORMAL MAP (Special Handling)
+        # 4. NORMAL MAP
         norm_tex = setup_texture_chain(nodes, links, tex_map, pbr.normal_map, is_data=True)
         if norm_tex:
             normal_map_node = nodes.new('ShaderNodeNormalMap')
@@ -172,23 +176,23 @@ def build_blender_scene_from_ufbx(fbx_path):
             links.new(em_tex, bsdf.inputs['Emission Color'])
 
         mat_map[fbx_mat.typed_id] = mat
-    print(mat_map)
-        
-    for fbx_mesh in meshes:
+    
+    # Create blender meshes and assign appropriate materials.
+    for fbx_mesh in containers.meshes:
         if len(fbx_mesh.faces) == 0:
             continue
         blender_mesh = bpy.data.meshes.new(fbx_mesh.name)
         
-        verts = [(v.x, v.y, v.z) for v in mesh_vertices[fbx_mesh.typed_id]]
+        verts = [(v.x, v.y, v.z) for v in containers.mesh_vertices[fbx_mesh.typed_id]]
 
         faces = [tuple(fbx_mesh.vertex_indices[i] for i in range(face.index_begin, face.index_begin + face.num_indices))
-                  for face in mesh_faces[fbx_mesh.typed_id]]
+                  for face in containers.mesh_faces[fbx_mesh.typed_id]]
         
         blender_mesh.from_pydata(verts, [], faces)
         
         if fbx_mesh.vertex_uv.exists:
             uv_layer = blender_mesh.uv_layers.new(name="UVMap")
-            for face in mesh_faces[fbx_mesh.typed_id]:
+            for face in containers.mesh_faces[fbx_mesh.typed_id]:
                 for i in range(face.index_begin, face.index_begin + face.num_indices):
                     # ufbx stores UVs in the same loop order as face indices
                     uv = fbx_mesh.vertex_uv.values[fbx_mesh.vertex_uv.indices[i]]
@@ -197,34 +201,28 @@ def build_blender_scene_from_ufbx(fbx_path):
         blender_mesh.validate()
         blender_mesh.update()
 
-        # 1. Fill the slots in the EXACT order the FBX mesh expects
-        for id in mesh_materials[fbx_mesh.typed_id]:
+        for id in containers.mesh_materials[fbx_mesh.typed_id]:
             
             bl_mat = mat_map.get(id)
             
             if bl_mat:
                 blender_mesh.materials.append(bl_mat)
             else:
-                    # Append None to keep the index order correct even if a material is missing
+                # Append None to keep the index order correct even if a material is missing
                 blender_mesh.materials.append(None)
 
-        # 2. Assign the faces (now the indices will match perfectly)
+        # 2. Assign the faces
         if fbx_mesh.face_material:
             for i, poly in enumerate(blender_mesh.polygons):
-                    # This index (0, 1, 2...) now corresponds to the slots we just filled
                 poly.material_index = fbx_mesh.face_material[i]
 
 
-        for instance in mesh_instances[fbx_mesh.typed_id]:
-            # Create a new Object container for this specific instance
+        for instance in containers.mesh_instances[fbx_mesh.typed_id]:
             obj = bpy.data.objects.new(fbx_mesh.name, blender_mesh)
             
-            # 3. APPLY THE TRANSFORM (The 'Lumping' Fix)
-            # Even though we are looping through meshes, 
-            # the 'instance' tells us the correct node_to_world matrix.
+            #Apply transformation to fix rotation + scale.
             m = instance.node_to_world
             
-            # Using the column-based access (most common in ufbx Python)
             obj.matrix_world = Matrix([
                 [m.c0.x * unit_scale, m.c1.x * unit_scale, m.c2.x * unit_scale, m.c3.x * unit_scale],
                 [m.c0.y * unit_scale, m.c1.y * unit_scale, m.c2.y * unit_scale, m.c3.y * unit_scale],
@@ -240,25 +238,34 @@ def build_blender_scene_from_ufbx(fbx_path):
             obj.select_set(True)
             bpy.context.view_layer.objects.active = obj
 
-    print(bpy.data.images)
     # Join them into a single primitive
     if len(bpy.context.selected_objects) > 1:
         bpy.ops.object.join()
 
     bpy.context.view_layer.update()
-    bpy.ops.export_scene.gltf(filepath="final_output", export_format='GLB', export_materials='EXPORT', export_normals=True)
+    print("Finished constructing GLTF, now exporting...")
+    bpy.ops.export_scene.gltf(filepath=output_path, export_format='GLB', export_materials='EXPORT', export_normals=True,
+                              export_draco_mesh_compression_enable=True,
+                                export_draco_mesh_compression_level=DRACO_COMPRESS_LEVEL,
+                                export_draco_position_quantization=DRACO_QUANTIZATION_SETTINGS[0], 
+                                export_draco_normal_quantization=DRACO_QUANTIZATION_SETTINGS[1],
+                                export_draco_texcoord_quantization=DRACO_QUANTIZATION_SETTINGS[2],
+                                export_draco_generic_quantization=DRACO_QUANTIZATION_SETTINGS[3])
 
+    #Memory cleanup
     for obj in bpy.data.objects:
         bpy.data.objects.remove(obj, do_unlink=True)
 
     bpy.ops.outliner.orphans_purge(do_local_ids=True, do_recursive=True)
     bpy.ops.wm.read_factory_settings(use_empty=True)
-    return scene
-
+    print("FBX to GLB conversion via ufbx completed successfully.")
 
 #TODO: bazı materyallerin değerleri yanlış olabilir: örneğin opak bir cam
 #TODO: vray corona materyallerini ya alma ya da bir logic yaz
 #TODO: her materyal pbr olmayabilir diffuse e fallback ekle.
-FILE = "fbx/Checkpoint.fbx"
+
+'''
+FILE = "fbx/coupe.fbx"
 scene_data(FILE)
 scene = build_blender_scene_from_ufbx(FILE)
+'''

@@ -57,6 +57,8 @@ RUN cmake ../ -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local && ma
 
 WORKDIR /app/converter
 
+RUN . venv/bin/activate && python3 -m pip install ufbx
+
 COPY . /app/converter/
 
 ENTRYPOINT ["xvfb-run","-a","/venv/bin/python3.11","test.py"]

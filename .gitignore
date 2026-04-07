@@ -142,3 +142,5 @@ InitTestScene*.unity*
 # Unity Collaborate and Plastic SCM local data
 /UnityAR/ArTest/[Cc]ollab/
 /UnityAR/ArTest/PlasticSCM/
+
+converter/fbx/
