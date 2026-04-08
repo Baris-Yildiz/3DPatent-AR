@@ -3,18 +3,23 @@ FROM ubuntu:24.04
 RUN apt-get update \
     && apt-get install -y software-properties-common \
     && add-apt-repository ppa:deadsnakes/ppa \
+    && add-apt-repository ppa:ubuntu-toolchain-r/test \
     && apt --fix-broken install -y \
     && apt install -y python3.11 python3 git git-lfs python3-wheel python3.11-venv \
-    && apt install -y xvfb
+    && apt install -y xvfb \
+    && apt install -y gcc-14 g++-14
 
 WORKDIR /app/blender-git
-#TODO: try --recursive-submodules
-RUN git clone https://projects.blender.org/blender/blender.git
+#Downloading specific Blender version.
+RUN git clone https://projects.blender.org/blender/blender.git && cd blender && git checkout `git rev-list -n 1 --before="2025-10-7 20:33:41" main`
 
-WORKDIR blender
-#TODO: try to install a specific version e.g. run git checkout 4.3.2
+WORKDIR /app/blender-git/blender
+
 RUN apt update && apt install -y build-essential git git-lfs subversion cmake libx11-dev libxxf86vm-dev libxcursor-dev libxi-dev libxrandr-dev libxinerama-dev libegl-dev \
     && apt install -y libwayland-dev wayland-protocols libxkbcommon-dev libdbus-1-dev linux-libc-dev
+
+ENV CC=gcc-14
+ENV CXX=g++-14
 
 RUN make update && make -j$(nproc) bpy
 
@@ -57,7 +62,8 @@ RUN cmake ../ -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local && ma
 
 WORKDIR /app/converter
 
-RUN python3 -m pip install ufbx
+#TODO: install requirements.txt
+RUN . venv/bin/activate && python3 -m pip install ufbx
 
 COPY . /app/converter/
 
