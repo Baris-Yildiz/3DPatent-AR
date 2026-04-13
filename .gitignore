@@ -145,3 +145,5 @@ InitTestScene*.unity*
 # Platform-specific build caches
 /UnityAR/ArTest/[Ll]ibrary/Artifacts/
 /UnityAR/ArTest/.utmp
+
+UnityAR/ArTest/Assets/UMS_LODs/

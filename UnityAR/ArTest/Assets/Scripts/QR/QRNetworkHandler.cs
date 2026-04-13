@@ -1,4 +1,5 @@
 using GLTFast;
+using GLTFast.Logging;
 using System.Collections;
 using System.IO;
 using System.Runtime.CompilerServices;
@@ -96,7 +97,8 @@ public class QRNetworkHandler : MonoBehaviour
 
     private async Task LoadGLBObject(byte[] data)
     {
-        var gltf = new GltfImport();
+        var logger = new CollectingLogger();
+        var gltf = new GltfImport(logger: logger);
         bool success = await gltf.Load(data);
 
         if (success)
@@ -118,6 +120,14 @@ public class QRNetworkHandler : MonoBehaviour
                 //_objectSpawnerAR.SetActivePatent(LoadedModel);
                 
                 return;
+            }
+        }
+
+        if (logger.Items != null)
+        {
+            foreach (var item in logger.Items)
+            {
+                Debug.LogError(item.ToString());
             }
         }
 
