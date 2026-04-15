@@ -160,22 +160,10 @@ public class PatentTransformer : MonoBehaviour
         GameObject activePatent = patentManager.ActivePatent;
         if (activePatent == null) return;
 
-        if (visualPivot != null) Destroy(visualPivot);
-
         float scale = ScreenScaler.instance.FitScreen(activePatent);
         if (scale > 0) activePatent.transform.localScale *= scale;
         
         PivotSetter.SnapToYOffset(activePatent, toGround);
-
-        Bounds localBounds = PivotSetter.GetBounds(activePatent);
-        Vector3 worldCenter = activePatent.transform.TransformPoint(localBounds.center);
-
-        visualPivot = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        visualPivot.name = "PivotIndicator";
-        visualPivot.transform.position = worldCenter;
-        visualPivot.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-        visualPivot.transform.SetParent(activePatent.transform, true);
-
         SyncTargets();
     }
 
@@ -206,6 +194,7 @@ public class PatentTransformer : MonoBehaviour
         if (patentManager.Patent == null || patentManager.ActivePatent == null) return;
         targetScale = Vector3.one;
         targetRotation = patentManager.initialRotation;
+        PatentManager.Instance.ActivePatent.transform.rotation = PatentManager.Instance.initialRotation;
         PivotSetter.ChangeToOneOneMode(patentManager.ActivePatent, Camera.main.transform, 1);
         DisableTransformInputs();
     }
