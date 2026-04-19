@@ -12,13 +12,17 @@ public class ModelPlaneDetectionManager : MonoBehaviour
 
     private UIToggle m_UIToggleComponent;
 
+    private Toggle planeToggle;
     private void Awake()
     {
         Instance = this;
     }
 
+   
+
     public void Initialize()
     {
+        planeToggle = GetComponent<Toggle>();
         m_UIToggleComponent = GetComponent<UIToggle>();
 
         m_UIToggleComponent.OnToggleValueChanged += (bool isOn) => { OnPlaneDetectionChange?.Invoke(isOn); };
@@ -26,6 +30,13 @@ public class ModelPlaneDetectionManager : MonoBehaviour
         OnPlaneDetectionChange += (bool isOn) => { print("plane detection pressed"); };
 
         StateMachine.Instance.GetState(StateMachine.States.MODEL_VIEW_STATE)
-            .OnStateEnter += () => { GetComponent<Toggle>().isOn = false; };
+            .OnStateEnter += () => { planeToggle.isOn = false; };
+        ScalingModeController.Instance.modeChanged += ChangeButtonState;
+    }
+
+    private void ChangeButtonState(bool isOff)
+    {
+        planeToggle.isOn = !isOff;
+        planeToggle.interactable = !isOff;
     }
 }

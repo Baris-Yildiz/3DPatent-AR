@@ -7,7 +7,7 @@ public class ModelTransformManager : MonoBehaviour
     public UIToggle LockModelUIToggle;
     public Button ResetModelTransformButton;
     public Button DeleteModelTransformButton;
-    
+    public Toggle LockModelTransformToggle;
     public static ModelTransformManager Instance { get; private set; }
 
     public event UnityAction<bool> OnLockModel;
@@ -27,14 +27,28 @@ public class ModelTransformManager : MonoBehaviour
 
     void Start()
     {
+        
         LockModelUIToggle.OnToggleValueChanged += (bool isOn) => { OnLockModel?.Invoke(isOn); };
         ResetModelTransformButton.onClick.AddListener(DisplayResetTransformPopup);
         DeleteModelTransformButton.onClick.AddListener(DisplayDeleteModelPopup);
 
         StateMachine.Instance.GetState(StateMachine.States.MODEL_VIEW_STATE)
             .OnStateEnter += () => { LockModelUIToggle.GetComponent<Toggle>().isOn = false; };
+        ScalingModeController.Instance.modeChanged += LockLockToggle;
+        ScalingModeController.Instance.modeChanged += LockResetButton;
 
         gameObject.SetActive(false);
+    }
+
+    private void LockLockToggle(bool isOn)
+    {
+        LockModelTransformToggle.isOn = isOn;
+        LockModelTransformToggle.interactable = !isOn;
+    }
+
+    private void LockResetButton(bool isOn)
+    {
+        ResetModelTransformButton.interactable = !isOn;
     }
 
     private void DisplayResetTransformPopup()

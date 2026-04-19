@@ -450,6 +450,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &577194803 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5621380484212252969, guid: 2cffab4e280f14749a57235bc334fd3e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1058027613}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &590445242
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,6 +869,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1818803905513885774, guid: 2cffab4e280f14749a57235bc334fd3e,
+        type: 3}
+      propertyPath: m_IsOn
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1865345458911839437, guid: 2cffab4e280f14749a57235bc334fd3e,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -947,6 +964,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4524482932135970498, guid: 2cffab4e280f14749a57235bc334fd3e,
+        type: 3}
+      propertyPath: LockModelTransformToggle
+      value: 
+      objectReference: {fileID: 577194803}
     - target: {fileID: 4949134124751814365, guid: 2cffab4e280f14749a57235bc334fd3e,
         type: 3}
       propertyPath: m_AnchorMax.y
