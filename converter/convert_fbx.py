@@ -84,7 +84,6 @@ def initialize_scene_data(fbx_path, containers:UFBXDataContainers):
                            target_unit_meters=1.0,
                            skip_mesh_parts=True,
                            skip_skin_vertices=True,
-                           use_blender_pbr_material=True
                            )
 
 
@@ -215,6 +214,7 @@ def convert_fbx_to_glb(fbx_path, output_path, DRACO_COMPRESS_LEVEL, DRACO_QUANTI
             bpy.context.view_layer.objects.active = obj
 
     # Join them into a single primitive
+    
     if len(bpy.context.selected_objects) > 1:
         bpy.ops.object.join()
         bpy.ops.object.shade_smooth_by_angle(angle=math.radians(30.0))
