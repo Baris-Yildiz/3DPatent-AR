@@ -1,3 +1,5 @@
+import math
+
 import bpy
 import ufbx
 import os
@@ -35,10 +37,6 @@ def setup_texture_chain(nodes, links, tex_map, fbx_prop, is_data=False):
         bl_image = tex_map.get(tex_obj.file_index)
         if not bl_image:
             continue
-        
-        # For roughness metallic and normal.
-        if is_data:
-            bl_image.colorspace_settings.name = 'Non-Color'
 
         tex_node = nodes.new('ShaderNodeTexImage')
         tex_node.image = bl_image
@@ -71,14 +69,29 @@ def initialize_scene_data(fbx_path, containers:UFBXDataContainers):
 
     # preload ufbx data to python containers. needed for avoiding memory leaks and crashes. load all needed data.
     bpy.ops.wm.read_factory_settings(use_empty=True)
-    
-    scene = ufbx.load_file(fbx_path)
 
-    print(len(scene.texture_files))
+
+    target_axes = ufbx.CoordinateAxes(
+        ufbx.CoordinateAxis.POSITIVE_X,
+        ufbx.CoordinateAxis.POSITIVE_Z,
+        ufbx.CoordinateAxis.NEGATIVE_Y
+    )
+    
+    #target_unit_meters = 1.0 metre için, 0.01 santimetre(0.01 m = 1cm) vs. blender, gltf metre bazında bekliyor.
+
+    scene = ufbx.load_file(fbx_path, 
+                           target_axes=target_axes, 
+                           target_unit_meters=1.0,
+                           skip_mesh_parts=True,
+                           skip_skin_vertices=True,
+                           use_blender_pbr_material=True
+                           )
+
 
     for tex in scene.texture_files:
         containers.textures.append(tex)
     for mesh in scene.meshes:
+        
         containers.meshes.append(mesh)
         containers.mesh_instances[mesh.typed_id] = mesh.instances
         containers.mesh_vertices[mesh.typed_id] = mesh.vertices
@@ -97,12 +110,6 @@ def convert_fbx_to_glb(fbx_path, output_path, DRACO_COMPRESS_LEVEL, DRACO_QUANTI
     containers = UFBXDataContainers()
     initialize_scene_data(fbx_path, containers)
 
-    scene = ufbx.load_file(fbx_path)
-    unit_scale = scene.settings.unit_meters #blender gltf = 0.01
-
-    if unit_scale == 0:
-        unit_scale = 0.01
-
     tex_map = {}
     
     script_dir = os.path.dirname(os.path.abspath(__file__))    
@@ -112,7 +119,7 @@ def convert_fbx_to_glb(fbx_path, output_path, DRACO_COMPRESS_LEVEL, DRACO_QUANTI
     for tex in containers.textures:
         if tex.content:
             
-            temp_path = os.path.abspath(f"{tex.index}.jpg") #Temporary write in this path
+            temp_path = os.path.abspath(f"{tex.index}.png") #Temporary write in this path
 
             with open(temp_path, "wb") as f:
                 f.write(tex.content)
@@ -121,7 +128,6 @@ def convert_fbx_to_glb(fbx_path, output_path, DRACO_COMPRESS_LEVEL, DRACO_QUANTI
             img.pack()  
             tex_map[tex.index] = img
             
-
             os.remove(temp_path)
     
     mat_map = {}
@@ -132,9 +138,6 @@ def convert_fbx_to_glb(fbx_path, output_path, DRACO_COMPRESS_LEVEL, DRACO_QUANTI
         nodes = mat.node_tree.nodes
         links = mat.node_tree.links
         bsdf = nodes.get("Principled BSDF")
-        #for prop in fbx_mat.props.props:
-            # This will print things like 'VRay_Diffuse', 'Corona_Glossiness', etc.
-            #print(f"Property found: {prop.name}") 
 
         # 1. BASE COLOR 
         pbr = fbx_mat.pbr
@@ -145,35 +148,6 @@ def convert_fbx_to_glb(fbx_path, output_path, DRACO_COMPRESS_LEVEL, DRACO_QUANTI
         base_tex = setup_texture_chain(nodes, links, tex_map, pbr.base_color, is_data=False)
         if base_tex:
             links.new(base_tex, bsdf.inputs['Base Color'])
-        
-
-        # 2. METALLIC
-        if pbr.metalness.has_value:
-            bsdf.inputs['Metallic'].default_value = pbr.metalness.value_vec4[0]
-        met_tex = setup_texture_chain(nodes, links, tex_map, pbr.metalness, is_data=True)
-        if met_tex:
-            links.new(met_tex, bsdf.inputs['Metallic'])
-        # 3. ROUGHNESS
-        if pbr.roughness.has_value:
-            bsdf.inputs['Roughness'].default_value = pbr.roughness.value_vec4[0]
-        rough_tex = setup_texture_chain(nodes, links, tex_map, pbr.roughness, is_data=True)
-        if rough_tex:
-            links.new(rough_tex, bsdf.inputs['Roughness'])
-
-        # 4. NORMAL MAP
-        norm_tex = setup_texture_chain(nodes, links, tex_map, pbr.normal_map, is_data=True)
-        if norm_tex:
-            normal_map_node = nodes.new('ShaderNodeNormalMap')
-            links.new(norm_tex, normal_map_node.inputs['Color'])
-            links.new(normal_map_node.outputs['Normal'], bsdf.inputs['Normal'])
-
-        # 5. EMISSION
-        if pbr.emission_color.has_value:
-            e_col = pbr.emission_color.value_vec4
-            bsdf.inputs['Emission Color'].default_value = (e_col[0], e_col[1], e_col[2], 1.0)
-        em_tex = setup_texture_chain(nodes, links, tex_map, pbr.emission_color, is_data=False)
-        if em_tex:
-            links.new(em_tex, bsdf.inputs['Emission Color'])
 
         mat_map[fbx_mat.typed_id] = mat
     
@@ -224,11 +198,13 @@ def convert_fbx_to_glb(fbx_path, output_path, DRACO_COMPRESS_LEVEL, DRACO_QUANTI
             m = instance.node_to_world
             
             obj.matrix_world = Matrix([
-                [m.c0.x * unit_scale, m.c1.x * unit_scale, m.c2.x * unit_scale, m.c3.x * unit_scale],
-                [m.c0.y * unit_scale, m.c1.y * unit_scale, m.c2.y * unit_scale, m.c3.y * unit_scale],
-                [m.c0.z * unit_scale, m.c1.z * unit_scale, m.c2.z * unit_scale, m.c3.z * unit_scale],
+                [m.c0.x, m.c1.x , m.c2.x , m.c3.x ],
+                [m.c0.y , m.c1.y , m.c2.y , m.c3.y ],
+                [m.c0.z , m.c1.z , m.c2.z , m.c3.z ],
                 [0, 0, 0, 1]
             ])
+
+            
             bpy.context.collection.objects.link(obj)
 
     # Select all mesh objects
@@ -241,6 +217,10 @@ def convert_fbx_to_glb(fbx_path, output_path, DRACO_COMPRESS_LEVEL, DRACO_QUANTI
     # Join them into a single primitive
     if len(bpy.context.selected_objects) > 1:
         bpy.ops.object.join()
+        bpy.ops.object.shade_smooth_by_angle(angle=math.radians(30.0))
+        joined_obj = bpy.context.active_object
+        joined_obj.data.validate()
+        joined_obj.data.update()
 
     bpy.context.view_layer.update()
     print("Finished constructing GLTF, now exporting...")
@@ -250,7 +230,8 @@ def convert_fbx_to_glb(fbx_path, output_path, DRACO_COMPRESS_LEVEL, DRACO_QUANTI
                                 export_draco_position_quantization=DRACO_QUANTIZATION_SETTINGS[0], 
                                 export_draco_normal_quantization=DRACO_QUANTIZATION_SETTINGS[1],
                                 export_draco_texcoord_quantization=DRACO_QUANTIZATION_SETTINGS[2],
-                                export_draco_generic_quantization=DRACO_QUANTIZATION_SETTINGS[3])
+                                export_draco_generic_quantization=DRACO_QUANTIZATION_SETTINGS[3],
+                                export_yup=True)
 
     #Memory cleanup
     for obj in bpy.data.objects:
