@@ -1,75 +1,72 @@
-import math
-
-import bpy
 import ufbx
 import os
-from mathutils import Matrix
-
+import mathutils
 
 #embedded FBX-GLB exporting
 
-def setup_texture_chain(nodes, links, tex_map, fbx_prop, is_data=False):
-    """
-    Helper to handle ufbx texture layers and return the final output socket.
-    is_data=True sets the image to 'Non-Color' (for Roughness/Normal/Metallic).
-    """
+class UFBXDataContainers:
+    def __init__(self):
+        self.textures = []
+        self.texture_objects = []
+        self.materials = []
+        self.mesh_materials = {}
+        self.mesh_instances = {}
+        self.mesh_vertices = {}
+        self.mesh_faces = {}
+        self.meshes = []
+        self.scene:ufbx.Scene = None
     
+
+def setup_texture_chain(mat, tex_map, fbx_prop:ufbx.MaterialMap, containers:UFBXDataContainers):
+
     if not fbx_prop.texture:
         return None
-
+    
     BLEND_MAP = {
         ufbx.BlendMode.TRANSLUCENT: 'MIX',
         ufbx.BlendMode.ADDITIVE: 'ADD',
         ufbx.BlendMode.MULTIPLY: 'MULTIPLY',
         ufbx.BlendMode.SCREEN: 'SCREEN',
     }
-
+    
     texture_layers = fbx_prop.texture.layers if fbx_prop.texture.type == ufbx.TextureType.LAYERED else [fbx_prop]
     last_output = None
 
     for layer in texture_layers:
         tex_obj = layer.texture if hasattr(layer, 'texture') else layer
-        
+        containers.texture_objects.append(tex_obj)
         if not tex_obj or not tex_obj.has_file:
             continue
-        
 
         bl_image = tex_map.get(tex_obj.file_index)
         if not bl_image:
             continue
 
-        tex_node = nodes.new('ShaderNodeTexImage')
+        tex_node = mat.node_tree.nodes.new('ShaderNodeTexImage')
         tex_node.image = bl_image
         
         if last_output is None:
             last_output = tex_node.outputs['Color']
         else:
-            mix_node = nodes.new('ShaderNodeMix')
+            
+            mix_node = mat.node_tree.nodes.new('ShaderNodeMix')
             mix_node.data_type = 'RGBA'
             blend_mode = getattr(layer, 'blend_mode', ufbx.BlendMode.TRANSLUCENT)
+            
             mix_node.blend_type = BLEND_MAP.get(blend_mode, 'MIX')
             mix_node.inputs['Factor'].default_value = getattr(layer, 'opacity', 1.0)
+            mat.node_tree.links.new(last_output, mix_node.inputs[6])
+            mat.node_tree.links.new(tex_node.outputs['Color'], mix_node.inputs[7])
             
-            links.new(last_output, mix_node.inputs[6])
-            links.new(tex_node.outputs['Color'], mix_node.inputs[7])
             last_output = mix_node.outputs[2]
-            
+        
     return last_output
 
-class UFBXDataContainers:
-    textures = []
-    materials:ufbx.MaterialList = []
-    mesh_materials = {}
-    mesh_instances = {}
-    mesh_vertices = {}
-    mesh_faces = {}
-    meshes = []
+
 
 def initialize_scene_data(fbx_path, containers:UFBXDataContainers):    
 
     # preload ufbx data to python containers. needed for avoiding memory leaks and crashes. load all needed data.
-    bpy.ops.wm.read_factory_settings(use_empty=True)
-
 
     target_axes = ufbx.CoordinateAxes(
         ufbx.CoordinateAxis.POSITIVE_X,
@@ -85,17 +82,16 @@ def initialize_scene_data(fbx_path, containers:UFBXDataContainers):
                            skip_mesh_parts=True,
                            skip_skin_vertices=True,
                            )
-
-
-    for tex in scene.texture_files:
+    
+    containers.scene = scene
+    for tex in containers.scene.texture_files:
         containers.textures.append(tex)
-    for mesh in scene.meshes:
+    for mesh in containers.scene.meshes:
         
         containers.meshes.append(mesh)
         containers.mesh_instances[mesh.typed_id] = mesh.instances
         containers.mesh_vertices[mesh.typed_id] = mesh.vertices
         containers.mesh_faces[mesh.typed_id] = mesh.faces
-
 
         for mat in mesh.materials:    
             containers.materials.append(mat)
@@ -103,22 +99,22 @@ def initialize_scene_data(fbx_path, containers:UFBXDataContainers):
                 containers.mesh_materials[mesh.typed_id] = []
             containers.mesh_materials[mesh.typed_id].append(mat.typed_id)
 
-def convert_fbx_to_glb(fbx_path, output_path, DRACO_COMPRESS_LEVEL, DRACO_QUANTIZATION_SETTINGS):
-    print("Running FBX to GLB conversion with ufbx...")
-    
-    containers = UFBXDataContainers()
-    initialize_scene_data(fbx_path, containers)
+def load_and_export_fbx(output_path, containers, DRACO_COMPRESS_LEVEL, DRACO_QUANTIZATION_SETTINGS):
+    import bpy
 
-    tex_map = {}
-    
     script_dir = os.path.dirname(os.path.abspath(__file__))    
     os.chdir(script_dir)
-    
+
+    tex_map = {}
+
     #Creating blender image buffers
     for tex in containers.textures:
         if tex.content:
+            _,format = os.path.splitext(tex.absolute_filename)
+            if not format:
+                format = ".png"
             
-            temp_path = os.path.abspath(f"{tex.index}.png") #Temporary write in this path
+            temp_path = os.path.abspath(f"{tex.index}{format}") #Temporary write in this path
 
             with open(temp_path, "wb") as f:
                 f.write(tex.content)
@@ -126,7 +122,6 @@ def convert_fbx_to_glb(fbx_path, output_path, DRACO_COMPRESS_LEVEL, DRACO_QUANTI
             img = bpy.data.images.load(temp_path)
             img.pack()  
             tex_map[tex.index] = img
-            
             os.remove(temp_path)
     
     mat_map = {}
@@ -134,21 +129,22 @@ def convert_fbx_to_glb(fbx_path, output_path, DRACO_COMPRESS_LEVEL, DRACO_QUANTI
     for fbx_mat in containers.materials:
         mat = bpy.data.materials.new(name=fbx_mat.name)
         mat.use_nodes = True
-        nodes = mat.node_tree.nodes
-        links = mat.node_tree.links
-        bsdf = nodes.get("Principled BSDF")
-
+        bsdf = mat.node_tree.nodes.get("Principled BSDF")
+        
         # 1. BASE COLOR 
         pbr = fbx_mat.pbr
         if pbr.base_color.has_value:
             col = pbr.base_color.value_vec4
             bsdf.inputs['Base Color'].default_value = (col[0], col[1], col[2], 1.0)
         
-        base_tex = setup_texture_chain(nodes, links, tex_map, pbr.base_color, is_data=False)
+        base_tex = setup_texture_chain(mat, tex_map, pbr.base_color, containers)
         if base_tex:
-            links.new(base_tex, bsdf.inputs['Base Color'])
+            mat.node_tree.links.new(base_tex, bsdf.inputs['Base Color'])
 
         mat_map[fbx_mat.typed_id] = mat
+    
+    fallback_mat = bpy.data.materials.new(name="Fallback_Material")
+    fallback_mat.use_nodes = True
     
     # Create blender meshes and assign appropriate materials.
     for fbx_mesh in containers.meshes:
@@ -177,12 +173,11 @@ def convert_fbx_to_glb(fbx_path, output_path, DRACO_COMPRESS_LEVEL, DRACO_QUANTI
         for id in containers.mesh_materials[fbx_mesh.typed_id]:
             
             bl_mat = mat_map.get(id)
-            
+
             if bl_mat:
                 blender_mesh.materials.append(bl_mat)
             else:
-                # Append None to keep the index order correct even if a material is missing
-                blender_mesh.materials.append(None)
+                blender_mesh.materials.append(fallback_mat)
 
         # 2. Assign the faces
         if fbx_mesh.face_material:
@@ -196,14 +191,13 @@ def convert_fbx_to_glb(fbx_path, output_path, DRACO_COMPRESS_LEVEL, DRACO_QUANTI
             #Apply transformation to fix rotation + scale.
             m = instance.node_to_world
             
-            obj.matrix_world = Matrix([
+            obj.matrix_world = mathutils.Matrix([
                 [m.c0.x, m.c1.x , m.c2.x , m.c3.x ],
                 [m.c0.y , m.c1.y , m.c2.y , m.c3.y ],
                 [m.c0.z , m.c1.z , m.c2.z , m.c3.z ],
                 [0, 0, 0, 1]
             ])
 
-            
             bpy.context.collection.objects.link(obj)
 
     # Select all mesh objects
@@ -217,12 +211,10 @@ def convert_fbx_to_glb(fbx_path, output_path, DRACO_COMPRESS_LEVEL, DRACO_QUANTI
     
     if len(bpy.context.selected_objects) > 1:
         bpy.ops.object.join()
-        bpy.ops.object.shade_smooth_by_angle(angle=math.radians(30.0))
-        joined_obj = bpy.context.active_object
-        joined_obj.data.validate()
-        joined_obj.data.update()
+
 
     bpy.context.view_layer.update()
+
     print("Finished constructing GLTF, now exporting...")
     bpy.ops.export_scene.gltf(filepath=output_path, export_format='GLB', export_materials='EXPORT', export_normals=True,
                               export_draco_mesh_compression_enable=True,
@@ -232,18 +224,19 @@ def convert_fbx_to_glb(fbx_path, output_path, DRACO_COMPRESS_LEVEL, DRACO_QUANTI
                                 export_draco_texcoord_quantization=DRACO_QUANTIZATION_SETTINGS[2],
                                 export_draco_generic_quantization=DRACO_QUANTIZATION_SETTINGS[3],
                                 export_yup=True)
+    
 
-    #Memory cleanup
-    for obj in bpy.data.objects:
-        bpy.data.objects.remove(obj, do_unlink=True)
 
-    bpy.ops.outliner.orphans_purge(do_local_ids=True, do_recursive=True)
-    bpy.ops.wm.read_factory_settings(use_empty=True)
+def convert_fbx_to_glb(fbx_path, output_path, DRACO_COMPRESS_LEVEL, DRACO_QUANTIZATION_SETTINGS):
+    print("Running FBX to GLB conversion with ufbx...")
+      
+    containers = UFBXDataContainers()
+    initialize_scene_data(fbx_path, containers)
+    load_and_export_fbx(output_path, containers, DRACO_COMPRESS_LEVEL, DRACO_QUANTIZATION_SETTINGS)
+
     print("FBX to GLB conversion via ufbx completed successfully.")
 
 #TODO: bazı materyallerin değerleri yanlış olabilir: örneğin opak bir cam
-#TODO: vray corona materyallerini ya alma ya da bir logic yaz
-#TODO: her materyal pbr olmayabilir diffuse e fallback ekle.
 
 '''
 FILE = "fbx/coupe.fbx"

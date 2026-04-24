@@ -1,6 +1,5 @@
 import os
 import sys
-import bpy
 sys.path.append("/usr/local/lib")
 
 from convert_cad_formats import convert_cad
@@ -27,4 +26,5 @@ def convert_file_to_glb(abs_input_file_path):
     except Exception as e:
         print(f"An Error Occured: {str(e)}")
         sys.exit(1)
+    
 

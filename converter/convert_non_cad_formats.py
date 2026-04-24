@@ -7,6 +7,12 @@ DRACO_QUANTIZATION_SETTINGS = (16,12,12,12)
 
 #empty scene to prevent loading old stuff.
 def empty_blender_scene():
+    #Memory cleanup
+    for obj in bpy.data.objects:
+        bpy.data.objects.remove(obj, do_unlink=True)
+
+    bpy.ops.outliner.orphans_purge(do_local_ids=True, do_recursive=True)
+
     bpy.ops.wm.read_factory_settings(use_empty=True)
 
 def apply_draco_compression(output_path):
@@ -76,11 +82,13 @@ def convert_stl(file_path, output_path):
                                 export_draco_generic_quantization=DRACO_QUANTIZATION_SETTINGS[3])
 
 def convert_non_cad(file_path, file_type):
+    
     try:
         output_path = os.environ.get("OUTPUT_PATH")
         if file_type == ".obj":
             convert_obj(file_path, output_path)
         elif file_type == ".fbx":
+            bpy.ops.wm.read_factory_settings(use_empty=True) #Remove blender default cube
             convert_fbx.convert_fbx_to_glb(file_path, output_path, DRACO_COMPRESS_LEVEL, DRACO_QUANTIZATION_SETTINGS)
         elif file_type == ".stl":
             convert_stl(file_path, output_path)
