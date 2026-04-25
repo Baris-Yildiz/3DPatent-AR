@@ -1,8 +1,12 @@
 import ufbx
 import os
 import mathutils
+import logging
+import bpy
 
 #embedded FBX-GLB exporting
+
+logger = logging.getLogger(__name__)
 
 class UFBXDataContainers:
     def __init__(self):
@@ -65,7 +69,7 @@ def setup_texture_chain(mat, tex_map, fbx_prop:ufbx.MaterialMap, containers:UFBX
 
 
 def initialize_scene_data(fbx_path, containers:UFBXDataContainers):    
-
+    logger.info("Importing FBX model with ufbx.")
     # preload ufbx data to python containers. needed for avoiding memory leaks and crashes. load all needed data.
 
     target_axes = ufbx.CoordinateAxes(
@@ -82,7 +86,8 @@ def initialize_scene_data(fbx_path, containers:UFBXDataContainers):
                            skip_mesh_parts=True,
                            skip_skin_vertices=True,
                            )
-    
+    logger.info("Populating data containers...")
+
     containers.scene = scene
     for tex in containers.scene.texture_files:
         containers.textures.append(tex)
@@ -98,9 +103,11 @@ def initialize_scene_data(fbx_path, containers:UFBXDataContainers):
             if mesh.typed_id not in containers.mesh_materials:
                 containers.mesh_materials[mesh.typed_id] = []
             containers.mesh_materials[mesh.typed_id].append(mat.typed_id)
+    
+    logger.success("Scene data initialized.")
 
 def load_and_export_fbx(output_path, containers, DRACO_COMPRESS_LEVEL, DRACO_QUANTIZATION_SETTINGS):
-    import bpy
+    
 
     script_dir = os.path.dirname(os.path.abspath(__file__))    
     os.chdir(script_dir)
@@ -108,6 +115,7 @@ def load_and_export_fbx(output_path, containers, DRACO_COMPRESS_LEVEL, DRACO_QUA
     tex_map = {}
 
     #Creating blender image buffers
+    logger.info("Extracting model textures...")
     for tex in containers.textures:
         if tex.content:
             _,format = os.path.splitext(tex.absolute_filename)
@@ -125,6 +133,7 @@ def load_and_export_fbx(output_path, containers, DRACO_COMPRESS_LEVEL, DRACO_QUA
             os.remove(temp_path)
     
     mat_map = {}
+    logger.info("Creating bpy materials...")
     #Create blender material buffers: Get all materials in ufbx scene and convert to blender materials.
     for fbx_mat in containers.materials:
         mat = bpy.data.materials.new(name=fbx_mat.name)
@@ -146,6 +155,7 @@ def load_and_export_fbx(output_path, containers, DRACO_COMPRESS_LEVEL, DRACO_QUA
     fallback_mat = bpy.data.materials.new(name="Fallback_Material")
     fallback_mat.use_nodes = True
     
+    logger.info("Creating bpy meshes...")
     # Create blender meshes and assign appropriate materials.
     for fbx_mesh in containers.meshes:
         if len(fbx_mesh.faces) == 0:
@@ -177,6 +187,7 @@ def load_and_export_fbx(output_path, containers, DRACO_COMPRESS_LEVEL, DRACO_QUA
             if bl_mat:
                 blender_mesh.materials.append(bl_mat)
             else:
+                logger.warning("Unknown material in mesh! Using fallback material...")
                 blender_mesh.materials.append(fallback_mat)
 
         # 2. Assign the faces
@@ -215,7 +226,7 @@ def load_and_export_fbx(output_path, containers, DRACO_COMPRESS_LEVEL, DRACO_QUA
 
     bpy.context.view_layer.update()
 
-    print("Finished constructing GLTF, now exporting...")
+    logger.info("Finished constructing model in GLB, now exporting...")
     bpy.ops.export_scene.gltf(filepath=output_path, export_format='GLB', export_materials='EXPORT', export_normals=True,
                               export_draco_mesh_compression_enable=True,
                                 export_draco_mesh_compression_level=DRACO_COMPRESS_LEVEL,
@@ -224,22 +235,18 @@ def load_and_export_fbx(output_path, containers, DRACO_COMPRESS_LEVEL, DRACO_QUA
                                 export_draco_texcoord_quantization=DRACO_QUANTIZATION_SETTINGS[2],
                                 export_draco_generic_quantization=DRACO_QUANTIZATION_SETTINGS[3],
                                 export_yup=True)
+    logger.success("Export finished.")
     
 
 
 def convert_fbx_to_glb(fbx_path, output_path, DRACO_COMPRESS_LEVEL, DRACO_QUANTIZATION_SETTINGS):
-    print("Running FBX to GLB conversion with ufbx...")
+    
+    logger.info("Starting FBX to GLB converter")
       
     containers = UFBXDataContainers()
+
     initialize_scene_data(fbx_path, containers)
+
     load_and_export_fbx(output_path, containers, DRACO_COMPRESS_LEVEL, DRACO_QUANTIZATION_SETTINGS)
 
-    print("FBX to GLB conversion via ufbx completed successfully.")
-
-#TODO: bazı materyallerin değerleri yanlış olabilir: örneğin opak bir cam
-
-'''
-FILE = "fbx/coupe.fbx"
-scene_data(FILE)
-scene = build_blender_scene_from_ufbx(FILE)
-'''
+    logger.success("FBX to GLB conversion finished.")
