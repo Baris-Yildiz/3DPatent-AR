@@ -38,7 +38,7 @@ public  class ScreenScaler : MonoBehaviour
     //     scaleAmount = slider.value;
     // }
 
-    public float FitScreen(GameObject patent)
+    public float FitScreen(GameObject patent , bool usePivot)
     {
         if (patent == null || cam == null || !isScreenFitOn)
         {
@@ -50,7 +50,7 @@ public  class ScreenScaler : MonoBehaviour
         Bounds bounds = PivotSetter.GetBounds(patent);
         if (originalCenter == Vector3.negativeInfinity && originalSize == Vector3.negativeInfinity)
         {
-            originalCenter = bounds.center;
+            originalCenter = usePivot? patent.transform.position : bounds.center;
             originalSize = bounds.size;
         } 
         float projectedDistance = Vector3.Distance(cam.transform.position, patent.transform.position);

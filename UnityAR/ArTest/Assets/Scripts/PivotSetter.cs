@@ -13,6 +13,7 @@ public static class PivotSetter
         Physics.SyncTransforms();
             
         Vector3 calculatedOffSet = Vector3.zero;
+        patent.transform.localScale = Vector3.one;
         Bounds bounds = GetBounds(patent);
         
         Vector3 mins = bounds.min;
@@ -78,7 +79,7 @@ public static class PivotSetter
         return bounds;
     }
 
-    public static void SnapToYOffset(GameObject patent , bool toGround)
+    public static void SnapToYOffset(GameObject patent , bool toGround , bool usePivot)
     {
         if (patent == null)
         {
@@ -87,9 +88,9 @@ public static class PivotSetter
         }
 
         Bounds bounds = GetBounds(patent);
-
-        float target = toGround ? bounds.min.y : bounds.center.y;
-        Vector2 xzCenter = new Vector2(bounds.center.x, bounds.center.z);
+        Vector3 center = usePivot ? patent.transform.position : bounds.center;
+        float target = toGround ? bounds.min.y : center.y;
+        Vector2 xzCenter = new Vector2(center.x, center.z);
         Transform t = patent.transform;
         t.position = new Vector3(2*t.position.x - xzCenter.x, 2 * t.position.y - target, 2*t.position.z - xzCenter.y);
     }

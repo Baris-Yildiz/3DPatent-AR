@@ -97,14 +97,14 @@ public class ObjectSpawnerAR : MonoBehaviour
         PatentManager.Instance.SetInitialTransform();
     }
 
-    private void FitScreen()
-    {
-        if (!spawnWithinScreen) return;
-        float scaleAmount = ScreenScaler.instance.FitScreen(activePatent);
-        activePatent.transform.localScale *= scaleAmount;
-        scaleText.text ="Scale:          " + activePatent.transform.localScale.y.ToString()  ;
-        Debug.Log(scaleAmount);
-    }
+    // private void FitScreen()
+    // {
+    //     if (!spawnWithinScreen) return;
+    //     float scaleAmount = ScreenScaler.instance.FitScreen(activePatent);
+    //     activePatent.transform.localScale *= scaleAmount;
+    //     scaleText.text ="Scale:          " + activePatent.transform.localScale.y.ToString()  ;
+    //     Debug.Log(scaleAmount);
+    // }
 
     public void SetActivePatent(GameObject downloaded_patent)
     {

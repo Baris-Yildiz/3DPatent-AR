@@ -3266,6 +3266,17 @@
                 },
                 {
                     "name": "",
+                    "id": "aa842e37-a115-42a3-884f-31d63b46404d",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Drag Delta",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "9e3b31e7-2f82-40f3-bfe1-ad0fa7f035d4",
                     "path": "<TouchscreenGestureInputController>/pinchStartPosition1",
                     "interactions": "",
