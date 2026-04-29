@@ -7,6 +7,7 @@ public class MiscOptionsManager : MonoBehaviour
     {
         GetComponentInChildren<UIVisibilityManager>().Initialize();
         GetComponentInChildren<ModelPlaneDetectionManager>().Initialize();
+        GetComponentInChildren<PivotSettingManager>().Initialize();
         gameObject.SetActive(false);
     }
 }

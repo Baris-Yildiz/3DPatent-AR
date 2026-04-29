@@ -13,7 +13,7 @@ public class PatentTransformer : MonoBehaviour
 
     [SerializeField] private float pinchScaleSpeed = 0.05f;
     [SerializeField] private float minScale = 0.01f;
-    [SerializeField] private float maxScale = 1f;
+    [SerializeField] private float maxScale = 2f;
 
     [SerializeField] private bool useMouseFallback = true;
     [SerializeField] private float mouseDragToRotate = 0.2f;
@@ -29,11 +29,14 @@ public class PatentTransformer : MonoBehaviour
     {
         if (usePivot)
         {
+            //Debug.Log("getting pivot " + obj.transform.position);
             return obj.transform.position;
         }
         else
         {
+            
             Bounds localBounds = PivotSetter.GetBounds(obj);
+           // Debug.Log("getting non pivot " + obj.transform.TransformPoint(localBounds.center));
             return obj.transform.TransformPoint(localBounds.center);
         }
     }
@@ -93,13 +96,23 @@ public class PatentTransformer : MonoBehaviour
             
         }
 
-
+        
         if (pinchDeltaAction.action != null)
         {
             pinchDeltaAction.action.performed += OnPinchDelta;    
         }
 
-        
+        if (PivotSettingManager.Instance != null)
+        {
+            PivotSettingManager.Instance.OnPivotUseChange += UsePivot;
+        }
+
+
+    }
+
+    private void UsePivot(bool _usePivot)
+    {
+        usePivot = _usePivot;
     }
 
     private void DisableTransformInputs()
@@ -114,6 +127,11 @@ public class PatentTransformer : MonoBehaviour
 
         if (pinchDeltaAction.action != null)
             pinchDeltaAction.action.performed -= OnPinchDelta;
+        
+        if (PivotSettingManager.Instance != null)
+        {
+            PivotSettingManager.Instance.OnPivotUseChange -= UsePivot;
+        }
     }
 
     private void UpdateMouseRotation()
@@ -209,10 +227,13 @@ public class PatentTransformer : MonoBehaviour
     {
         GameObject activePatent = patentManager.ActivePatent;
         if (activePatent == null) return;
-
+        Bounds bounds = PivotSetter.GetBounds(activePatent);
+        float maxSize = Mathf.Max(bounds.size.x, bounds.size.y, bounds.size.z);
+        pinchScaleSpeed *= 3 / maxSize;
+        Debug.Log("Max size is : " + maxSize);
         float scale = ScreenScaler.instance.FitScreen(activePatent, usePivot);
         if (scale > 0) activePatent.transform.localScale *= scale;
-
+        
         PivotSetter.SnapToYOffset(activePatent, toGround, usePivot);
         SyncTargets();
     }

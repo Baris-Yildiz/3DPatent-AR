@@ -60,7 +60,8 @@ public class RaycastHandler : MonoBehaviour
 
     public void OnModeChange(bool isOneToOne)
     {
-        changePlaneDetection(!isOneToOne);
+        //if(isOneToOne) changePlaneDetection(false);
+        
     }
 
     // Update is called once per frame
