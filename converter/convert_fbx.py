@@ -20,7 +20,6 @@ class UFBXDataContainers:
         self.meshes:list[ufbx.Mesh] = []
         self.scene:ufbx.Scene = None
         self.nodes:list[ufbx.Node] = []
-    
 
 def setup_texture_chain(mat, tex_map, fbx_prop:ufbx.MaterialMap, containers:UFBXDataContainers):
 
@@ -49,6 +48,29 @@ def setup_texture_chain(mat, tex_map, fbx_prop:ufbx.MaterialMap, containers:UFBX
 
         tex_node = mat.node_tree.nodes.new('ShaderNodeTexImage')
         tex_node.image = bl_image
+
+        uv_node = mat.node_tree.nodes.new('ShaderNodeUVMap')
+        uv_node.uv_map = "UVMap"
+
+        mapping_node = mat.node_tree.nodes.new('ShaderNodeMapping')
+        if tex_obj.has_uv_transform:
+        
+            u_scale = tex_obj.uv_transform.scale.x
+            v_scale = tex_obj.uv_transform.scale.y
+            mapping_node.inputs['Scale'].default_value = (u_scale, v_scale, 1.0)
+            
+            u_offset = tex_obj.uv_transform.translation.x
+            v_offset = tex_obj.uv_transform.translation.y
+            mapping_node.inputs['Location'].default_value = (u_offset, v_offset, 0.0)
+            
+            rot = tex_obj.uv_transform.rotation
+            q = mathutils.Quaternion((rot.w, rot.x, rot.y, rot.z))
+                
+            z_angle = q.to_euler().z
+            mapping_node.inputs['Rotation'].default_value = (0.0, 0.0, z_angle)
+
+        mat.node_tree.links.new(uv_node.outputs['UV'], mapping_node.inputs['Vector'])
+        mat.node_tree.links.new(mapping_node.outputs['Vector'], tex_node.inputs['Vector'])
         
         if last_output is None:
             last_output = tex_node.outputs['Color']
@@ -84,7 +106,6 @@ def initialize_scene_data(fbx_path, containers:UFBXDataContainers):
     scene = ufbx.load_file(fbx_path, 
                            target_axes=target_axes, 
                            target_unit_meters=1,
-                           skip_mesh_parts=True,
                            skip_skin_vertices=True,
                            )
     logger.info("Populating data containers...")
@@ -107,7 +128,7 @@ def initialize_scene_data(fbx_path, containers:UFBXDataContainers):
                 containers.mesh_materials[mesh.typed_id] = []
             containers.mesh_materials[mesh.typed_id].append(mat.typed_id)
     
-    logger.success("Scene data initialized.")
+        logger.success("Scene data initialized.")
 
 def _to_blender_matrix(m):
     return  mathutils.Matrix([
@@ -123,7 +144,7 @@ def load_and_export_fbx(output_path, containers:UFBXDataContainers, DRACO_COMPRE
     os.chdir(script_dir)
 
     tex_map = {}
-
+    temp_files = []
     #Creating blender image buffers
     logger.info("Extracting model textures...")
     for tex in containers.textures:
@@ -138,25 +159,36 @@ def load_and_export_fbx(output_path, containers:UFBXDataContainers, DRACO_COMPRE
                 f.write(tex.content)
 
             img = bpy.data.images.load(temp_path)
+            img.colorspace_settings.name = 'sRGB'
             img.pack()  
             tex_map[tex.index] = img
-            os.remove(temp_path)
+            temp_files.append(temp_path)
     
     mat_map = {}
+    gamma_correction = lambda x: (x / 12.92) if x <= 0.04045 else ((x + 0.055) / 1.055) ** 2.4
+    
     logger.info("Creating bpy materials...")
     #Create blender material buffers: Get all materials in ufbx scene and convert to blender materials.
     for fbx_mat in containers.materials:
         mat = bpy.data.materials.new(name=fbx_mat.name)
         mat.use_nodes = True
         bsdf = mat.node_tree.nodes.get("Principled BSDF")
-        
-        # 1. BASE COLOR 
+             
         pbr = fbx_mat.pbr
         if pbr.base_color.has_value:
+
             col = pbr.base_color.value_vec4
-            bsdf.inputs['Base Color'].default_value = (col[0], col[1], col[2], 1.0)
-        
+
+            r, g, b, a = col[0], col[1], col[2], col[3]
+                
+            linear_r = gamma_correction(r)
+            linear_g = gamma_correction(g)
+            linear_b = gamma_correction(b)
+                
+            bsdf.inputs['Base Color'].default_value = (linear_r, linear_g, linear_b, a)
+
         base_tex = setup_texture_chain(mat, tex_map, pbr.base_color, containers)
+
         if base_tex:
             mat.node_tree.links.new(base_tex, bsdf.inputs['Base Color'])
 
@@ -166,8 +198,8 @@ def load_and_export_fbx(output_path, containers:UFBXDataContainers, DRACO_COMPRE
     fallback_mat.use_nodes = True
 
     mesh_cache = {}
-
     logger.info("Creating bpy meshes...")
+    
     for node in containers.nodes:
 
         if not node.mesh:
@@ -178,72 +210,97 @@ def load_and_export_fbx(output_path, containers:UFBXDataContainers, DRACO_COMPRE
 
         if fbx_mesh not in mesh_cache:
 
-            if len(fbx_mesh.faces) == 0:
-                continue
-        
-            blender_mesh = bpy.data.meshes.new(fbx_mesh.name)
-            
-            verts = [(v.x, v.y, v.z) for v in containers.mesh_vertices[fbx_mesh.typed_id]]
-
-            faces = [tuple(fbx_mesh.vertex_indices[i] for i in range(face.index_begin, face.index_begin + face.num_indices))
-                    for face in containers.mesh_faces[fbx_mesh.typed_id]]
-            
-            blender_mesh.from_pydata(verts, [], faces)
-
-            if fbx_mesh.vertex_uv.exists:
-                uv_layer = blender_mesh.uv_layers.new(name="UVMap")
-                uv_indices = fbx_mesh.vertex_uv.indices
-                uv_values = fbx_mesh.vertex_uv.values
-
-                for face in containers.mesh_faces[fbx_mesh.typed_id]:
-                    for i in range(face.index_begin, face.index_begin + face.num_indices):
-                        # ufbx stores UVs in the same loop order as face indices
-                        
-                        uv = uv_values[uv_indices[i]]
-                        uv_layer.data[i].uv = (uv.x, uv.y)
-
-            blender_mesh.validate()
-            blender_mesh.update()
-
-            for id in containers.mesh_materials[fbx_mesh.typed_id]:
+            if len(fbx_mesh.faces) > 0:
+                blender_mesh = bpy.data.meshes.new(fbx_mesh.name)
                 
-                bl_mat = mat_map.get(id)
+                #Face global vertexes that can be referenced by faces.
+                verts = [(v.x, v.y, v.z) for v in containers.mesh_vertices[fbx_mesh.typed_id]]
 
-                if bl_mat:
-                    blender_mesh.materials.append(bl_mat)
-                else:
-                    logger.warning("Unknown material in mesh! Using fallback material...")
-                    blender_mesh.materials.append(fallback_mat)
+                #Face vertex indexes for each vertex that is contained in the face.
+                faces = [tuple(fbx_mesh.vertex_indices[i] for i in range(face.index_begin, face.index_begin + face.num_indices))
+                        for face in containers.mesh_faces[fbx_mesh.typed_id]]
+                
+                blender_mesh.from_pydata(verts, [], faces)
+                
+                for i in range(len(faces)):
+                    for j in range (len(faces[i])):
+                        if (faces[i][j] != blender_mesh.polygons[i].vertices[j]):
+                            logger.warning(f"mismatch in vertex indices!")
 
-            # 2. Assign the faces
-            if fbx_mesh.face_material:
-                for i, poly in enumerate(blender_mesh.polygons):
-                    poly.material_index = fbx_mesh.face_material[i]
+                    fbx_face = containers.mesh_faces[fbx_mesh.typed_id][i]
 
-            mesh_cache[fbx_mesh] = blender_mesh
+                    for corner_idx, blender_loop_idx in enumerate(blender_mesh.polygons[i].loop_indices):
+                        if (corner_idx + fbx_face.index_begin != blender_loop_idx):
+                            logger.warning(f"mismatch in loop indices!")
+                
+                if fbx_mesh.vertex_uv.exists:
+                    uv_indices = fbx_mesh.vertex_uv.indices
+                    uv_values = fbx_mesh.vertex_uv.values
+        
+                    uv_layer = blender_mesh.uv_layers.new(name="UVMap")
+
+                    for poly_idx, poly in enumerate(blender_mesh.polygons):
+                        fbx_face = containers.mesh_faces[fbx_mesh.typed_id][poly_idx]
+                        
+                        for corner_idx, blender_loop_idx in enumerate(poly.loop_indices):
+                            fbx_loop_idx = fbx_face.index_begin + corner_idx
+                            
+                            if fbx_loop_idx < len(uv_indices):
+                                val_idx = uv_indices[fbx_loop_idx]
+                                
+                                if 0 <= val_idx < len(uv_values):
+                                    uv = uv_values[val_idx]                                 
+                                    uv_layer.uv[blender_loop_idx].vector = (uv.x, 1.0-uv.y)
+                                    continue
+                            
+                            uv_layer.uv[blender_loop_idx].vector = (0.0, 0.0)
+                
+                blender_mesh.validate()
+                blender_mesh.update()
+            
+                for id in containers.mesh_materials[fbx_mesh.typed_id]:
+                    
+                    bl_mat = mat_map.get(id)
+
+                    if bl_mat:
+                        blender_mesh.materials.append(bl_mat)
+                    else:
+                        logger.warning("Unknown material in mesh! Using fallback material...")
+                        blender_mesh.materials.append(fallback_mat)
+
+                if fbx_mesh.face_material:
+                    for i, poly in enumerate(blender_mesh.polygons):
+                        poly.material_index = fbx_mesh.face_material[i]
+                
+
+                mesh_cache[fbx_mesh] = blender_mesh
         else:
             blender_mesh = mesh_cache[fbx_mesh]
 
         node_empty = bpy.data.objects.new(node.name, None)
-        
         node_empty.matrix_world = _to_blender_matrix(node.node_to_world)
         bpy.context.collection.objects.link(node_empty)
 
-
-        mesh_obj = bpy.data.objects.new(node.name, blender_mesh)
-
-        mesh_obj.matrix_local = _to_blender_matrix(node.geometry_to_node)
-        
-
-        mesh_obj.parent = node_empty
-        bpy.context.collection.objects.link(mesh_obj)
-
+        if blender_mesh:
+            mesh_obj = bpy.data.objects.new(node.name, blender_mesh)
+            mesh_obj.matrix_local = _to_blender_matrix(node.geometry_to_node)
+            mesh_obj.parent = node_empty
+            bpy.context.collection.objects.link(mesh_obj)
+    
+    for idx, tex in enumerate(containers.textures):
+        bl_img = tex_map.get(tex.index)
+        if bl_img:
+            logger.info(f"tex[{idx}]: packed={bl_img.packed_file is not None}, "
+            f"source='{bl_img.source}', "
+            f"filepath_raw='{bl_img.filepath_raw}'")
     # Select all mesh objects
     bpy.ops.object.select_all(action='DESELECT')
+
     for obj in bpy.data.objects:
         if obj.type == 'MESH':
             obj.select_set(True)
             bpy.context.view_layer.objects.active = obj
+    
 
     bpy.context.view_layer.update()
 
@@ -257,6 +314,9 @@ def load_and_export_fbx(output_path, containers:UFBXDataContainers, DRACO_COMPRE
                                 export_draco_generic_quantization=DRACO_QUANTIZATION_SETTINGS[3],
                                 export_yup=True)
     logger.success("Export finished.")
+
+    for path in temp_files:
+        os.remove(path)
     
 
 

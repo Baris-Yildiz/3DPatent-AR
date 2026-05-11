@@ -4,7 +4,7 @@ import convert_fbx
 import logging
 
 DRACO_COMPRESS_LEVEL = 6
-DRACO_QUANTIZATION_SETTINGS = (16,12,12,12)
+DRACO_QUANTIZATION_SETTINGS = (16,12,20,12)
 
 logger = logging.getLogger(__name__)
 
