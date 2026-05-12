@@ -2,6 +2,7 @@ import bpy
 import os
 import convert_fbx
 import logging
+import math
 
 DRACO_COMPRESS_LEVEL = 6
 DRACO_QUANTIZATION_SETTINGS = (16,12,20,12)
@@ -36,7 +37,45 @@ def apply_draco_compression(output_path):
                                 export_draco_texcoord_quantization=DRACO_QUANTIZATION_SETTINGS[2],
                                 export_draco_generic_quantization=DRACO_QUANTIZATION_SETTINGS[3])
     logger.success("Exporting with DRACO compression finished.")
+
+def generate_custom_normals_for_object_if_needed(blender_obj):
+    if blender_obj.type != 'MESH':
+        return
     
+    blender_mesh = blender_obj.data
+    if not blender_mesh.has_custom_normals:
+        logger.warning(f"Blender Mesh {blender_obj.name} does not have custom normals. Generating default normals for it.")
+
+        bpy.context.view_layer.objects.active = blender_obj
+        blender_obj.select_set(True)
+
+        for poly in blender_mesh.polygons:
+            poly.use_smooth = True
+                    
+        bpy.ops.object.shade_smooth_by_angle(angle=math.radians(30.0))
+        blender_obj.select_set(False)
+
+def apply_gamma_correction(blender_mat, gamma_correction):
+    if not blender_mat.use_nodes:
+        return
+    
+    nodes = blender_mat.node_tree.nodes
+    principled = next((n for n in nodes if n.type == 'BSDF_PRINCIPLED'), None)
+        
+    if principled:
+        base_color_socket = principled.inputs.get("Base Color")
+            
+        if base_color_socket and not base_color_socket.is_linked:
+                
+            #Take r g b a values from bsdf socket and perform gamma 2.2 correction.
+            r, g, b, a = base_color_socket.default_value
+                
+            linear_r = gamma_correction(r)
+            linear_g = gamma_correction(g)
+            linear_b = gamma_correction(b)
+                
+            base_color_socket.default_value = (linear_r, linear_g, linear_b, a)
+
 #converts .obj files to .glb.
 def convert_obj(file_path, output_path):
     logger.info("Starting OBJ to GLB converter.")
@@ -45,30 +84,17 @@ def convert_obj(file_path, output_path):
     logger.info("Importing OBJ file to scene...")
     bpy.ops.wm.obj_import(filepath=file_path)
 
+    logger.info("Iterating over model meshes...")
+    for obj in bpy.data.objects:
+        generate_custom_normals_for_object_if_needed(obj)
+                     
     gamma_correction = lambda x: (x / 12.92) if x <= 0.04045 else ((x + 0.055) / 1.055) ** 2.4
 
     logger.info("Iterating over model materials...")
     #Gamma 2.2 fix for colors.
     for mat in bpy.data.materials:
-        if not mat.use_nodes:
-            continue
-            
-        nodes = mat.node_tree.nodes
-        principled = next((n for n in nodes if n.type == 'BSDF_PRINCIPLED'), None)
+        apply_gamma_correction(mat, gamma_correction)
         
-        if principled:
-            base_color_socket = principled.inputs.get("Base Color")
-            
-            if base_color_socket and not base_color_socket.is_linked:
-                
-                #Take r g b a values from bsdf socket and perform gamma 2.2 correction.
-                r, g, b, a = base_color_socket.default_value
-                
-                linear_r = gamma_correction(r)
-                linear_g = gamma_correction(g)
-                linear_b = gamma_correction(b)
-                
-                base_color_socket.default_value = (linear_r, linear_g, linear_b, a)
     
     logger.info("Exporting to GLB...")
     #TODO: error handling : missing texture durumunda renksiz materyaller ile export ediliyor.

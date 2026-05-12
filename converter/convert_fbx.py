@@ -3,6 +3,7 @@ import os
 import mathutils
 import logging
 import bpy
+import math
 
 #embedded FBX-GLB exporting
 
@@ -12,7 +13,7 @@ class UFBXDataContainers:
     def __init__(self):
         self.textures = []
         self.texture_objects = []
-        self.materials = []
+        self.materials:list[ufbx.Material] = []
         self.mesh_materials = {}
         self.mesh_instances = {}
         self.mesh_vertices = {}
@@ -138,6 +139,12 @@ def _to_blender_matrix(m):
             [0, 0, 0, 1]
         ])
 
+def get_opacity_value(fbx_mat:ufbx.Material):
+    for prop in fbx_mat.props.props:
+        if prop.name == "Opacity":
+            return prop.value_vec4.x
+    return 1.0 
+
 def load_and_export_fbx(output_path, containers:UFBXDataContainers, DRACO_COMPRESS_LEVEL, DRACO_QUANTIZATION_SETTINGS):
     
     script_dir = os.path.dirname(os.path.abspath(__file__))    
@@ -171,6 +178,7 @@ def load_and_export_fbx(output_path, containers:UFBXDataContainers, DRACO_COMPRE
     #Create blender material buffers: Get all materials in ufbx scene and convert to blender materials.
     for fbx_mat in containers.materials:
         mat = bpy.data.materials.new(name=fbx_mat.name)
+        
         mat.use_nodes = True
         bsdf = mat.node_tree.nodes.get("Principled BSDF")
              
@@ -178,7 +186,6 @@ def load_and_export_fbx(output_path, containers:UFBXDataContainers, DRACO_COMPRE
         if pbr.base_color.has_value:
 
             col = pbr.base_color.value_vec4
-
             r, g, b, a = col[0], col[1], col[2], col[3]
                 
             linear_r = gamma_correction(r)
@@ -191,6 +198,13 @@ def load_and_export_fbx(output_path, containers:UFBXDataContainers, DRACO_COMPRE
 
         if base_tex:
             mat.node_tree.links.new(base_tex, bsdf.inputs['Base Color'])
+
+        #Get opacity value
+        opacity = get_opacity_value(fbx_mat)
+        bsdf.inputs['Alpha'].default_value = opacity
+
+        if opacity < 1.0:
+            mat.blend_method = 'BLEND'
 
         mat_map[fbx_mat.typed_id] = mat
     
@@ -255,6 +269,34 @@ def load_and_export_fbx(output_path, containers:UFBXDataContainers, DRACO_COMPRE
                             
                             uv_layer.uv[blender_loop_idx].vector = (0.0, 0.0)
                 
+                custom_normals = [(0.0, 0.0, 1.0)] * len(blender_mesh.loops)
+
+                if fbx_mesh.vertex_normal.exists:
+                    norm_indices = fbx_mesh.vertex_normal.indices
+                    norm_values = fbx_mesh.vertex_normal.values
+
+                    for poly_idx, poly in enumerate(blender_mesh.polygons):
+                        
+                        poly.use_smooth = True 
+                        
+                        fbx_face = containers.mesh_faces[fbx_mesh.typed_id][poly_idx]
+                        
+                        for corner_idx, blender_loop_idx in enumerate(poly.loop_indices):
+                            fbx_loop_idx = fbx_face.index_begin + corner_idx
+                            
+                            if fbx_loop_idx < len(norm_indices):
+                                val_idx = norm_indices[fbx_loop_idx]
+                                
+                                if 0 <= val_idx < len(norm_values):
+                                    n = norm_values[val_idx]
+                                    
+                                    custom_normals[blender_loop_idx] = (n.x, n.y, n.z)
+
+                    blender_mesh.normals_split_custom_set(custom_normals)
+                else:
+                    for poly in blender_mesh.polygons:
+                        poly.use_smooth = True
+
                 blender_mesh.validate()
                 blender_mesh.update()
             
@@ -286,13 +328,15 @@ def load_and_export_fbx(output_path, containers:UFBXDataContainers, DRACO_COMPRE
             mesh_obj.matrix_local = _to_blender_matrix(node.geometry_to_node)
             mesh_obj.parent = node_empty
             bpy.context.collection.objects.link(mesh_obj)
+
+            if not fbx_mesh.vertex_normal.exists:
+                logger.warning(f"Mesh does not have vertex normals. Applying auto smooth with 30 degree angle.")
+                bpy.context.view_layer.objects.active = mesh_obj
+                mesh_obj.select_set(True)
+                bpy.ops.object.shade_smooth_by_angle(angle=math.radians(30.0))
+                mesh_obj.select_set(False)
+            
     
-    for idx, tex in enumerate(containers.textures):
-        bl_img = tex_map.get(tex.index)
-        if bl_img:
-            logger.info(f"tex[{idx}]: packed={bl_img.packed_file is not None}, "
-            f"source='{bl_img.source}', "
-            f"filepath_raw='{bl_img.filepath_raw}'")
     # Select all mesh objects
     bpy.ops.object.select_all(action='DESELECT')
 
@@ -301,12 +345,11 @@ def load_and_export_fbx(output_path, containers:UFBXDataContainers, DRACO_COMPRE
             obj.select_set(True)
             bpy.context.view_layer.objects.active = obj
     
-
     bpy.context.view_layer.update()
 
     logger.info("Finished constructing model in GLB, now exporting...")
     bpy.ops.export_scene.gltf(filepath=output_path, export_format='GLB', export_materials='EXPORT', export_normals=True,
-                              export_draco_mesh_compression_enable=True,
+                              export_draco_mesh_compression_enable=False,
                                 export_draco_mesh_compression_level=DRACO_COMPRESS_LEVEL,
                                 export_draco_position_quantization=DRACO_QUANTIZATION_SETTINGS[0], 
                                 export_draco_normal_quantization=DRACO_QUANTIZATION_SETTINGS[1],
