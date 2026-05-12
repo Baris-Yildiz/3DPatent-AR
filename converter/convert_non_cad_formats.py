@@ -97,7 +97,7 @@ def convert_obj(file_path, output_path):
         
     
     logger.info("Exporting to GLB...")
-    #TODO: error handling : missing texture durumunda renksiz materyaller ile export ediliyor.
+    #TODO: error handling : missing texture durumunda renksiz materyaller ile export ediliyor. (örneğin ARABA1 OBJ CM)
     bpy.ops.export_scene.gltf(  filepath=output_path, export_format='GLB', export_normals=True,
                                 export_draco_mesh_compression_enable=True,
                                 export_draco_mesh_compression_level=DRACO_COMPRESS_LEVEL,
@@ -124,6 +124,7 @@ def convert_stl(file_path, output_path):
                                 export_draco_normal_quantization=DRACO_QUANTIZATION_SETTINGS[1],
                                 export_draco_texcoord_quantization=DRACO_QUANTIZATION_SETTINGS[2],
                                 export_draco_generic_quantization=DRACO_QUANTIZATION_SETTINGS[3])
+    
     logger.success("Export to GLB finished.")
 
 def convert_non_cad(file_path, file_type):

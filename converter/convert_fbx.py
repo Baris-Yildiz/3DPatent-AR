@@ -145,6 +145,15 @@ def get_opacity_value(fbx_mat:ufbx.Material):
             return prop.value_vec4.x
     return 1.0 
 
+def get_gamma_corrected_color(col, gamma_function):
+    r, g, b, a = col[0], col[1], col[2], col[3]
+                
+    linear_r = gamma_function(r)
+    linear_g = gamma_function(g)
+    linear_b = gamma_function(b)
+
+    return (linear_r, linear_g, linear_b, a)
+
 def load_and_export_fbx(output_path, containers:UFBXDataContainers, DRACO_COMPRESS_LEVEL, DRACO_QUANTIZATION_SETTINGS):
     
     script_dir = os.path.dirname(os.path.abspath(__file__))    
@@ -184,15 +193,7 @@ def load_and_export_fbx(output_path, containers:UFBXDataContainers, DRACO_COMPRE
              
         pbr = fbx_mat.pbr
         if pbr.base_color.has_value:
-
-            col = pbr.base_color.value_vec4
-            r, g, b, a = col[0], col[1], col[2], col[3]
-                
-            linear_r = gamma_correction(r)
-            linear_g = gamma_correction(g)
-            linear_b = gamma_correction(b)
-                
-            bsdf.inputs['Base Color'].default_value = (linear_r, linear_g, linear_b, a)
+            bsdf.inputs['Base Color'].default_value = get_gamma_corrected_color(pbr.base_color.value_vec4, gamma_correction)
 
         base_tex = setup_texture_chain(mat, tex_map, pbr.base_color, containers)
 
@@ -349,7 +350,7 @@ def load_and_export_fbx(output_path, containers:UFBXDataContainers, DRACO_COMPRE
 
     logger.info("Finished constructing model in GLB, now exporting...")
     bpy.ops.export_scene.gltf(filepath=output_path, export_format='GLB', export_materials='EXPORT', export_normals=True,
-                              export_draco_mesh_compression_enable=False,
+                              export_draco_mesh_compression_enable=True,
                                 export_draco_mesh_compression_level=DRACO_COMPRESS_LEVEL,
                                 export_draco_position_quantization=DRACO_QUANTIZATION_SETTINGS[0], 
                                 export_draco_normal_quantization=DRACO_QUANTIZATION_SETTINGS[1],
