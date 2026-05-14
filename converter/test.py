@@ -23,10 +23,12 @@ def run_test_cases():
         for root, _, files in walk:    
             for file in files:
                 name, ext = os.path.splitext(file)
-                if (ext in CAD_FILE_LIST or ext in NONCAD_FILE_LIST):
+                ext = ext.lower()
+                if (ext in NONCAD_FILE_LIST):
                     logger.info(f"Running test case {curr}/{count} ({file}):")
                     abspath = os.path.abspath(os.path.join(root, file))
                     os.environ["OUTPUT_PATH"] = f"{test_output_folder}/{name}_out.glb"
+                    os.environ["SCALE"] = "1.0"
                     convert_file_to_glb(abspath)
                     curr = curr + 1
         logger.info("All test cases passed!")

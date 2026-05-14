@@ -63,7 +63,7 @@ RUN cmake ../ -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local && ma
 WORKDIR /app/converter
 
 #TODO: install requirements.txt
-RUN . venv/bin/activate && python3 -m pip install ufbx && python3 -m pip install rich-logger
+RUN . venv/bin/activate && python3 -m pip install ufbx==0.0.5 && python3 -m pip install rich-logger==0.3.2 && python3 -m pip install regex==2026.5.9
 
 COPY . /app/converter/
 

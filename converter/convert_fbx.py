@@ -4,10 +4,13 @@ import mathutils
 import logging
 import bpy
 import math
+from handlers import ExportLogHandler
+from bpy_fetch_warnings import capture_bpy_export_warnings
 
 #embedded FBX-GLB exporting
 
 logger = logging.getLogger(__name__)
+
 
 class UFBXDataContainers:
     def __init__(self):
@@ -52,10 +55,11 @@ def setup_texture_chain(mat, tex_map, fbx_prop:ufbx.MaterialMap, containers:UFBX
 
         uv_node = mat.node_tree.nodes.new('ShaderNodeUVMap')
         uv_node.uv_map = "UVMap"
-
-        mapping_node = mat.node_tree.nodes.new('ShaderNodeMapping')
-        if tex_obj.has_uv_transform:
         
+        mapping_node = mat.node_tree.nodes.new('ShaderNodeMapping')
+        
+        if tex_obj.has_uv_transform:
+            
             u_scale = tex_obj.uv_transform.scale.x
             v_scale = tex_obj.uv_transform.scale.y
             mapping_node.inputs['Scale'].default_value = (u_scale, v_scale, 1.0)
@@ -63,12 +67,12 @@ def setup_texture_chain(mat, tex_map, fbx_prop:ufbx.MaterialMap, containers:UFBX
             u_offset = tex_obj.uv_transform.translation.x
             v_offset = tex_obj.uv_transform.translation.y
             mapping_node.inputs['Location'].default_value = (u_offset, v_offset, 0.0)
-            
+            '''
             rot = tex_obj.uv_transform.rotation
             q = mathutils.Quaternion((rot.w, rot.x, rot.y, rot.z))
                 
             z_angle = q.to_euler().z
-            mapping_node.inputs['Rotation'].default_value = (0.0, 0.0, z_angle)
+            mapping_node.inputs['Rotation'].default_value = (0.0, 0.0, z_angle)'''
 
         mat.node_tree.links.new(uv_node.outputs['UV'], mapping_node.inputs['Vector'])
         mat.node_tree.links.new(mapping_node.outputs['Vector'], tex_node.inputs['Vector'])
@@ -151,7 +155,6 @@ def get_gamma_corrected_color(col, gamma_function):
     linear_r = gamma_function(r)
     linear_g = gamma_function(g)
     linear_b = gamma_function(b)
-
     return (linear_r, linear_g, linear_b, a)
 
 def load_and_export_fbx(output_path, containers:UFBXDataContainers, DRACO_COMPRESS_LEVEL, DRACO_QUANTIZATION_SETTINGS):
@@ -187,10 +190,9 @@ def load_and_export_fbx(output_path, containers:UFBXDataContainers, DRACO_COMPRE
     #Create blender material buffers: Get all materials in ufbx scene and convert to blender materials.
     for fbx_mat in containers.materials:
         mat = bpy.data.materials.new(name=fbx_mat.name)
-        
         mat.use_nodes = True
         bsdf = mat.node_tree.nodes.get("Principled BSDF")
-             
+
         pbr = fbx_mat.pbr
         if pbr.base_color.has_value:
             bsdf.inputs['Base Color'].default_value = get_gamma_corrected_color(pbr.base_color.value_vec4, gamma_correction)
@@ -201,6 +203,7 @@ def load_and_export_fbx(output_path, containers:UFBXDataContainers, DRACO_COMPRE
             mat.node_tree.links.new(base_tex, bsdf.inputs['Base Color'])
 
         #Get opacity value
+        
         opacity = get_opacity_value(fbx_mat)
         bsdf.inputs['Alpha'].default_value = opacity
 
@@ -249,6 +252,14 @@ def load_and_export_fbx(output_path, containers:UFBXDataContainers, DRACO_COMPRE
                             logger.warning(f"mismatch in loop indices!")
                 
                 if fbx_mesh.vertex_uv.exists:
+                    uv_layer = blender_mesh.uv_layers.new(name="UVMap")
+                    for face in containers.mesh_faces[fbx_mesh.typed_id]:
+                        for i in range(face.index_begin, face.index_begin + face.num_indices):
+                            # ufbx stores UVs in the same loop order as face indices
+                            uv = fbx_mesh.vertex_uv.values[fbx_mesh.vertex_uv.indices[i]]
+                            uv_layer.data[i].uv = (uv.x, uv.y)
+                
+                if fbx_mesh.vertex_uv.exists:
                     uv_indices = fbx_mesh.vertex_uv.indices
                     uv_values = fbx_mesh.vertex_uv.values
         
@@ -265,7 +276,7 @@ def load_and_export_fbx(output_path, containers:UFBXDataContainers, DRACO_COMPRE
                                 
                                 if 0 <= val_idx < len(uv_values):
                                     uv = uv_values[val_idx]                                 
-                                    uv_layer.uv[blender_loop_idx].vector = (uv.x, 1.0-uv.y)
+                                    uv_layer.uv[blender_loop_idx].vector = (uv.x, uv.y)
                                     continue
                             
                             uv_layer.uv[blender_loop_idx].vector = (0.0, 0.0)
@@ -349,7 +360,8 @@ def load_and_export_fbx(output_path, containers:UFBXDataContainers, DRACO_COMPRE
     bpy.context.view_layer.update()
 
     logger.info("Finished constructing model in GLB, now exporting...")
-    bpy.ops.export_scene.gltf(filepath=output_path, export_format='GLB', export_materials='EXPORT', export_normals=True,
+    with capture_bpy_export_warnings() as log_file:
+        bpy.ops.export_scene.gltf(filepath=output_path, export_format='GLB', export_materials='EXPORT', export_normals=True,
                               export_draco_mesh_compression_enable=True,
                                 export_draco_mesh_compression_level=DRACO_COMPRESS_LEVEL,
                                 export_draco_position_quantization=DRACO_QUANTIZATION_SETTINGS[0], 
@@ -357,6 +369,9 @@ def load_and_export_fbx(output_path, containers:UFBXDataContainers, DRACO_COMPRE
                                 export_draco_texcoord_quantization=DRACO_QUANTIZATION_SETTINGS[2],
                                 export_draco_generic_quantization=DRACO_QUANTIZATION_SETTINGS[3],
                                 export_yup=True)
+        
+        export_log_handler = ExportLogHandler(log_file)
+        export_log_handler.export_user_logs_to_json()        
     logger.success("Export finished.")
 
     for path in temp_files:

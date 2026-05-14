@@ -19,7 +19,7 @@ def success(self, message, *args, **kws):
 logging.Logger.success = success
 
 custom_theme = Theme({
-    "logging.level.success": "bold green", # Customize your colors here!
+    "logging.level.success": "bold green", 
 })
 
 custom_console = Console(theme=custom_theme)
@@ -31,6 +31,7 @@ logging.basicConfig(
 )
 
 logger = logging.getLogger(__name__)
+
 
 #Starting point of the converter.
 if __name__ == "__main__":
@@ -44,6 +45,23 @@ if __name__ == "__main__":
     gc.disable()
 
     input_file_path = os.path.abspath(sys.argv[1])
+
+    scale = sys.argv[2].lower().lstrip().rstrip()
+    scale_factor = 1.0
+
+    if scale == "mm":
+        scale_factor = 0.001
+    elif scale == "cm":
+        scale_factor = 0.01
+    elif scale == "in":
+        scale_factor = 0.0254
+    elif scale == "m":
+        scale_factor = 1.0
+    else:
+        logger.warning(f"Unsupported scale provided: {scale}. Defaulting to meters.")
+
+    os.environ["SCALE"] = str(scale_factor)
+
     os.environ["OUTPUT_PATH"] = os.path.abspath("output.glb")
     output_path = os.environ["OUTPUT_PATH"]
 

@@ -3,6 +3,8 @@ import os
 import convert_fbx
 import logging
 import math
+from bpy_fetch_warnings import capture_bpy_import_warnings, capture_bpy_export_warnings
+from handlers import ImportLogHandler, ExportLogHandler
 
 DRACO_COMPRESS_LEVEL = 6
 DRACO_QUANTIZATION_SETTINGS = (16,12,20,12)
@@ -76,13 +78,29 @@ def apply_gamma_correction(blender_mat, gamma_correction):
                 
             base_color_socket.default_value = (linear_r, linear_g, linear_b, a)
 
+def resize_model():
+    logger.info("Resizing model according to scale...")
+    bpy.ops.object.select_all(action='SELECT')
+
+    scale = float(os.environ.get("SCALE"))
+    
+    bpy.ops.transform.resize(value=(scale, scale, scale))
+    
+    bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
+
+    bpy.ops.object.select_all(action='DESELECT')
+
+
 #converts .obj files to .glb.
 def convert_obj(file_path, output_path):
     logger.info("Starting OBJ to GLB converter.")
     empty_blender_scene()
 
     logger.info("Importing OBJ file to scene...")
-    bpy.ops.wm.obj_import(filepath=file_path)
+    with capture_bpy_import_warnings() as log_temp:
+        bpy.ops.wm.obj_import(filepath=file_path)
+        import_log_handler = ImportLogHandler(log_temp)
+        import_log_handler.export_user_logs_to_json()
 
     logger.info("Iterating over model meshes...")
     for obj in bpy.data.objects:
@@ -94,11 +112,15 @@ def convert_obj(file_path, output_path):
     #Gamma 2.2 fix for colors.
     for mat in bpy.data.materials:
         apply_gamma_correction(mat, gamma_correction)
-        
+    
+    resize_model()
     
     logger.info("Exporting to GLB...")
-    #TODO: error handling : missing texture durumunda renksiz materyaller ile export ediliyor. (örneğin ARABA1 OBJ CM)
-    bpy.ops.export_scene.gltf(  filepath=output_path, export_format='GLB', export_normals=True,
+
+    with capture_bpy_export_warnings() as log_file:
+
+        #TODO: error handling : missing texture durumunda renksiz materyaller ile export ediliyor. (örneğin ARABA1 OBJ CM)
+        bpy.ops.export_scene.gltf(  filepath=output_path, export_format='GLB', export_normals=True,
                                 export_draco_mesh_compression_enable=True,
                                 export_draco_mesh_compression_level=DRACO_COMPRESS_LEVEL,
                                 export_draco_position_quantization=DRACO_QUANTIZATION_SETTINGS[0], 
@@ -106,6 +128,9 @@ def convert_obj(file_path, output_path):
                                 export_draco_texcoord_quantization=DRACO_QUANTIZATION_SETTINGS[2],
                                 export_draco_generic_quantization=DRACO_QUANTIZATION_SETTINGS[3]
                               )
+        export_log_handler = ExportLogHandler(log_file)
+        export_log_handler.export_user_logs_to_json()
+
     logger.success("Exporting to GLB finished.")
 
 #converts .stl files to .glb.
@@ -114,10 +139,18 @@ def convert_stl(file_path, output_path):
     empty_blender_scene()
 
     logger.info("Importing STL model to scene...")
-    bpy.ops.wm.stl_import(filepath=file_path)
+    with capture_bpy_import_warnings() as log_temp:
+        bpy.ops.wm.stl_import(filepath=file_path)
+        import_log_handler = ImportLogHandler()
+        import_log_handler.process_logs(log_temp)
+        import_log_handler.export_user_logs_to_json()
+    
+    resize_model()
 
     logger.info("Exporting to GLB...")
-    bpy.ops.export_scene.gltf(filepath=output_path, export_format='GLB', export_materials='EXPORT', export_normals=True,
+    with capture_bpy_export_warnings() as log_file:
+
+        bpy.ops.export_scene.gltf(filepath=output_path, export_format='GLB', export_materials='EXPORT', export_normals=True,
                               export_draco_mesh_compression_enable=True,
                                 export_draco_mesh_compression_level=DRACO_COMPRESS_LEVEL,
                                 export_draco_position_quantization=DRACO_QUANTIZATION_SETTINGS[0], 
@@ -125,6 +158,10 @@ def convert_stl(file_path, output_path):
                                 export_draco_texcoord_quantization=DRACO_QUANTIZATION_SETTINGS[2],
                                 export_draco_generic_quantization=DRACO_QUANTIZATION_SETTINGS[3])
     
+        export_log_handler = ExportLogHandler()
+        export_log_handler.process_logs(log_file)
+        export_log_handler.export_user_logs_to_json()
+
     logger.success("Export to GLB finished.")
 
 def convert_non_cad(file_path, file_type):
