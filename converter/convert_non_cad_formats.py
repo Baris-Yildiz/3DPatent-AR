@@ -97,6 +97,7 @@ def convert_obj(file_path, output_path):
     empty_blender_scene()
 
     logger.info("Importing OBJ file to scene...")
+    
     with capture_bpy_import_warnings() as log_temp:
         bpy.ops.wm.obj_import(filepath=file_path)
         import_log_handler = ImportLogHandler(log_temp)
@@ -116,7 +117,7 @@ def convert_obj(file_path, output_path):
     resize_model()
     
     logger.info("Exporting to GLB...")
-
+    
     with capture_bpy_export_warnings() as log_file:
 
         #TODO: error handling : missing texture durumunda renksiz materyaller ile export ediliyor. (örneğin ARABA1 OBJ CM)
@@ -130,6 +131,7 @@ def convert_obj(file_path, output_path):
                               )
         export_log_handler = ExportLogHandler(log_file)
         export_log_handler.export_user_logs_to_json()
+    
 
     logger.success("Exporting to GLB finished.")
 

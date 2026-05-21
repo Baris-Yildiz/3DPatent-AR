@@ -24,7 +24,7 @@ def run_test_cases():
             for file in files:
                 name, ext = os.path.splitext(file)
                 ext = ext.lower()
-                if (ext in NONCAD_FILE_LIST):
+                if(ext in NONCAD_FILE_LIST):
                     logger.info(f"Running test case {curr}/{count} ({file}):")
                     abspath = os.path.abspath(os.path.join(root, file))
                     os.environ["OUTPUT_PATH"] = f"{test_output_folder}/{name}_out.glb"

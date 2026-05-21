@@ -94,8 +94,6 @@ def setup_texture_chain(mat, tex_map, fbx_prop:ufbx.MaterialMap, containers:UFBX
         
     return last_output
 
-
-
 def initialize_scene_data(fbx_path, containers:UFBXDataContainers):    
     logger.info("Importing FBX model with ufbx.")
     # preload ufbx data to python containers. needed for avoiding memory leaks and crashes. load all needed data.
@@ -105,14 +103,12 @@ def initialize_scene_data(fbx_path, containers:UFBXDataContainers):
         ufbx.CoordinateAxis.POSITIVE_Z,
         ufbx.CoordinateAxis.NEGATIVE_Y
     )
-    
-    #target_unit_meters = 1.0 metre için, 0.01 santimetre(0.01 m = 1cm) vs. blender, gltf metre bazında bekliyor.
 
     scene = ufbx.load_file(fbx_path, 
                            target_axes=target_axes, 
-                           target_unit_meters=1,
-                           skip_skin_vertices=True,
-                           )
+                           skip_skin_vertices=True                     
+                        )
+    
     logger.info("Populating data containers...")
 
     containers.scene = scene
@@ -135,11 +131,11 @@ def initialize_scene_data(fbx_path, containers:UFBXDataContainers):
     
         logger.success("Scene data initialized.")
 
-def _to_blender_matrix(m):
-    return  mathutils.Matrix([
-            [m.c0.x, m.c1.x , m.c2.x , m.c3.x ],
-            [m.c0.y , m.c1.y , m.c2.y , m.c3.y ],
-            [m.c0.z , m.c1.z , m.c2.z , m.c3.z ],
+def _to_blender_matrix(m, scale=1.0):
+    return mathutils.Matrix([
+            [m.c0.x, m.c1.x, m.c2.x, m.c3.x * scale],
+            [m.c0.y, m.c1.y, m.c2.y, m.c3.y * scale],
+            [m.c0.z, m.c1.z, m.c2.z, m.c3.z * scale],
             [0, 0, 0, 1]
         ])
 
@@ -158,8 +154,10 @@ def get_gamma_corrected_color(col, gamma_function):
     return (linear_r, linear_g, linear_b, a)
 
 def load_and_export_fbx(output_path, containers:UFBXDataContainers, DRACO_COMPRESS_LEVEL, DRACO_QUANTIZATION_SETTINGS):
-    
-    script_dir = os.path.dirname(os.path.abspath(__file__))    
+
+    scale = float(os.environ.get("SCALE", "1.0"))
+
+    script_dir = os.path.dirname(os.path.abspath(__file__))
     os.chdir(script_dir)
 
     tex_map = {}
@@ -232,7 +230,7 @@ def load_and_export_fbx(output_path, containers:UFBXDataContainers, DRACO_COMPRE
                 blender_mesh = bpy.data.meshes.new(fbx_mesh.name)
                 
                 #Face global vertexes that can be referenced by faces.
-                verts = [(v.x, v.y, v.z) for v in containers.mesh_vertices[fbx_mesh.typed_id]]
+                verts = [(v.x * scale, v.y * scale, v.z * scale) for v in containers.mesh_vertices[fbx_mesh.typed_id]]
 
                 #Face vertex indexes for each vertex that is contained in the face.
                 faces = [tuple(fbx_mesh.vertex_indices[i] for i in range(face.index_begin, face.index_begin + face.num_indices))
@@ -332,12 +330,12 @@ def load_and_export_fbx(output_path, containers:UFBXDataContainers, DRACO_COMPRE
             blender_mesh = mesh_cache[fbx_mesh]
 
         node_empty = bpy.data.objects.new(node.name, None)
-        node_empty.matrix_world = _to_blender_matrix(node.node_to_world)
+        node_empty.matrix_world = _to_blender_matrix(node.node_to_world, scale)
         bpy.context.collection.objects.link(node_empty)
 
         if blender_mesh:
             mesh_obj = bpy.data.objects.new(node.name, blender_mesh)
-            mesh_obj.matrix_local = _to_blender_matrix(node.geometry_to_node)
+            mesh_obj.matrix_local = _to_blender_matrix(node.geometry_to_node, scale)
             mesh_obj.parent = node_empty
             bpy.context.collection.objects.link(mesh_obj)
 
@@ -348,7 +346,7 @@ def load_and_export_fbx(output_path, containers:UFBXDataContainers, DRACO_COMPRE
                 bpy.ops.object.shade_smooth_by_angle(angle=math.radians(30.0))
                 mesh_obj.select_set(False)
             
-    
+
     # Select all mesh objects
     bpy.ops.object.select_all(action='DESELECT')
 

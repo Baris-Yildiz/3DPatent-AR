@@ -32,7 +32,13 @@ class LogHandler:
 class ImportLogHandler(LogHandler):
     def __init__(self, logfile):
         self.patterns = {
-            "Yüklediğiniz MTL dosyasındaki bu satır desteklenmiyor": re.compile(r"MTL\stexture\smap\stype\snot\ssupported:\s(.*?$)")
+            "Yüklediğiniz MTL dosyasındaki bu satır desteklenmiyor": re.compile(r"MTL\stexture\smap\stype\snot\ssupported:\s(.*?$)"),
+            "MTL dosyası bulunamamıştır. Modeliniz rengi/materyali eksik görünebilir": re.compile(r"parse_and_store:\sOBJ\simport:\scannot\sread\sfrom\sMTL\sfile:\s\'.*\\(.*?\.mtl)\'"),
+            "Yüklediğiniz modeldeki bu UV indeksi geçerli değil.": re.compile(r"Invalid\sUV\sindex\s(\d*?)\s\(valid\srange\s\[\d*?\,\s\d*?\)\)\,\signoring\sface"),
+            "Yüklediğiniz modeldeki bu normal indeksi geçerli değil.": re.compile(r"Invalid\snormal\sindex\s(\d*?)\s\(valid\srange\s\[\d*?\,\s\d*?\)\)\,\signoring\sface"),
+            "Yüklediğiniz modeldeki bu vertex/köşe indeksi geçerli değil.":re.compile(r"Invalid\svertex\sindex\s(\d*?)\s\(valid\srange\s\[\d*?\,\s\d*?\)\)\,\signoring\sface"),
+            "Yüklediğiniz modelde çok uzun bir satır var.":re.compile(r"OBJ\sfile\scontains\sa\sline\s\#(\d*?)\sthat\sis\stoo\slong"),
+            "Yüklediğiniz MTL dosyasındaki şu 'illum' değeri desteklenmiyor":re.compile(r"Material\sillum\svalue\s\'(\d*?)\'\sis\snot\ssupported\sby\sthe\sPrincipled\sBSDF\sshader."),
         }
         super().__init__("import_errors", logfile, self.patterns)
     
@@ -40,6 +46,11 @@ class ImportLogHandler(LogHandler):
 class ExportLogHandler(LogHandler):
     def __init__(self, logfile):
         self.patterns = {
-            "Yüklediğiniz modelde bu texture dosyası bulunamamıştır": re.compile(r"Image\s\'<bpy_struct,\sImage\(\"(.*?)\"\)\sat(.*?')\shas\sno\ssize\sand\scannot\sbe\sexported.")
+            "Yüklediğiniz modelde bu texture dosyası bulunamamıştır": re.compile(r"Image\s\'<bpy_struct,\sImage\(\"(.*?)\"\)\sat(.*?')\shas\sno\ssize\sand\scannot\sbe\sexported."),
+            "Yüklediğiniz modeldeki bir texture verisi boş, export edilemedi": re.compile(r"Image\sdata\sis\sempty,\snot\sexporting\simage(.*)"),
+            "Yüklediğiniz modeldeki şu mesh çıkarılamadı. Modeliniz yanlış görünebilir": re.compile(r"Mesh\s'(.*?)'\shas\sno\sprimitives\sand\swill\sbe\somitted\."),
+            "Yüklediğiniz modeldeki şu mesh geçersiz ve hatalı görünebilir": re.compile(r"Mesh\s(.*?)\sis\snot\svalid,\sand\smay\sbe\sexported\swrongly"),
         }
         super().__init__("export_errors", logfile, self.patterns)
+
+# https://projects.blender.org/blender/blender/src/commit/60325c7a9c889a6683f177d10daed8f54b020b8f/source/blender/io/wavefront_obj/importer/obj_import_file_reader.cc

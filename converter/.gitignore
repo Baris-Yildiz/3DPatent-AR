@@ -6,3 +6,8 @@ fbx
 output.glb
 MODELLER
 test_models
+test_models_err
+import_errors.json
+export_errors.json
+.claude
+CLAUDE.md
