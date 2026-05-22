@@ -115,7 +115,7 @@ def process_glb_gltf(file_path, output_path):
     
     with capture_bpy_export_warnings() as log_file:
 
-        bpy.ops.export_scene.gltf(filepath=output_path, export_format='GLB', export_materials='EXPORT', export_normals=True
+        bpy.ops.export_scene.gltf(filepath=output_path, export_format='GLB', export_materials='EXPORT', export_normals=True,
                               export_draco_mesh_compression_enable=True,
                                 export_draco_mesh_compression_level=DRACO_COMPRESS_LEVEL,
                                 export_draco_position_quantization=DRACO_QUANTIZATION_SETTINGS[0], 
