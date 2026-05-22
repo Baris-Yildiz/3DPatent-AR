@@ -28,16 +28,27 @@ def apply_draco_compression(output_path):
     empty_blender_scene()
 
     logger.info("Importing GLB file to scene...")
-    bpy.ops.import_scene.gltf(filepath=output_path)
+
+    with capture_bpy_import_warnings() as log_temp:
+        bpy.ops.import_scene.gltf(filepath=output_path)
+        import_log_handler = ImportLogHandler(log_temp)
+        import_log_handler.export_user_logs_to_json()
 
     logger.info("Exporting with DRACO compression...")
-    bpy.ops.export_scene.gltf(filepath=output_path, export_format='GLB', export_materials='EXPORT', export_normals=True,
+    
+    with capture_bpy_export_warnings() as log_file:
+
+        bpy.ops.export_scene.gltf(filepath=output_path, export_format='GLB', export_materials='EXPORT', export_normals=True,
                               export_draco_mesh_compression_enable=True,
                                 export_draco_mesh_compression_level=DRACO_COMPRESS_LEVEL,
                                 export_draco_position_quantization=DRACO_QUANTIZATION_SETTINGS[0], 
                                 export_draco_normal_quantization=DRACO_QUANTIZATION_SETTINGS[1],
                                 export_draco_texcoord_quantization=DRACO_QUANTIZATION_SETTINGS[2],
                                 export_draco_generic_quantization=DRACO_QUANTIZATION_SETTINGS[3])
+        export_log_handler = ExportLogHandler(log_file)
+        export_log_handler.export_user_logs_to_json()
+
+    
     logger.success("Exporting with DRACO compression finished.")
 
 def generate_custom_normals_for_object_if_needed(blender_obj):
@@ -90,6 +101,32 @@ def resize_model():
 
     bpy.ops.object.select_all(action='DESELECT')
 
+def process_glb_gltf(file_path, output_path):
+    logger.info("Processing GLB/GLTF file.")
+    empty_blender_scene()
+
+    logger.info("Importing to Blender scene.")
+    with capture_bpy_import_warnings() as log_temp:
+        bpy.ops.import_scene.gltf(filepath=file_path)
+        import_log_handler = ImportLogHandler(log_temp)
+        import_log_handler.export_user_logs_to_json()
+
+    logger.info("Exporting with DRACO compression...")
+    
+    with capture_bpy_export_warnings() as log_file:
+
+        bpy.ops.export_scene.gltf(filepath=output_path, export_format='GLB', export_materials='EXPORT', export_normals=True
+                              export_draco_mesh_compression_enable=True,
+                                export_draco_mesh_compression_level=DRACO_COMPRESS_LEVEL,
+                                export_draco_position_quantization=DRACO_QUANTIZATION_SETTINGS[0], 
+                                export_draco_normal_quantization=DRACO_QUANTIZATION_SETTINGS[1],
+                                export_draco_texcoord_quantization=DRACO_QUANTIZATION_SETTINGS[2],
+                                export_draco_generic_quantization=DRACO_QUANTIZATION_SETTINGS[3])
+        export_log_handler = ExportLogHandler(log_file)
+        export_log_handler.export_user_logs_to_json()
+
+    
+    logger.success("Exporting with DRACO compression finished.")
 
 #converts .obj files to .glb.
 def convert_obj(file_path, output_path):
@@ -143,8 +180,7 @@ def convert_stl(file_path, output_path):
     logger.info("Importing STL model to scene...")
     with capture_bpy_import_warnings() as log_temp:
         bpy.ops.wm.stl_import(filepath=file_path)
-        import_log_handler = ImportLogHandler()
-        import_log_handler.process_logs(log_temp)
+        import_log_handler = ImportLogHandler(log_temp)
         import_log_handler.export_user_logs_to_json()
     
     resize_model()
@@ -160,8 +196,7 @@ def convert_stl(file_path, output_path):
                                 export_draco_texcoord_quantization=DRACO_QUANTIZATION_SETTINGS[2],
                                 export_draco_generic_quantization=DRACO_QUANTIZATION_SETTINGS[3])
     
-        export_log_handler = ExportLogHandler()
-        export_log_handler.process_logs(log_file)
+        export_log_handler = ExportLogHandler(log_file)
         export_log_handler.export_user_logs_to_json()
 
     logger.success("Export to GLB finished.")
@@ -181,6 +216,8 @@ def convert_non_cad(file_path, file_type):
             convert_fbx.convert_fbx_to_glb(file_path, output_path, DRACO_COMPRESS_LEVEL, DRACO_QUANTIZATION_SETTINGS)
         elif file_type == ".stl":
             convert_stl(file_path, output_path)
+        elif file_type == ".gltf" or file_type == ".glb":
+            process_glb_gltf(file_path, output_path)
         else:
             logger.error("Unsupported 3D model type!")
     finally:

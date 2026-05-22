@@ -7,7 +7,7 @@ from convert_cad_formats import convert_cad
 from convert_non_cad_formats import convert_non_cad, apply_draco_compression
 
 CAD_FILE_LIST = [".iges", ".igs", ".stp", ".step"]
-NONCAD_FILE_LIST = [".obj", ".stl", ".fbx"]
+NONCAD_FILE_LIST = [".obj", ".stl", ".fbx", ".glb", ".gltf"]
 
 #Converts a single file
 def convert_file_to_glb(abs_input_file_path):

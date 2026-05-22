@@ -67,12 +67,12 @@ def setup_texture_chain(mat, tex_map, fbx_prop:ufbx.MaterialMap, containers:UFBX
             u_offset = tex_obj.uv_transform.translation.x
             v_offset = tex_obj.uv_transform.translation.y
             mapping_node.inputs['Location'].default_value = (u_offset, v_offset, 0.0)
-            '''
+            
             rot = tex_obj.uv_transform.rotation
             q = mathutils.Quaternion((rot.w, rot.x, rot.y, rot.z))
                 
             z_angle = q.to_euler().z
-            mapping_node.inputs['Rotation'].default_value = (0.0, 0.0, z_angle)'''
+            mapping_node.inputs['Rotation'].default_value = (0.0, 0.0, z_angle)
 
         mat.node_tree.links.new(uv_node.outputs['UV'], mapping_node.inputs['Vector'])
         mat.node_tree.links.new(mapping_node.outputs['Vector'], tex_node.inputs['Vector'])
@@ -104,9 +104,10 @@ def initialize_scene_data(fbx_path, containers:UFBXDataContainers):
         ufbx.CoordinateAxis.NEGATIVE_Y
     )
 
-    scene = ufbx.load_file(fbx_path, 
-                           target_axes=target_axes, 
-                           skip_skin_vertices=True                     
+    scene = ufbx.load_file(fbx_path,
+                           target_axes=target_axes,
+                           handedness_conversion_axis=ufbx.MirrorAxis.Y,
+                           skip_skin_vertices=True
                         )
     
     logger.info("Populating data containers...")
@@ -248,14 +249,6 @@ def load_and_export_fbx(output_path, containers:UFBXDataContainers, DRACO_COMPRE
                     for corner_idx, blender_loop_idx in enumerate(blender_mesh.polygons[i].loop_indices):
                         if (corner_idx + fbx_face.index_begin != blender_loop_idx):
                             logger.warning(f"mismatch in loop indices!")
-                
-                if fbx_mesh.vertex_uv.exists:
-                    uv_layer = blender_mesh.uv_layers.new(name="UVMap")
-                    for face in containers.mesh_faces[fbx_mesh.typed_id]:
-                        for i in range(face.index_begin, face.index_begin + face.num_indices):
-                            # ufbx stores UVs in the same loop order as face indices
-                            uv = fbx_mesh.vertex_uv.values[fbx_mesh.vertex_uv.indices[i]]
-                            uv_layer.data[i].uv = (uv.x, uv.y)
                 
                 if fbx_mesh.vertex_uv.exists:
                     uv_indices = fbx_mesh.vertex_uv.indices
