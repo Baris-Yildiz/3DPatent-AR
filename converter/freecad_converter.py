@@ -2,19 +2,19 @@ import FreeCAD
 import FreeCADGui
 import ImportGui # type: ignore
 import os
-
+from environment_management import get_environment_var, EnvironmentVariableName
 #convert cad formats .iges and .stp to .glb
 def convert_step_iges():
 
     try:
         doc = FreeCAD.newDocument("ImportScene")
 
-        model_path = os.environ.get("MODEL_PATH")
+        model_path = get_environment_var(EnvironmentVariableName.MODEL_FILE_PATH)
         #import step to scene
         ImportGui.insert(model_path, "ImportScene")
         
         #export root objects, exporting all objects causes problems
-        ImportGui.export(doc.RootObjects, os.environ.get("OUTPUT_PATH"))
+        ImportGui.export(doc.RootObjects, get_environment_var(EnvironmentVariableName.OUTPUT_FILE_PATH))
 
         FreeCAD.closeDocument(doc.Name)
     except Exception as e:

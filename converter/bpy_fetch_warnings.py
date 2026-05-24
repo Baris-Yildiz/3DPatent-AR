@@ -4,25 +4,32 @@ import tempfile
 import logging
 from contextlib import contextmanager
 
+_STDOUT_FD = 1
+_STDERR_FD = 2
+
 @contextmanager
 def capture_bpy_import_warnings():
+    sys.stdout.flush()
+    sys.stderr.flush()
 
-    old_stdout_fd = os.dup(sys.stdout.fileno()) #Get OS console output connection
-    old_stderr_fd = os.dup(sys.stderr.fileno()) #Get OS console error connection
+    old_stdout = sys.stdout
+    old_stderr = sys.stderr
+    old_stdout_fd = os.dup(_STDOUT_FD)
+    old_stderr_fd = os.dup(_STDERR_FD)
 
-    #Temp files to capture the Blender logs
     with tempfile.TemporaryFile(mode='w+t') as log_temp:
+        os.dup2(log_temp.fileno(), _STDOUT_FD)
+        os.dup2(log_temp.fileno(), _STDERR_FD)
+        sys.stdout = log_temp
+        sys.stderr = log_temp
 
-        #Write Blender logs to temp files.
-        os.dup2(log_temp.fileno(), sys.stdout.fileno())
-        os.dup2(log_temp.fileno(), sys.stderr.fileno())
-        
         try:
             yield log_temp
         finally:
-            #Restore console connections
-            os.dup2(old_stdout_fd, sys.stdout.fileno())
-            os.dup2(old_stderr_fd, sys.stderr.fileno())
+            sys.stdout = old_stdout
+            sys.stderr = old_stderr
+            os.dup2(old_stdout_fd, _STDOUT_FD)
+            os.dup2(old_stderr_fd, _STDERR_FD)
             os.close(old_stdout_fd)
             os.close(old_stderr_fd)
 
