@@ -4,6 +4,8 @@ import os
 from environment_management import get_environment_var, EnvironmentVariableName
 from utils import ModelType
 
+import sys
+sys.path.append("/usr/local/lib") #for freecad to work
 import FreeCAD
 import FreeCADGui
 

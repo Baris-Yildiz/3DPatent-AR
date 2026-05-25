@@ -37,3 +37,4 @@ if __name__ == "__main__":
     converter.convert()
 
     logger.info("Exiting converter.")
+    os._exit(0)
