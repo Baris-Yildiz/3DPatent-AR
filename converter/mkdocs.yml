@@ -1,0 +1,67 @@
+site_name: 3D Model Converter
+site_description: FBX / OBJ / STL / GLB / STEP / IGES to GLB converter with DRACO compression.
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - content.code.annotate
+    - content.code.copy
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: ["."]
+          options:
+            show_source: true
+            show_root_heading: true
+            docstring_style: google
+            docstring_section_style: table
+            separate_signature: true
+            show_signature_annotations: true
+            merge_init_into_class: true
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - tables
+
+nav:
+  - Home: index.md
+  - Architecture: architecture.md
+  - API Reference:
+    - Classes:
+      - AbstractConverter: classes/AbstractConverter.md
+      - BPYExportConverter: classes/BPYExportConverter.md
+      - BPYImportExportConverter: classes/BPYImportExportConverter.md
+      - FBXConverter: classes/FBXConverter.md
+      - OBJConverter: classes/OBJConverter.md
+      - STLConverter: classes/STLConverter.md
+      - GLBConverter: classes/GLBConverter.md
+      - CADConverter: classes/CADConverter.md
+      - ConverterLogger: classes/ConverterLogger.md
+      - LogHandler: classes/LogHandler.md
+      - ConverterArgs: classes/ConverterArgs.md
+    - Modules:
+      - bpy_fetch_log_messages: modules/bpy_fetch_log_messages.md
+      - bpy_utils: modules/bpy_utils.md
+      - converter_decider: modules/converter_decider.md
+      - environment_management: modules/environment_management.md
+      - freecad_converter: modules/freecad_converter.md
+      - utils: modules/utils.md
+  - Deployment: deployment.md
+  - Maintenance: maintenance.md

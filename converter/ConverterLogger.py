@@ -9,10 +9,12 @@ SUCCESS_NAME = "SUCCESS"
 
 if SUCCESS_NAME not in logging.getLevelNamesMapping():
     logging.addLevelName(SUCCESS_LEVEL, SUCCESS_NAME)
-    
-#Custom logger class for this converter.
+
 class ConverterLogger(logging.Logger):
-    
+    """Custom logger class used as the class for every logger in this project.
+    Uses RichHandler with a custom theme and adds a "SUCCESS" log level (level 25, between INFO and WARNING)
+    """
+
     def __init__(self, name, level=logging.DEBUG):
         super().__init__(name, level)
 
@@ -22,7 +24,7 @@ class ConverterLogger(logging.Logger):
             formatter = logging.Formatter(log_format)
 
             custom_theme = Theme({
-                "logging.level.success": "bold green", 
+                "logging.level.success": "bold green",
             })
 
             custom_console = Console(theme=custom_theme)
@@ -34,5 +36,6 @@ class ConverterLogger(logging.Logger):
             self.addHandler(rich_handler)
 
     def success(self, message, *args, **kws):
+        """Logs at the SUCCESS level."""
         if self.isEnabledFor(SUCCESS_LEVEL):
             self._log(SUCCESS_LEVEL, message, args, **kws)

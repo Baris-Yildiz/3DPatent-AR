@@ -4,6 +4,12 @@ from utils import ModelType
 from environment_management import get_environment_var, EnvironmentVariableName
 
 class GLBConverter(BPYImportExportConverter):
+    """Adds DRACO compression to an existing GLB/GLTF model.
+
+    Implemented for completeness. The platform needs to handle GLB inputs
+    even though no format conversion is required.
+    """
+    
     def __init__(self):
         super().__init__()
         self.logger = logging.getLogger(__name__) 

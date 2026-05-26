@@ -1,5 +1,5 @@
 #Code to test converter system
-'''
+"""
 import os
 import logging
 from converter_decider import get_converter
@@ -46,4 +46,4 @@ def run_test_cases():
         logger.critical(f"Test case {curr}/{count} failed with error message: {e}")
 
 run_test_cases()
-'''
+"""

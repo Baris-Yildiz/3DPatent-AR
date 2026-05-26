@@ -5,10 +5,14 @@ from bpy_utils import resize_model
 from environment_management import get_environment_var, EnvironmentVariableName
 
 class STLConverter(BPYImportExportConverter):
+    """Converts an STL model to GLB. Uses the full bpy import-export pipeline (defined in BPYImportExportConverter).
+    Does no material processing since STL models don't have color/material support.
+    """
+
     def __init__(self):
         super().__init__()
         self.logger = logging.getLogger(__name__) 
-
+    
     def import_model(self):
         import_path = get_environment_var(EnvironmentVariableName.MODEL_FILE_PATH)
         super().import_model(import_path, ModelType.STL)

@@ -1,19 +1,21 @@
+'''Macro for FreeCAD environment to import a STP/STEP or IGS/IGES and export to GLB.'''
 import FreeCAD
 import FreeCADGui
 import ImportGui # type: ignore
 import os
 from environment_management import get_environment_var, EnvironmentVariableName
-#convert cad formats .iges and .stp to .glb
+
 def convert_step_iges():
 
     try:
-        doc = FreeCAD.newDocument("ImportScene")
+        doc = FreeCAD.newDocument("ImportScene") 
 
         model_path = get_environment_var(EnvironmentVariableName.MODEL_FILE_PATH)
-        #import step to scene
+        
+        #Import model to scene.
         ImportGui.insert(model_path, "ImportScene")
         
-        #export root objects, exporting all objects causes problems
+        #Export root objects, exporting all objects causes problems.
         ImportGui.export(doc.RootObjects, get_environment_var(EnvironmentVariableName.OUTPUT_FILE_PATH))
 
         FreeCAD.closeDocument(doc.Name)

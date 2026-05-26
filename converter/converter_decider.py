@@ -1,4 +1,3 @@
-
 from environment_management import get_environment_var, EnvironmentVariableName
 import logging
 import os
@@ -12,8 +11,13 @@ from FBXConverter import FBXConverter
 from CADConverter import CADConverter
 
 
-
 def get_converter() -> AbstractConverter:
+    """Returns the appropriate converter based on the MODEL_FILE_PATH environment variable.
+
+    Reads the file extension from MODEL_FILE_PATH and returns the appropriate converter.
+    
+    Raises ValueError for unsupported extensions.
+    """
     abs_input_file_path = get_environment_var(EnvironmentVariableName.MODEL_FILE_PATH)
 
     ext = (os.path.splitext(abs_input_file_path)[1]).lower()

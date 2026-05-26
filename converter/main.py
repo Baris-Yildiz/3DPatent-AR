@@ -1,3 +1,4 @@
+'''Starting point of the project.'''
 import sys
 import os
 import faulthandler
@@ -13,7 +14,6 @@ logging.getLogger("glTFImporter_errors").propagate = False
 
 logger = logging.getLogger(__name__)
 
-#Starting point of the converter.
 if __name__ == "__main__":
     logger.info("Starting converter.")
     
