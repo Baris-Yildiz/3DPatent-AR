@@ -33,11 +33,16 @@ public class PivotSettingManager : MonoBehaviour
         m_UIToggleComponent.OnToggleValueChanged += (bool isOn) =>
         {
             OnPivotUseChange?.Invoke(isOn);
-            
+
         };
-        
+
         StateMachine.Instance.GetState(StateMachine.States.MODEL_VIEW_STATE)
             .OnStateEnter += () => { pivotToggle.isOn = true; };
+    }
+
+    public void SetUsePivot(bool value)
+    {
+        OnPivotUseChange?.Invoke(value);
     }
 
     

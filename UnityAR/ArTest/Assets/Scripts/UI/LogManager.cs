@@ -58,8 +58,16 @@ public class LogManager : MonoBehaviour
         logPool.Enqueue(log);
     }
 
+    public bool NotificationsEnabled { get; private set; } = true;
+
+    public void SetNotificationsEnabled(bool enabled)
+    {
+        NotificationsEnabled = enabled;
+    }
+
     public void DequeueLog(String logText)
     {
+        if (!NotificationsEnabled) return;
         LogText log = logPool.Dequeue();
         log.gameObject.SetActive(true);
         log.StartLog(startPoint , new Vector2(endPoint.x , endPoint.y + (logDistanceY*activeLogs.Count)));

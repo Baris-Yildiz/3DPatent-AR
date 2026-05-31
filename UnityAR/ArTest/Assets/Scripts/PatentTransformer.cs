@@ -32,13 +32,11 @@ public class PatentTransformer : MonoBehaviour
             //Debug.Log("getting pivot " + obj.transform.position);
             return obj.transform.position;
         }
-        else
-        {
-            
-            Bounds localBounds = PivotSetter.GetBounds(obj);
-           // Debug.Log("getting non pivot " + obj.transform.TransformPoint(localBounds.center));
-            return obj.transform.TransformPoint(localBounds.center);
-        }
+        
+        Bounds localBounds = PivotSetter.GetBounds(obj);
+       // Debug.Log("getting non pivot " + obj.transform.TransformPoint(localBounds.center));
+        return obj.transform.TransformPoint(localBounds.center);
+        
     }
 
 
@@ -227,7 +225,7 @@ public class PatentTransformer : MonoBehaviour
     {
         GameObject activePatent = patentManager.ActivePatent;
         if (activePatent == null) return;
-        Bounds bounds = PivotSetter.GetBounds(activePatent);
+        Bounds bounds = PivotSetter.GetSpawnBounds(activePatent);
         float maxSize = Mathf.Max(bounds.size.x, bounds.size.y, bounds.size.z);
         pinchScaleSpeed *= 3 / maxSize;
         Debug.Log("Max size is : " + maxSize);
@@ -256,7 +254,7 @@ public class PatentTransformer : MonoBehaviour
     public void OneToOneScale()
     {
         if (patentManager.Patent == null || patentManager.ActivePatent == null) return;
-        targetScale    = Vector3.one;
+        targetScale    = patentManager.initialScale;
         targetRotation = patentManager.initialRotation;
         PatentManager.Instance.ActivePatent.transform.rotation = PatentManager.Instance.initialRotation;
         PivotSetter.ChangeToOneOneMode(patentManager.ActivePatent, Camera.main.transform, 1);

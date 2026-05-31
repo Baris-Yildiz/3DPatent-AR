@@ -14,7 +14,7 @@ public static class PivotSetter
             
         Vector3 calculatedOffSet = Vector3.zero;
         patent.transform.localScale = Vector3.one;
-        Bounds bounds = GetBounds(patent);
+        Bounds bounds = GetSpawnBounds(patent);
         
         Vector3 mins = bounds.min;
         Vector3 maxs = bounds.max;
@@ -62,7 +62,7 @@ public static class PivotSetter
         return calculatedOffSet;
     }
 
-    public static Bounds GetBounds(GameObject patent)
+    public static Bounds GetSpawnBounds(GameObject patent)
     {
         MeshRenderer[] meshRenderers = patent.GetComponentsInChildren<MeshRenderer>();
         if (meshRenderers.Length == 0)
@@ -79,6 +79,42 @@ public static class PivotSetter
         return bounds;
     }
 
+    public static Bounds GetBounds(GameObject patent)
+    {
+        MeshFilter[] filters = patent.GetComponentsInChildren<MeshFilter>();
+        if (filters.Length == 0)
+            return new Bounds(Vector3.zero, Vector3.one * 0.1f);
+
+        Matrix4x4 worldToRoot = patent.transform.worldToLocalMatrix;
+        bool initialized = false;
+        Bounds result = default;
+
+        foreach (MeshFilter mf in filters)
+        {
+            if (mf.sharedMesh == null) continue;
+
+            Bounds mb = mf.sharedMesh.bounds;
+            Matrix4x4 meshToRoot = worldToRoot * mf.transform.localToWorldMatrix;
+
+            for (int x = 0; x <= 1; x++)
+            for (int y = 0; y <= 1; y++)
+            for (int z = 0; z <= 1; z++)
+            {
+                Vector3 corner = new Vector3(
+                    x == 0 ? mb.min.x : mb.max.x,
+                    y == 0 ? mb.min.y : mb.max.y,
+                    z == 0 ? mb.min.z : mb.max.z);
+
+                Vector3 rootCorner = meshToRoot.MultiplyPoint3x4(corner);
+
+                if (!initialized) { result = new Bounds(rootCorner, Vector3.zero); initialized = true; }
+                else result.Encapsulate(rootCorner);
+            }
+        }
+
+        return initialized ? result : new Bounds(Vector3.zero, Vector3.one * 0.1f);
+    }
+
     public static void SnapToYOffset(GameObject patent , bool toGround , bool usePivot)
     {
         if (patent == null)
@@ -87,7 +123,7 @@ public static class PivotSetter
             return;
         }
 
-        Bounds bounds = GetBounds(patent);
+        Bounds bounds = GetSpawnBounds(patent);
         Vector3 center = usePivot ? patent.transform.position : bounds.center;
         float target = toGround ? bounds.min.y : center.y;
         Vector2 xzCenter = new Vector2(center.x, center.z);
