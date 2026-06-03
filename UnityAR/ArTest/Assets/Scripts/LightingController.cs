@@ -1,130 +1,71 @@
-using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.XR.ARFoundation;
+using UnityEngine.XR.ARSubsystems;
 
 public class LightingController : MonoBehaviour
 {
     [SerializeField] private PopupMenuManager popupMenuManager;
+    [SerializeField] private ARCameraManager arCameraManager;
+
+    private LightEstimation _savedLightEstimation;
+    private CameraFacingDirection _savedFacingDirection;
     private AmbientMode _savedAmbientMode;
     private Color _savedAmbientLight;
-    private float _savedAmbientIntensity;
-    private Material _savedSkybox;
-    private float _savedReflectionIntensity;
-    private ShadowQuality _savedShadowQuality;
-
-    private struct LightState
-    {
-        public Light light;
-        public bool enabled;
-        public LightShadows shadows;
-    }
-
-    private struct RendererState
-    {
-        public Renderer renderer;
-        public ShadowCastingMode castingMode;
-        public bool receiveShadows;
-    }
-
-    private readonly List<LightState> _savedLightStates = new();
-    private readonly List<RendererState> _savedRendererStates = new();
 
     private void Start()
     {
         if (popupMenuManager != null)
-        {
-            popupMenuManager.OnEnableLightning += SetLighting;    
-        }
+            popupMenuManager.OnEnableLightning += SetLighting;
         else
-        {
             Debug.LogError("Pop up manager is null");
+
+        if (arCameraManager != null)
+        {
+            _savedLightEstimation = arCameraManager.requestedLightEstimation;
+            _savedFacingDirection = arCameraManager.requestedFacingDirection;
         }
 
+        _savedAmbientMode = RenderSettings.ambientMode;
+        _savedAmbientLight = RenderSettings.ambientLight;
 
+        SetLighting(false);
     }
 
     private void OnDestroy()
     {
         if (popupMenuManager != null)
-        {
             popupMenuManager.OnEnableLightning -= SetLighting;
-        }
-        else
-        {
-            Debug.LogError("Pop up manager is null");
-        }
-
-        
     }
 
     private void SetLighting(bool enable)
     {
-        Debug.Log("Setting Lightning : " + enable);
-        if (enable)
-            RestoreLighting();
-        else
-            DisableLighting();
-    }
-
-    private void DisableLighting()
-    {
-        _savedAmbientMode = RenderSettings.ambientMode;
-        _savedAmbientLight = RenderSettings.ambientLight;
-        _savedAmbientIntensity = RenderSettings.ambientIntensity;
-        _savedSkybox = RenderSettings.skybox;
-        _savedReflectionIntensity = RenderSettings.reflectionIntensity;
-        _savedShadowQuality = QualitySettings.shadows;
-
-        RenderSettings.ambientMode = AmbientMode.Flat;
-        RenderSettings.ambientLight = Color.black;
-        RenderSettings.ambientIntensity = 0f;
-        RenderSettings.skybox = null;
-        RenderSettings.reflectionIntensity = 0f;
-        QualitySettings.shadows = ShadowQuality.Disable;
-
-        _savedLightStates.Clear();
-        foreach (Light l in FindObjectsByType<Light>(FindObjectsSortMode.None))
+        var urpAsset = GraphicsSettings.currentRenderPipeline as UniversalRenderPipelineAsset;
+        if (urpAsset == null)
         {
-            _savedLightStates.Add(new LightState { light = l, enabled = l.enabled, shadows = l.shadows });
-            l.shadows = LightShadows.None;
-            l.enabled = false;
+            Debug.LogError("Current render pipeline is not URP.");
+            return;
         }
 
-        _savedRendererStates.Clear();
-        foreach (Renderer r in FindObjectsByType<Renderer>(FindObjectsSortMode.None))
+        var field = typeof(UniversalRenderPipelineAsset).GetField("m_MainLightRenderingMode",
+            BindingFlags.NonPublic | BindingFlags.Instance);
+        if (field == null)
         {
-            _savedRendererStates.Add(new RendererState
-            {
-                renderer = r,
-                castingMode = r.shadowCastingMode,
-                receiveShadows = r.receiveShadows
-            });
-            r.shadowCastingMode = ShadowCastingMode.Off;
-            r.receiveShadows = false;
-        }
-    }
-
-    private void RestoreLighting()
-    {
-        RenderSettings.ambientMode = _savedAmbientMode;
-        RenderSettings.ambientLight = _savedAmbientLight;
-        RenderSettings.ambientIntensity = _savedAmbientIntensity;
-        RenderSettings.skybox = _savedSkybox;
-        RenderSettings.reflectionIntensity = _savedReflectionIntensity;
-        QualitySettings.shadows = _savedShadowQuality;
-
-        foreach (LightState s in _savedLightStates)
-        {
-            if (s.light == null) continue;
-            s.light.shadows = s.shadows;
-            s.light.enabled = s.enabled;
+            Debug.LogError("Could not find m_MainLightRenderingMode field via reflection.");
+            return;
         }
 
-        foreach (RendererState s in _savedRendererStates)
+        field.SetValue(urpAsset, enable ? LightRenderingMode.PerPixel : LightRenderingMode.Disabled);
+
+        RenderSettings.ambientMode = enable ? _savedAmbientMode : AmbientMode.Flat;
+        RenderSettings.ambientLight = enable ? _savedAmbientLight : Color.white;
+
+        if (arCameraManager != null)
         {
-            if (s.renderer == null) continue;
-            s.renderer.shadowCastingMode = s.castingMode;
-            s.renderer.receiveShadows = s.receiveShadows;
+            arCameraManager.requestedLightEstimation = enable ? _savedLightEstimation : LightEstimation.None;
+            arCameraManager.requestedFacingDirection = _savedFacingDirection;
         }
     }
 }

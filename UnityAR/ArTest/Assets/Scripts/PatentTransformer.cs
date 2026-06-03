@@ -254,7 +254,7 @@ public class PatentTransformer : MonoBehaviour
     public void OneToOneScale()
     {
         if (patentManager.Patent == null || patentManager.ActivePatent == null) return;
-        targetScale    = patentManager.initialScale;
+        targetScale    = Vector3.one;
         targetRotation = patentManager.initialRotation;
         PatentManager.Instance.ActivePatent.transform.rotation = PatentManager.Instance.initialRotation;
         PivotSetter.ChangeToOneOneMode(patentManager.ActivePatent, Camera.main.transform, 1);

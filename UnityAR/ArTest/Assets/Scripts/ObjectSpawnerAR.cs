@@ -77,6 +77,7 @@ public class ObjectSpawnerAR : MonoBehaviour
         {
             PatentManager.Instance.ActivePatent = Instantiate(PatentManager.Instance.Patent, position, PatentManager.Instance.Patent.transform.rotation);
             PatentManager.Instance.ActivePatent.SetActive(true);
+            PatentManager.Instance.InvokePatentSpawned();
         }
         objectSpawnedEvent?.Invoke(false);
         PatentManager.Instance.SetInitialTransform();
@@ -91,7 +92,7 @@ public class ObjectSpawnerAR : MonoBehaviour
         {
             PatentManager.Instance.ActivePatent = Instantiate(PatentManager.Instance.Patent, hitPose.position, PatentManager.Instance.Patent.transform.rotation);
             PatentManager.Instance.ActivePatent.SetActive(true);
-            
+            PatentManager.Instance.InvokePatentSpawned();
         }
         objectSpawnedEvent?.Invoke(true);
         PatentManager.Instance.SetInitialTransform();

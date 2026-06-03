@@ -147,3 +147,4 @@ InitTestScene*.unity*
 /UnityAR/ArTest/.utmp
 
 UnityAR/ArTest/Assets/UMS_LODs/
+*.mesh

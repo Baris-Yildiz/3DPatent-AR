@@ -3,7 +3,10 @@ using UnityEngine.Rendering;
 
 public class BoundingBoxVisualizer : MonoBehaviour
 {
+    
     [SerializeField] private Color boxColor = Color.green;
+    [SerializeField] private PopupMenuManager popupMenuManager;
+    [SerializeField] private Shader lineShader;
 
     // Corner index layout:
     //  0=(min.x, min.y, min.z)  1=(max.x, min.y, min.z)
@@ -20,17 +23,23 @@ public class BoundingBoxVisualizer : MonoBehaviour
     private LineRenderer[] _edges;
     private Material _material;
     private bool _isVisible;
-    private GameObject _trackedPatent;
-    private Bounds _localBounds;
     private readonly Vector3[] _worldCorners = new Vector3[8];
 
     private void Start()
     {
-        PivotSettingManager.Instance.OnPivotUseChange += SetVisible;
-        //MenuManager.OnBoundingBoxToggle += SetVisible;
-        PatentManager.Instance.patentDeletedEvent += OnPatentDeleted;
+        
+       // PatentManager.Instance.patentDeletedEvent += OnPatentDeleted;
+        if (ModelTransformManager.Instance != null)
+            ModelTransformManager.Instance.OnDeleteModel += OnPatentDeleted;
+        else
+            Debug.LogError("delete is ulaaa");
 
-        _material = new Material(Shader.Find("Unlit/Color"));
+        if (popupMenuManager != null)
+            popupMenuManager.OnEnableBoundingBox += SetVisible;
+        else
+            Debug.LogError("PopupMenuManager is null on BoundingBoxVisualizer");
+
+        _material = new Material(lineShader != null ? lineShader : Shader.Find("Unlit/Color"));
         _material.color = boxColor;
 
         _edges = new LineRenderer[12];
@@ -49,30 +58,30 @@ public class BoundingBoxVisualizer : MonoBehaviour
             obj.SetActive(false);
             _edges[i] = lr;
         }
-        //SetVisible(false);
+
+        SetVisible(false);
     }
 
     private void OnDestroy()
     {
-        PivotSettingManager.Instance.OnPivotUseChange -= SetVisible;
-        //MenuManager.OnBoundingBoxToggle -= SetVisible;
+        if (ModelTransformManager.Instance != null)
+            ModelTransformManager.Instance.OnDeleteModel -= OnPatentDeleted;
         if (PatentManager.Instance != null)
             PatentManager.Instance.patentDeletedEvent -= OnPatentDeleted;
+        if (popupMenuManager != null)
+            popupMenuManager.OnEnableBoundingBox -= SetVisible;
         if (_material != null) Destroy(_material);
     }
 
     private void SetVisible(bool visible)
     {
         _isVisible = visible;
-        Debug.Log("is visible is : " +  _isVisible);
         if (!visible)
             SetEdgesActive(false);
-        // turning on is handled next Update tick
     }
 
     private void OnPatentDeleted()
     {
-        _trackedPatent = null;
         SetEdgesActive(false);
     }
 
@@ -84,21 +93,11 @@ public class BoundingBoxVisualizer : MonoBehaviour
 
         if (patent == null)
         {
-            if (_trackedPatent != null)
-            {
-                SetEdgesActive(false);
-                _trackedPatent = null;
-            }
+            SetEdgesActive(false);
             return;
         }
 
-        if (patent != _trackedPatent)
-        {
-            _trackedPatent = patent;
-            _localBounds = ComputeLocalBounds(patent);
-            SetEdgesActive(true);
-        }
-
+        SetEdgesActive(true);
         RefreshEdges(patent);
     }
 
@@ -110,10 +109,9 @@ public class BoundingBoxVisualizer : MonoBehaviour
 
     private void RefreshEdges(GameObject root)
     {
-        // Transform the 8 local-space corners into world space via the root's full TRS matrix.
-        // This means the box correctly follows position, rotation, and scale every frame.
-        Vector3 min = _localBounds.min;
-        Vector3 max = _localBounds.max;
+        Bounds localBounds = ComputeLocalBounds(root);
+        Vector3 min = localBounds.min;
+        Vector3 max = localBounds.max;
         Matrix4x4 l2w = root.transform.localToWorldMatrix;
 
         _worldCorners[0] = l2w.MultiplyPoint3x4(new Vector3(min.x, min.y, min.z));
@@ -125,7 +123,6 @@ public class BoundingBoxVisualizer : MonoBehaviour
         _worldCorners[6] = l2w.MultiplyPoint3x4(new Vector3(min.x, max.y, max.z));
         _worldCorners[7] = l2w.MultiplyPoint3x4(new Vector3(max.x, max.y, max.z));
 
-        // Scale line width proportionally to the world-space diagonal so it's always visible
         Bounds wb = new Bounds(_worldCorners[0], Vector3.zero);
         for (int i = 1; i < 8; i++) wb.Encapsulate(_worldCorners[i]);
         float lw = Mathf.Max(wb.size.magnitude * 0.003f, 0.001f);
@@ -139,9 +136,6 @@ public class BoundingBoxVisualizer : MonoBehaviour
         }
     }
 
-    // Computes bounds in the root's LOCAL space by transforming each child mesh's
-    // own local bounds corners through the root's inverse world matrix.
-    // Stored once per patent — the localToWorldMatrix in RefreshEdges handles all movement.
     private Bounds ComputeLocalBounds(GameObject root)
     {
         MeshFilter[] filters = root.GetComponentsInChildren<MeshFilter>();

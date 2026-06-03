@@ -7,6 +7,7 @@ public class PatentManager : MonoBehaviour
     [SerializeField] private GameObject patent;
     private GameObject activePatent;
     public event Action patentDeletedEvent;
+    public event Action patentSpawnedEvent;
 
     public Vector3 initialScale { get; private set; }
     public Quaternion initialRotation { get; private set; }
@@ -66,5 +67,10 @@ public class PatentManager : MonoBehaviour
         initialRotation = activePatent.transform.rotation;
         initialScale = activePatent.transform.localScale;
         initialPosition = activePatent.transform.position;
+    }
+
+    public void InvokePatentSpawned()
+    {
+        patentSpawnedEvent?.Invoke();
     }
 }

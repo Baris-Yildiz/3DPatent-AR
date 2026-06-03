@@ -13,12 +13,15 @@ public class PopupMenuManager : MonoBehaviour
     [SerializeField] private UIToggle lightPopup;
 
     [SerializeField] private UIToggle descriptionPopup;
+    
+    [SerializeField] private UIToggle lodToggle;
 
     [SerializeField] private List<TextMeshProUGUI> descriptions;
     
     public event UnityAction<bool> OnEnableBoundingBox;
     public event UnityAction<bool> OnEnableLightning;
     public event UnityAction<bool> OnEnableDescriptions;
+    public event UnityAction<bool> OnLodChange; 
 
     private void Awake()
     {
@@ -49,6 +52,7 @@ public class PopupMenuManager : MonoBehaviour
         boundingBoxPopup.OnToggleValueChanged += EnableBoundingBox;
         lightPopup.OnToggleValueChanged += EnableLightning;
         descriptionPopup.OnToggleValueChanged += EnableDescriptions;
+        lodToggle.OnToggleValueChanged += OnLodChangeToggle;
     }
 
     private void OnDisable()
@@ -56,9 +60,14 @@ public class PopupMenuManager : MonoBehaviour
         boundingBoxPopup.OnToggleValueChanged -= EnableBoundingBox;
         lightPopup.OnToggleValueChanged -= EnableLightning;
         descriptionPopup.OnToggleValueChanged -= EnableDescriptions;
-        
+        lodToggle.OnToggleValueChanged -= OnLodChangeToggle;
     }
 
+    void OnLodChangeToggle(bool isOn)
+    {
+        Debug.Log("lod level is " + isOn);
+        OnLodChange?.Invoke(isOn);
+    }
 
     void EnableBoundingBox(bool isOn)
     {
