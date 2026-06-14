@@ -1,0 +1,266 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_q_r_scanner" kind="class" language="C#" prot="public">
+    <compoundname>QRScanner</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_q_r_scanner_1a9d90eeb77042284eca18d04c91627c92" prot="private" static="no" mutable="no">
+        <type>Texture2D</type>
+        <definition>Texture2D QRScanner.currentFrame</definition>
+        <argsstring></argsstring>
+        <name>currentFrame</name>
+        <qualifiedname>QRScanner.currentFrame</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRScanner.cs" line="19" column="15" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRScanner.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_r_scanner_1a4804f6e7e2370790a9d0979bf7e1fb44" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int QRScanner.width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <qualifiedname>QRScanner.width</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRScanner.cs" line="21" column="9" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRScanner.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_r_scanner_1aba5de01f325721aaaa04ecc96abb474e" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int QRScanner.height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <qualifiedname>QRScanner.height</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRScanner.cs" line="22" column="9" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRScanner.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_r_scanner_1a7cb430068115e3d7613790a81e06f4a7" prot="private" static="no" mutable="no">
+        <type>IBarcodeReader</type>
+        <definition>IBarcodeReader QRScanner.m_BarcodeReader</definition>
+        <argsstring></argsstring>
+        <name>m_BarcodeReader</name>
+        <qualifiedname>QRScanner.m_BarcodeReader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRScanner.cs" line="33" column="20" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRScanner.cs" bodystart="33" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="property">
+      <memberdef kind="property" id="class_q_r_scanner_1a8e571b3225925ee269d55ec56e899c73" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="yes" protectedsettable="no">
+        <type>string</type>
+        <definition>string QRScanner.QrCode</definition>
+        <argsstring></argsstring>
+        <name>QrCode</name>
+        <qualifiedname>QRScanner.QrCode</qualifiedname>
+        <briefdescription>
+<para>The decoded QR code string, or string.Empty when no code has been found. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRScanner.cs" line="25" column="19" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRScanner.cs" bodystart="25" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="property" id="class_q_r_scanner_1aa5b8c183936f10d45ed8f3676d23e99f" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="yes" protectedsettable="no">
+        <type><ref refid="class_q_r_scanner" kindref="compound">QRScanner</ref></type>
+        <definition>QRScanner QRScanner.Instance</definition>
+        <argsstring></argsstring>
+        <name>Instance</name>
+        <qualifiedname>QRScanner.Instance</qualifiedname>
+        <briefdescription>
+<para>The single active instance of QRScanner. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRScanner.cs" line="28" column="29" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRScanner.cs" bodystart="29" bodyend="31"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_q_r_scanner_1a18a525a2b90e410e0f8b28c4b06dee01" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void QRScanner.Awake</definition>
+        <argsstring>()</argsstring>
+        <name>Awake</name>
+        <qualifiedname>QRScanner.Awake</qualifiedname>
+        <briefdescription>
+<para>Initialises the singleton instance. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRScanner.cs" line="36" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRScanner.cs" bodystart="36" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_r_scanner_1a9252002b3d5cc5c53cb794c34c99a290" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void QRScanner.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <qualifiedname>QRScanner.Start</qualifiedname>
+        <briefdescription>
+<para>Creates the ZXing barcode reader, subscribes to the QR scan state, and caches the screen resolution used for pixel capture. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRScanner.cs" line="45" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRScanner.cs" bodystart="45" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_r_scanner_1a25a69ec4f6837a2380bf101b6fa00dd2" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void QRScanner.ResetScanner</definition>
+        <argsstring>()</argsstring>
+        <name>ResetScanner</name>
+        <qualifiedname>QRScanner.ResetScanner</qualifiedname>
+        <briefdescription>
+<para>Clears the last decoded QR code string. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRScanner.cs" line="77" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRScanner.cs" bodystart="77" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_r_scanner_1ad5993be8a67d64f5ea080a3c716afaf0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void QRScanner.ScanScreen</definition>
+        <argsstring>()</argsstring>
+        <name>ScanScreen</name>
+        <qualifiedname>QRScanner.ScanScreen</qualifiedname>
+        <briefdescription>
+<para>Starts the ScanFrameForQRCode coroutine with a 60-frame interval. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRScanner.cs" line="83" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRScanner.cs" bodystart="83" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_r_scanner_1a8caf94359fd829932f3d58d6fa565e97" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IEnumerator</type>
+        <definition>IEnumerator QRScanner.ScanFrameForQRCode</definition>
+        <argsstring>(int waitframeCount)</argsstring>
+        <name>ScanFrameForQRCode</name>
+        <qualifiedname>QRScanner.ScanFrameForQRCode</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>waitframeCount</declname>
+        </param>
+        <briefdescription>
+<para>Coroutine that captures a screen frame every <emphasis>waitframeCount</emphasis>  frames and attempts to decode it as a QR code. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Stops automatically once a code is found or the state changes away from StateMachine.States.QR_SCAN_STATE.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>waitframeCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of frames to skip between each decode attempt.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRScanner.cs" line="95" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRScanner.cs" bodystart="95" bodyend="121"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_q_r_scanner_1a37ed1a302223afc148cfac35779d1a42" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void QRScanner.StartScanner</definition>
+        <argsstring>()</argsstring>
+        <name>StartScanner</name>
+        <qualifiedname>QRScanner.StartScanner</qualifiedname>
+        <briefdescription>
+<para>Resets the scanner state and starts a new scan coroutine. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Safe to call while a scan is already running. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRScanner.cs" line="61" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRScanner.cs" bodystart="61" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_r_scanner_1aaad6f6480476d9c4254d17ceac953d5e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void QRScanner.StopScanner</definition>
+        <argsstring>()</argsstring>
+        <name>StopScanner</name>
+        <qualifiedname>QRScanner.StopScanner</qualifiedname>
+        <briefdescription>
+<para>Stops any active scan coroutine and clears the last decoded result. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRScanner.cs" line="70" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRScanner.cs" bodystart="70" bodyend="74"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Singleton component that reads screen pixels every N frames and decodes them as a QR code using the ZXing library. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>When a code is found the state machine transitions to StateMachine.States.QR_SCAN_COMPLETE_STATE and the decoded URL is available via QrCode. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>QRScanner</label>
+        <link refid="class_q_r_scanner"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>QRScanner</label>
+        <link refid="class_q_r_scanner"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRScanner.cs" line="17" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRScanner.cs" bodystart="18" bodyend="122"/>
+    <listofallmembers>
+      <member refid="class_q_r_scanner_1a18a525a2b90e410e0f8b28c4b06dee01" prot="private" virt="non-virtual"><scope>QRScanner</scope><name>Awake</name></member>
+      <member refid="class_q_r_scanner_1a9d90eeb77042284eca18d04c91627c92" prot="private" virt="non-virtual"><scope>QRScanner</scope><name>currentFrame</name></member>
+      <member refid="class_q_r_scanner_1aba5de01f325721aaaa04ecc96abb474e" prot="private" virt="non-virtual"><scope>QRScanner</scope><name>height</name></member>
+      <member refid="class_q_r_scanner_1aa5b8c183936f10d45ed8f3676d23e99f" prot="public" virt="non-virtual"><scope>QRScanner</scope><name>Instance</name></member>
+      <member refid="class_q_r_scanner_1a7cb430068115e3d7613790a81e06f4a7" prot="private" virt="non-virtual"><scope>QRScanner</scope><name>m_BarcodeReader</name></member>
+      <member refid="class_q_r_scanner_1a8e571b3225925ee269d55ec56e899c73" prot="public" virt="non-virtual"><scope>QRScanner</scope><name>QrCode</name></member>
+      <member refid="class_q_r_scanner_1a25a69ec4f6837a2380bf101b6fa00dd2" prot="private" virt="non-virtual"><scope>QRScanner</scope><name>ResetScanner</name></member>
+      <member refid="class_q_r_scanner_1a8caf94359fd829932f3d58d6fa565e97" prot="private" virt="non-virtual"><scope>QRScanner</scope><name>ScanFrameForQRCode</name></member>
+      <member refid="class_q_r_scanner_1ad5993be8a67d64f5ea080a3c716afaf0" prot="private" virt="non-virtual"><scope>QRScanner</scope><name>ScanScreen</name></member>
+      <member refid="class_q_r_scanner_1a9252002b3d5cc5c53cb794c34c99a290" prot="private" virt="non-virtual"><scope>QRScanner</scope><name>Start</name></member>
+      <member refid="class_q_r_scanner_1a37ed1a302223afc148cfac35779d1a42" prot="public" virt="non-virtual"><scope>QRScanner</scope><name>StartScanner</name></member>
+      <member refid="class_q_r_scanner_1aaad6f6480476d9c4254d17ceac953d5e" prot="public" virt="non-virtual"><scope>QRScanner</scope><name>StopScanner</name></member>
+      <member refid="class_q_r_scanner_1a4804f6e7e2370790a9d0979bf7e1fb44" prot="private" virt="non-virtual"><scope>QRScanner</scope><name>width</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

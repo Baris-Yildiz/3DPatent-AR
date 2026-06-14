@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="dir_0dcda981a25a85a4afd959425ea199d7" kind="dir">
+    <compoundname>C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR</compoundname>
+    <innerfile refid="_q_r_network_handler_8cs">QRNetworkHandler.cs</innerfile>
+    <innerfile refid="_q_r_progress_bar_manager_8cs">QRProgressBarManager.cs</innerfile>
+    <innerfile refid="_q_r_scanner_8cs">QRScanner.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="dir_6318bd51d34e3a62cc8fad03cfd5c11b" kind="dir">
+    <compoundname>C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI</compoundname>
+    <innerfile refid="_add_model_manager_8cs">AddModelManager.cs</innerfile>
+    <innerfile refid="_mini_model_display_manager_8cs">MiniModelDisplayManager.cs</innerfile>
+    <innerfile refid="_misc_options_manager_8cs">MiscOptionsManager.cs</innerfile>
+    <innerfile refid="_popup_builder_8cs">PopupBuilder.cs</innerfile>
+    <innerfile refid="_popup_layer_manager_8cs">PopupLayerManager.cs</innerfile>
+    <innerfile refid="_popup_menu_handler_8cs">PopupMenuHandler.cs</innerfile>
+    <innerfile refid="_popup_menu_manager_8cs">PopupMenuManager.cs</innerfile>
+    <innerfile refid="_popup_window_8cs">PopupWindow.cs</innerfile>
+    <innerfile refid="_u_i_toggle_8cs">UIToggle.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/"/>
+  </compounddef>
+</doxygen>

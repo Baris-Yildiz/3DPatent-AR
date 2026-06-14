@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_plane_detection_controller" kind="class" language="C#" prot="public">
+    <compoundname>PlaneDetectionController</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_plane_detection_controller_1ae610dee195582ebf7fccd2dd8b08b523" prot="private" static="no" mutable="no">
+        <type>Text</type>
+        <definition>Text PlaneDetectionController.toggleText</definition>
+        <argsstring></argsstring>
+        <name>toggleText</name>
+        <qualifiedname>PlaneDetectionController.toggleText</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/PlaneDetectionController.cs" line="13" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/PlaneDetectionController.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_plane_detection_controller_1afdf99493c25b5edff5e4b2c57128bfed" prot="private" static="no" mutable="no">
+        <type>Toggle</type>
+        <definition>Toggle PlaneDetectionController.toggle</definition>
+        <argsstring></argsstring>
+        <name>toggle</name>
+        <qualifiedname>PlaneDetectionController.toggle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/PlaneDetectionController.cs" line="14" column="20" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/PlaneDetectionController.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="event">
+      <memberdef kind="event" id="class_plane_detection_controller_1ad41c6d784e00069f273283b6a6e17303" prot="public" static="no" add="no" remove="no" raise="no">
+        <type>Action&lt; bool &gt;</type>
+        <definition>Action&lt;bool&gt; PlaneDetectionController.planeDetectionToggleChange</definition>
+        <argsstring></argsstring>
+        <name>planeDetectionToggleChange</name>
+        <qualifiedname>PlaneDetectionController.planeDetectionToggleChange</qualifiedname>
+        <briefdescription>
+<para>Fired when the toggle value changes. Parameter is the new state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/PlaneDetectionController.cs" line="17" column="25" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/PlaneDetectionController.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_plane_detection_controller_1aea044d44854e67077de9da5124e7fa36" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PlaneDetectionController.Awake</definition>
+        <argsstring>()</argsstring>
+        <name>Awake</name>
+        <qualifiedname>PlaneDetectionController.Awake</qualifiedname>
+        <briefdescription>
+<para>Resolves the child text label and the toggle component, registers the value-changed listener, and sets the initial label colour to green. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/PlaneDetectionController.cs" line="23" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/PlaneDetectionController.cs" bodystart="23" bodyend="29"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_plane_detection_controller_1a232ecc40fbfadfd0428981c6ffd714f9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PlaneDetectionController.OnPlaneDetectionToggleChange</definition>
+        <argsstring>(bool isOn)</argsstring>
+        <name>OnPlaneDetectionToggleChange</name>
+        <qualifiedname>PlaneDetectionController.OnPlaneDetectionToggleChange</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>isOn</declname>
+        </param>
+        <briefdescription>
+<para>Called by the toggle&apos;s onValueChanged event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Updates the label colour and raises planeDetectionToggleChange.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>isOn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new toggle state passed by Unity&apos;s event system.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/PlaneDetectionController.cs" line="36" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/PlaneDetectionController.cs" bodystart="36" bodyend="42"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Legacy toggle component used in the older UI layer. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Changes its label colour and fires planeDetectionToggleChange when the toggle state changes. Used by UIManager for plane-detection and screen-fit controls. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>PlaneDetectionController</label>
+        <link refid="class_plane_detection_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>PlaneDetectionController</label>
+        <link refid="class_plane_detection_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/PlaneDetectionController.cs" line="10" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/PlaneDetectionController.cs" bodystart="11" bodyend="44"/>
+    <listofallmembers>
+      <member refid="class_plane_detection_controller_1aea044d44854e67077de9da5124e7fa36" prot="private" virt="non-virtual"><scope>PlaneDetectionController</scope><name>Awake</name></member>
+      <member refid="class_plane_detection_controller_1a232ecc40fbfadfd0428981c6ffd714f9" prot="public" virt="non-virtual"><scope>PlaneDetectionController</scope><name>OnPlaneDetectionToggleChange</name></member>
+      <member refid="class_plane_detection_controller_1ad41c6d784e00069f273283b6a6e17303" prot="public" virt="non-virtual"><scope>PlaneDetectionController</scope><name>planeDetectionToggleChange</name></member>
+      <member refid="class_plane_detection_controller_1afdf99493c25b5edff5e4b2c57128bfed" prot="private" virt="non-virtual"><scope>PlaneDetectionController</scope><name>toggle</name></member>
+      <member refid="class_plane_detection_controller_1ae610dee195582ebf7fccd2dd8b08b523" prot="private" virt="non-virtual"><scope>PlaneDetectionController</scope><name>toggleText</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="_patent_manager_8cs" kind="file" language="C#">
+    <compoundname>PatentManager.cs</compoundname>
+    <innerclass refid="class_patent_manager" prot="public">PatentManager</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">using<sp/></highlight><highlight class="normal">System;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">UnityEngine;</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="class_patent_manager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_patent_manager" kindref="compound">PatentManager</ref><sp/>:<sp/>MonoBehaviour</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="class_patent_manager" kindref="compound">PatentManager</ref><sp/><ref refid="class_patent_manager_1a32e0d55c3bfa88a1ba6e49830a12eb5c" kindref="member">Instance</ref>;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>[SerializeField]<sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>GameObject<sp/><ref refid="class_patent_manager_1aa31fdb92d7972456bd15890493d4b2d3" kindref="member">patent</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>GameObject<sp/><ref refid="class_patent_manager_1a63c5ee8b98214b88fb507b0bd29f8c19" kindref="member">activePatent</ref>;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal"><sp/>Action<sp/><ref refid="class_patent_manager_1a2d59940de6ed8c4552d7b68301d95b69" kindref="member">patentDeletedEvent</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal"><sp/>Action<sp/><ref refid="class_patent_manager_1a14a5dd227d77e7b0fb75b150d6c8fb75" kindref="member">patentSpawnedEvent</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>Vector3<sp/><ref refid="class_patent_manager_1ae3c9220fb7f5540c2967695de7fce6a6" kindref="member">initialScale</ref><sp/>{<sp/></highlight><highlight class="keyword">get</highlight><highlight class="normal">;<sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>Quaternion<sp/><ref refid="class_patent_manager_1afb7c2d1fcc4f72c1d78df2325cc0b966" kindref="member">initialRotation</ref><sp/>{<sp/></highlight><highlight class="keyword">get</highlight><highlight class="normal">;<sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>Vector3<sp/><ref refid="class_patent_manager_1a77ec300d988239f22ae9ddefe4c75acf" kindref="member">initialPosition</ref><sp/>{<sp/></highlight><highlight class="keyword">get</highlight><highlight class="normal">;<sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_patent_manager_1aebd8a9ce66bee77b81b0621e49873162" kindref="member">Awake</ref>()</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_patent_manager_1a32e0d55c3bfa88a1ba6e49830a12eb5c" kindref="member">Instance</ref><sp/>==<sp/></highlight><highlight class="keyword">null</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_patent_manager_1a32e0d55c3bfa88a1ba6e49830a12eb5c" kindref="member">Instance</ref><sp/>=<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_patent_manager_1a32e0d55c3bfa88a1ba6e49830a12eb5c" kindref="member">Instance</ref><sp/>!=<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Destroy(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_patent_manager_1a4b92a491df836bd2ec9f17f8e7b42045" kindref="member">Start</ref>()</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_state_machine" kindref="compound">StateMachine</ref>.<ref refid="class_state_machine_1ae5cbc71c07f182b79e34cb653c0192a9" kindref="member">Instance</ref>.<ref refid="class_state_machine_1a9ff5cbac71cdc7b0c7f944c1d85c7bc9" kindref="member">GetState</ref>(<ref refid="class_state_machine" kindref="compound">StateMachine</ref>.<ref refid="class_state_machine_1a905d1c2a570856577ca5bca4274217f6" kindref="member">States</ref>.NO_MODEL_VIEW_STATE).<ref refid="class_state_1a8cea1a06337b876a31f9185e7d4c7abb" kindref="member">OnStateEnter</ref><sp/>+=<sp/><ref refid="class_patent_manager_1a2692101fadff96f5e58670515c5b165f" kindref="member">OnScanEnter</ref>;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_state_machine" kindref="compound">StateMachine</ref>.<ref refid="class_state_machine_1ae5cbc71c07f182b79e34cb653c0192a9" kindref="member">Instance</ref>.<ref refid="class_state_machine_1a9ff5cbac71cdc7b0c7f944c1d85c7bc9" kindref="member">GetState</ref>(<ref refid="class_state_machine" kindref="compound">StateMachine</ref>.<ref refid="class_state_machine_1a905d1c2a570856577ca5bca4274217f6" kindref="member">States</ref>.QR_SCAN_STATE).<ref refid="class_state_1a8cea1a06337b876a31f9185e7d4c7abb" kindref="member">OnStateEnter</ref><sp/>+=<sp/><ref refid="class_patent_manager_1a2692101fadff96f5e58670515c5b165f" kindref="member">OnScanEnter</ref>;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>GameObject<sp/><ref refid="class_patent_manager_1a916bb09ce8ae8e7d029c62915d6a8f2c" kindref="member">ActivePatent</ref></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal"><sp/>=&gt;<sp/><ref refid="class_patent_manager_1a63c5ee8b98214b88fb507b0bd29f8c19" kindref="member">activePatent</ref><sp/>=<sp/>value;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">get</highlight><highlight class="normal"><sp/>=&gt;<sp/><ref refid="class_patent_manager_1a63c5ee8b98214b88fb507b0bd29f8c19" kindref="member">activePatent</ref>;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>GameObject<sp/><ref refid="class_patent_manager_1a54be3951a1569e3bd3e433b488c71384" kindref="member">Patent</ref></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal"><sp/>=&gt;<sp/><ref refid="class_patent_manager_1aa31fdb92d7972456bd15890493d4b2d3" kindref="member">patent</ref><sp/>=<sp/>value;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">get</highlight><highlight class="normal"><sp/>=&gt;<sp/><ref refid="class_patent_manager_1aa31fdb92d7972456bd15890493d4b2d3" kindref="member">patent</ref>;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_patent_manager_1ad129b092f1b6513de6bcc5ea6f26e2f1" kindref="member">DeleteActivePatent</ref>()</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Destroy(<ref refid="class_patent_manager_1a63c5ee8b98214b88fb507b0bd29f8c19" kindref="member">activePatent</ref>);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_patent_manager_1a2692101fadff96f5e58670515c5b165f" kindref="member">OnScanEnter</ref>()</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Debug.Log(</highlight><highlight class="stringliteral">&quot;ualalalala5551515&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_patent_manager_1ad129b092f1b6513de6bcc5ea6f26e2f1" kindref="member">DeleteActivePatent</ref>();</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_patent_manager_1a54be3951a1569e3bd3e433b488c71384" kindref="member">Patent</ref><sp/>=<sp/></highlight><highlight class="keyword">null</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_patent_manager_1a916bb09ce8ae8e7d029c62915d6a8f2c" kindref="member">ActivePatent</ref><sp/>=<sp/></highlight><highlight class="keyword">null</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_patent_manager_1a2d59940de6ed8c4552d7b68301d95b69" kindref="member">patentDeletedEvent</ref>?.Invoke();</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_patent_manager_1ae9c0aff883001cfbd651779d30c3bff4" kindref="member">SetInitialTransform</ref>()</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_patent_manager_1afb7c2d1fcc4f72c1d78df2325cc0b966" kindref="member">initialRotation</ref><sp/>=<sp/><ref refid="class_patent_manager_1a63c5ee8b98214b88fb507b0bd29f8c19" kindref="member">activePatent</ref>.transform.rotation;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_patent_manager_1ae3c9220fb7f5540c2967695de7fce6a6" kindref="member">initialScale</ref><sp/>=<sp/><ref refid="class_patent_manager_1a63c5ee8b98214b88fb507b0bd29f8c19" kindref="member">activePatent</ref>.transform.localScale;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_patent_manager_1a77ec300d988239f22ae9ddefe4c75acf" kindref="member">initialPosition</ref><sp/>=<sp/><ref refid="class_patent_manager_1a63c5ee8b98214b88fb507b0bd29f8c19" kindref="member">activePatent</ref>.transform.position;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_patent_manager_1a54321502ca55cc380c55a25b2db7149a" kindref="member">InvokePatentSpawned</ref>()</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_patent_manager_1a14a5dd227d77e7b0fb75b150d6c8fb75" kindref="member">patentSpawnedEvent</ref>?.Invoke();</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs"/>
+  </compounddef>
+</doxygen>

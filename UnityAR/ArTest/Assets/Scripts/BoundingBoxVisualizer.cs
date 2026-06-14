@@ -1,9 +1,15 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 
+/// <summary>
+/// Renders a wireframe bounding box around the active patent model using
+/// 12 <see cref="LineRenderer"/> edges. Visibility is toggled via
+/// <see cref="PopupMenuManager.OnEnableBoundingBox"/> and the box is
+/// automatically hidden when the model is deleted.
+/// </summary>
 public class BoundingBoxVisualizer : MonoBehaviour
 {
-    
+
     [SerializeField] private Color boxColor = Color.green;
     [SerializeField] private PopupMenuManager popupMenuManager;
     [SerializeField] private Shader lineShader;
@@ -24,10 +30,15 @@ public class BoundingBoxVisualizer : MonoBehaviour
     private Material _material;
     private bool _isVisible;
     private readonly Vector3[] _worldCorners = new Vector3[8];
-
+    
+    /// <summary>
+    /// Subscribes to delete and visibility events, creates the shared line material,
+    /// and instantiates the 12 edge <see cref="LineRenderer"/> child objects.
+    /// The box starts hidden.
+    /// </summary>
     private void Start()
     {
-        
+
        // PatentManager.Instance.patentDeletedEvent += OnPatentDeleted;
         if (ModelTransformManager.Instance != null)
             ModelTransformManager.Instance.OnDeleteModel += OnPatentDeleted;
@@ -62,6 +73,10 @@ public class BoundingBoxVisualizer : MonoBehaviour
         SetVisible(false);
     }
 
+    /// <summary>
+    /// Unsubscribes all events and destroys the shared line material to prevent
+    /// memory leaks when the component is removed from the scene.
+    /// </summary>
     private void OnDestroy()
     {
         if (ModelTransformManager.Instance != null)
@@ -73,6 +88,11 @@ public class BoundingBoxVisualizer : MonoBehaviour
         if (_material != null) Destroy(_material);
     }
 
+    /// <summary>
+    /// Records the desired visibility state and hides all edges immediately
+    /// when visibility is turned off.
+    /// </summary>
+    /// <param name="visible"><c>true</c> to allow the box to be drawn; <c>false</c> to hide it.</param>
     private void SetVisible(bool visible)
     {
         _isVisible = visible;
@@ -80,11 +100,17 @@ public class BoundingBoxVisualizer : MonoBehaviour
             SetEdgesActive(false);
     }
 
+    /// <summary>Hides all edge renderers when the active patent is deleted.</summary>
     private void OnPatentDeleted()
     {
         SetEdgesActive(false);
     }
 
+    /// <summary>
+    /// Each frame, when visible, retrieves the active patent and either hides
+    /// the edges (no patent present) or refreshes their positions to track the
+    /// model as it moves and scales.
+    /// </summary>
     private void Update()
     {
         if (!_isVisible) return;
@@ -101,12 +127,22 @@ public class BoundingBoxVisualizer : MonoBehaviour
         RefreshEdges(patent);
     }
 
+    /// <summary>
+    /// Enables or disables all 12 edge <see cref="LineRenderer"/> GameObjects.
+    /// </summary>
+    /// <param name="active"><c>true</c> to show edges; <c>false</c> to hide them.</param>
     private void SetEdgesActive(bool active)
     {
         for (int i = 0; i < _edges.Length; i++)
             _edges[i].gameObject.SetActive(active);
     }
 
+    /// <summary>
+    /// Recomputes all 8 world-space corner positions of <paramref name="root"/>'s
+    /// local bounds, scales line widths relative to the box diagonal, and updates
+    /// both endpoints of each of the 12 edge renderers.
+    /// </summary>
+    /// <param name="root">The patent root GameObject whose bounds define the box.</param>
     private void RefreshEdges(GameObject root)
     {
         Bounds localBounds = ComputeLocalBounds(root);
@@ -136,6 +172,16 @@ public class BoundingBoxVisualizer : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Computes the axis-aligned bounding box of all meshes in <paramref name="root"/>'s
+    /// hierarchy, expressed in <paramref name="root"/>'s local space by transforming
+    /// each mesh's eight corners through the root's world-to-local matrix.
+    /// </summary>
+    /// <param name="root">The root GameObject whose child mesh filters are measured.</param>
+    /// <returns>
+    /// The local-space <see cref="Bounds"/> encapsulating all meshes, or a small
+    /// default bounds if no mesh filters are found.
+    /// </returns>
     private Bounds ComputeLocalBounds(GameObject root)
     {
         MeshFilter[] filters = root.GetComponentsInChildren<MeshFilter>();

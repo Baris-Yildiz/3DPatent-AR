@@ -1,0 +1,399 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_popup_menu_manager" kind="class" language="C#" prot="public">
+    <compoundname>PopupMenuManager</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_popup_menu_manager_1a691a42ad40618e38c113869f05a27176" prot="public" static="yes" mutable="no">
+        <type><ref refid="class_popup_menu_manager" kindref="compound">PopupMenuManager</ref></type>
+        <definition>PopupMenuManager PopupMenuManager.Instance</definition>
+        <argsstring></argsstring>
+        <name>Instance</name>
+        <qualifiedname>PopupMenuManager.Instance</qualifiedname>
+        <briefdescription>
+<para>The single active instance of PopupMenuManager. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" line="16" column="36" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_popup_menu_manager_1a342ae1348f9c8a5aef206f2487598672" prot="private" static="no" mutable="no">
+        <type><ref refid="class_u_i_toggle" kindref="compound">UIToggle</ref></type>
+        <definition>UIToggle PopupMenuManager.boundingBoxPopup</definition>
+        <argsstring></argsstring>
+        <name>boundingBoxPopup</name>
+        <qualifiedname>PopupMenuManager.boundingBoxPopup</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" line="18" column="23" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_popup_menu_manager_1aad98bdcf7e3b36e614833fc311c5bcb2" prot="private" static="no" mutable="no">
+        <type><ref refid="class_u_i_toggle" kindref="compound">UIToggle</ref></type>
+        <definition>UIToggle PopupMenuManager.lightPopup</definition>
+        <argsstring></argsstring>
+        <name>lightPopup</name>
+        <qualifiedname>PopupMenuManager.lightPopup</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" line="19" column="23" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_popup_menu_manager_1ac3189da806b6cca57b17e9f0c06b723c" prot="private" static="no" mutable="no">
+        <type><ref refid="class_u_i_toggle" kindref="compound">UIToggle</ref></type>
+        <definition>UIToggle PopupMenuManager.descriptionPopup</definition>
+        <argsstring></argsstring>
+        <name>descriptionPopup</name>
+        <qualifiedname>PopupMenuManager.descriptionPopup</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" line="20" column="23" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_popup_menu_manager_1a2c8753566eea896aadd6ca30b9e069e8" prot="private" static="no" mutable="no">
+        <type><ref refid="class_u_i_toggle" kindref="compound">UIToggle</ref></type>
+        <definition>UIToggle PopupMenuManager.lodToggle</definition>
+        <argsstring></argsstring>
+        <name>lodToggle</name>
+        <qualifiedname>PopupMenuManager.lodToggle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" line="21" column="23" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_popup_menu_manager_1a9bd5a0f961d37e707cea0f351c887edb" prot="private" static="no" mutable="no">
+        <type>List&lt; TextMeshProUGUI &gt;</type>
+        <definition>List&lt;TextMeshProUGUI&gt; PopupMenuManager.descriptions</definition>
+        <argsstring></argsstring>
+        <name>descriptions</name>
+        <qualifiedname>PopupMenuManager.descriptions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" line="22" column="19" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="event">
+      <memberdef kind="event" id="class_popup_menu_manager_1a72b78c24a7745af1bf75e863b25e9d78" prot="public" static="no" add="no" remove="no" raise="no">
+        <type>UnityAction&lt; bool &gt;</type>
+        <definition>UnityAction&lt;bool&gt; PopupMenuManager.OnEnableBoundingBox</definition>
+        <argsstring></argsstring>
+        <name>OnEnableBoundingBox</name>
+        <qualifiedname>PopupMenuManager.OnEnableBoundingBox</qualifiedname>
+        <briefdescription>
+<para>Fired when the bounding-box toggle changes. Parameter is the new state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" line="25" column="30" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="event" id="class_popup_menu_manager_1aca0f2df7d85a48b2e0866f26a00a2afb" prot="public" static="no" add="no" remove="no" raise="no">
+        <type>UnityAction&lt; bool &gt;</type>
+        <definition>UnityAction&lt;bool&gt; PopupMenuManager.OnEnableLightning</definition>
+        <argsstring></argsstring>
+        <name>OnEnableLightning</name>
+        <qualifiedname>PopupMenuManager.OnEnableLightning</qualifiedname>
+        <briefdescription>
+<para>Fired when the lighting toggle changes. Parameter is the new state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" line="28" column="30" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="event" id="class_popup_menu_manager_1a3ad8d58fe88c5d2d67f94afd3aa09f63" prot="public" static="no" add="no" remove="no" raise="no">
+        <type>UnityAction&lt; bool &gt;</type>
+        <definition>UnityAction&lt;bool&gt; PopupMenuManager.OnEnableDescriptions</definition>
+        <argsstring></argsstring>
+        <name>OnEnableDescriptions</name>
+        <qualifiedname>PopupMenuManager.OnEnableDescriptions</qualifiedname>
+        <briefdescription>
+<para>Fired when the description toggle changes. Parameter is the new state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" line="31" column="30" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="event" id="class_popup_menu_manager_1adb44b173097b7cc73b1f9c82ac1b3d56" prot="public" static="no" add="no" remove="no" raise="no">
+        <type>UnityAction&lt; bool &gt;</type>
+        <definition>UnityAction&lt;bool&gt; PopupMenuManager.OnLodChange</definition>
+        <argsstring></argsstring>
+        <name>OnLodChange</name>
+        <qualifiedname>PopupMenuManager.OnLodChange</qualifiedname>
+        <briefdescription>
+<para>Fired when the LOD toggle changes. Parameter is <computeroutput>true</computeroutput> for LOD 1 (simplified). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" line="34" column="30" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" bodystart="34" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_popup_menu_manager_1a393894d6a84f0c0cea7377df3dd3ef11" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PopupMenuManager.Awake</definition>
+        <argsstring>()</argsstring>
+        <name>Awake</name>
+        <qualifiedname>PopupMenuManager.Awake</qualifiedname>
+        <briefdescription>
+<para>Initialises the singleton instance. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" line="37" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" bodystart="37" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="class_popup_menu_manager_1a7f4da7ce1361f305b31c6c3554eab1e0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PopupMenuManager.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <qualifiedname>PopupMenuManager.Start</qualifiedname>
+        <briefdescription>
+<para>Disables raycasting on all description text objects so they do not block touch input on the model beneath them. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" line="53" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" bodystart="53" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="class_popup_menu_manager_1a459f9668e60ebce7bfc748c0f36b81af" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PopupMenuManager.OnEnable</definition>
+        <argsstring>()</argsstring>
+        <name>OnEnable</name>
+        <qualifiedname>PopupMenuManager.OnEnable</qualifiedname>
+        <briefdescription>
+<para>Subscribes all toggle callbacks when the menu becomes active. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" line="66" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" bodystart="66" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="class_popup_menu_manager_1a944bb716c3902326493b0457f1d91803" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PopupMenuManager.OnDisable</definition>
+        <argsstring>()</argsstring>
+        <name>OnDisable</name>
+        <qualifiedname>PopupMenuManager.OnDisable</qualifiedname>
+        <briefdescription>
+<para>Unsubscribes all toggle callbacks when the menu is deactivated. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" line="75" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" bodystart="75" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="class_popup_menu_manager_1aeb0016909a4be55583679d32557d945b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PopupMenuManager.OnLodChangeToggle</definition>
+        <argsstring>(bool isOn)</argsstring>
+        <name>OnLodChangeToggle</name>
+        <qualifiedname>PopupMenuManager.OnLodChangeToggle</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>isOn</declname>
+        </param>
+        <briefdescription>
+<para>Forwards the LOD toggle state to OnLodChange subscribers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>isOn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>true</computeroutput> to switch to the simplified LOD.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" line="85" column="10" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" bodystart="85" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="class_popup_menu_manager_1a07631a9b347227bb11e3b526623b08dd" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PopupMenuManager.EnableBoundingBox</definition>
+        <argsstring>(bool isOn)</argsstring>
+        <name>EnableBoundingBox</name>
+        <qualifiedname>PopupMenuManager.EnableBoundingBox</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>isOn</declname>
+        </param>
+        <briefdescription>
+<para>Forwards the bounding-box toggle state to OnEnableBoundingBox subscribers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>isOn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>true</computeroutput> to show the bounding box.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" line="93" column="10" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" bodystart="93" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="class_popup_menu_manager_1a066e9412b5cb4e3225b19a0d382fc8b4" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PopupMenuManager.EnableLightning</definition>
+        <argsstring>(bool isOn)</argsstring>
+        <name>EnableLightning</name>
+        <qualifiedname>PopupMenuManager.EnableLightning</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>isOn</declname>
+        </param>
+        <briefdescription>
+<para>Forwards the lighting toggle state to OnEnableLightning subscribers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>isOn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>true</computeroutput> to enable AR lighting estimation.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" line="101" column="10" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" bodystart="101" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="class_popup_menu_manager_1aabfe5ae14b8f5054499e562b7fb9d340" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PopupMenuManager.EnableDescriptions</definition>
+        <argsstring>(bool isOn)</argsstring>
+        <name>EnableDescriptions</name>
+        <qualifiedname>PopupMenuManager.EnableDescriptions</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>isOn</declname>
+        </param>
+        <briefdescription>
+<para>Shows or hides all description text objects and forwards the new state to OnEnableDescriptions subscribers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>isOn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>true</computeroutput> to show descriptions.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" line="112" column="10" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" bodystart="112" bodyend="126"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Singleton that owns the in-AR options popup menu, forwarding toggle states for bounding-box visibility, lighting, model descriptions, and LOD level to interested subscribers via Unity events. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>PopupMenuManager</label>
+        <link refid="class_popup_menu_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>PopupMenuManager</label>
+        <link refid="class_popup_menu_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1" relation="usage">
+          <edgelabel>Instance</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>boundingBoxPopup</edgelabel>
+          <edgelabel>descriptionPopup</edgelabel>
+          <edgelabel>lightPopup</edgelabel>
+          <edgelabel>lodToggle</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>UIToggle</label>
+        <link refid="class_u_i_toggle"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" line="13" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuManager.cs" bodystart="14" bodyend="127"/>
+    <listofallmembers>
+      <member refid="class_popup_menu_manager_1a393894d6a84f0c0cea7377df3dd3ef11" prot="private" virt="non-virtual"><scope>PopupMenuManager</scope><name>Awake</name></member>
+      <member refid="class_popup_menu_manager_1a342ae1348f9c8a5aef206f2487598672" prot="private" virt="non-virtual"><scope>PopupMenuManager</scope><name>boundingBoxPopup</name></member>
+      <member refid="class_popup_menu_manager_1ac3189da806b6cca57b17e9f0c06b723c" prot="private" virt="non-virtual"><scope>PopupMenuManager</scope><name>descriptionPopup</name></member>
+      <member refid="class_popup_menu_manager_1a9bd5a0f961d37e707cea0f351c887edb" prot="private" virt="non-virtual"><scope>PopupMenuManager</scope><name>descriptions</name></member>
+      <member refid="class_popup_menu_manager_1a07631a9b347227bb11e3b526623b08dd" prot="private" virt="non-virtual"><scope>PopupMenuManager</scope><name>EnableBoundingBox</name></member>
+      <member refid="class_popup_menu_manager_1aabfe5ae14b8f5054499e562b7fb9d340" prot="private" virt="non-virtual"><scope>PopupMenuManager</scope><name>EnableDescriptions</name></member>
+      <member refid="class_popup_menu_manager_1a066e9412b5cb4e3225b19a0d382fc8b4" prot="private" virt="non-virtual"><scope>PopupMenuManager</scope><name>EnableLightning</name></member>
+      <member refid="class_popup_menu_manager_1a691a42ad40618e38c113869f05a27176" prot="public" virt="non-virtual"><scope>PopupMenuManager</scope><name>Instance</name></member>
+      <member refid="class_popup_menu_manager_1aad98bdcf7e3b36e614833fc311c5bcb2" prot="private" virt="non-virtual"><scope>PopupMenuManager</scope><name>lightPopup</name></member>
+      <member refid="class_popup_menu_manager_1a2c8753566eea896aadd6ca30b9e069e8" prot="private" virt="non-virtual"><scope>PopupMenuManager</scope><name>lodToggle</name></member>
+      <member refid="class_popup_menu_manager_1a944bb716c3902326493b0457f1d91803" prot="private" virt="non-virtual"><scope>PopupMenuManager</scope><name>OnDisable</name></member>
+      <member refid="class_popup_menu_manager_1a459f9668e60ebce7bfc748c0f36b81af" prot="private" virt="non-virtual"><scope>PopupMenuManager</scope><name>OnEnable</name></member>
+      <member refid="class_popup_menu_manager_1a72b78c24a7745af1bf75e863b25e9d78" prot="public" virt="non-virtual"><scope>PopupMenuManager</scope><name>OnEnableBoundingBox</name></member>
+      <member refid="class_popup_menu_manager_1a3ad8d58fe88c5d2d67f94afd3aa09f63" prot="public" virt="non-virtual"><scope>PopupMenuManager</scope><name>OnEnableDescriptions</name></member>
+      <member refid="class_popup_menu_manager_1aca0f2df7d85a48b2e0866f26a00a2afb" prot="public" virt="non-virtual"><scope>PopupMenuManager</scope><name>OnEnableLightning</name></member>
+      <member refid="class_popup_menu_manager_1adb44b173097b7cc73b1f9c82ac1b3d56" prot="public" virt="non-virtual"><scope>PopupMenuManager</scope><name>OnLodChange</name></member>
+      <member refid="class_popup_menu_manager_1aeb0016909a4be55583679d32557d945b" prot="private" virt="non-virtual"><scope>PopupMenuManager</scope><name>OnLodChangeToggle</name></member>
+      <member refid="class_popup_menu_manager_1a7f4da7ce1361f305b31c6c3554eab1e0" prot="private" virt="non-virtual"><scope>PopupMenuManager</scope><name>Start</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

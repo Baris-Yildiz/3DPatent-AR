@@ -1,0 +1,308 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_patent_manager" kind="class" language="C#" prot="public">
+    <compoundname>PatentManager</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_patent_manager_1a32e0d55c3bfa88a1ba6e49830a12eb5c" prot="public" static="yes" mutable="no">
+        <type><ref refid="class_patent_manager" kindref="compound">PatentManager</ref></type>
+        <definition>PatentManager PatentManager.Instance</definition>
+        <argsstring></argsstring>
+        <name>Instance</name>
+        <qualifiedname>PatentManager.Instance</qualifiedname>
+        <briefdescription>
+<para>The single active instance of PatentManager. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" line="13" column="33" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_patent_manager_1aa31fdb92d7972456bd15890493d4b2d3" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject PatentManager.patent</definition>
+        <argsstring></argsstring>
+        <name>patent</name>
+        <qualifiedname>PatentManager.patent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" line="15" column="25" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_patent_manager_1a63c5ee8b98214b88fb507b0bd29f8c19" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject PatentManager.activePatent</definition>
+        <argsstring></argsstring>
+        <name>activePatent</name>
+        <qualifiedname>PatentManager.activePatent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" line="16" column="24" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="event">
+      <memberdef kind="event" id="class_patent_manager_1a2d59940de6ed8c4552d7b68301d95b69" prot="public" static="no" add="no" remove="no" raise="no">
+        <type>Action</type>
+        <definition>Action PatentManager.patentDeletedEvent</definition>
+        <argsstring></argsstring>
+        <name>patentDeletedEvent</name>
+        <qualifiedname>PatentManager.patentDeletedEvent</qualifiedname>
+        <briefdescription>
+<para>Fired when the active patent is deleted. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" line="19" column="25" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="event" id="class_patent_manager_1a14a5dd227d77e7b0fb75b150d6c8fb75" prot="public" static="no" add="no" remove="no" raise="no">
+        <type>Action</type>
+        <definition>Action PatentManager.patentSpawnedEvent</definition>
+        <argsstring></argsstring>
+        <name>patentSpawnedEvent</name>
+        <qualifiedname>PatentManager.patentSpawnedEvent</qualifiedname>
+        <briefdescription>
+<para>Fired when a new patent is spawned into the AR scene. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" line="22" column="25" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="property">
+      <memberdef kind="property" id="class_patent_manager_1ae3c9220fb7f5540c2967695de7fce6a6" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="yes" protectedsettable="no">
+        <type>Vector3</type>
+        <definition>Vector3 PatentManager.initialScale</definition>
+        <argsstring></argsstring>
+        <name>initialScale</name>
+        <qualifiedname>PatentManager.initialScale</qualifiedname>
+        <briefdescription>
+<para>Local scale of the patent at the moment it was spawned. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" line="25" column="20" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" bodystart="25" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="property" id="class_patent_manager_1afb7c2d1fcc4f72c1d78df2325cc0b966" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="yes" protectedsettable="no">
+        <type>Quaternion</type>
+        <definition>Quaternion PatentManager.initialRotation</definition>
+        <argsstring></argsstring>
+        <name>initialRotation</name>
+        <qualifiedname>PatentManager.initialRotation</qualifiedname>
+        <briefdescription>
+<para>World rotation of the patent at the moment it was spawned. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" line="28" column="23" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" bodystart="28" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="property" id="class_patent_manager_1a77ec300d988239f22ae9ddefe4c75acf" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="yes" protectedsettable="no">
+        <type>Vector3</type>
+        <definition>Vector3 PatentManager.initialPosition</definition>
+        <argsstring></argsstring>
+        <name>initialPosition</name>
+        <qualifiedname>PatentManager.initialPosition</qualifiedname>
+        <briefdescription>
+<para>World position of the patent at the moment it was spawned. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" line="31" column="20" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" bodystart="31" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="property" id="class_patent_manager_1a916bb09ce8ae8e7d029c62915d6a8f2c" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>GameObject</type>
+        <definition>GameObject PatentManager.ActivePatent</definition>
+        <argsstring></argsstring>
+        <name>ActivePatent</name>
+        <qualifiedname>PatentManager.ActivePatent</qualifiedname>
+        <briefdescription>
+<para>The instantiated patent GameObject currently in the AR scene. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Setting this to <computeroutput>null</computeroutput> clears the active reference without destroying the object. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" line="60" column="23" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" bodystart="61" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="property" id="class_patent_manager_1a54be3951a1569e3bd3e433b488c71384" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>GameObject</type>
+        <definition>GameObject PatentManager.Patent</definition>
+        <argsstring></argsstring>
+        <name>Patent</name>
+        <qualifiedname>PatentManager.Patent</qualifiedname>
+        <briefdescription>
+<para>The prefab or downloaded model assigned as the source for instantiation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" line="69" column="23" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" bodystart="70" bodyend="73"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_patent_manager_1aebd8a9ce66bee77b81b0621e49873162" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PatentManager.Awake</definition>
+        <argsstring>()</argsstring>
+        <name>Awake</name>
+        <qualifiedname>PatentManager.Awake</qualifiedname>
+        <briefdescription>
+<para>Initialises the singleton instance. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" line="34" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" bodystart="34" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="class_patent_manager_1a4b92a491df836bd2ec9f17f8e7b42045" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PatentManager.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <qualifiedname>PatentManager.Start</qualifiedname>
+        <briefdescription>
+<para>Registers OnScanEnter on both scan states so any existing patent is cleaned up whenever the user starts a new QR scan. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" line="50" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" bodystart="50" bodyend="54"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_patent_manager_1ad129b092f1b6513de6bcc5ea6f26e2f1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PatentManager.DeleteActivePatent</definition>
+        <argsstring>()</argsstring>
+        <name>DeleteActivePatent</name>
+        <qualifiedname>PatentManager.DeleteActivePatent</qualifiedname>
+        <briefdescription>
+<para>Destroys the active patent instance and raises patentDeletedEvent. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" line="76" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" bodystart="76" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="class_patent_manager_1a2692101fadff96f5e58670515c5b165f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PatentManager.OnScanEnter</definition>
+        <argsstring>()</argsstring>
+        <name>OnScanEnter</name>
+        <qualifiedname>PatentManager.OnScanEnter</qualifiedname>
+        <briefdescription>
+<para>Called on scan-state entry to clean up any existing patent so a new QR scan can begin. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" line="85" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" bodystart="85" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="class_patent_manager_1ae9c0aff883001cfbd651779d30c3bff4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PatentManager.SetInitialTransform</definition>
+        <argsstring>()</argsstring>
+        <name>SetInitialTransform</name>
+        <qualifiedname>PatentManager.SetInitialTransform</qualifiedname>
+        <briefdescription>
+<para>Captures the active patent&apos;s current transform as the initial snapshot used by PatentTransformer.ResetRotation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" line="98" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" bodystart="98" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="class_patent_manager_1a54321502ca55cc380c55a25b2db7149a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PatentManager.InvokePatentSpawned</definition>
+        <argsstring>()</argsstring>
+        <name>InvokePatentSpawned</name>
+        <qualifiedname>PatentManager.InvokePatentSpawned</qualifiedname>
+        <briefdescription>
+<para>Raises patentSpawnedEvent. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" line="106" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" bodystart="106" bodyend="109"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Singleton registry for the loaded patent model. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Holds references to the prefab (Patent) and the currently instantiated scene object (ActivePatent), as well as the transform snapshot taken at spawn time for use by PatentTransformer.ResetRotation. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>PatentManager</label>
+        <link refid="class_patent_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>PatentManager</label>
+        <link refid="class_patent_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1" relation="usage">
+          <edgelabel>Instance</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" line="10" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentManager.cs" bodystart="11" bodyend="110"/>
+    <listofallmembers>
+      <member refid="class_patent_manager_1a916bb09ce8ae8e7d029c62915d6a8f2c" prot="public" virt="non-virtual"><scope>PatentManager</scope><name>ActivePatent</name></member>
+      <member refid="class_patent_manager_1a63c5ee8b98214b88fb507b0bd29f8c19" prot="private" virt="non-virtual"><scope>PatentManager</scope><name>activePatent</name></member>
+      <member refid="class_patent_manager_1aebd8a9ce66bee77b81b0621e49873162" prot="private" virt="non-virtual"><scope>PatentManager</scope><name>Awake</name></member>
+      <member refid="class_patent_manager_1ad129b092f1b6513de6bcc5ea6f26e2f1" prot="public" virt="non-virtual"><scope>PatentManager</scope><name>DeleteActivePatent</name></member>
+      <member refid="class_patent_manager_1a77ec300d988239f22ae9ddefe4c75acf" prot="public" virt="non-virtual"><scope>PatentManager</scope><name>initialPosition</name></member>
+      <member refid="class_patent_manager_1afb7c2d1fcc4f72c1d78df2325cc0b966" prot="public" virt="non-virtual"><scope>PatentManager</scope><name>initialRotation</name></member>
+      <member refid="class_patent_manager_1ae3c9220fb7f5540c2967695de7fce6a6" prot="public" virt="non-virtual"><scope>PatentManager</scope><name>initialScale</name></member>
+      <member refid="class_patent_manager_1a32e0d55c3bfa88a1ba6e49830a12eb5c" prot="public" virt="non-virtual"><scope>PatentManager</scope><name>Instance</name></member>
+      <member refid="class_patent_manager_1a54321502ca55cc380c55a25b2db7149a" prot="public" virt="non-virtual"><scope>PatentManager</scope><name>InvokePatentSpawned</name></member>
+      <member refid="class_patent_manager_1a2692101fadff96f5e58670515c5b165f" prot="public" virt="non-virtual"><scope>PatentManager</scope><name>OnScanEnter</name></member>
+      <member refid="class_patent_manager_1a54be3951a1569e3bd3e433b488c71384" prot="public" virt="non-virtual"><scope>PatentManager</scope><name>Patent</name></member>
+      <member refid="class_patent_manager_1aa31fdb92d7972456bd15890493d4b2d3" prot="private" virt="non-virtual"><scope>PatentManager</scope><name>patent</name></member>
+      <member refid="class_patent_manager_1a2d59940de6ed8c4552d7b68301d95b69" prot="public" virt="non-virtual"><scope>PatentManager</scope><name>patentDeletedEvent</name></member>
+      <member refid="class_patent_manager_1a14a5dd227d77e7b0fb75b150d6c8fb75" prot="public" virt="non-virtual"><scope>PatentManager</scope><name>patentSpawnedEvent</name></member>
+      <member refid="class_patent_manager_1ae9c0aff883001cfbd651779d30c3bff4" prot="public" virt="non-virtual"><scope>PatentManager</scope><name>SetInitialTransform</name></member>
+      <member refid="class_patent_manager_1a4b92a491df836bd2ec9f17f8e7b42045" prot="private" virt="non-virtual"><scope>PatentManager</scope><name>Start</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

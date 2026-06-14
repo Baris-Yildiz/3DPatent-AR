@@ -1,0 +1,331 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_popup_window" kind="class" language="C#" prot="public">
+    <compoundname>PopupWindow</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_popup_window_1a40b4b9a606082deb622fbbd73ec56bb6" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject PopupWindow.m_Content</definition>
+        <argsstring></argsstring>
+        <name>m_Content</name>
+        <qualifiedname>PopupWindow.m_Content</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupWindow.cs" line="15" column="25" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupWindow.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_popup_window_1a4086aed5aec0a454679b3c1ae09907a9" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject PopupWindow.m_Header</definition>
+        <argsstring></argsstring>
+        <name>m_Header</name>
+        <qualifiedname>PopupWindow.m_Header</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupWindow.cs" line="16" column="25" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupWindow.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_popup_window_1a09803bf1173f3e98733832284af6b508" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject PopupWindow.m_Footer</definition>
+        <argsstring></argsstring>
+        <name>m_Footer</name>
+        <qualifiedname>PopupWindow.m_Footer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupWindow.cs" line="17" column="25" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupWindow.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_popup_window_1a0bdc607db1335b9ce1f68614ed8592cc" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject PopupWindow.m_ButtonSample</definition>
+        <argsstring></argsstring>
+        <name>m_ButtonSample</name>
+        <qualifiedname>PopupWindow.m_ButtonSample</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupWindow.cs" line="19" column="25" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupWindow.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_popup_window_1a35ef32f09355def48d9115a64fe0a4cd" prot="public" static="yes" mutable="no">
+        <type>Color</type>
+        <definition>Color PopupWindow.BUTTON_COLOR_CANCEL</definition>
+        <argsstring></argsstring>
+        <name>BUTTON_COLOR_CANCEL</name>
+        <qualifiedname>PopupWindow.BUTTON_COLOR_CANCEL</qualifiedname>
+        <initializer>= new (0.7529412f, 0.2235294f, 0.1686275f)</initializer>
+        <briefdescription>
+<para>Preset button color for destructive/cancel actions (red). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupWindow.cs" line="22" column="25" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupWindow.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_popup_window_1aa0554650c0ca9b74629c735eadbfe7bc" prot="public" static="yes" mutable="no">
+        <type>Color</type>
+        <definition>Color PopupWindow.BUTTON_COLOR_OK</definition>
+        <argsstring></argsstring>
+        <name>BUTTON_COLOR_OK</name>
+        <qualifiedname>PopupWindow.BUTTON_COLOR_OK</qualifiedname>
+        <initializer>= new (0.1529412f, 0.682353f, 0.3764706f)</initializer>
+        <briefdescription>
+<para>Preset button color for confirmation/OK actions (green). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupWindow.cs" line="25" column="25" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupWindow.cs" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_popup_window_1aa5d8d2f834667e1ed73c7f08d5a36c51" prot="public" static="yes" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject PopupWindow.PopupLayer</definition>
+        <argsstring></argsstring>
+        <name>PopupLayer</name>
+        <qualifiedname>PopupWindow.PopupLayer</qualifiedname>
+        <briefdescription>
+<para>The full-screen overlay GameObject shown while any popup is visible. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Set by PopupLayerManager and PopupBuilder. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupWindow.cs" line="31" column="30" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupWindow.cs" bodystart="31" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_popup_window_1a8f73bd75aa471d7f9a4a3862e52bf304" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PopupWindow.OnEnable</definition>
+        <argsstring>()</argsstring>
+        <name>OnEnable</name>
+        <qualifiedname>PopupWindow.OnEnable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupWindow.cs" line="33" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupWindow.cs" bodystart="33" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="class_popup_window_1a4173c35d5745e65f57cca53409d2a6a7" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PopupWindow.OnDisable</definition>
+        <argsstring>()</argsstring>
+        <name>OnDisable</name>
+        <qualifiedname>PopupWindow.OnDisable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupWindow.cs" line="38" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupWindow.cs" bodystart="38" bodyend="41"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_popup_window_1a11ed0b5449ec16e4fa93ec5f062148c0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PopupWindow.AddContentText</definition>
+        <argsstring>(string content)</argsstring>
+        <name>AddContentText</name>
+        <qualifiedname>PopupWindow.AddContentText</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>content</declname>
+        </param>
+        <briefdescription>
+<para>Creates a TextMeshProUGUI label inside the content area. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text string to display.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupWindow.cs" line="47" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupWindow.cs" bodystart="47" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="class_popup_window_1aab4020f9c6b5b949c5d45ea31afd3752" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PopupWindow.AddHeader</definition>
+        <argsstring>(string headerText)</argsstring>
+        <name>AddHeader</name>
+        <qualifiedname>PopupWindow.AddHeader</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>headerText</declname>
+        </param>
+        <briefdescription>
+<para>Creates a bold TextMeshProUGUI label inside the header area. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>headerText</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The header string to display.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupWindow.cs" line="67" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupWindow.cs" bodystart="67" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="class_popup_window_1a4e68742145362eff1461b5f7c03bf96a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PopupWindow.AddContent</definition>
+        <argsstring>(GameObject content)</argsstring>
+        <name>AddContent</name>
+        <qualifiedname>PopupWindow.AddContent</qualifiedname>
+        <param>
+          <type>GameObject</type>
+          <declname>content</declname>
+        </param>
+        <briefdescription>
+<para>Parents an arbitrary GameObject into the content area and activates it if necessary. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The GameObject to embed in the content area.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupWindow.cs" line="86" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupWindow.cs" bodystart="86" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="class_popup_window_1afc4151b996d8497c9b1613bb2380a38f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PopupWindow.AddFooterButton</definition>
+        <argsstring>(string buttonText, Color buttonColor, UnityAction callback)</argsstring>
+        <name>AddFooterButton</name>
+        <qualifiedname>PopupWindow.AddFooterButton</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>buttonText</declname>
+        </param>
+        <param>
+          <type>Color</type>
+          <declname>buttonColor</declname>
+        </param>
+        <param>
+          <type>UnityAction</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Instantiates a button from the sample prefab, sets its color, label, and click callback, then places it in the footer area. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buttonText</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Label to display on the button.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buttonColor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Background color of the button image.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Action to invoke when the button is clicked.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupWindow.cs" line="99" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupWindow.cs" bodystart="99" bodyend="132"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Runtime popup window component. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Manages a header, scrollable content area, and a footer with one or more action buttons. The PopupLayer overlay is automatically shown and hidden with this window. Construct instances through PopupBuilder rather than directly. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>PopupWindow</label>
+        <link refid="class_popup_window"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>PopupWindow</label>
+        <link refid="class_popup_window"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupWindow.cs" line="13" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupWindow.cs" bodystart="14" bodyend="134"/>
+    <listofallmembers>
+      <member refid="class_popup_window_1a4e68742145362eff1461b5f7c03bf96a" prot="public" virt="non-virtual"><scope>PopupWindow</scope><name>AddContent</name></member>
+      <member refid="class_popup_window_1a11ed0b5449ec16e4fa93ec5f062148c0" prot="public" virt="non-virtual"><scope>PopupWindow</scope><name>AddContentText</name></member>
+      <member refid="class_popup_window_1afc4151b996d8497c9b1613bb2380a38f" prot="public" virt="non-virtual"><scope>PopupWindow</scope><name>AddFooterButton</name></member>
+      <member refid="class_popup_window_1aab4020f9c6b5b949c5d45ea31afd3752" prot="public" virt="non-virtual"><scope>PopupWindow</scope><name>AddHeader</name></member>
+      <member refid="class_popup_window_1a35ef32f09355def48d9115a64fe0a4cd" prot="public" virt="non-virtual"><scope>PopupWindow</scope><name>BUTTON_COLOR_CANCEL</name></member>
+      <member refid="class_popup_window_1aa0554650c0ca9b74629c735eadbfe7bc" prot="public" virt="non-virtual"><scope>PopupWindow</scope><name>BUTTON_COLOR_OK</name></member>
+      <member refid="class_popup_window_1a0bdc607db1335b9ce1f68614ed8592cc" prot="private" virt="non-virtual"><scope>PopupWindow</scope><name>m_ButtonSample</name></member>
+      <member refid="class_popup_window_1a40b4b9a606082deb622fbbd73ec56bb6" prot="private" virt="non-virtual"><scope>PopupWindow</scope><name>m_Content</name></member>
+      <member refid="class_popup_window_1a09803bf1173f3e98733832284af6b508" prot="private" virt="non-virtual"><scope>PopupWindow</scope><name>m_Footer</name></member>
+      <member refid="class_popup_window_1a4086aed5aec0a454679b3c1ae09907a9" prot="private" virt="non-virtual"><scope>PopupWindow</scope><name>m_Header</name></member>
+      <member refid="class_popup_window_1a4173c35d5745e65f57cca53409d2a6a7" prot="private" virt="non-virtual"><scope>PopupWindow</scope><name>OnDisable</name></member>
+      <member refid="class_popup_window_1a8f73bd75aa471d7f9a4a3862e52bf304" prot="private" virt="non-virtual"><scope>PopupWindow</scope><name>OnEnable</name></member>
+      <member refid="class_popup_window_1aa5d8d2f834667e1ed73c7f08d5a36c51" prot="public" virt="non-virtual"><scope>PopupWindow</scope><name>PopupLayer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

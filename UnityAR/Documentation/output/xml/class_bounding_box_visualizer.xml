@@ -1,0 +1,383 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_bounding_box_visualizer" kind="class" language="C#" prot="public">
+    <compoundname>BoundingBoxVisualizer</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_bounding_box_visualizer_1aa6cff18d71efcddd559214c67fe14fcb" prot="private" static="no" mutable="no">
+        <type>Color</type>
+        <definition>Color BoundingBoxVisualizer.boxColor</definition>
+        <argsstring></argsstring>
+        <name>boxColor</name>
+        <qualifiedname>BoundingBoxVisualizer.boxColor</qualifiedname>
+        <initializer>= Color.green</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" line="13" column="20" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bounding_box_visualizer_1afd41c12b6736af832c8173a58d06ebd0" prot="private" static="no" mutable="no">
+        <type><ref refid="class_popup_menu_manager" kindref="compound">PopupMenuManager</ref></type>
+        <definition>PopupMenuManager BoundingBoxVisualizer.popupMenuManager</definition>
+        <argsstring></argsstring>
+        <name>popupMenuManager</name>
+        <qualifiedname>BoundingBoxVisualizer.popupMenuManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" line="14" column="31" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bounding_box_visualizer_1ae9f1e097296b3993a6e1cfa09706181c" prot="private" static="no" mutable="no">
+        <type>Shader</type>
+        <definition>Shader BoundingBoxVisualizer.lineShader</definition>
+        <argsstring></argsstring>
+        <name>lineShader</name>
+        <qualifiedname>BoundingBoxVisualizer.lineShader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" line="15" column="21" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bounding_box_visualizer_1afb2433b987fe129958b6b13afdf9dd02" prot="private" static="no" mutable="no">
+        <type>LineRenderer[]</type>
+        <definition>LineRenderer [] BoundingBoxVisualizer._edges</definition>
+        <argsstring></argsstring>
+        <name>_edges</name>
+        <qualifiedname>BoundingBoxVisualizer._edges</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" line="29" column="26" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bounding_box_visualizer_1a2264dad7dc95e43837653889e4d638ed" prot="private" static="no" mutable="no">
+        <type>Material</type>
+        <definition>Material BoundingBoxVisualizer._material</definition>
+        <argsstring></argsstring>
+        <name>_material</name>
+        <qualifiedname>BoundingBoxVisualizer._material</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" line="30" column="22" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bounding_box_visualizer_1a1695dc05387d2e1bdb1c5ee6ea3aa516" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool BoundingBoxVisualizer._isVisible</definition>
+        <argsstring></argsstring>
+        <name>_isVisible</name>
+        <qualifiedname>BoundingBoxVisualizer._isVisible</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" line="31" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bounding_box_visualizer_1a03c40dbe906ff5cb8ba19100372abcf5" prot="private" static="no" mutable="no">
+        <type>readonly Vector3[]</type>
+        <definition>readonly Vector3 [] BoundingBoxVisualizer._worldCorners</definition>
+        <argsstring></argsstring>
+        <name>_worldCorners</name>
+        <qualifiedname>BoundingBoxVisualizer._worldCorners</qualifiedname>
+        <initializer>= new Vector3[8]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" line="32" column="30" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" bodystart="32" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_bounding_box_visualizer_1a2bf83aaad1421ba3f36cda5e28e4d698" prot="private" static="yes" mutable="no">
+        <type>readonly int[][]</type>
+        <definition>readonly int [][] BoundingBoxVisualizer.EdgePairs</definition>
+        <argsstring></argsstring>
+        <name>EdgePairs</name>
+        <qualifiedname>BoundingBoxVisualizer.EdgePairs</qualifiedname>
+        <initializer>                                      =
+{
+    new[]{0,1}, new[]{1,3}, new[]{3,2}, new[]{2,0},  
+    new[]{4,5}, new[]{5,7}, new[]{7,6}, new[]{6,4},  
+    new[]{0,4}, new[]{1,5}, new[]{2,6}, new[]{3,7}   
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" line="22" column="33" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" bodystart="22" bodyend="27"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_bounding_box_visualizer_1a6a863d588bac5b1d34d037c50a15cc9d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void BoundingBoxVisualizer.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <qualifiedname>BoundingBoxVisualizer.Start</qualifiedname>
+        <briefdescription>
+<para>Subscribes to delete and visibility events, creates the shared line material, and instantiates the 12 edge LineRenderer child objects. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The box starts hidden. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" line="39" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" bodystart="39" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bounding_box_visualizer_1a0aae3379ca2c074778478428c2904ded" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void BoundingBoxVisualizer.OnDestroy</definition>
+        <argsstring>()</argsstring>
+        <name>OnDestroy</name>
+        <qualifiedname>BoundingBoxVisualizer.OnDestroy</qualifiedname>
+        <briefdescription>
+<para>Unsubscribes all events and destroys the shared line material to prevent memory leaks when the component is removed from the scene. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" line="80" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" bodystart="80" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bounding_box_visualizer_1a3f097a08412b7e8bcd28ee030bd741f0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void BoundingBoxVisualizer.SetVisible</definition>
+        <argsstring>(bool visible)</argsstring>
+        <name>SetVisible</name>
+        <qualifiedname>BoundingBoxVisualizer.SetVisible</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>visible</declname>
+        </param>
+        <briefdescription>
+<para>Records the desired visibility state and hides all edges immediately when visibility is turned off. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>visible</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>true</computeroutput> to allow the box to be drawn; <computeroutput>false</computeroutput> to hide it.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" line="96" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" bodystart="96" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bounding_box_visualizer_1a96bc4f298ff31ab5ac973ebc4a87ae82" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void BoundingBoxVisualizer.OnPatentDeleted</definition>
+        <argsstring>()</argsstring>
+        <name>OnPatentDeleted</name>
+        <qualifiedname>BoundingBoxVisualizer.OnPatentDeleted</qualifiedname>
+        <briefdescription>
+<para>Hides all edge renderers when the active patent is deleted. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" line="104" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" bodystart="104" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bounding_box_visualizer_1a29ac405a7cb8467140eb471faacd474c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void BoundingBoxVisualizer.Update</definition>
+        <argsstring>()</argsstring>
+        <name>Update</name>
+        <qualifiedname>BoundingBoxVisualizer.Update</qualifiedname>
+        <briefdescription>
+<para>Each frame, when visible, retrieves the active patent and either hides the edges (no patent present) or refreshes their positions to track the model as it moves and scales. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" line="114" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" bodystart="114" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bounding_box_visualizer_1afb3c1f88e13c559dadf6045f0c3bdcab" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void BoundingBoxVisualizer.SetEdgesActive</definition>
+        <argsstring>(bool active)</argsstring>
+        <name>SetEdgesActive</name>
+        <qualifiedname>BoundingBoxVisualizer.SetEdgesActive</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>active</declname>
+        </param>
+        <briefdescription>
+<para>Enables or disables all 12 edge LineRenderer GameObjects. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>active</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>true</computeroutput> to show edges; <computeroutput>false</computeroutput> to hide them.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" line="134" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" bodystart="134" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bounding_box_visualizer_1a93bb7e3fabb7f252ccb5ea5bca15d4d2" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void BoundingBoxVisualizer.RefreshEdges</definition>
+        <argsstring>(GameObject root)</argsstring>
+        <name>RefreshEdges</name>
+        <qualifiedname>BoundingBoxVisualizer.RefreshEdges</qualifiedname>
+        <param>
+          <type>GameObject</type>
+          <declname>root</declname>
+        </param>
+        <briefdescription>
+<para>Recomputes all 8 world-space corner positions of <emphasis>root</emphasis> &apos;s local bounds, scales line widths relative to the box diagonal, and updates both endpoints of each of the 12 edge renderers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>root</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The patent root GameObject whose bounds define the box.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" line="146" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" bodystart="146" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bounding_box_visualizer_1a9b4a640f2d96c7e66d7f6d925eb77279" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Bounds</type>
+        <definition>Bounds BoundingBoxVisualizer.ComputeLocalBounds</definition>
+        <argsstring>(GameObject root)</argsstring>
+        <name>ComputeLocalBounds</name>
+        <qualifiedname>BoundingBoxVisualizer.ComputeLocalBounds</qualifiedname>
+        <param>
+          <type>GameObject</type>
+          <declname>root</declname>
+        </param>
+        <briefdescription>
+<para>Computes the axis-aligned bounding box of all meshes in <emphasis>root</emphasis> &apos;s hierarchy, expressed in <emphasis>root</emphasis> &apos;s local space by transforming each mesh&apos;s eight corners through the root&apos;s world-to-local matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>root</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The root GameObject whose child mesh filters are measured.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The local-space Bounds encapsulating all meshes, or a small default bounds if no mesh filters are found. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" line="185" column="20" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" bodystart="185" bodyend="219"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Renders a wireframe bounding box around the active patent model using 12 LineRenderer edges. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Visibility is toggled via PopupMenuManager.OnEnableBoundingBox and the box is automatically hidden when the model is deleted. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>BoundingBoxVisualizer</label>
+        <link refid="class_bounding_box_visualizer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>BoundingBoxVisualizer</label>
+        <link refid="class_bounding_box_visualizer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>popupMenuManager</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="3">
+        <label>PopupMenuManager</label>
+        <link refid="class_popup_menu_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>Instance</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>boundingBoxPopup</edgelabel>
+          <edgelabel>descriptionPopup</edgelabel>
+          <edgelabel>lightPopup</edgelabel>
+          <edgelabel>lodToggle</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>UIToggle</label>
+        <link refid="class_u_i_toggle"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" line="10" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/BoundingBoxVisualizer.cs" bodystart="11" bodyend="220"/>
+    <listofallmembers>
+      <member refid="class_bounding_box_visualizer_1afb2433b987fe129958b6b13afdf9dd02" prot="private" virt="non-virtual"><scope>BoundingBoxVisualizer</scope><name>_edges</name></member>
+      <member refid="class_bounding_box_visualizer_1a1695dc05387d2e1bdb1c5ee6ea3aa516" prot="private" virt="non-virtual"><scope>BoundingBoxVisualizer</scope><name>_isVisible</name></member>
+      <member refid="class_bounding_box_visualizer_1a2264dad7dc95e43837653889e4d638ed" prot="private" virt="non-virtual"><scope>BoundingBoxVisualizer</scope><name>_material</name></member>
+      <member refid="class_bounding_box_visualizer_1a03c40dbe906ff5cb8ba19100372abcf5" prot="private" virt="non-virtual"><scope>BoundingBoxVisualizer</scope><name>_worldCorners</name></member>
+      <member refid="class_bounding_box_visualizer_1aa6cff18d71efcddd559214c67fe14fcb" prot="private" virt="non-virtual"><scope>BoundingBoxVisualizer</scope><name>boxColor</name></member>
+      <member refid="class_bounding_box_visualizer_1a9b4a640f2d96c7e66d7f6d925eb77279" prot="private" virt="non-virtual"><scope>BoundingBoxVisualizer</scope><name>ComputeLocalBounds</name></member>
+      <member refid="class_bounding_box_visualizer_1a2bf83aaad1421ba3f36cda5e28e4d698" prot="private" virt="non-virtual"><scope>BoundingBoxVisualizer</scope><name>EdgePairs</name></member>
+      <member refid="class_bounding_box_visualizer_1ae9f1e097296b3993a6e1cfa09706181c" prot="private" virt="non-virtual"><scope>BoundingBoxVisualizer</scope><name>lineShader</name></member>
+      <member refid="class_bounding_box_visualizer_1a0aae3379ca2c074778478428c2904ded" prot="private" virt="non-virtual"><scope>BoundingBoxVisualizer</scope><name>OnDestroy</name></member>
+      <member refid="class_bounding_box_visualizer_1a96bc4f298ff31ab5ac973ebc4a87ae82" prot="private" virt="non-virtual"><scope>BoundingBoxVisualizer</scope><name>OnPatentDeleted</name></member>
+      <member refid="class_bounding_box_visualizer_1afd41c12b6736af832c8173a58d06ebd0" prot="private" virt="non-virtual"><scope>BoundingBoxVisualizer</scope><name>popupMenuManager</name></member>
+      <member refid="class_bounding_box_visualizer_1a93bb7e3fabb7f252ccb5ea5bca15d4d2" prot="private" virt="non-virtual"><scope>BoundingBoxVisualizer</scope><name>RefreshEdges</name></member>
+      <member refid="class_bounding_box_visualizer_1afb3c1f88e13c559dadf6045f0c3bdcab" prot="private" virt="non-virtual"><scope>BoundingBoxVisualizer</scope><name>SetEdgesActive</name></member>
+      <member refid="class_bounding_box_visualizer_1a3f097a08412b7e8bcd28ee030bd741f0" prot="private" virt="non-virtual"><scope>BoundingBoxVisualizer</scope><name>SetVisible</name></member>
+      <member refid="class_bounding_box_visualizer_1a6a863d588bac5b1d34d037c50a15cc9d" prot="private" virt="non-virtual"><scope>BoundingBoxVisualizer</scope><name>Start</name></member>
+      <member refid="class_bounding_box_visualizer_1a29ac405a7cb8467140eb471faacd474c" prot="private" virt="non-virtual"><scope>BoundingBoxVisualizer</scope><name>Update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

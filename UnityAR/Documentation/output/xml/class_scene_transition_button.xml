@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_scene_transition_button" kind="class" language="C#" prot="public">
+    <compoundname>SceneTransitionButton</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_scene_transition_button_1ab639b82a6cf6403facb20ed0b15ae7d5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void SceneTransitionButton.OnSceneChangeClicked</definition>
+        <argsstring>()</argsstring>
+        <name>OnSceneChangeClicked</name>
+        <qualifiedname>SceneTransitionButton.OnSceneChangeClicked</qualifiedname>
+        <briefdescription>
+<para>Called by the button&apos;s OnClick event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Delegates to GameManager.ChangeMode. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/SceneTransitionButton.cs" line="12" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/SceneTransitionButton.cs" bodystart="12" bodyend="15"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>UI button handler that toggles between QR-scanning and AR patent-viewing modes by calling GameManager.ChangeMode when clicked. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>SceneTransitionButton</label>
+        <link refid="class_scene_transition_button"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>SceneTransitionButton</label>
+        <link refid="class_scene_transition_button"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/SceneTransitionButton.cs" line="7" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/SceneTransitionButton.cs" bodystart="8" bodyend="16"/>
+    <listofallmembers>
+      <member refid="class_scene_transition_button_1ab639b82a6cf6403facb20ed0b15ae7d5" prot="public" virt="non-virtual"><scope>SceneTransitionButton</scope><name>OnSceneChangeClicked</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

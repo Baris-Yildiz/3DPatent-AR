@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="_mini_model_display_manager_8cs" kind="file" language="C#">
+    <compoundname>MiniModelDisplayManager.cs</compoundname>
+    <innerclass refid="class_mini_model_display_manager" prot="public">MiniModelDisplayManager</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">using<sp/></highlight><highlight class="normal">Unity.XR.CoreUtils;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">UnityEngine;</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">UnityEngine.UI;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="class_mini_model_display_manager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_mini_model_display_manager" kindref="compound">MiniModelDisplayManager</ref><sp/>:<sp/>MonoBehaviour</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>Image<sp/><ref refid="class_mini_model_display_manager_1a7673f17908c7f9093ca3652c23d93bbe" kindref="member">m_MiniDisplayImage</ref>;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_mini_model_display_manager_1ac386524a3fac15e39556d2c5342cbb05" kindref="member">m_DisplayWidth</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_mini_model_display_manager_1aa4445490e618f02cfb2e3c9e35c20dd7" kindref="member">m_DisplayHeight</ref>;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>LayerMask<sp/><ref refid="class_mini_model_display_manager_1adcc55c2781de9ad313397771010aebf2" kindref="member">ModelImageLayer</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>Sprite<sp/><ref refid="class_mini_model_display_manager_1a43686266cac1f4ebf1e984de6f626a48" kindref="member">m_DefaultSprite</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_mini_model_display_manager_1ab352126157dfd086e38e57a46f03ee14" kindref="member">Start</ref>()</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_state_machine" kindref="compound">StateMachine</ref>.<ref refid="class_state_machine_1ae5cbc71c07f182b79e34cb653c0192a9" kindref="member">Instance</ref>.<ref refid="class_state_machine_1a9ff5cbac71cdc7b0c7f944c1d85c7bc9" kindref="member">GetState</ref>(<ref refid="class_state_machine" kindref="compound">StateMachine</ref>.<ref refid="class_state_machine_1a905d1c2a570856577ca5bca4274217f6" kindref="member">States</ref>.MODEL_VIEW_STATE)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="class_state_1a8cea1a06337b876a31f9185e7d4c7abb" kindref="member">OnStateEnter</ref><sp/>+=<sp/>()<sp/>=&gt;<sp/><ref refid="class_mini_model_display_manager_1a64af2ad762b78466efb79398f8f006f8" kindref="member">DisplayMiniObject</ref>();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_state_machine" kindref="compound">StateMachine</ref>.<ref refid="class_state_machine_1ae5cbc71c07f182b79e34cb653c0192a9" kindref="member">Instance</ref>.<ref refid="class_state_machine_1a9ff5cbac71cdc7b0c7f944c1d85c7bc9" kindref="member">GetState</ref>(<ref refid="class_state_machine" kindref="compound">StateMachine</ref>.<ref refid="class_state_machine_1a905d1c2a570856577ca5bca4274217f6" kindref="member">States</ref>.QR_SCAN_STATE)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="class_state_1a8cea1a06337b876a31f9185e7d4c7abb" kindref="member">OnStateEnter</ref><sp/>+=<sp/>()<sp/>=&gt;<sp/><ref refid="class_mini_model_display_manager_1a7deff82884ce4cb16b5a244d9d388741" kindref="member">ResetDisplay</ref>();</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_mini_model_display_manager_1a7673f17908c7f9093ca3652c23d93bbe" kindref="member">m_MiniDisplayImage</ref><sp/>=<sp/>GetComponent&lt;Image&gt;();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_mini_model_display_manager_1a43686266cac1f4ebf1e984de6f626a48" kindref="member">m_DefaultSprite</ref><sp/>=<sp/><ref refid="class_mini_model_display_manager_1a7673f17908c7f9093ca3652c23d93bbe" kindref="member">m_MiniDisplayImage</ref>.sprite;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RectTransform<sp/>rt<sp/>=<sp/>GetComponent&lt;RectTransform&gt;();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_mini_model_display_manager_1aa4445490e618f02cfb2e3c9e35c20dd7" kindref="member">m_DisplayHeight</ref><sp/>=<sp/>(int)rt.rect.height;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_mini_model_display_manager_1ac386524a3fac15e39556d2c5342cbb05" kindref="member">m_DisplayWidth</ref><sp/>=<sp/>(int)rt.rect.width;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_mini_model_display_manager_1a7deff82884ce4cb16b5a244d9d388741" kindref="member">ResetDisplay</ref>()</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_MiniDisplayImage.sprite<sp/>=<sp/><ref refid="class_mini_model_display_manager_1a43686266cac1f4ebf1e984de6f626a48" kindref="member">m_DefaultSprite</ref>;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_mini_model_display_manager_1a64af2ad762b78466efb79398f8f006f8" kindref="member">DisplayMiniObject</ref>()</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//TODO:<sp/>add<sp/>camera<sp/>to<sp/>models<sp/>that<sp/>dont<sp/>have<sp/>one</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//TODO:<sp/>better<sp/>adjust<sp/>size<sp/>of<sp/>camera<sp/>to<sp/>perfectly<sp/>fit<sp/>model,<sp/>now<sp/>it<sp/>is<sp/>up<sp/>to<sp/>the<sp/>model&apos;s<sp/>own<sp/>config.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width<sp/>=<sp/>Screen.width;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height<sp/>=<sp/>Screen.height;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GameObject<sp/>loadedModel<sp/>=<sp/><ref refid="class_q_r_network_handler" kindref="compound">QRNetworkHandler</ref>.<ref refid="class_q_r_network_handler_1a6fcef1ceb671c940aadc1c0e61c6b8e1" kindref="member">Instance</ref>.<ref refid="class_q_r_network_handler_1a83028ff7ab89b8a060045f0692551e24" kindref="member">LoadedModel</ref>;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loadedModel.SetLayerRecursively(<ref refid="class_mini_model_display_manager_1adcc55c2781de9ad313397771010aebf2" kindref="member">ModelImageLayer</ref>);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Camera<sp/>renderCamera<sp/>=<sp/>loadedModel.GetComponentInChildren&lt;Camera&gt;(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>renderCamera.clearFlags<sp/>=<sp/>CameraClearFlags.SolidColor;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>renderCamera.backgroundColor<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Color(0,<sp/>0,<sp/>0,<sp/>0);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>renderCamera.cullingMask<sp/>=<sp/>1<sp/>&lt;&lt;<sp/><ref refid="class_mini_model_display_manager_1adcc55c2781de9ad313397771010aebf2" kindref="member">ModelImageLayer</ref>;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>renderCamera.orthographic<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>renderCamera.orthographicSize<sp/>=<sp/>1.5f;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RenderTexture<sp/>cameraRender<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>RenderTexture(width,<sp/>height,<sp/>24);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>renderCamera.targetTexture<sp/>=<sp/>cameraRender;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>renderCamera.Render();</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RenderTexture.active<sp/>=<sp/>cameraRender;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Texture2D<sp/>displayTexture<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Texture2D(width,height,<sp/>TextureFormat.ARGB32,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>displayTexture.ReadPixels(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Rect(0,<sp/>0,<sp/>width,<sp/>height),<sp/>0,<sp/>0);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>displayTexture.Apply();</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sprite<sp/>sprite<sp/>=<sp/>Sprite.Create(displayTexture,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Rect(0,<sp/>0,<sp/>width,<sp/>height),<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Vector2(0.5f,<sp/>0.5f));</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_MiniDisplayImage.sprite<sp/>=<sp/>sprite;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/MiniModelDisplayManager.cs"/>
+  </compounddef>
+</doxygen>

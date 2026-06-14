@@ -1,0 +1,731 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_patent_transformer" kind="class" language="C#" prot="public">
+    <compoundname>PatentTransformer</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_patent_transformer_1acb00add6fe38bc66376e5dbbbc118d82" prot="private" static="no" mutable="no">
+        <type><ref refid="class_patent_manager" kindref="compound">PatentManager</ref></type>
+        <definition>PatentManager PatentTransformer.patentManager</definition>
+        <argsstring></argsstring>
+        <name>patentManager</name>
+        <qualifiedname>PatentTransformer.patentManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="14" column="27" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_patent_transformer_1ad5e4cd80e8969cf764a6be06e4000f1b" prot="private" static="no" mutable="no">
+        <type>InputActionProperty</type>
+        <definition>InputActionProperty PatentTransformer.dragDeltaAction</definition>
+        <argsstring></argsstring>
+        <name>dragDeltaAction</name>
+        <qualifiedname>PatentTransformer.dragDeltaAction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="16" column="34" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_patent_transformer_1adbd2baff795f1ab89f0f1830995ca601" prot="private" static="no" mutable="no">
+        <type>InputActionProperty</type>
+        <definition>InputActionProperty PatentTransformer.pinchDeltaAction</definition>
+        <argsstring></argsstring>
+        <name>pinchDeltaAction</name>
+        <qualifiedname>PatentTransformer.pinchDeltaAction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="17" column="34" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_patent_transformer_1ab4950b4472314b786bd5c474b25cd978" prot="private" static="no" mutable="no">
+        <type>InputActionProperty</type>
+        <definition>InputActionProperty PatentTransformer.twistDeltaAction</definition>
+        <argsstring></argsstring>
+        <name>twistDeltaAction</name>
+        <qualifiedname>PatentTransformer.twistDeltaAction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="18" column="34" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_patent_transformer_1ab878d31f27e8df0b679f115110dd38dc" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PatentTransformer.dragRotationSpeed</definition>
+        <argsstring></argsstring>
+        <name>dragRotationSpeed</name>
+        <qualifiedname>PatentTransformer.dragRotationSpeed</qualifiedname>
+        <initializer>= 0.12f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="20" column="20" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_patent_transformer_1a2d7b54c70db2340c478d13fbc953cb91" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PatentTransformer.twistRotationSpeed</definition>
+        <argsstring></argsstring>
+        <name>twistRotationSpeed</name>
+        <qualifiedname>PatentTransformer.twistRotationSpeed</qualifiedname>
+        <initializer>= 0.5f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="21" column="20" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_patent_transformer_1a7fe41477a79d426925a6026a517eb5d5" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PatentTransformer.pinchScaleSpeed</definition>
+        <argsstring></argsstring>
+        <name>pinchScaleSpeed</name>
+        <qualifiedname>PatentTransformer.pinchScaleSpeed</qualifiedname>
+        <initializer>= 0.05f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="23" column="20" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_patent_transformer_1aec988a6ae6cc622274b62b36dc2f88ff" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PatentTransformer.minScale</definition>
+        <argsstring></argsstring>
+        <name>minScale</name>
+        <qualifiedname>PatentTransformer.minScale</qualifiedname>
+        <initializer>= 0.01f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="24" column="20" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_patent_transformer_1a0492caecfa9fc43131d17fca688bd97d" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PatentTransformer.maxScale</definition>
+        <argsstring></argsstring>
+        <name>maxScale</name>
+        <qualifiedname>PatentTransformer.maxScale</qualifiedname>
+        <initializer>= 2f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="25" column="20" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_patent_transformer_1aa0d9d73114ecf817686d0afd745a7a2e" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool PatentTransformer.useMouseFallback</definition>
+        <argsstring></argsstring>
+        <name>useMouseFallback</name>
+        <qualifiedname>PatentTransformer.useMouseFallback</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="27" column="19" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_patent_transformer_1a1bd24db4f7d33fae2468d3428dfb96b7" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PatentTransformer.mouseDragToRotate</definition>
+        <argsstring></argsstring>
+        <name>mouseDragToRotate</name>
+        <qualifiedname>PatentTransformer.mouseDragToRotate</qualifiedname>
+        <initializer>= 0.2f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="28" column="20" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_patent_transformer_1a7d869a2e55e3f005dacc350c6713976b" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PatentTransformer.mouseScrollToScale</definition>
+        <argsstring></argsstring>
+        <name>mouseScrollToScale</name>
+        <qualifiedname>PatentTransformer.mouseScrollToScale</qualifiedname>
+        <initializer>= 0.1f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="29" column="20" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_patent_transformer_1ab36ab329560b68ddca18fe16bccafdfa" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PatentTransformer.smoothSpeed</definition>
+        <argsstring></argsstring>
+        <name>smoothSpeed</name>
+        <qualifiedname>PatentTransformer.smoothSpeed</qualifiedname>
+        <initializer>= 2f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="31" column="20" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_patent_transformer_1a4c4bf649aa3195ddceebb6ec4c9d38c3" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool PatentTransformer.usePivot</definition>
+        <argsstring></argsstring>
+        <name>usePivot</name>
+        <qualifiedname>PatentTransformer.usePivot</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="32" column="19" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_patent_transformer_1af1a97da836ece9a7c20c451ad1a3c0c3" prot="private" static="no" mutable="no">
+        <type>Quaternion</type>
+        <definition>Quaternion PatentTransformer.targetRotation</definition>
+        <argsstring></argsstring>
+        <name>targetRotation</name>
+        <qualifiedname>PatentTransformer.targetRotation</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="34" column="24" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_patent_transformer_1a32ba0f2e016e8b3169f1500b434eb245" prot="private" static="no" mutable="no">
+        <type>Vector3</type>
+        <definition>Vector3 PatentTransformer.targetScale</definition>
+        <argsstring></argsstring>
+        <name>targetScale</name>
+        <qualifiedname>PatentTransformer.targetScale</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="35" column="21" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="35" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_patent_transformer_1a3de7898a722ad3de8beb38ccf88d406a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Vector3</type>
+        <definition>Vector3 PatentTransformer.GetRotationCenter</definition>
+        <argsstring>(GameObject obj)</argsstring>
+        <name>GetRotationCenter</name>
+        <qualifiedname>PatentTransformer.GetRotationCenter</qualifiedname>
+        <param>
+          <type>GameObject</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+<para>Returns the world-space point around which the model should rotate. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When <computeroutput>usePivot</computeroutput> is <computeroutput>true</computeroutput> this is the object&apos;s transform origin; otherwise it is the world-space center of the local mesh bounds.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>obj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The patent root GameObject to evaluate.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The world-space rotation center.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="44" column="21" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="44" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="class_patent_transformer_1a4f450a2a9e863bb6cf8b40e55ff028cb" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PatentTransformer.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <qualifiedname>PatentTransformer.Start</qualifiedname>
+        <briefdescription>
+<para>Caches the PatentManager singleton reference. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="60" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="60" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="class_patent_transformer_1a3d61b308560779a365a66279e42b24ef" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PatentTransformer.Update</definition>
+        <argsstring>()</argsstring>
+        <name>Update</name>
+        <qualifiedname>PatentTransformer.Update</qualifiedname>
+        <briefdescription>
+<para>Each frame, smoothly interpolates the active patent&apos;s scale toward <computeroutput>targetScale</computeroutput> and its rotation toward <computeroutput>targetRotation</computeroutput> using Slerp, keeping the model orbiting around its rotation center. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="71" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="71" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="class_patent_transformer_1a4e661b57025437c96e39649562dba7b5" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PatentTransformer.OnEnable</definition>
+        <argsstring>()</argsstring>
+        <name>OnEnable</name>
+        <qualifiedname>PatentTransformer.OnEnable</qualifiedname>
+        <briefdescription>
+<para>Registers all input action callbacks and controller event subscriptions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="99" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="99" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="class_patent_transformer_1a66d720d5064f5ed300ec0b1cadc87696" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PatentTransformer.OnDisable</definition>
+        <argsstring>()</argsstring>
+        <name>OnDisable</name>
+        <qualifiedname>PatentTransformer.OnDisable</qualifiedname>
+        <briefdescription>
+<para>Removes all input action callbacks and controller event subscriptions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="106" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="106" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="class_patent_transformer_1a3a85eaa574cf79e44ab43a0f00d4a4a6" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PatentTransformer.EnableTransformInputs</definition>
+        <argsstring>()</argsstring>
+        <name>EnableTransformInputs</name>
+        <qualifiedname>PatentTransformer.EnableTransformInputs</qualifiedname>
+        <briefdescription>
+<para>Subscribes the drag and pinch input actions and the pivot-change event so the model responds to touch gestures. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="117" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="117" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="class_patent_transformer_1aaba293d84060f60b6f9764ac0e54761c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PatentTransformer.UsePivot</definition>
+        <argsstring>(bool _usePivot)</argsstring>
+        <name>UsePivot</name>
+        <qualifiedname>PatentTransformer.UsePivot</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>_usePivot</declname>
+        </param>
+        <briefdescription>
+<para>Updates the local <computeroutput>usePivot</computeroutput> flag in response to PivotSettingManager.OnPivotUseChange. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>_usePivot</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>true</computeroutput> to rotate around the transform origin.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="144" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="144" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="class_patent_transformer_1ac9efc4bd262d186f438301f16163e5da" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PatentTransformer.DisableTransformInputs</definition>
+        <argsstring>()</argsstring>
+        <name>DisableTransformInputs</name>
+        <qualifiedname>PatentTransformer.DisableTransformInputs</qualifiedname>
+        <briefdescription>
+<para>Unsubscribes the drag and pinch input actions and the pivot-change event so gestures no longer affect the model (used when locked or in 1:1 mode). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="153" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="153" bodyend="170"/>
+      </memberdef>
+      <memberdef kind="function" id="class_patent_transformer_1a1dd387d2d10c160b9bfc13341ce26d8e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PatentTransformer.UpdateMouseRotation</definition>
+        <argsstring>()</argsstring>
+        <name>UpdateMouseRotation</name>
+        <qualifiedname>PatentTransformer.UpdateMouseRotation</qualifiedname>
+        <briefdescription>
+<para>Applies mouse-drag rotation to <computeroutput>targetRotation</computeroutput> when <computeroutput>useMouseFallback</computeroutput> is enabled and the left mouse button is held. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Rotates around the world Y axis (horizontal drag) and the camera&apos;s right axis (vertical drag). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="178" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="178" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="class_patent_transformer_1add320202fd02647f42c3065411e55186" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PatentTransformer.EnableControllers</definition>
+        <argsstring>()</argsstring>
+        <name>EnableControllers</name>
+        <qualifiedname>PatentTransformer.EnableControllers</qualifiedname>
+        <briefdescription>
+<para>Subscribes to scaling-mode, reset, lock, and spawn events from the manager singletons and ObjectSpawnerAR. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="203" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="203" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="class_patent_transformer_1ab23aacc8edde933b228ee4598d9cc383" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PatentTransformer.DisableControllers</definition>
+        <argsstring>()</argsstring>
+        <name>DisableControllers</name>
+        <qualifiedname>PatentTransformer.DisableControllers</qualifiedname>
+        <briefdescription>
+<para>Unsubscribes from all manager and spawner events registered in EnableControllers. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="221" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="221" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="class_patent_transformer_1aba8c1a106ab27d8a2303e1a45ed014f3" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PatentTransformer.ChangeTransformInputState</definition>
+        <argsstring>(bool isLocked)</argsstring>
+        <name>ChangeTransformInputState</name>
+        <qualifiedname>PatentTransformer.ChangeTransformInputState</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>isLocked</declname>
+        </param>
+        <briefdescription>
+<para>Enables or disables touch/mouse transform inputs based on the lock state received from ModelTransformManager.OnLockModel. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>isLocked</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>true</computeroutput> to lock (disable inputs); <computeroutput>false</computeroutput> to unlock.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="240" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="240" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="class_patent_transformer_1aa928f4d0a9303cb839388ad2fba42198" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PatentTransformer.OnDragDelta</definition>
+        <argsstring>(InputAction.CallbackContext ctx)</argsstring>
+        <name>OnDragDelta</name>
+        <qualifiedname>PatentTransformer.OnDragDelta</qualifiedname>
+        <param>
+          <type>InputAction.CallbackContext</type>
+          <declname>ctx</declname>
+        </param>
+        <briefdescription>
+<para>Input action callback for one-finger drag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Converts the 2D screen-space delta into a combined Y-axis (yaw) and camera-right-axis (pitch) rotation and accumulates it into <computeroutput>targetRotation</computeroutput>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ctx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The input callback context providing the drag delta as Vector2.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="253" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="253" bodyend="265"/>
+      </memberdef>
+      <memberdef kind="function" id="class_patent_transformer_1aad9a12ec9b68e20b2d0001d960f76d46" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PatentTransformer.OnPinchDelta</definition>
+        <argsstring>(InputAction.CallbackContext ctx)</argsstring>
+        <name>OnPinchDelta</name>
+        <qualifiedname>PatentTransformer.OnPinchDelta</qualifiedname>
+        <param>
+          <type>InputAction.CallbackContext</type>
+          <declname>ctx</declname>
+        </param>
+        <briefdescription>
+<para>Input action callback for two-finger pinch. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Converts the pinch magnitude into a uniform scale factor and clamps the result between <computeroutput>minScale</computeroutput> and <computeroutput>maxScale</computeroutput>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ctx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The input callback context providing the pinch delta as float.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="273" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="273" bodyend="283"/>
+      </memberdef>
+      <memberdef kind="function" id="class_patent_transformer_1a366a2716ec836503e17efc4359411ded" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PatentTransformer.SyncTargets</definition>
+        <argsstring>()</argsstring>
+        <name>SyncTargets</name>
+        <qualifiedname>PatentTransformer.SyncTargets</qualifiedname>
+        <briefdescription>
+<para>Snaps <computeroutput>targetRotation</computeroutput> and <computeroutput>targetScale</computeroutput> to the active patent&apos;s current transform values so the interpolation loop starts from the correct baseline (called after spawn-time scaling is applied). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="366" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="366" bodyend="371"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_patent_transformer_1a01354282b140178040f68033bcdf9864" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PatentTransformer.OnModeChange</definition>
+        <argsstring>(bool isOneToOne)</argsstring>
+        <name>OnModeChange</name>
+        <qualifiedname>PatentTransformer.OnModeChange</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>isOneToOne</declname>
+        </param>
+        <briefdescription>
+<para>Reacts to a scaling mode change by switching between OneToOneScale and FitToScreenScale. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>isOneToOne</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>true</computeroutput> to enter 1:1 scale mode.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="291" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="291" bodyend="295"/>
+      </memberdef>
+      <memberdef kind="function" id="class_patent_transformer_1a765720931fc1cbbfd5dd75162d4b8cc4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PatentTransformer.HandleSpawnPosition</definition>
+        <argsstring>(bool toGround)</argsstring>
+        <name>HandleSpawnPosition</name>
+        <qualifiedname>PatentTransformer.HandleSpawnPosition</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>toGround</declname>
+        </param>
+        <briefdescription>
+<para>Called when the patent is first spawned. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Adjusts <computeroutput>pinchScaleSpeed</computeroutput> relative to the model&apos;s largest dimension, applies the initial screen-fit scale, and snaps the Y position to the spawn surface.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>toGround</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>true</computeroutput> if the model was placed on a detected plane (snap to ground); <computeroutput>false</computeroutput> if placed without plane detection. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="306" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="306" bodyend="319"/>
+      </memberdef>
+      <memberdef kind="function" id="class_patent_transformer_1a15313b149dc006a302dd6ef8f3904a38" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PatentTransformer.ResetRotation</definition>
+        <argsstring>()</argsstring>
+        <name>ResetRotation</name>
+        <qualifiedname>PatentTransformer.ResetRotation</qualifiedname>
+        <briefdescription>
+<para>Resets the active patent&apos;s rotation, scale, and position to the values captured at spawn time. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="325" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="325" bodyend="331"/>
+      </memberdef>
+      <memberdef kind="function" id="class_patent_transformer_1aefce817c12136ffd7c9dfacacae60540" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PatentTransformer.FitToScreenScale</definition>
+        <argsstring>()</argsstring>
+        <name>FitToScreenScale</name>
+        <qualifiedname>PatentTransformer.FitToScreenScale</qualifiedname>
+        <briefdescription>
+<para>Switches to FitScreen mode: resets the model transform and re-enables touch/mouse transform inputs. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="337" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="337" bodyend="342"/>
+      </memberdef>
+      <memberdef kind="function" id="class_patent_transformer_1a9eb91598ce01ce54256d7a404328d6fc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PatentTransformer.OneToOneScale</definition>
+        <argsstring>()</argsstring>
+        <name>OneToOneScale</name>
+        <qualifiedname>PatentTransformer.OneToOneScale</qualifiedname>
+        <briefdescription>
+<para>Switches to 1:1 real-world scale mode: sets scale to Vector3.one, resets rotation, pushes the model out of the camera&apos;s view via PivotSetter.ChangeToOneOneMode, and disables touch/mouse transform inputs. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="350" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="350" bodyend="358"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Handles touch gestures (drag-to-rotate, pinch-to-scale) and mouse fallback to transform the active patent model. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Smoothly interpolates towards <computeroutput>targetRotation</computeroutput> and <computeroutput>targetScale</computeroutput> each frame. Reacts to ScalingModeController.modeChanged, ModelTransformManager.OnLockModel, and ObjectSpawnerAR.objectSpawnedEvent. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>PatentTransformer</label>
+        <link refid="class_patent_transformer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="3">
+        <label>PatentManager</label>
+        <link refid="class_patent_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>Instance</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>PatentTransformer</label>
+        <link refid="class_patent_transformer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>patentManager</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" line="12" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PatentTransformer.cs" bodystart="13" bodyend="372"/>
+    <listofallmembers>
+      <member refid="class_patent_transformer_1aba8c1a106ab27d8a2303e1a45ed014f3" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>ChangeTransformInputState</name></member>
+      <member refid="class_patent_transformer_1ab23aacc8edde933b228ee4598d9cc383" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>DisableControllers</name></member>
+      <member refid="class_patent_transformer_1ac9efc4bd262d186f438301f16163e5da" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>DisableTransformInputs</name></member>
+      <member refid="class_patent_transformer_1ad5e4cd80e8969cf764a6be06e4000f1b" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>dragDeltaAction</name></member>
+      <member refid="class_patent_transformer_1ab878d31f27e8df0b679f115110dd38dc" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>dragRotationSpeed</name></member>
+      <member refid="class_patent_transformer_1add320202fd02647f42c3065411e55186" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>EnableControllers</name></member>
+      <member refid="class_patent_transformer_1a3a85eaa574cf79e44ab43a0f00d4a4a6" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>EnableTransformInputs</name></member>
+      <member refid="class_patent_transformer_1aefce817c12136ffd7c9dfacacae60540" prot="public" virt="non-virtual"><scope>PatentTransformer</scope><name>FitToScreenScale</name></member>
+      <member refid="class_patent_transformer_1a3de7898a722ad3de8beb38ccf88d406a" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>GetRotationCenter</name></member>
+      <member refid="class_patent_transformer_1a765720931fc1cbbfd5dd75162d4b8cc4" prot="public" virt="non-virtual"><scope>PatentTransformer</scope><name>HandleSpawnPosition</name></member>
+      <member refid="class_patent_transformer_1a0492caecfa9fc43131d17fca688bd97d" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>maxScale</name></member>
+      <member refid="class_patent_transformer_1aec988a6ae6cc622274b62b36dc2f88ff" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>minScale</name></member>
+      <member refid="class_patent_transformer_1a1bd24db4f7d33fae2468d3428dfb96b7" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>mouseDragToRotate</name></member>
+      <member refid="class_patent_transformer_1a7d869a2e55e3f005dacc350c6713976b" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>mouseScrollToScale</name></member>
+      <member refid="class_patent_transformer_1a66d720d5064f5ed300ec0b1cadc87696" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>OnDisable</name></member>
+      <member refid="class_patent_transformer_1aa928f4d0a9303cb839388ad2fba42198" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>OnDragDelta</name></member>
+      <member refid="class_patent_transformer_1a4e661b57025437c96e39649562dba7b5" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>OnEnable</name></member>
+      <member refid="class_patent_transformer_1a9eb91598ce01ce54256d7a404328d6fc" prot="public" virt="non-virtual"><scope>PatentTransformer</scope><name>OneToOneScale</name></member>
+      <member refid="class_patent_transformer_1a01354282b140178040f68033bcdf9864" prot="public" virt="non-virtual"><scope>PatentTransformer</scope><name>OnModeChange</name></member>
+      <member refid="class_patent_transformer_1aad9a12ec9b68e20b2d0001d960f76d46" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>OnPinchDelta</name></member>
+      <member refid="class_patent_transformer_1acb00add6fe38bc66376e5dbbbc118d82" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>patentManager</name></member>
+      <member refid="class_patent_transformer_1adbd2baff795f1ab89f0f1830995ca601" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>pinchDeltaAction</name></member>
+      <member refid="class_patent_transformer_1a7fe41477a79d426925a6026a517eb5d5" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>pinchScaleSpeed</name></member>
+      <member refid="class_patent_transformer_1a15313b149dc006a302dd6ef8f3904a38" prot="public" virt="non-virtual"><scope>PatentTransformer</scope><name>ResetRotation</name></member>
+      <member refid="class_patent_transformer_1ab36ab329560b68ddca18fe16bccafdfa" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>smoothSpeed</name></member>
+      <member refid="class_patent_transformer_1a4f450a2a9e863bb6cf8b40e55ff028cb" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>Start</name></member>
+      <member refid="class_patent_transformer_1a366a2716ec836503e17efc4359411ded" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>SyncTargets</name></member>
+      <member refid="class_patent_transformer_1af1a97da836ece9a7c20c451ad1a3c0c3" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>targetRotation</name></member>
+      <member refid="class_patent_transformer_1a32ba0f2e016e8b3169f1500b434eb245" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>targetScale</name></member>
+      <member refid="class_patent_transformer_1ab4950b4472314b786bd5c474b25cd978" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>twistDeltaAction</name></member>
+      <member refid="class_patent_transformer_1a2d7b54c70db2340c478d13fbc953cb91" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>twistRotationSpeed</name></member>
+      <member refid="class_patent_transformer_1a3d61b308560779a365a66279e42b24ef" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>Update</name></member>
+      <member refid="class_patent_transformer_1a1dd387d2d10c160b9bfc13341ce26d8e" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>UpdateMouseRotation</name></member>
+      <member refid="class_patent_transformer_1aa0d9d73114ecf817686d0afd745a7a2e" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>useMouseFallback</name></member>
+      <member refid="class_patent_transformer_1aaba293d84060f60b6f9764ac0e54761c" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>UsePivot</name></member>
+      <member refid="class_patent_transformer_1a4c4bf649aa3195ddceebb6ec4c9d38c3" prot="private" virt="non-virtual"><scope>PatentTransformer</scope><name>usePivot</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

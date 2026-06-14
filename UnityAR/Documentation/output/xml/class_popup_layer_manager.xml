@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_popup_layer_manager" kind="class" language="C#" prot="public">
+    <compoundname>PopupLayerManager</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_popup_layer_manager_1a4d63cc22cc92ba25489c4ef13f51b826" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PopupLayerManager.Awake</definition>
+        <argsstring>()</argsstring>
+        <name>Awake</name>
+        <qualifiedname>PopupLayerManager.Awake</qualifiedname>
+        <briefdescription>
+<para>Registers this GameObject as the global popup layer and hides it by default. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupLayerManager.cs" line="11" column="10" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupLayerManager.cs" bodystart="11" bodyend="15"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Registers this GameObject as PopupWindow.PopupLayer on Awake and hides it by default. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The popup layer is a full-screen overlay that blocks interaction with the AR scene while a popup is open. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>PopupLayerManager</label>
+        <link refid="class_popup_layer_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>PopupLayerManager</label>
+        <link refid="class_popup_layer_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupLayerManager.cs" line="8" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupLayerManager.cs" bodystart="9" bodyend="16"/>
+    <listofallmembers>
+      <member refid="class_popup_layer_manager_1a4d63cc22cc92ba25489c4ef13f51b826" prot="private" virt="non-virtual"><scope>PopupLayerManager</scope><name>Awake</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

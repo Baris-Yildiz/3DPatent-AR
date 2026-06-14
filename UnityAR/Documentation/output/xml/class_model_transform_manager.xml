@@ -1,0 +1,405 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_model_transform_manager" kind="class" language="C#" prot="public">
+    <compoundname>ModelTransformManager</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_model_transform_manager_1ad28d7eee6a172f9c5f81c68832c429fb" prot="public" static="no" mutable="no">
+        <type><ref refid="class_u_i_toggle" kindref="compound">UIToggle</ref></type>
+        <definition>UIToggle ModelTransformManager.LockModelUIToggle</definition>
+        <argsstring></argsstring>
+        <name>LockModelUIToggle</name>
+        <qualifiedname>ModelTransformManager.LockModelUIToggle</qualifiedname>
+        <briefdescription>
+<para>Toggle that locks or unlocks model interaction. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" line="14" column="21" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_model_transform_manager_1aff0c0f0507a52b75c34e98eaa49c91fd" prot="public" static="no" mutable="no">
+        <type>Button</type>
+        <definition>Button ModelTransformManager.ResetModelTransformButton</definition>
+        <argsstring></argsstring>
+        <name>ResetModelTransformButton</name>
+        <qualifiedname>ModelTransformManager.ResetModelTransformButton</qualifiedname>
+        <briefdescription>
+<para>Button that resets the model to its initial transform. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" line="17" column="19" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_model_transform_manager_1a5002fd95f751ea16684e38e5e2290daf" prot="public" static="no" mutable="no">
+        <type>Button</type>
+        <definition>Button ModelTransformManager.DeleteModelTransformButton</definition>
+        <argsstring></argsstring>
+        <name>DeleteModelTransformButton</name>
+        <qualifiedname>ModelTransformManager.DeleteModelTransformButton</qualifiedname>
+        <briefdescription>
+<para>Button that deletes the currently active patent model. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" line="20" column="19" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_model_transform_manager_1a253b305ff9ad526e6fcbb40cda8fbc2c" prot="public" static="no" mutable="no">
+        <type>Toggle</type>
+        <definition>Toggle ModelTransformManager.LockModelTransformToggle</definition>
+        <argsstring></argsstring>
+        <name>LockModelTransformToggle</name>
+        <qualifiedname>ModelTransformManager.LockModelTransformToggle</qualifiedname>
+        <briefdescription>
+<para>Underlying Toggle component for the lock control. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" line="23" column="19" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="property">
+      <memberdef kind="property" id="class_model_transform_manager_1a5fcc58b117c1c4947316238d3ac285c9" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="yes" protectedsettable="no">
+        <type><ref refid="class_model_transform_manager" kindref="compound">ModelTransformManager</ref></type>
+        <definition>ModelTransformManager ModelTransformManager.Instance</definition>
+        <argsstring></argsstring>
+        <name>Instance</name>
+        <qualifiedname>ModelTransformManager.Instance</qualifiedname>
+        <briefdescription>
+<para>The single active instance of ModelTransformManager. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" line="26" column="41" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" bodystart="26" bodyend="26"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="event">
+      <memberdef kind="event" id="class_model_transform_manager_1a240a574c5db935bf3730314d650a249c" prot="public" static="no" add="no" remove="no" raise="no">
+        <type>UnityAction&lt; bool &gt;</type>
+        <definition>UnityAction&lt;bool&gt; ModelTransformManager.OnLockModel</definition>
+        <argsstring></argsstring>
+        <name>OnLockModel</name>
+        <qualifiedname>ModelTransformManager.OnLockModel</qualifiedname>
+        <briefdescription>
+<para>Fired when the lock toggle changes. Parameter is <computeroutput>true</computeroutput> when locked. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" line="29" column="30" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="event" id="class_model_transform_manager_1a7a68541b4c0d509f5b12db2b3cdf1aca" prot="public" static="no" add="no" remove="no" raise="no">
+        <type>UnityAction</type>
+        <definition>UnityAction ModelTransformManager.OnResetModelTransform</definition>
+        <argsstring></argsstring>
+        <name>OnResetModelTransform</name>
+        <qualifiedname>ModelTransformManager.OnResetModelTransform</qualifiedname>
+        <briefdescription>
+<para>Fired after the user confirms a transform reset. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" line="32" column="30" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="event" id="class_model_transform_manager_1a2fdb3d8b69209918ead01f384cf2e12e" prot="public" static="no" add="no" remove="no" raise="no">
+        <type>UnityAction</type>
+        <definition>UnityAction ModelTransformManager.OnDeleteModel</definition>
+        <argsstring></argsstring>
+        <name>OnDeleteModel</name>
+        <qualifiedname>ModelTransformManager.OnDeleteModel</qualifiedname>
+        <briefdescription>
+<para>Fired after the user confirms model deletion. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" line="35" column="30" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" bodystart="35" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_model_transform_manager_1a2d29c1d92fb65d9d129c20862c22d25c" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject ModelTransformManager.m_ResetTransformPopupWindow</definition>
+        <argsstring></argsstring>
+        <name>m_ResetTransformPopupWindow</name>
+        <qualifiedname>ModelTransformManager.m_ResetTransformPopupWindow</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" line="38" column="24" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_model_transform_manager_1a89c31bad71e013e701cbdb52a7fd77db" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject ModelTransformManager.m_DeleteModelPopupWindow</definition>
+        <argsstring></argsstring>
+        <name>m_DeleteModelPopupWindow</name>
+        <qualifiedname>ModelTransformManager.m_DeleteModelPopupWindow</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" line="39" column="24" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" bodystart="39" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_model_transform_manager_1a98752d7d53b6369011ce1ab659f52705" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ModelTransformManager.Awake</definition>
+        <argsstring>()</argsstring>
+        <name>Awake</name>
+        <qualifiedname>ModelTransformManager.Awake</qualifiedname>
+        <briefdescription>
+<para>Initialises the singleton and clears cached popup references. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" line="42" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" bodystart="42" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="class_model_transform_manager_1a6a50e92abb40b1cb3bdc50535a93ab9f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ModelTransformManager.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <qualifiedname>ModelTransformManager.Start</qualifiedname>
+        <briefdescription>
+<para>Wires button and toggle listeners, subscribes to scaling-mode changes to auto-lock controls in 1:1 mode, and hides the panel until a model is active. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" line="53" column="10" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" bodystart="53" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="class_model_transform_manager_1a76f1916748e4d0c359bbbbd521c45b10" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ModelTransformManager.LockLockToggle</definition>
+        <argsstring>(bool isOn)</argsstring>
+        <name>LockLockToggle</name>
+        <qualifiedname>ModelTransformManager.LockLockToggle</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>isOn</declname>
+        </param>
+        <briefdescription>
+<para>Forces the lock toggle on and makes it non-interactable when 1:1 mode is active, ensuring the model cannot be moved while at real-world scale. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>isOn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>true</computeroutput> when 1:1 mode is active.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" line="73" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" bodystart="73" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="class_model_transform_manager_1a22e1e2fc6fa38496b54e423007e633d3" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ModelTransformManager.LockResetButton</definition>
+        <argsstring>(bool isOn)</argsstring>
+        <name>LockResetButton</name>
+        <qualifiedname>ModelTransformManager.LockResetButton</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>isOn</declname>
+        </param>
+        <briefdescription>
+<para>Disables the reset button in 1:1 mode because resetting scale would conflict with real-world positioning. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>isOn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>true</computeroutput> when 1:1 mode is active.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" line="84" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" bodystart="84" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="class_model_transform_manager_1a00fa62a325070b186d003c70b15de907" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ModelTransformManager.DisplayResetTransformPopup</definition>
+        <argsstring>()</argsstring>
+        <name>DisplayResetTransformPopup</name>
+        <qualifiedname>ModelTransformManager.DisplayResetTransformPopup</qualifiedname>
+        <briefdescription>
+<para>Shows a confirmation popup before resetting the model transform. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates the popup on first call; reuses it on subsequent calls. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" line="93" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" bodystart="93" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="class_model_transform_manager_1a9cdc27804f372a6028c7db6b08ac6605" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ModelTransformManager.OnResetTransformPopupOK</definition>
+        <argsstring>()</argsstring>
+        <name>OnResetTransformPopupOK</name>
+        <qualifiedname>ModelTransformManager.OnResetTransformPopupOK</qualifiedname>
+        <briefdescription>
+<para>Confirms the reset: restores button interactivity, hides the popup, and fires OnResetModelTransform. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" line="117" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" bodystart="117" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="class_model_transform_manager_1a7106bd73666d39cf33589182e31ab710" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ModelTransformManager.OnResetTransformPopupCancel</definition>
+        <argsstring>()</argsstring>
+        <name>OnResetTransformPopupCancel</name>
+        <qualifiedname>ModelTransformManager.OnResetTransformPopupCancel</qualifiedname>
+        <briefdescription>
+<para>Cancels the reset and restores button interactivity. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" line="125" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" bodystart="125" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="class_model_transform_manager_1a6560b6653a21a6371c3fedd8821403bc" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ModelTransformManager.DisplayDeleteModelPopup</definition>
+        <argsstring>()</argsstring>
+        <name>DisplayDeleteModelPopup</name>
+        <qualifiedname>ModelTransformManager.DisplayDeleteModelPopup</qualifiedname>
+        <briefdescription>
+<para>Shows a confirmation popup before deleting the active patent model. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates the popup on first call; reuses it on subsequent calls. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" line="135" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" bodystart="135" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="class_model_transform_manager_1ae9813ddcf8f0d6ccfbd7e5cb6279cbba" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ModelTransformManager.OnDeleteModelPopupOK</definition>
+        <argsstring>()</argsstring>
+        <name>OnDeleteModelPopupOK</name>
+        <qualifiedname>ModelTransformManager.OnDeleteModelPopupOK</qualifiedname>
+        <briefdescription>
+<para>Confirms deletion: restores button interactivity, hides the popup, calls PatentManager.DeleteActivePatent, and fires OnDeleteModel. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" line="159" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" bodystart="159" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="class_model_transform_manager_1aad8f13eac824236d53ba43f07dabafab" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ModelTransformManager.OnDeleteModelPopupCancel</definition>
+        <argsstring>()</argsstring>
+        <name>OnDeleteModelPopupCancel</name>
+        <qualifiedname>ModelTransformManager.OnDeleteModelPopupCancel</qualifiedname>
+        <briefdescription>
+<para>Cancels the deletion and restores button interactivity. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" line="168" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" bodystart="168" bodyend="172"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Singleton manager for model transform controls: lock/unlock movement, reset transform, and delete the active patent model. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Drives confirmation popups via PopupBuilder before executing destructive actions. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>ModelTransformManager</label>
+        <link refid="class_model_transform_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>ModelTransformManager</label>
+        <link refid="class_model_transform_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>LockModelUIToggle</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="3">
+        <label>UIToggle</label>
+        <link refid="class_u_i_toggle"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" line="11" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelTransformManager.cs" bodystart="12" bodyend="173"/>
+    <listofallmembers>
+      <member refid="class_model_transform_manager_1a98752d7d53b6369011ce1ab659f52705" prot="private" virt="non-virtual"><scope>ModelTransformManager</scope><name>Awake</name></member>
+      <member refid="class_model_transform_manager_1a5002fd95f751ea16684e38e5e2290daf" prot="public" virt="non-virtual"><scope>ModelTransformManager</scope><name>DeleteModelTransformButton</name></member>
+      <member refid="class_model_transform_manager_1a6560b6653a21a6371c3fedd8821403bc" prot="private" virt="non-virtual"><scope>ModelTransformManager</scope><name>DisplayDeleteModelPopup</name></member>
+      <member refid="class_model_transform_manager_1a00fa62a325070b186d003c70b15de907" prot="private" virt="non-virtual"><scope>ModelTransformManager</scope><name>DisplayResetTransformPopup</name></member>
+      <member refid="class_model_transform_manager_1a5fcc58b117c1c4947316238d3ac285c9" prot="public" virt="non-virtual"><scope>ModelTransformManager</scope><name>Instance</name></member>
+      <member refid="class_model_transform_manager_1a76f1916748e4d0c359bbbbd521c45b10" prot="private" virt="non-virtual"><scope>ModelTransformManager</scope><name>LockLockToggle</name></member>
+      <member refid="class_model_transform_manager_1a253b305ff9ad526e6fcbb40cda8fbc2c" prot="public" virt="non-virtual"><scope>ModelTransformManager</scope><name>LockModelTransformToggle</name></member>
+      <member refid="class_model_transform_manager_1ad28d7eee6a172f9c5f81c68832c429fb" prot="public" virt="non-virtual"><scope>ModelTransformManager</scope><name>LockModelUIToggle</name></member>
+      <member refid="class_model_transform_manager_1a22e1e2fc6fa38496b54e423007e633d3" prot="private" virt="non-virtual"><scope>ModelTransformManager</scope><name>LockResetButton</name></member>
+      <member refid="class_model_transform_manager_1a89c31bad71e013e701cbdb52a7fd77db" prot="private" virt="non-virtual"><scope>ModelTransformManager</scope><name>m_DeleteModelPopupWindow</name></member>
+      <member refid="class_model_transform_manager_1a2d29c1d92fb65d9d129c20862c22d25c" prot="private" virt="non-virtual"><scope>ModelTransformManager</scope><name>m_ResetTransformPopupWindow</name></member>
+      <member refid="class_model_transform_manager_1a2fdb3d8b69209918ead01f384cf2e12e" prot="public" virt="non-virtual"><scope>ModelTransformManager</scope><name>OnDeleteModel</name></member>
+      <member refid="class_model_transform_manager_1aad8f13eac824236d53ba43f07dabafab" prot="private" virt="non-virtual"><scope>ModelTransformManager</scope><name>OnDeleteModelPopupCancel</name></member>
+      <member refid="class_model_transform_manager_1ae9813ddcf8f0d6ccfbd7e5cb6279cbba" prot="private" virt="non-virtual"><scope>ModelTransformManager</scope><name>OnDeleteModelPopupOK</name></member>
+      <member refid="class_model_transform_manager_1a240a574c5db935bf3730314d650a249c" prot="public" virt="non-virtual"><scope>ModelTransformManager</scope><name>OnLockModel</name></member>
+      <member refid="class_model_transform_manager_1a7a68541b4c0d509f5b12db2b3cdf1aca" prot="public" virt="non-virtual"><scope>ModelTransformManager</scope><name>OnResetModelTransform</name></member>
+      <member refid="class_model_transform_manager_1a7106bd73666d39cf33589182e31ab710" prot="private" virt="non-virtual"><scope>ModelTransformManager</scope><name>OnResetTransformPopupCancel</name></member>
+      <member refid="class_model_transform_manager_1a9cdc27804f372a6028c7db6b08ac6605" prot="private" virt="non-virtual"><scope>ModelTransformManager</scope><name>OnResetTransformPopupOK</name></member>
+      <member refid="class_model_transform_manager_1aff0c0f0507a52b75c34e98eaa49c91fd" prot="public" virt="non-virtual"><scope>ModelTransformManager</scope><name>ResetModelTransformButton</name></member>
+      <member refid="class_model_transform_manager_1a6a50e92abb40b1cb3bdc50535a93ab9f" prot="private" virt="non-virtual"><scope>ModelTransformManager</scope><name>Start</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

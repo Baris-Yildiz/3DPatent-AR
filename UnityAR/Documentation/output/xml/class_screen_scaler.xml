@@ -1,0 +1,268 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_screen_scaler" kind="class" language="C#" prot="public">
+    <compoundname>ScreenScaler</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_screen_scaler_1a5e8746a9ce859027597b630b1d6acdde" prot="public" static="yes" mutable="no">
+        <type><ref refid="class_screen_scaler" kindref="compound">ScreenScaler</ref></type>
+        <definition>ScreenScaler ScreenScaler.instance</definition>
+        <argsstring></argsstring>
+        <name>instance</name>
+        <qualifiedname>ScreenScaler.instance</qualifiedname>
+        <briefdescription>
+<para>The single active instance of ScreenScaler. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScreenScaler.cs" line="16" column="32" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScreenScaler.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_screen_scaler_1ae42b1237130d421ccb1818242c565379" prot="public" static="no" mutable="no">
+        <type>TextMeshProUGUI</type>
+        <definition>TextMeshProUGUI ScreenScaler.txt</definition>
+        <argsstring></argsstring>
+        <name>txt</name>
+        <qualifiedname>ScreenScaler.txt</qualifiedname>
+        <briefdescription>
+<para>Optional debug text field for displaying scale info. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScreenScaler.cs" line="19" column="28" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScreenScaler.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_screen_scaler_1a8f8a46a770b556720a242fa3b4e1947c" prot="private" static="no" mutable="no">
+        <type>Camera</type>
+        <definition>Camera ScreenScaler.cam</definition>
+        <argsstring></argsstring>
+        <name>cam</name>
+        <qualifiedname>ScreenScaler.cam</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScreenScaler.cs" line="21" column="20" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScreenScaler.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_screen_scaler_1a8582259e81d9274f1d73e19cbc1e074d" prot="private" static="no" mutable="no">
+        <type>Vector3</type>
+        <definition>Vector3 ScreenScaler.originalSize</definition>
+        <argsstring></argsstring>
+        <name>originalSize</name>
+        <qualifiedname>ScreenScaler.originalSize</qualifiedname>
+        <initializer>= Vector3.negativeInfinity</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScreenScaler.cs" line="22" column="21" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScreenScaler.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_screen_scaler_1a6de57ed7931b3e266c3eb49937a6ed01" prot="private" static="no" mutable="no">
+        <type>Vector3</type>
+        <definition>Vector3 ScreenScaler.originalCenter</definition>
+        <argsstring></argsstring>
+        <name>originalCenter</name>
+        <qualifiedname>ScreenScaler.originalCenter</qualifiedname>
+        <initializer>= Vector3.negativeInfinity</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScreenScaler.cs" line="23" column="21" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScreenScaler.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_screen_scaler_1af3e27f7c85da0e32b7e6a22aab97038f" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ScreenScaler.isScreenFitOn</definition>
+        <argsstring></argsstring>
+        <name>isScreenFitOn</name>
+        <qualifiedname>ScreenScaler.isScreenFitOn</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScreenScaler.cs" line="24" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScreenScaler.cs" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_screen_scaler_1a49c701838f9dfe4b8e4b2efc915eda21" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float ScreenScaler.scaleAmount</definition>
+        <argsstring></argsstring>
+        <name>scaleAmount</name>
+        <qualifiedname>ScreenScaler.scaleAmount</qualifiedname>
+        <initializer>= 0.6f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScreenScaler.cs" line="26" column="21" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScreenScaler.cs" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_screen_scaler_1a7dfee10e36894cfb3ea7b4d46c06f64c" prot="private" static="no" mutable="no">
+        <type>Slider</type>
+        <definition>Slider ScreenScaler.slider</definition>
+        <argsstring></argsstring>
+        <name>slider</name>
+        <qualifiedname>ScreenScaler.slider</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScreenScaler.cs" line="27" column="21" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScreenScaler.cs" bodystart="27" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_screen_scaler_1a558ebaded43f55d0fdf7ea1dc3090783" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ScreenScaler.Awake</definition>
+        <argsstring>()</argsstring>
+        <name>Awake</name>
+        <qualifiedname>ScreenScaler.Awake</qualifiedname>
+        <briefdescription>
+<para>Initialises the singleton and caches Camera.main. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScreenScaler.cs" line="30" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScreenScaler.cs" bodystart="30" bodyend="41"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_screen_scaler_1a6f6e43b450e2ebd4080d8fb199225517" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ScreenScaler.SetScreenFit</definition>
+        <argsstring>(bool isOn)</argsstring>
+        <name>SetScreenFit</name>
+        <qualifiedname>ScreenScaler.SetScreenFit</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>isOn</declname>
+        </param>
+        <briefdescription>
+<para>Enables or disables the screen-fit calculation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When disabled FitScreen returns <computeroutput>-1</computeroutput>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>isOn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>true</computeroutput> to enable screen fitting.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScreenScaler.cs" line="48" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScreenScaler.cs" bodystart="48" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="class_screen_scaler_1a21643cb05cd9eed8d45363c23c1653fa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float ScreenScaler.FitScreen</definition>
+        <argsstring>(GameObject patent, bool usePivot)</argsstring>
+        <name>FitScreen</name>
+        <qualifiedname>ScreenScaler.FitScreen</qualifiedname>
+        <param>
+          <type>GameObject</type>
+          <declname>patent</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>usePivot</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the uniform scale multiplier that makes <emphasis>patent</emphasis>  fill <computeroutput>scaleAmount</computeroutput> of the camera&apos;s view frustum at its current distance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>patent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The root GameObject of the patent model to size.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>usePivot</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>When <computeroutput>true</computeroutput>, uses the object&apos;s transform position as the reference center; otherwise uses the bounds center. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The scale multiplier to apply, or <computeroutput>-1</computeroutput> if the calculation cannot proceed (null inputs or screen fit disabled). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScreenScaler.cs" line="71" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScreenScaler.cs" bodystart="71" bodyend="94"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Singleton utility that calculates the uniform scale factor needed to fit a patent model within a configurable fraction of the device screen. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Uses the camera&apos;s FOV and the model&apos;s world-space bounds from PivotSetter.GetSpawnBounds. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>ScreenScaler</label>
+        <link refid="class_screen_scaler"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>ScreenScaler</label>
+        <link refid="class_screen_scaler"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1" relation="usage">
+          <edgelabel>instance</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScreenScaler.cs" line="12" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScreenScaler.cs" bodystart="13" bodyend="97"/>
+    <listofallmembers>
+      <member refid="class_screen_scaler_1a558ebaded43f55d0fdf7ea1dc3090783" prot="private" virt="non-virtual"><scope>ScreenScaler</scope><name>Awake</name></member>
+      <member refid="class_screen_scaler_1a8f8a46a770b556720a242fa3b4e1947c" prot="private" virt="non-virtual"><scope>ScreenScaler</scope><name>cam</name></member>
+      <member refid="class_screen_scaler_1a21643cb05cd9eed8d45363c23c1653fa" prot="public" virt="non-virtual"><scope>ScreenScaler</scope><name>FitScreen</name></member>
+      <member refid="class_screen_scaler_1a5e8746a9ce859027597b630b1d6acdde" prot="public" virt="non-virtual"><scope>ScreenScaler</scope><name>instance</name></member>
+      <member refid="class_screen_scaler_1af3e27f7c85da0e32b7e6a22aab97038f" prot="private" virt="non-virtual"><scope>ScreenScaler</scope><name>isScreenFitOn</name></member>
+      <member refid="class_screen_scaler_1a6de57ed7931b3e266c3eb49937a6ed01" prot="private" virt="non-virtual"><scope>ScreenScaler</scope><name>originalCenter</name></member>
+      <member refid="class_screen_scaler_1a8582259e81d9274f1d73e19cbc1e074d" prot="private" virt="non-virtual"><scope>ScreenScaler</scope><name>originalSize</name></member>
+      <member refid="class_screen_scaler_1a49c701838f9dfe4b8e4b2efc915eda21" prot="private" virt="non-virtual"><scope>ScreenScaler</scope><name>scaleAmount</name></member>
+      <member refid="class_screen_scaler_1a6f6e43b450e2ebd4080d8fb199225517" prot="public" virt="non-virtual"><scope>ScreenScaler</scope><name>SetScreenFit</name></member>
+      <member refid="class_screen_scaler_1a7dfee10e36894cfb3ea7b4d46c06f64c" prot="private" virt="non-virtual"><scope>ScreenScaler</scope><name>slider</name></member>
+      <member refid="class_screen_scaler_1ae42b1237130d421ccb1818242c565379" prot="public" virt="non-virtual"><scope>ScreenScaler</scope><name>txt</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

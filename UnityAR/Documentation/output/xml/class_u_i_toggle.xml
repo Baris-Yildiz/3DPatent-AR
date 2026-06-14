@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_u_i_toggle" kind="class" language="C#" prot="public">
+    <compoundname>UIToggle</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_u_i_toggle_1a1aa12dcfa2a17c7a64fd7a4850a24c1b" prot="private" static="no" mutable="no">
+        <type>Toggle</type>
+        <definition>Toggle UIToggle.m_Toggle</definition>
+        <argsstring></argsstring>
+        <name>m_Toggle</name>
+        <qualifiedname>UIToggle.m_Toggle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/UIToggle.cs" line="13" column="20" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/UIToggle.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_u_i_toggle_1a16b13733514ce6c4da7218a74f81ccfc" prot="private" static="no" mutable="no">
+        <type>Image</type>
+        <definition>Image UIToggle.m_Image</definition>
+        <argsstring></argsstring>
+        <name>m_Image</name>
+        <qualifiedname>UIToggle.m_Image</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/UIToggle.cs" line="18" column="19" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/UIToggle.cs" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_u_i_toggle_1ab46667b5470eafeea508ed3029af81dc" prot="private" static="no" mutable="no">
+        <type>Color</type>
+        <definition>Color UIToggle.m_DefaultColor</definition>
+        <argsstring></argsstring>
+        <name>m_DefaultColor</name>
+        <qualifiedname>UIToggle.m_DefaultColor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/UIToggle.cs" line="19" column="19" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/UIToggle.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="event">
+      <memberdef kind="event" id="class_u_i_toggle_1a7d6dfe99f6942da800f8ae363914bcae" prot="public" static="no" add="no" remove="no" raise="no">
+        <type>UnityAction&lt; bool &gt;</type>
+        <definition>UnityAction&lt;bool&gt; UIToggle.OnToggleValueChanged</definition>
+        <argsstring></argsstring>
+        <name>OnToggleValueChanged</name>
+        <qualifiedname>UIToggle.OnToggleValueChanged</qualifiedname>
+        <briefdescription>
+<para>Fired when the toggle value changes. Parameter is the new state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/UIToggle.cs" line="16" column="30" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/UIToggle.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_u_i_toggle_1a10b68760dcb88835821bded36162c97e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void UIToggle.Awake</definition>
+        <argsstring>()</argsstring>
+        <name>Awake</name>
+        <qualifiedname>UIToggle.Awake</qualifiedname>
+        <briefdescription>
+<para>Caches the Image component and its default color, then registers OnTogglePress as the toggle&apos;s value-changed listener. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/UIToggle.cs" line="25" column="10" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/UIToggle.cs" bodystart="25" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_u_i_toggle_1aad063dd73b2002d52e4f23e13db82097" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void UIToggle.OnTogglePress</definition>
+        <argsstring>(bool isOn)</argsstring>
+        <name>OnTogglePress</name>
+        <qualifiedname>UIToggle.OnTogglePress</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>isOn</declname>
+        </param>
+        <briefdescription>
+<para>Internal listener called by Unity&apos;s toggle system. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Applies the color change and then forwards the new state via OnToggleValueChanged.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>isOn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new toggle state.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/UIToggle.cs" line="40" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/UIToggle.cs" bodystart="40" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="class_u_i_toggle_1ac885ba232b45b8c9c5a2e2649b246778" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void UIToggle.ChangeColor</definition>
+        <argsstring>(bool isOn)</argsstring>
+        <name>ChangeColor</name>
+        <qualifiedname>UIToggle.ChangeColor</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>isOn</declname>
+        </param>
+        <briefdescription>
+<para>Sets the background image to green when <emphasis>isOn</emphasis>  is <computeroutput>true</computeroutput> and restores the original color when <computeroutput>false</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>isOn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>true</computeroutput> when the toggle is active.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/UIToggle.cs" line="51" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/UIToggle.cs" bodystart="51" bodyend="61"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Wrapper around Unity&apos;s Toggle that adds visual color feedback (green when on, default color when off) and exposes a typed OnToggleValueChanged event for other components to subscribe to. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>UIToggle</label>
+        <link refid="class_u_i_toggle"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>UIToggle</label>
+        <link refid="class_u_i_toggle"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/UIToggle.cs" line="11" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/UIToggle.cs" bodystart="12" bodyend="62"/>
+    <listofallmembers>
+      <member refid="class_u_i_toggle_1a10b68760dcb88835821bded36162c97e" prot="private" virt="non-virtual"><scope>UIToggle</scope><name>Awake</name></member>
+      <member refid="class_u_i_toggle_1ac885ba232b45b8c9c5a2e2649b246778" prot="private" virt="non-virtual"><scope>UIToggle</scope><name>ChangeColor</name></member>
+      <member refid="class_u_i_toggle_1ab46667b5470eafeea508ed3029af81dc" prot="private" virt="non-virtual"><scope>UIToggle</scope><name>m_DefaultColor</name></member>
+      <member refid="class_u_i_toggle_1a16b13733514ce6c4da7218a74f81ccfc" prot="private" virt="non-virtual"><scope>UIToggle</scope><name>m_Image</name></member>
+      <member refid="class_u_i_toggle_1a1aa12dcfa2a17c7a64fd7a4850a24c1b" prot="private" virt="non-virtual"><scope>UIToggle</scope><name>m_Toggle</name></member>
+      <member refid="class_u_i_toggle_1aad063dd73b2002d52e4f23e13db82097" prot="private" virt="non-virtual"><scope>UIToggle</scope><name>OnTogglePress</name></member>
+      <member refid="class_u_i_toggle_1a7d6dfe99f6942da800f8ae363914bcae" prot="public" virt="non-virtual"><scope>UIToggle</scope><name>OnToggleValueChanged</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

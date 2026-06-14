@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_u_i_visibility_manager" kind="class" language="C#" prot="public">
+    <compoundname>UIVisibilityManager</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_u_i_visibility_manager_1a7a99f8752c5bebd2d5db3adc234628ad" prot="private" static="no" mutable="no">
+        <type>List&lt; GameObject &gt;</type>
+        <definition>List&lt;GameObject&gt; UIVisibilityManager.m_ObjectsToModifyVisibility</definition>
+        <argsstring></argsstring>
+        <name>m_ObjectsToModifyVisibility</name>
+        <qualifiedname>UIVisibilityManager.m_ObjectsToModifyVisibility</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UIVisibilityManager.cs" line="13" column="10" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UIVisibilityManager.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_u_i_visibility_manager_1a567b4856dccadde62e0e8fdc92f827f0" prot="private" static="no" mutable="no">
+        <type><ref refid="class_u_i_toggle" kindref="compound">UIToggle</ref></type>
+        <definition>UIToggle UIVisibilityManager.m_UIToggleComponent</definition>
+        <argsstring></argsstring>
+        <name>m_UIToggleComponent</name>
+        <qualifiedname>UIVisibilityManager.m_UIToggleComponent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UIVisibilityManager.cs" line="14" column="22" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UIVisibilityManager.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_u_i_visibility_manager_1a66757115e564efdcfa4379270128c880" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void UIVisibilityManager.Initialize</definition>
+        <argsstring>()</argsstring>
+        <name>Initialize</name>
+        <qualifiedname>UIVisibilityManager.Initialize</qualifiedname>
+        <briefdescription>
+<para>Wires up state-machine callbacks and toggle listeners. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Call once after all singleton instances are ready. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UIVisibilityManager.cs" line="20" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UIVisibilityManager.cs" bodystart="20" bodyend="54"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_u_i_visibility_manager_1a5eeada8c697bd19796d17ac84f9a6874" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void UIVisibilityManager.SetUIObjectVisibility</definition>
+        <argsstring>(bool isOn)</argsstring>
+        <name>SetUIObjectVisibility</name>
+        <qualifiedname>UIVisibilityManager.SetUIObjectVisibility</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>isOn</declname>
+        </param>
+        <briefdescription>
+<para>Shows or hides all tracked UI objects. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>isOn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>When <computeroutput>true</computeroutput> the panels are hidden; when <computeroutput>false</computeroutput> they are shown. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UIVisibilityManager.cs" line="62" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UIVisibilityManager.cs" bodystart="62" bodyend="68"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Hides or shows a collection of AR UI panels based on the current app state and a hide-all toggle. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Must be initialised manually by calling Initialize (done by MiscOptionsManager). </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>UIVisibilityManager</label>
+        <link refid="class_u_i_visibility_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="3">
+        <label>UIToggle</label>
+        <link refid="class_u_i_toggle"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>UIVisibilityManager</label>
+        <link refid="class_u_i_visibility_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_UIToggleComponent</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UIVisibilityManager.cs" line="11" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UIVisibilityManager.cs" bodystart="12" bodyend="70"/>
+    <listofallmembers>
+      <member refid="class_u_i_visibility_manager_1a66757115e564efdcfa4379270128c880" prot="public" virt="non-virtual"><scope>UIVisibilityManager</scope><name>Initialize</name></member>
+      <member refid="class_u_i_visibility_manager_1a7a99f8752c5bebd2d5db3adc234628ad" prot="private" virt="non-virtual"><scope>UIVisibilityManager</scope><name>m_ObjectsToModifyVisibility</name></member>
+      <member refid="class_u_i_visibility_manager_1a567b4856dccadde62e0e8fdc92f827f0" prot="private" virt="non-virtual"><scope>UIVisibilityManager</scope><name>m_UIToggleComponent</name></member>
+      <member refid="class_u_i_visibility_manager_1a5eeada8c697bd19796d17ac84f9a6874" prot="private" virt="non-virtual"><scope>UIVisibilityManager</scope><name>SetUIObjectVisibility</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

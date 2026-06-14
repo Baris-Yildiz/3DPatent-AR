@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_q_r_progress_bar_manager" kind="class" language="C#" prot="public">
+    <compoundname>QRProgressBarManager</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_q_r_progress_bar_manager_1a96e7ef7bb2d7e9f2bc06ae0c35610fc5" prot="public" static="no" mutable="no">
+        <type>Slider</type>
+        <definition>Slider QRProgressBarManager.Slider</definition>
+        <argsstring></argsstring>
+        <name>Slider</name>
+        <qualifiedname>QRProgressBarManager.Slider</qualifiedname>
+        <briefdescription>
+<para>The slider that visualises download progress (0–1). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRProgressBarManager.cs" line="13" column="19" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRProgressBarManager.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_r_progress_bar_manager_1aa8b879a2415b889f6788ca649f7b0e65" prot="public" static="no" mutable="no">
+        <type>TextMeshProUGUI</type>
+        <definition>TextMeshProUGUI QRProgressBarManager.ProgressText</definition>
+        <argsstring></argsstring>
+        <name>ProgressText</name>
+        <qualifiedname>QRProgressBarManager.ProgressText</qualifiedname>
+        <briefdescription>
+<para>The text label that shows the percentage string. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRProgressBarManager.cs" line="16" column="28" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRProgressBarManager.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Simple data-container component for the model-download progress bar UI. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Exposes the Slider and ProgressText references so QRNetworkHandler can update them during download. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>QRProgressBarManager</label>
+        <link refid="class_q_r_progress_bar_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>QRProgressBarManager</label>
+        <link refid="class_q_r_progress_bar_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRProgressBarManager.cs" line="10" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRProgressBarManager.cs" bodystart="11" bodyend="17"/>
+    <listofallmembers>
+      <member refid="class_q_r_progress_bar_manager_1aa8b879a2415b889f6788ca649f7b0e65" prot="public" virt="non-virtual"><scope>QRProgressBarManager</scope><name>ProgressText</name></member>
+      <member refid="class_q_r_progress_bar_manager_1a96e7ef7bb2d7e9f2bc06ae0c35610fc5" prot="public" virt="non-virtual"><scope>QRProgressBarManager</scope><name>Slider</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

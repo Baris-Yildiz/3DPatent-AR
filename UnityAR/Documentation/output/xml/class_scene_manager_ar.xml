@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_scene_manager_ar" kind="class" language="C#" prot="public">
+    <compoundname>SceneManagerAr</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_scene_manager_ar_1a86f909e4c43cdb12c0bd8b4389cb7964" prot="public" static="yes" mutable="no">
+        <type><ref refid="class_scene_manager_ar" kindref="compound">SceneManagerAr</ref></type>
+        <definition>SceneManagerAr SceneManagerAr.instance</definition>
+        <argsstring></argsstring>
+        <name>instance</name>
+        <qualifiedname>SceneManagerAr.instance</qualifiedname>
+        <briefdescription>
+<para>The single active instance of SceneManagerAr. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/SceneManagerAr.cs" line="14" column="34" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/SceneManagerAr.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_scene_manager_ar_1a27f36566e085f7cfd64fac9fe1012bca" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void SceneManagerAr.Awake</definition>
+        <argsstring>()</argsstring>
+        <name>Awake</name>
+        <qualifiedname>SceneManagerAr.Awake</qualifiedname>
+        <briefdescription>
+<para>Initialises the singleton and marks this object to persist across scene loads. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/SceneManagerAr.cs" line="17" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/SceneManagerAr.cs" bodystart="17" bodyend="29"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_scene_manager_ar_1a6b33450ce8e820d346af5d25e323f2dc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void SceneManagerAr.GoToNextScene</definition>
+        <argsstring>()</argsstring>
+        <name>GoToNextScene</name>
+        <qualifiedname>SceneManagerAr.GoToNextScene</qualifiedname>
+        <briefdescription>
+<para>Loads the other scene based on which scene is currently active. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem>
+<para>From <computeroutput>QR Code Scanning</computeroutput> → loads <computeroutput>MyArScene</computeroutput>. </para>
+</listitem>
+<listitem>
+<para>From <computeroutput>MyArScene</computeroutput> → loads <computeroutput>QR Code Scanning</computeroutput>. </para>
+</listitem>
+</itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/SceneManagerAr.cs" line="38" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/SceneManagerAr.cs" bodystart="38" bodyend="52"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Singleton scene router that toggles between the <computeroutput>QR Code Scanning</computeroutput> scene and the <computeroutput>MyArScene</computeroutput> AR scene. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Persists across loads via UnityEngine.Object.DontDestroyOnLoad. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>SceneManagerAr</label>
+        <link refid="class_scene_manager_ar"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>SceneManagerAr</label>
+        <link refid="class_scene_manager_ar"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1" relation="usage">
+          <edgelabel>instance</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/SceneManagerAr.cs" line="10" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/SceneManagerAr.cs" bodystart="11" bodyend="53"/>
+    <listofallmembers>
+      <member refid="class_scene_manager_ar_1a27f36566e085f7cfd64fac9fe1012bca" prot="private" virt="non-virtual"><scope>SceneManagerAr</scope><name>Awake</name></member>
+      <member refid="class_scene_manager_ar_1a6b33450ce8e820d346af5d25e323f2dc" prot="public" virt="non-virtual"><scope>SceneManagerAr</scope><name>GoToNextScene</name></member>
+      <member refid="class_scene_manager_ar_1a86f909e4c43cdb12c0bd8b4389cb7964" prot="public" virt="non-virtual"><scope>SceneManagerAr</scope><name>instance</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

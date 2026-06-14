@@ -1,8 +1,14 @@
 using UnityEngine;
 
+/// <summary>
+/// Container component for the miscellaneous options panel. On Start it
+/// initialises its child <see cref="UIVisibilityManager"/>,
+/// <see cref="ModelPlaneDetectionManager"/>, and <see cref="PivotSettingManager"/>
+/// components (which require manual initialisation after singletons are ready),
+/// then hides the panel until it is needed.
+/// </summary>
 public class MiscOptionsManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         GetComponentInChildren<UIVisibilityManager>().Initialize();

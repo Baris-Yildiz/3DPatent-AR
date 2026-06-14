@@ -1,0 +1,300 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_popup_builder" kind="class" language="C#" prot="public">
+    <compoundname>PopupBuilder</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_popup_builder_1a7d122c409e2fc6e2eda6c05bf0511e42" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject PopupBuilder.m_PopupWindowPrefab</definition>
+        <argsstring></argsstring>
+        <name>m_PopupWindowPrefab</name>
+        <qualifiedname>PopupBuilder.m_PopupWindowPrefab</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupBuilder.cs" line="20" column="24" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupBuilder.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_popup_builder_1ab4e23ee073ba56dfb47e45ce9ec6a0fc" prot="private" static="no" mutable="no">
+        <type><ref refid="class_popup_window" kindref="compound">PopupWindow</ref></type>
+        <definition>PopupWindow PopupBuilder.m_PopupWindowScript</definition>
+        <argsstring></argsstring>
+        <name>m_PopupWindowScript</name>
+        <qualifiedname>PopupBuilder.m_PopupWindowScript</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupBuilder.cs" line="21" column="25" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupBuilder.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_popup_builder_1a9fe7bfc9bc200867166bbce98ffab72c" prot="private" static="yes" mutable="no">
+        <type>const string</type>
+        <definition>const string PopupBuilder.m_PopupWindowPrefabPath</definition>
+        <argsstring></argsstring>
+        <name>m_PopupWindowPrefabPath</name>
+        <qualifiedname>PopupBuilder.m_PopupWindowPrefabPath</qualifiedname>
+        <initializer>= &quot;Popup Window&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupBuilder.cs" line="23" column="26" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupBuilder.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_popup_builder_1a35410b9ed427b69bc2d41079e487ee5f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_popup_builder" kindref="compound">PopupBuilder</ref></type>
+        <definition>static PopupBuilder PopupBuilder.Create</definition>
+        <argsstring>()</argsstring>
+        <name>Create</name>
+        <qualifiedname>PopupBuilder.Create</qualifiedname>
+        <briefdescription>
+<para>Creates and returns a new PopupBuilder instance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A new PopupBuilder.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupBuilder.cs" line="27" column="32" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupBuilder.cs" bodystart="27" bodyend="30"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_popup_builder_1a34d13e5b7244a1ccb862e40b3f27609c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>PopupBuilder.PopupBuilder</definition>
+        <argsstring>()</argsstring>
+        <name>PopupBuilder</name>
+        <qualifiedname>PopupBuilder.PopupBuilder</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupBuilder.cs" line="32" column="13" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupBuilder.cs" bodystart="32" bodyend="39"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_popup_builder_1acfedae9085a381dcbc365391833c7f8f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_popup_builder" kindref="compound">PopupBuilder</ref></type>
+        <definition>PopupBuilder PopupBuilder.WithContentText</definition>
+        <argsstring>(string text)</argsstring>
+        <name>WithContentText</name>
+        <qualifiedname>PopupBuilder.WithContentText</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+<para>Adds a text paragraph to the popup&apos;s content area. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text to display.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>This builder for chaining.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupBuilder.cs" line="44" column="25" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupBuilder.cs" bodystart="44" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="class_popup_builder_1a46e393293841d8085140e8caf35438c2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_popup_builder" kindref="compound">PopupBuilder</ref></type>
+        <definition>PopupBuilder PopupBuilder.WithHeader</definition>
+        <argsstring>(string text)</argsstring>
+        <name>WithHeader</name>
+        <qualifiedname>PopupBuilder.WithHeader</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+<para>Sets the popup&apos;s header text. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The header string to display in bold.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>This builder for chaining.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupBuilder.cs" line="53" column="25" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupBuilder.cs" bodystart="53" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="class_popup_builder_1a29c8e234156607b4bab7df3c4643d09e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_popup_builder" kindref="compound">PopupBuilder</ref></type>
+        <definition>PopupBuilder PopupBuilder.WithFooterButton</definition>
+        <argsstring>(string buttonText, Color color, UnityAction callback)</argsstring>
+        <name>WithFooterButton</name>
+        <qualifiedname>PopupBuilder.WithFooterButton</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>buttonText</declname>
+        </param>
+        <param>
+          <type>Color</type>
+          <declname>color</declname>
+        </param>
+        <param>
+          <type>UnityAction</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Adds a footer action button. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buttonText</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Label displayed on the button.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Background color of the button.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Action invoked when the button is clicked.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>This builder for chaining.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupBuilder.cs" line="64" column="25" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupBuilder.cs" bodystart="64" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="class_popup_builder_1a9fbc0b4cc4a6d2bad2ed20390552928f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_popup_builder" kindref="compound">PopupBuilder</ref></type>
+        <definition>PopupBuilder PopupBuilder.WithContent</definition>
+        <argsstring>(GameObject content)</argsstring>
+        <name>WithContent</name>
+        <qualifiedname>PopupBuilder.WithContent</qualifiedname>
+        <param>
+          <type>GameObject</type>
+          <declname>content</declname>
+        </param>
+        <briefdescription>
+<para>Places an arbitrary GameObject into the popup&apos;s content area. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The content object to embed.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>This builder for chaining.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupBuilder.cs" line="73" column="25" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupBuilder.cs" bodystart="73" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="class_popup_builder_1aa429464b1a6320d60cd4a761b6f900bb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>GameObject</type>
+        <definition>GameObject PopupBuilder.Get</definition>
+        <argsstring>()</argsstring>
+        <name>Get</name>
+        <qualifiedname>PopupBuilder.Get</qualifiedname>
+        <briefdescription>
+<para>Returns the fully configured popup GameObject ready for display. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The instantiated popup window.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupBuilder.cs" line="83" column="23" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupBuilder.cs" bodystart="83" bodyend="86"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Fluent builder for creating PopupWindow instances. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Instantiates the <computeroutput>Popup Window</computeroutput> prefab from Resources, attaches it to the <computeroutput>PopupParent</computeroutput> tagged object, and configures it via chained method calls.</para>
+<para><programlisting filename=".cs"><codeline><highlight class="normal">GameObject<sp/>popup<sp/>=<sp/><ref refid="class_popup_builder_1a34d13e5b7244a1ccb862e40b3f27609c" kindref="member">PopupBuilder</ref>.Create()</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>.WithHeader(</highlight><highlight class="stringliteral">&quot;WARNING&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>.WithContentText(</highlight><highlight class="stringliteral">&quot;Are<sp/>you<sp/>sure?&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>.WithFooterButton(</highlight><highlight class="stringliteral">&quot;OK&quot;</highlight><highlight class="normal">,<sp/>PopupWindow.BUTTON_COLOR_OK,<sp/>OnOK)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>.Get();</highlight></codeline>
+</programlisting> </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>PopupBuilder</label>
+        <link refid="class_popup_builder"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_PopupWindowScript</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>PopupWindow</label>
+        <link refid="class_popup_window"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupBuilder.cs" line="18" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupBuilder.cs" bodystart="19" bodyend="88"/>
+    <listofallmembers>
+      <member refid="class_popup_builder_1a35410b9ed427b69bc2d41079e487ee5f" prot="public" virt="non-virtual"><scope>PopupBuilder</scope><name>Create</name></member>
+      <member refid="class_popup_builder_1aa429464b1a6320d60cd4a761b6f900bb" prot="public" virt="non-virtual"><scope>PopupBuilder</scope><name>Get</name></member>
+      <member refid="class_popup_builder_1a7d122c409e2fc6e2eda6c05bf0511e42" prot="private" virt="non-virtual"><scope>PopupBuilder</scope><name>m_PopupWindowPrefab</name></member>
+      <member refid="class_popup_builder_1a9fe7bfc9bc200867166bbce98ffab72c" prot="private" virt="non-virtual"><scope>PopupBuilder</scope><name>m_PopupWindowPrefabPath</name></member>
+      <member refid="class_popup_builder_1ab4e23ee073ba56dfb47e45ce9ec6a0fc" prot="private" virt="non-virtual"><scope>PopupBuilder</scope><name>m_PopupWindowScript</name></member>
+      <member refid="class_popup_builder_1a34d13e5b7244a1ccb862e40b3f27609c" prot="private" virt="non-virtual"><scope>PopupBuilder</scope><name>PopupBuilder</name></member>
+      <member refid="class_popup_builder_1a9fbc0b4cc4a6d2bad2ed20390552928f" prot="public" virt="non-virtual"><scope>PopupBuilder</scope><name>WithContent</name></member>
+      <member refid="class_popup_builder_1acfedae9085a381dcbc365391833c7f8f" prot="public" virt="non-virtual"><scope>PopupBuilder</scope><name>WithContentText</name></member>
+      <member refid="class_popup_builder_1a29c8e234156607b4bab7df3c4643d09e" prot="public" virt="non-virtual"><scope>PopupBuilder</scope><name>WithFooterButton</name></member>
+      <member refid="class_popup_builder_1a46e393293841d8085140e8caf35438c2" prot="public" virt="non-virtual"><scope>PopupBuilder</scope><name>WithHeader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

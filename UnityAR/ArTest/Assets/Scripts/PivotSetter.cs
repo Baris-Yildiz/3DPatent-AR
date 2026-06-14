@@ -1,7 +1,24 @@
 using UnityEngine;
 
-public static class PivotSetter 
+/// <summary>
+/// Static utility class providing pivot calculation, bounds computation, and
+/// model-positioning helpers used when placing or scaling a patent in AR.
+/// </summary>
+public static class PivotSetter
 {
+    /// <summary>
+    /// Repositions <paramref name="patent"/> so its bounding box no longer
+    /// overlaps the camera position in the XZ plane, pushing it along the
+    /// camera's forward direction when the camera is inside the model bounds.
+    /// Used when switching to 1:1 real-world scale mode.
+    /// </summary>
+    /// <param name="patent">The root GameObject of the patent model.</param>
+    /// <param name="camTransform">The AR camera transform.</param>
+    /// <param name="offSet">Extra clearance distance in metres beyond the model edge.</param>
+    /// <returns>
+    /// The calculated offset vector (currently always <see cref="Vector3.zero"/>),
+    /// or <see cref="Vector3.positiveInfinity"/> if <paramref name="patent"/> is null.
+    /// </returns>
     public static Vector3 ChangeToOneOneMode(GameObject patent ,Transform camTransform, float offSet)
     {
         if (patent == null)
@@ -62,6 +79,15 @@ public static class PivotSetter
         return calculatedOffSet;
     }
 
+    /// <summary>
+    /// Computes the world-space axis-aligned bounding box that encapsulates all
+    /// <see cref="MeshRenderer"/> components in <paramref name="patent"/>'s hierarchy.
+    /// </summary>
+    /// <param name="patent">The root GameObject whose renderers are measured.</param>
+    /// <returns>
+    /// The encapsulating <see cref="Bounds"/> in world space, or a zero-size
+    /// bounds at the object's position if no renderers are found.
+    /// </returns>
     public static Bounds GetSpawnBounds(GameObject patent)
     {
         MeshRenderer[] meshRenderers = patent.GetComponentsInChildren<MeshRenderer>();
@@ -79,6 +105,13 @@ public static class PivotSetter
         return bounds;
     }
 
+    /// <summary>
+    /// Computes the local-space axis-aligned bounding box of <paramref name="patent"/>
+    /// by transforming all mesh-corner vertices into the root object's local space.
+    /// More accurate than <see cref="GetSpawnBounds"/> for rotated hierarchies.
+    /// </summary>
+    /// <param name="patent">The root GameObject whose mesh filters are measured.</param>
+    /// <returns>The local-space <see cref="Bounds"/>, or a small default if no meshes exist.</returns>
     public static Bounds GetBounds(GameObject patent)
     {
         MeshFilter[] filters = patent.GetComponentsInChildren<MeshFilter>();
@@ -115,6 +148,21 @@ public static class PivotSetter
         return initialized ? result : new Bounds(Vector3.zero, Vector3.one * 0.1f);
     }
 
+    /// <summary>
+    /// Adjusts the Y position of <paramref name="patent"/> so its bottom face sits
+    /// on the detected AR plane (when <paramref name="toGround"/> is <c>true</c>)
+    /// or its center aligns with the spawn Y coordinate.
+    /// Also re-centres the XZ pivot relative to the bounds center.
+    /// </summary>
+    /// <param name="patent">The root GameObject to reposition.</param>
+    /// <param name="toGround">
+    /// <c>true</c> to snap the bottom of the model to the plane surface;
+    /// <c>false</c> to align the center.
+    /// </param>
+    /// <param name="usePivot">
+    /// <c>true</c> to treat the transform position as the pivot point;
+    /// <c>false</c> to use the bounds center.
+    /// </param>
     public static void SnapToYOffset(GameObject patent , bool toGround , bool usePivot)
     {
         if (patent == null)

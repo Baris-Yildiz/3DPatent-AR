@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_a_r_plane_area_calculator" kind="class" language="C#" prot="public">
+    <compoundname>ARPlaneAreaCalculator</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_a_r_plane_area_calculator_1a7e7ca60b33e050651d7ff5954d55338c" prot="private" static="no" mutable="no">
+        <type>ARPlaneManager</type>
+        <definition>ARPlaneManager ARPlaneAreaCalculator.planeManager</definition>
+        <argsstring></argsstring>
+        <name>planeManager</name>
+        <qualifiedname>ARPlaneAreaCalculator.planeManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ARPlaneAreaCalculator.cs" line="11" column="28" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ARPlaneAreaCalculator.cs" bodystart="11" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_a_r_plane_area_calculator_1af4d1150312a1779b6cee1fd8d855b882" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ARPlaneAreaCalculator.Awake</definition>
+        <argsstring>()</argsstring>
+        <name>Awake</name>
+        <qualifiedname>ARPlaneAreaCalculator.Awake</qualifiedname>
+        <briefdescription>
+<para>Locates and caches the scene&apos;s ARPlaneManager. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ARPlaneAreaCalculator.cs" line="14" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ARPlaneAreaCalculator.cs" bodystart="14" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_r_plane_area_calculator_1a7f8a06871abc67b9caed03d87cc58f82" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ARPlaneAreaCalculator.calculateArea</definition>
+        <argsstring>(BoxCollider patentCollider)</argsstring>
+        <name>calculateArea</name>
+        <qualifiedname>ARPlaneAreaCalculator.calculateArea</qualifiedname>
+        <param>
+          <type>BoxCollider</type>
+          <declname>patentCollider</declname>
+        </param>
+        <briefdescription>
+<para>Checks whether the bounding box of the given patent collider fits within any tracked AR plane. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Always returns <computeroutput>false</computeroutput> — implementation is incomplete.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>patentCollider</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The collider of the patent model to test.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>false</computeroutput> — not yet implemented.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ARPlaneAreaCalculator.cs" line="25" column="10" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ARPlaneAreaCalculator.cs" bodystart="25" bodyend="35"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Stub component intended to calculate whether a detected AR plane is large enough to accommodate a patent model. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Currently unimplemented. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>ARPlaneAreaCalculator</label>
+        <link refid="class_a_r_plane_area_calculator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>ARPlaneAreaCalculator</label>
+        <link refid="class_a_r_plane_area_calculator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ARPlaneAreaCalculator.cs" line="9" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ARPlaneAreaCalculator.cs" bodystart="10" bodyend="36"/>
+    <listofallmembers>
+      <member refid="class_a_r_plane_area_calculator_1af4d1150312a1779b6cee1fd8d855b882" prot="private" virt="non-virtual"><scope>ARPlaneAreaCalculator</scope><name>Awake</name></member>
+      <member refid="class_a_r_plane_area_calculator_1a7f8a06871abc67b9caed03d87cc58f82" prot="private" virt="non-virtual"><scope>ARPlaneAreaCalculator</scope><name>calculateArea</name></member>
+      <member refid="class_a_r_plane_area_calculator_1a7e7ca60b33e050651d7ff5954d55338c" prot="private" virt="non-virtual"><scope>ARPlaneAreaCalculator</scope><name>planeManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

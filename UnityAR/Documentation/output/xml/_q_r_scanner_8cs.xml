@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="_q_r_scanner_8cs" kind="file" language="C#">
+    <compoundname>QRScanner.cs</compoundname>
+    <innerclass refid="class_q_r_scanner" prot="public">QRScanner</innerclass>
+    <innernamespace refid="namespace_z_xing">ZXing</innernamespace>
+    <innernamespace refid="namespace_z_xing_1_1_qr_code">ZXing::QrCode</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">using<sp/></highlight><highlight class="normal">System;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">System.Collections;</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">TMPro;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">UnityEngine;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">ZXing;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">ZXing.QrCode;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="class_q_r_scanner" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_q_r_scanner" kindref="compound">QRScanner</ref><sp/>:<sp/>MonoBehaviour</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>Texture2D<sp/><ref refid="class_q_r_scanner_1a9d90eeb77042284eca18d04c91627c92" kindref="member">currentFrame</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_q_r_scanner_1a4804f6e7e2370790a9d0979bf7e1fb44" kindref="member">width</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_q_r_scanner_1aba5de01f325721aaaa04ecc96abb474e" kindref="member">height</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="class_q_r_scanner_1a8e571b3225925ee269d55ec56e899c73" kindref="member">QrCode</ref><sp/>{<sp/></highlight><highlight class="keyword">get</highlight><highlight class="normal">;<sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="class_q_r_scanner" kindref="compound">QRScanner</ref><sp/><ref refid="class_q_r_scanner_1aa5b8c183936f10d45ed8f3676d23e99f" kindref="member">Instance</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">get</highlight><highlight class="normal">;<sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>IBarcodeReader<sp/><ref refid="class_q_r_scanner_1a7cb430068115e3d7613790a81e06f4a7" kindref="member">m_BarcodeReader</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_q_r_scanner_1a18a525a2b90e410e0f8b28c4b06dee01" kindref="member">Awake</ref>()</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_q_r_scanner_1aa5b8c183936f10d45ed8f3676d23e99f" kindref="member">Instance</ref><sp/>=<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_q_r_scanner_1a9252002b3d5cc5c53cb794c34c99a290" kindref="member">Start</ref>()</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_q_r_scanner_1a7cb430068115e3d7613790a81e06f4a7" kindref="member">m_BarcodeReader</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>BarcodeReader();</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_state_machine" kindref="compound">StateMachine</ref>.<ref refid="class_state_machine_1ae5cbc71c07f182b79e34cb653c0192a9" kindref="member">Instance</ref>.<ref refid="class_state_machine_1a9ff5cbac71cdc7b0c7f944c1d85c7bc9" kindref="member">GetState</ref>(<ref refid="class_state_machine" kindref="compound">StateMachine</ref>.<ref refid="class_state_machine_1a905d1c2a570856577ca5bca4274217f6" kindref="member">States</ref>.QR_SCAN_STATE)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="class_state_1a8cea1a06337b876a31f9185e7d4c7abb" kindref="member">OnStateEnter</ref><sp/>+=<sp/>()<sp/>=&gt;<sp/><ref refid="class_q_r_scanner_1a37ed1a302223afc148cfac35779d1a42" kindref="member">StartScanner</ref>();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_q_r_scanner_1a4804f6e7e2370790a9d0979bf7e1fb44" kindref="member">width</ref><sp/>=<sp/>Screen.width;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_q_r_scanner_1aba5de01f325721aaaa04ecc96abb474e" kindref="member">height</ref><sp/>=<sp/>Screen.height;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_q_r_scanner_1a8e571b3225925ee269d55ec56e899c73" kindref="member">QrCode</ref><sp/>=<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">.Empty;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_q_r_scanner_1a37ed1a302223afc148cfac35779d1a42" kindref="member">StartScanner</ref>()</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_q_r_scanner_1a25a69ec4f6837a2380bf101b6fa00dd2" kindref="member">ResetScanner</ref>();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_q_r_scanner_1ad5993be8a67d64f5ea080a3c716afaf0" kindref="member">ScanScreen</ref>();</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_q_r_scanner_1aaad6f6480476d9c4254d17ceac953d5e" kindref="member">StopScanner</ref>()</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_q_r_scanner_1a25a69ec4f6837a2380bf101b6fa00dd2" kindref="member">ResetScanner</ref>();</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>StopAllCoroutines();</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_q_r_scanner_1a25a69ec4f6837a2380bf101b6fa00dd2" kindref="member">ResetScanner</ref>()</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_q_r_scanner_1a8e571b3225925ee269d55ec56e899c73" kindref="member">QrCode</ref><sp/>=<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">.Empty;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_q_r_scanner_1ad5993be8a67d64f5ea080a3c716afaf0" kindref="member">ScanScreen</ref>()</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>StartCoroutine(<ref refid="class_q_r_scanner_1a8caf94359fd829932f3d58d6fa565e97" kindref="member">ScanFrameForQRCode</ref>(60));</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>IEnumerator<sp/><ref refid="class_q_r_scanner_1a8caf94359fd829932f3d58d6fa565e97" kindref="member">ScanFrameForQRCode</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>waitframeCount)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">.IsNullOrEmpty(<ref refid="class_q_r_scanner_1a8e571b3225925ee269d55ec56e899c73" kindref="member">QrCode</ref>)<sp/>&amp;&amp;<sp/><ref refid="class_state_machine" kindref="compound">StateMachine</ref>.<ref refid="class_state_machine_1ae5cbc71c07f182b79e34cb653c0192a9" kindref="member">Instance</ref>.<ref refid="class_state_machine_1a6ac87358624e91d53e2c42c4a9a3c986" kindref="member">CurrentStateName</ref><sp/>==<sp/><ref refid="class_state_machine" kindref="compound">StateMachine</ref>.<ref refid="class_state_machine_1a905d1c2a570856577ca5bca4274217f6" kindref="member">States</ref>.QR_SCAN_STATE)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_q_r_scanner_1a9d90eeb77042284eca18d04c91627c92" kindref="member">currentFrame</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Texture2D(<ref refid="class_q_r_scanner_1a4804f6e7e2370790a9d0979bf7e1fb44" kindref="member">width</ref>,<sp/><ref refid="class_q_r_scanner_1aba5de01f325721aaaa04ecc96abb474e" kindref="member">height</ref>,<sp/>TextureFormat.ARGB32,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>waitframeCount;<sp/>i++)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>yield<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>WaitForEndOfFrame();</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_q_r_scanner_1a9d90eeb77042284eca18d04c91627c92" kindref="member">currentFrame</ref>.ReadPixels(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Rect(0,<sp/>0,<sp/><ref refid="class_q_r_scanner_1a4804f6e7e2370790a9d0979bf7e1fb44" kindref="member">width</ref>,<sp/><ref refid="class_q_r_scanner_1aba5de01f325721aaaa04ecc96abb474e" kindref="member">height</ref>),<sp/>0,<sp/>0);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_q_r_scanner_1a9d90eeb77042284eca18d04c91627c92" kindref="member">currentFrame</ref>.Apply();</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>pixelData<sp/>=<sp/><ref refid="class_q_r_scanner_1a9d90eeb77042284eca18d04c91627c92" kindref="member">currentFrame</ref>.GetRawTextureData();</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>var<sp/>Result<sp/>=<sp/><ref refid="class_q_r_scanner_1a7cb430068115e3d7613790a81e06f4a7" kindref="member">m_BarcodeReader</ref>.Decode(pixelData,<sp/><ref refid="class_q_r_scanner_1a4804f6e7e2370790a9d0979bf7e1fb44" kindref="member">width</ref>,<sp/><ref refid="class_q_r_scanner_1aba5de01f325721aaaa04ecc96abb474e" kindref="member">height</ref>,<sp/>RGBLuminanceSource.BitmapFormat.ARGB32);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_q_r_scanner_1a8e571b3225925ee269d55ec56e899c73" kindref="member">QrCode</ref><sp/>=<sp/>Result?.Text;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(Exception<sp/>ex)<sp/>{<sp/>Debug.LogWarning(ex.Message);<sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">.IsNullOrEmpty(<ref refid="class_q_r_scanner_1a8e571b3225925ee269d55ec56e899c73" kindref="member">QrCode</ref>))</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_state_machine" kindref="compound">StateMachine</ref>.<ref refid="class_state_machine_1ae5cbc71c07f182b79e34cb653c0192a9" kindref="member">Instance</ref>.<ref refid="class_state_machine_1a85081eed003af3b884051559ae3bf035" kindref="member">SetState</ref>(<ref refid="class_state_machine" kindref="compound">StateMachine</ref>.<ref refid="class_state_machine_1a905d1c2a570856577ca5bca4274217f6" kindref="member">States</ref>.QR_SCAN_COMPLETE_STATE);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR/QRScanner.cs"/>
+  </compounddef>
+</doxygen>

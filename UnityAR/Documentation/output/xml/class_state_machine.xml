@@ -1,0 +1,260 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_state_machine" kind="class" language="C#" prot="public">
+    <compoundname>StateMachine</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_state_machine_1a905d1c2a570856577ca5bca4274217f6" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>States</name>
+        <qualifiedname>StateMachine.States</qualifiedname>
+        <enumvalue id="class_state_machine_1a905d1c2a570856577ca5bca4274217f6abe052136ab838ccd8421f741c8df2c76" prot="public">
+          <name>NO_MODEL_VIEW_STATE</name>
+          <briefdescription>
+<para>Default state: no model loaded, QR scanner inactive. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_state_machine_1a905d1c2a570856577ca5bca4274217f6a44802a9df0677c0b0a3b31b0d8ae089d" prot="public">
+          <name>QR_SCAN_STATE</name>
+          <briefdescription>
+<para>Camera is actively scanning for a QR code. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_state_machine_1a905d1c2a570856577ca5bca4274217f6ac5f2f756d4045535c1f17b3372db867b" prot="public">
+          <name>QR_SCAN_COMPLETE_STATE</name>
+          <briefdescription>
+<para>QR code decoded; model download in progress. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_state_machine_1a905d1c2a570856577ca5bca4274217f6ae65ce883120c5c45b801ae21913a3030" prot="public">
+          <name>MODEL_VIEW_STATE</name>
+          <briefdescription>
+<para>Model placed in AR scene; interaction enabled. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration of all application states. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/StateMachine.cs" line="21" column="11" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/StateMachine.cs" bodystart="22" bodyend="34"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="property">
+      <memberdef kind="property" id="class_state_machine_1ae5cbc71c07f182b79e34cb653c0192a9" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="yes" protectedsettable="no">
+        <type><ref refid="class_state_machine" kindref="compound">StateMachine</ref></type>
+        <definition>StateMachine StateMachine.Instance</definition>
+        <argsstring></argsstring>
+        <name>Instance</name>
+        <qualifiedname>StateMachine.Instance</qualifiedname>
+        <briefdescription>
+<para>The single active instance of StateMachine. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/StateMachine.cs" line="13" column="32" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/StateMachine.cs" bodystart="14" bodyend="16"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_state_machine_1a7607927f9e86c9b9afad717ddd86b3d1" prot="private" static="no" mutable="no">
+        <type>Dictionary&lt; <ref refid="class_state_machine_1a905d1c2a570856577ca5bca4274217f6" kindref="member">States</ref>, <ref refid="class_state" kindref="compound">State</ref> &gt;</type>
+        <definition>Dictionary&lt;States, State&gt; StateMachine.m_StateMap</definition>
+        <argsstring></argsstring>
+        <name>m_StateMap</name>
+        <qualifiedname>StateMachine.m_StateMap</qualifiedname>
+        <initializer>= new()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/StateMachine.cs" line="36" column="24" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/StateMachine.cs" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_state_machine_1a04f0ae228c1b0f262f90e693a076ea38" prot="private" static="no" mutable="no">
+        <type><ref refid="class_state" kindref="compound">State</ref></type>
+        <definition>State StateMachine.m_CurrentState</definition>
+        <argsstring></argsstring>
+        <name>m_CurrentState</name>
+        <qualifiedname>StateMachine.m_CurrentState</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/StateMachine.cs" line="38" column="19" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/StateMachine.cs" bodystart="38" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_state_machine_1a6ac87358624e91d53e2c42c4a9a3c986" prot="public" static="no" mutable="no">
+        <type><ref refid="class_state_machine_1a905d1c2a570856577ca5bca4274217f6" kindref="member">States</ref></type>
+        <definition>States StateMachine.CurrentStateName</definition>
+        <argsstring></argsstring>
+        <name>CurrentStateName</name>
+        <qualifiedname>StateMachine.CurrentStateName</qualifiedname>
+        <briefdescription>
+<para>The name of the currently active state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/StateMachine.cs" line="41" column="19" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/StateMachine.cs" bodystart="41" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_state_machine_1a7f058b06236c4041de603f51e491f7bd" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void StateMachine.Awake</definition>
+        <argsstring>()</argsstring>
+        <name>Awake</name>
+        <qualifiedname>StateMachine.Awake</qualifiedname>
+        <briefdescription>
+<para>Initialises the singleton, creates a State object for each States value, and enters States.NO_MODEL_VIEW_STATE. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/StateMachine.cs" line="47" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/StateMachine.cs" bodystart="47" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="class_state_machine_1a05bed5cc15584111832fe7e3d0eaf400" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void StateMachine.Update</definition>
+        <argsstring>()</argsstring>
+        <name>Update</name>
+        <qualifiedname>StateMachine.Update</qualifiedname>
+        <briefdescription>
+<para>Forwards Unity&apos;s Update tick to the currently active State. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/StateMachine.cs" line="92" column="10" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/StateMachine.cs" bodystart="92" bodyend="95"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_state_machine_1a85081eed003af3b884051559ae3bf035" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void StateMachine.SetState</definition>
+        <argsstring>(States stateName)</argsstring>
+        <name>SetState</name>
+        <qualifiedname>StateMachine.SetState</qualifiedname>
+        <param>
+          <type><ref refid="class_state_machine_1a905d1c2a570856577ca5bca4274217f6" kindref="member">States</ref></type>
+          <declname>stateName</declname>
+        </param>
+        <briefdescription>
+<para>Exits the current state and enters <emphasis>stateName</emphasis> . </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>stateName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The state to transition into.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/StateMachine.cs" line="70" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/StateMachine.cs" bodystart="70" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="class_state_machine_1a9ff5cbac71cdc7b0c7f944c1d85c7bc9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_state" kindref="compound">State</ref></type>
+        <definition>State StateMachine.GetState</definition>
+        <argsstring>(States stateName)</argsstring>
+        <name>GetState</name>
+        <qualifiedname>StateMachine.GetState</qualifiedname>
+        <param>
+          <type><ref refid="class_state_machine_1a905d1c2a570856577ca5bca4274217f6" kindref="member">States</ref></type>
+          <declname>stateName</declname>
+        </param>
+        <briefdescription>
+<para>Returns the State object associated with <emphasis>stateName</emphasis>  so callers can subscribe to its lifecycle events. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>stateName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The state whose object should be retrieved.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The State for the given <emphasis>stateName</emphasis> .</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/StateMachine.cs" line="86" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/StateMachine.cs" bodystart="86" bodyend="89"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Singleton finite state machine that drives the overall app flow. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Subscribe to individual State events via GetState and trigger transitions with SetState. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>StateMachine</label>
+        <link refid="class_state_machine"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="3">
+        <label>State</label>
+        <link refid="class_state"/>
+      </node>
+      <node id="1">
+        <label>StateMachine</label>
+        <link refid="class_state_machine"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_CurrentState</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/StateMachine.cs" line="9" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/StateMachine.cs" bodystart="10" bodyend="96"/>
+    <listofallmembers>
+      <member refid="class_state_machine_1a7f058b06236c4041de603f51e491f7bd" prot="private" virt="non-virtual"><scope>StateMachine</scope><name>Awake</name></member>
+      <member refid="class_state_machine_1a6ac87358624e91d53e2c42c4a9a3c986" prot="public" virt="non-virtual"><scope>StateMachine</scope><name>CurrentStateName</name></member>
+      <member refid="class_state_machine_1a9ff5cbac71cdc7b0c7f944c1d85c7bc9" prot="public" virt="non-virtual"><scope>StateMachine</scope><name>GetState</name></member>
+      <member refid="class_state_machine_1ae5cbc71c07f182b79e34cb653c0192a9" prot="public" virt="non-virtual"><scope>StateMachine</scope><name>Instance</name></member>
+      <member refid="class_state_machine_1a04f0ae228c1b0f262f90e693a076ea38" prot="private" virt="non-virtual"><scope>StateMachine</scope><name>m_CurrentState</name></member>
+      <member refid="class_state_machine_1a7607927f9e86c9b9afad717ddd86b3d1" prot="private" virt="non-virtual"><scope>StateMachine</scope><name>m_StateMap</name></member>
+      <member refid="class_state_machine_1a85081eed003af3b884051559ae3bf035" prot="public" virt="non-virtual"><scope>StateMachine</scope><name>SetState</name></member>
+      <member refid="class_state_machine_1a905d1c2a570856577ca5bca4274217f6" prot="public" virt="non-virtual"><scope>StateMachine</scope><name>States</name></member>
+      <member refid="class_state_machine_1a05bed5cc15584111832fe7e3d0eaf400" prot="private" virt="non-virtual"><scope>StateMachine</scope><name>Update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

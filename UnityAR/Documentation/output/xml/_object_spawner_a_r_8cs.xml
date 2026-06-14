@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="_object_spawner_a_r_8cs" kind="file" language="C#">
+    <compoundname>ObjectSpawnerAR.cs</compoundname>
+    <innerclass refid="class_object_spawner_a_r" prot="public">ObjectSpawnerAR</innerclass>
+    <innernamespace refid="namespace_system_1_1_collections_1_1_generic">System::Collections::Generic</innernamespace>
+    <innernamespace refid="namespace_t_m_pro">TMPro</innernamespace>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="_object_spawner_a_r_8cs_1aaf159fca6c090cbe566a9e3ddc897c7b" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>PlacementMode</name>
+        <enumvalue id="_object_spawner_a_r_8cs_1aaf159fca6c090cbe566a9e3ddc897c7ba5835bab1ade0060909e31a06af2e2cde" prot="public">
+          <name>Front</name>
+          <briefdescription>
+<para>Place the model in front of the camera at a fixed Z distance. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_object_spawner_a_r_8cs_1aaf159fca6c090cbe566a9e3ddc897c7ba4f1f6016fc9f3f2353c0cc7c67b292bd" prot="public">
+          <name>Center</name>
+          <briefdescription>
+<para>Place the model at the camera&apos;s position offset downward. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Internal enum controlling where the model is placed when no AR plane is hit. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" line="10" column="1" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" bodystart="11" bodyend="17"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">using<sp/></highlight><highlight class="normal">System;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">System.Collections.Generic;</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">UnityEngine;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">UnityEngine.XR.ARFoundation;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">TMPro;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="_object_spawner_a_r_8cs_1aaf159fca6c090cbe566a9e3ddc897c7b" kindref="member">PlacementMode</ref></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_object_spawner_a_r_8cs_1aaf159fca6c090cbe566a9e3ddc897c7ba5835bab1ade0060909e31a06af2e2cde" kindref="member">Front</ref>,</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_object_spawner_a_r_8cs_1aaf159fca6c090cbe566a9e3ddc897c7ba4f1f6016fc9f3f2353c0cc7c67b292bd" kindref="member">Center</ref>,</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="class_object_spawner_a_r" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_object_spawner_a_r" kindref="compound">ObjectSpawnerAR</ref><sp/>:<sp/>MonoBehaviour</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>[SerializeField]<sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/><ref refid="_object_spawner_a_r_8cs_1aaf159fca6c090cbe566a9e3ddc897c7b" kindref="member">PlacementMode</ref><sp/><ref refid="class_object_spawner_a_r_1a79777e4d531d67db2b73854e5195e23f" kindref="member">_placementMode</ref><sp/>=<sp/><ref refid="_object_spawner_a_r_8cs_1aaf159fca6c090cbe566a9e3ddc897c7b" kindref="member">PlacementMode</ref>.Front;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>[SerializeField]<sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>GameObject<sp/><ref refid="class_object_spawner_a_r_1a3fdb28c956a273062b1c847209f5269d" kindref="member">patent</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>[SerializeField]<sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_object_spawner_a_r_1a28510201d5bf9b01385ef0a9daec5137" kindref="member">centerPlacementY</ref><sp/>=<sp/>1.1f;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>[SerializeField]<sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_object_spawner_a_r_1a5812492ff6245b4bd4d16a21f7deb3ea" kindref="member">frontPlacementZ</ref><sp/>=<sp/>2f;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>[SerializeField]<sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>TextMeshProUGUI<sp/><ref refid="class_object_spawner_a_r_1a632207d69bafb70e0e6339459e1e8328" kindref="member">scaleText</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>[SerializeField]<sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>TextMeshProUGUI<sp/><ref refid="class_object_spawner_a_r_1a9a2cfd8af76a57960294cc2b5b14beef" kindref="member">positionText</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal"><sp/>Action&lt;bool&gt;<sp/><ref refid="class_object_spawner_a_r_1a356de22d47b73bb484dc61df09fdede6" kindref="member">objectSpawnedEvent</ref>;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>GameObject<sp/><ref refid="class_object_spawner_a_r_1a0b3bc24314d7553db6cc8603ba2ee1e5" kindref="member">activePatent</ref>;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_object_spawner_a_r_1aeb2deeb05ac974b92a0db137203d1808" kindref="member">spawnWithinScreen</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>private<sp/>void<sp/>OnEnable()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>RaycastHandler.clickEvent<sp/>+=<sp/>SpawnObject;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>private<sp/>void<sp/>OnDisable()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>RaycastHandler.clickEvent<sp/>-=<sp/>SpawnObject;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_object_spawner_a_r_1a355feb596dfbb097d4ca817d144b83c0" kindref="member">Start</ref>()</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_raycast_handler_1aaf90faa24cf10e2daeaa7cce70323eb5" kindref="member">RaycastHandler.clickEvent</ref><sp/>+=<sp/><ref refid="class_object_spawner_a_r_1afcbb5fbba3132156e66a13c0de7ca803" kindref="member">SpawnObject</ref>;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_object_spawner_a_r_1afcbb5fbba3132156e66a13c0de7ca803" kindref="member">SpawnObject</ref>(List&lt;ARRaycastHit&gt;<sp/>hits)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Debug.Log(</highlight><highlight class="stringliteral">&quot;trying<sp/>to<sp/>spawn&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_patent_manager" kindref="compound">PatentManager</ref>.<ref refid="class_patent_manager_1a32e0d55c3bfa88a1ba6e49830a12eb5c" kindref="member">Instance</ref>.<ref refid="class_patent_manager_1a54be3951a1569e3bd3e433b488c71384" kindref="member">Patent</ref><sp/>==<sp/></highlight><highlight class="keyword">null</highlight><highlight class="normal"><sp/>||<sp/><ref refid="class_patent_manager" kindref="compound">PatentManager</ref>.<ref refid="class_patent_manager_1a32e0d55c3bfa88a1ba6e49830a12eb5c" kindref="member">Instance</ref>.<ref refid="class_patent_manager_1a916bb09ce8ae8e7d029c62915d6a8f2c" kindref="member">ActivePatent</ref><sp/>!=<sp/></highlight><highlight class="keyword">null</highlight><highlight class="normal">)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(hits<sp/>==<sp/></highlight><highlight class="keyword">null</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_object_spawner_a_r_1a044894a0e5750cad7d8128f1dc03d80e" kindref="member">spawnWithNoRaycast</ref>();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Pose<sp/>hitPose<sp/>=<sp/>hits[0].pose;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_object_spawner_a_r_1a0b8495cac298010d20176ad0778fa85d" kindref="member">spawnWithRaycast</ref>(hitPose);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_object_spawner_a_r_1a044894a0e5750cad7d8128f1dc03d80e" kindref="member">spawnWithNoRaycast</ref>()</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector3<sp/>position<sp/>=<sp/>Vector3.zero;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Camera<sp/>cam<sp/>=<sp/>Camera.main;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(<ref refid="class_object_spawner_a_r_1a79777e4d531d67db2b73854e5195e23f" kindref="member">_placementMode</ref>)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_object_spawner_a_r_8cs_1aaf159fca6c090cbe566a9e3ddc897c7b" kindref="member">PlacementMode</ref>.Center:</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>position<sp/>=<sp/>cam.transform.position;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>position.y<sp/>-=<sp/><ref refid="class_object_spawner_a_r_1a28510201d5bf9b01385ef0a9daec5137" kindref="member">centerPlacementY</ref>;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_object_spawner_a_r_8cs_1aaf159fca6c090cbe566a9e3ddc897c7b" kindref="member">PlacementMode</ref>.Front:</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>position<sp/>=<sp/>cam.transform.position<sp/>+<sp/>cam.transform.forward<sp/>*<sp/><ref refid="class_object_spawner_a_r_1a5812492ff6245b4bd4d16a21f7deb3ea" kindref="member">frontPlacementZ</ref>;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_patent_manager" kindref="compound">PatentManager</ref>.<ref refid="class_patent_manager_1a32e0d55c3bfa88a1ba6e49830a12eb5c" kindref="member">Instance</ref>.<ref refid="class_patent_manager_1a916bb09ce8ae8e7d029c62915d6a8f2c" kindref="member">ActivePatent</ref><sp/>==<sp/></highlight><highlight class="keyword">null</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PatentManager.Instance.ActivePatent<sp/>=<sp/>Instantiate(<ref refid="class_patent_manager" kindref="compound">PatentManager</ref>.<ref refid="class_patent_manager_1a32e0d55c3bfa88a1ba6e49830a12eb5c" kindref="member">Instance</ref>.<ref refid="class_patent_manager_1a54be3951a1569e3bd3e433b488c71384" kindref="member">Patent</ref>,<sp/>position,<sp/><ref refid="class_patent_manager" kindref="compound">PatentManager</ref>.<ref refid="class_patent_manager_1a32e0d55c3bfa88a1ba6e49830a12eb5c" kindref="member">Instance</ref>.<ref refid="class_patent_manager_1a54be3951a1569e3bd3e433b488c71384" kindref="member">Patent</ref>.transform.rotation);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_patent_manager" kindref="compound">PatentManager</ref>.<ref refid="class_patent_manager_1a32e0d55c3bfa88a1ba6e49830a12eb5c" kindref="member">Instance</ref>.<ref refid="class_patent_manager_1a916bb09ce8ae8e7d029c62915d6a8f2c" kindref="member">ActivePatent</ref>.SetActive(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_patent_manager" kindref="compound">PatentManager</ref>.<ref refid="class_patent_manager_1a32e0d55c3bfa88a1ba6e49830a12eb5c" kindref="member">Instance</ref>.<ref refid="class_patent_manager_1a54321502ca55cc380c55a25b2db7149a" kindref="member">InvokePatentSpawned</ref>();</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_object_spawner_a_r_1a356de22d47b73bb484dc61df09fdede6" kindref="member">objectSpawnedEvent</ref>?.Invoke(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_patent_manager" kindref="compound">PatentManager</ref>.<ref refid="class_patent_manager_1a32e0d55c3bfa88a1ba6e49830a12eb5c" kindref="member">Instance</ref>.<ref refid="class_patent_manager_1ae9c0aff883001cfbd651779d30c3bff4" kindref="member">SetInitialTransform</ref>();</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_object_spawner_a_r_1a0b8495cac298010d20176ad0778fa85d" kindref="member">spawnWithRaycast</ref>(Pose<sp/>hitPose)</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_patent_manager" kindref="compound">PatentManager</ref>.<ref refid="class_patent_manager_1a32e0d55c3bfa88a1ba6e49830a12eb5c" kindref="member">Instance</ref>.<ref refid="class_patent_manager_1a916bb09ce8ae8e7d029c62915d6a8f2c" kindref="member">ActivePatent</ref><sp/>==<sp/></highlight><highlight class="keyword">null</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PatentManager.Instance.ActivePatent<sp/>=<sp/>Instantiate(<ref refid="class_patent_manager" kindref="compound">PatentManager</ref>.<ref refid="class_patent_manager_1a32e0d55c3bfa88a1ba6e49830a12eb5c" kindref="member">Instance</ref>.<ref refid="class_patent_manager_1a54be3951a1569e3bd3e433b488c71384" kindref="member">Patent</ref>,<sp/>hitPose.position,<sp/><ref refid="class_patent_manager" kindref="compound">PatentManager</ref>.<ref refid="class_patent_manager_1a32e0d55c3bfa88a1ba6e49830a12eb5c" kindref="member">Instance</ref>.<ref refid="class_patent_manager_1a54be3951a1569e3bd3e433b488c71384" kindref="member">Patent</ref>.transform.rotation);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_patent_manager" kindref="compound">PatentManager</ref>.<ref refid="class_patent_manager_1a32e0d55c3bfa88a1ba6e49830a12eb5c" kindref="member">Instance</ref>.<ref refid="class_patent_manager_1a916bb09ce8ae8e7d029c62915d6a8f2c" kindref="member">ActivePatent</ref>.SetActive(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_patent_manager" kindref="compound">PatentManager</ref>.<ref refid="class_patent_manager_1a32e0d55c3bfa88a1ba6e49830a12eb5c" kindref="member">Instance</ref>.<ref refid="class_patent_manager_1a54321502ca55cc380c55a25b2db7149a" kindref="member">InvokePatentSpawned</ref>();</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_object_spawner_a_r_1a356de22d47b73bb484dc61df09fdede6" kindref="member">objectSpawnedEvent</ref>?.Invoke(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_patent_manager" kindref="compound">PatentManager</ref>.<ref refid="class_patent_manager_1a32e0d55c3bfa88a1ba6e49830a12eb5c" kindref="member">Instance</ref>.<ref refid="class_patent_manager_1ae9c0aff883001cfbd651779d30c3bff4" kindref="member">SetInitialTransform</ref>();</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>private<sp/>void<sp/>FitScreen()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>if<sp/>(!spawnWithinScreen)<sp/>return;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>float<sp/>scaleAmount<sp/>=<sp/>ScreenScaler.instance.FitScreen(activePatent);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>activePatent.transform.localScale<sp/>*=<sp/>scaleAmount;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>scaleText.text<sp/>=&quot;Scale:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;<sp/>+<sp/>activePatent.transform.localScale.y.ToString()<sp/><sp/>;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>Debug.Log(scaleAmount);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_object_spawner_a_r_1a6a41a4dd8c002dce875f01291ebef798" kindref="member">SetActivePatent</ref>(GameObject<sp/>downloaded_patent)</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_object_spawner_a_r_1a3fdb28c956a273062b1c847209f5269d" kindref="member">patent</ref><sp/>=<sp/>downloaded_patent;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Debug.Log(</highlight><highlight class="stringliteral">&quot;settedddd&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>GameObject<sp/><ref refid="class_object_spawner_a_r_1a7e310e75d1747922dd0c3a5816d66fdc" kindref="member">getActivePatent</ref>()</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_object_spawner_a_r_1a0b3bc24314d7553db6cc8603ba2ee1e5" kindref="member">activePatent</ref>;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_object_spawner_a_r_1a8e20b522fe13542ae6c38bcb57799056" kindref="member">ResetPatentTransform</ref>()</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_object_spawner_a_r_1a3fdb28c956a273062b1c847209f5269d" kindref="member">patent</ref><sp/>==<sp/></highlight><highlight class="keyword">null</highlight><highlight class="normal">)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Camera<sp/>cam<sp/>=<sp/>Camera.main;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>patent.transform.localScale<sp/>=<sp/>Vector3.one;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>activePatent.transform.localScale<sp/>=<sp/>Vector3.one;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector3<sp/>offSet<sp/>=<sp/><ref refid="class_pivot_setter" kindref="compound">PivotSetter</ref>.<ref refid="class_pivot_setter_1a2ba93b3c2ee0b518eeaa1694f7835b1d" kindref="member">ChangeToOneOneMode</ref>(<ref refid="class_object_spawner_a_r_1a0b3bc24314d7553db6cc8603ba2ee1e5" kindref="member">activePatent</ref>,cam.transform,1f);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="179"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs"/>
+  </compounddef>
+</doxygen>

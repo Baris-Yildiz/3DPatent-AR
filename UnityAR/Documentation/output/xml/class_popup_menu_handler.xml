@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_popup_menu_handler" kind="class" language="C#" prot="public">
+    <compoundname>PopupMenuHandler</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_popup_menu_handler_1adb75ef89d4a80d30136b312725fd34e6" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject PopupMenuHandler.popupMenu</definition>
+        <argsstring></argsstring>
+        <name>popupMenu</name>
+        <qualifiedname>PopupMenuHandler.popupMenu</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuHandler.cs" line="11" column="25" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuHandler.cs" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_popup_menu_handler_1a4953d15481ebb75a42a2c71ef6f08f77" prot="private" static="no" mutable="no">
+        <type>Button</type>
+        <definition>Button PopupMenuHandler.button</definition>
+        <argsstring></argsstring>
+        <name>button</name>
+        <qualifiedname>PopupMenuHandler.button</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuHandler.cs" line="12" column="20" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuHandler.cs" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_popup_menu_handler_1aa127019735e2ddae863c20dcee630a9d" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool PopupMenuHandler.isOpen</definition>
+        <argsstring></argsstring>
+        <name>isOpen</name>
+        <qualifiedname>PopupMenuHandler.isOpen</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuHandler.cs" line="13" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuHandler.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_popup_menu_handler_1ab5adeedda48c5a74df17f563525e252f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PopupMenuHandler.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <qualifiedname>PopupMenuHandler.Start</qualifiedname>
+        <briefdescription>
+<para>Caches the Button component and registers the click listener. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuHandler.cs" line="16" column="10" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuHandler.cs" bodystart="16" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_popup_menu_handler_1ace2dbc98c0bba86a7ba9faff6b1fc28b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PopupMenuHandler.EnablePopupMenu</definition>
+        <argsstring>()</argsstring>
+        <name>EnablePopupMenu</name>
+        <qualifiedname>PopupMenuHandler.EnablePopupMenu</qualifiedname>
+        <briefdescription>
+<para>Toggles the visibility of popupMenu. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuHandler.cs" line="23" column="10" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuHandler.cs" bodystart="23" bodyend="27"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Simple button handler that toggles a popup menu panel open and closed. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Requires a Button on the same GameObject. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>PopupMenuHandler</label>
+        <link refid="class_popup_menu_handler"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>PopupMenuHandler</label>
+        <link refid="class_popup_menu_handler"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuHandler.cs" line="9" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupMenuHandler.cs" bodystart="10" bodyend="28"/>
+    <listofallmembers>
+      <member refid="class_popup_menu_handler_1a4953d15481ebb75a42a2c71ef6f08f77" prot="private" virt="non-virtual"><scope>PopupMenuHandler</scope><name>button</name></member>
+      <member refid="class_popup_menu_handler_1ace2dbc98c0bba86a7ba9faff6b1fc28b" prot="private" virt="non-virtual"><scope>PopupMenuHandler</scope><name>EnablePopupMenu</name></member>
+      <member refid="class_popup_menu_handler_1aa127019735e2ddae863c20dcee630a9d" prot="private" virt="non-virtual"><scope>PopupMenuHandler</scope><name>isOpen</name></member>
+      <member refid="class_popup_menu_handler_1adb75ef89d4a80d30136b312725fd34e6" prot="private" virt="non-virtual"><scope>PopupMenuHandler</scope><name>popupMenu</name></member>
+      <member refid="class_popup_menu_handler_1ab5adeedda48c5a74df17f563525e252f" prot="private" virt="non-virtual"><scope>PopupMenuHandler</scope><name>Start</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

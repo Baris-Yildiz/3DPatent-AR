@@ -3,13 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Hides or shows a collection of AR UI panels based on the current app state
+/// and a hide-all toggle. Must be initialised manually by calling
+/// <see cref="Initialize"/> (done by <see cref="MiscOptionsManager"/>).
+/// </summary>
 public class UIVisibilityManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
     List<GameObject> m_ObjectsToModifyVisibility;
     private UIToggle m_UIToggleComponent;
 
+    /// <summary>
+    /// Wires up state-machine callbacks and toggle listeners.
+    /// Call once after all singleton instances are ready.
+    /// </summary>
     public void Initialize()
     {
         m_UIToggleComponent = GetComponent<UIToggle>();
@@ -46,6 +53,12 @@ public class UIVisibilityManager : MonoBehaviour
         m_UIToggleComponent.OnToggleValueChanged += (bool isOn) => { SetUIObjectVisibility(isOn); };
     }
 
+    /// <summary>
+    /// Shows or hides all tracked UI objects.
+    /// </summary>
+    /// <param name="isOn">
+    /// When <c>true</c> the panels are hidden; when <c>false</c> they are shown.
+    /// </param>
     private void SetUIObjectVisibility(bool isOn)
     {
         foreach (GameObject obj in m_ObjectsToModifyVisibility)

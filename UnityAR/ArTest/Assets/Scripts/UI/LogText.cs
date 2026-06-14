@@ -2,13 +2,18 @@ using System;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// A pooled, animated log notification text element managed by <see cref="LogManager"/>.
+/// Slides from a start position to an end position over time, fades in while
+/// moving, lingers for a configurable duration, then returns itself to the pool.
+/// </summary>
 public class LogText : MonoBehaviour
 {
     private TextMeshProUGUI text;
     [SerializeField] private float dropSpeed = 0.2f;
     [SerializeField] private float stayDuration = 2f;
     [SerializeField] private float fadeSpeedMultiplier;
-    
+
     [SerializeField] private Color errorColor = Color.red;
     [SerializeField] private Color normalColor  = Color.black;
 
@@ -22,6 +27,13 @@ public class LogText : MonoBehaviour
     private Vector2 targetPos;
 
     private Color currentColor;
+
+    /// <summary>
+    /// Initialises the log animation from <paramref name="_startPoint"/> to
+    /// <paramref name="_endPoint"/> and begins the slide-and-fade sequence.
+    /// </summary>
+    /// <param name="_startPoint">Local-space UI start position.</param>
+    /// <param name="_endPoint">Local-space UI end position.</param>
     public void StartLog(Vector2 _startPoint, Vector2 _endPoint)
     {
         startPoint = _startPoint;
@@ -31,6 +43,11 @@ public class LogText : MonoBehaviour
         remainingStayDuration = stayDuration;
     }
 
+    /// <summary>
+    /// Sets the displayed text and its colour based on severity.
+    /// </summary>
+    /// <param name="_text">The message to display.</param>
+    /// <param name="isError"><c>true</c> to use the error colour; <c>false</c> for normal.</param>
     public void SetText(String _text , bool isError)
     {
         text.text = _text;
@@ -40,6 +57,9 @@ public class LogText : MonoBehaviour
         text.color = color;
     }
 
+    /// <summary>
+    /// Advances the log animation. Called each frame by <see cref="LogManager.UpdateLogs"/>.
+    /// </summary>
     public void UpdateLog()
     {
         if (isStarted)
@@ -48,6 +68,11 @@ public class LogText : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Moves the element toward <c>endPoint</c>, fades the alpha in, and counts
+    /// down the linger duration once the end point is reached. Returns the element
+    /// to the <see cref="LogManager"/> pool when the linger expires.
+    /// </summary>
     private void MoveLog()
     {
         if (Mathf.Abs(transform.localPosition.y - endPoint.y) <= endPointThreshold)
@@ -56,7 +81,7 @@ public class LogText : MonoBehaviour
             if (remainingStayDuration <= 0)
             {
                 isStarted = false;
-                LogManager.Instance.EnqueueLog(this);   
+                LogManager.Instance.EnqueueLog(this);
             }
         }
         else

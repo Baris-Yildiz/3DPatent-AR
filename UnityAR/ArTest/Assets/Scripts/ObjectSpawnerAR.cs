@@ -4,22 +4,42 @@ using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using TMPro;
 
+/// <summary>
+/// Internal enum controlling where the model is placed when no AR plane is hit.
+/// </summary>
 enum PlacementMode
 {
+    /// <summary>Place the model in front of the camera at a fixed Z distance.</summary>
     Front,
+
+    /// <summary>Place the model at the camera's position offset downward.</summary>
     Center,
 }
 
+/// <summary>
+/// Listens for <see cref="RaycastHandler.clickEvent"/> and instantiates the
+/// downloaded patent model into the AR scene, either at a detected plane pose
+/// or at a fixed camera-relative position when no plane is available.
+/// Raises <see cref="objectSpawnedEvent"/> after placement.
+/// </summary>
 public class ObjectSpawnerAR : MonoBehaviour
 {
     [SerializeField] private PlacementMode _placementMode = PlacementMode.Front;
-    [SerializeField]private GameObject patent;
+    [SerializeField] private GameObject patent;
     [SerializeField] private float centerPlacementY = 1.1f;
     [SerializeField] private float frontPlacementZ = 2f;
-    [SerializeField]private TextMeshProUGUI scaleText;
-    [SerializeField]private TextMeshProUGUI positionText;
-    public static event Action<bool> objectSpawnedEvent; 
+    [SerializeField] private TextMeshProUGUI scaleText;
+    [SerializeField] private TextMeshProUGUI positionText;
+
+    /// <summary>
+    /// Fired after a patent is spawned. The <c>bool</c> parameter is
+    /// <c>true</c> when placed on a detected AR plane, <c>false</c> otherwise.
+    /// </summary>
+    public static event Action<bool> objectSpawnedEvent;
+
     private GameObject activePatent;
+
+    /// <summary>When <c>true</c>, applies screen-fit scaling after spawning.</summary>
     public bool spawnWithinScreen = true;
 
 
@@ -36,12 +56,18 @@ public class ObjectSpawnerAR : MonoBehaviour
     //     RaycastHandler.clickEvent -= SpawnObject;
     // }
 
+    /// <summary>Subscribes to <see cref="RaycastHandler.clickEvent"/> to receive tap notifications.</summary>
     private void Start()
     {
         RaycastHandler.clickEvent += SpawnObject;
     }
 
-
+    /// <summary>
+    /// Handles a tap event: ignores it if no patent is loaded or one is already
+    /// placed, then delegates to <see cref="spawnWithNoRaycast"/> or
+    /// <see cref="spawnWithRaycast"/> depending on whether plane hits were detected.
+    /// </summary>
+    /// <param name="hits">AR plane raycast hits, or <c>null</c> when plane detection is off.</param>
     void SpawnObject(List<ARRaycastHit> hits)
     {
         Debug.Log("trying to spawn");
@@ -55,9 +81,13 @@ public class ObjectSpawnerAR : MonoBehaviour
             Pose hitPose = hits[0].pose;
             spawnWithRaycast(hitPose);
         }
-        
+
     }
 
+    /// <summary>
+    /// Instantiates the patent at a camera-relative position (center offset or
+    /// directly in front) when no AR plane was detected.
+    /// </summary>
     void spawnWithNoRaycast()
     {
         Vector3 position = Vector3.zero;
@@ -81,11 +111,15 @@ public class ObjectSpawnerAR : MonoBehaviour
         }
         objectSpawnedEvent?.Invoke(false);
         PatentManager.Instance.SetInitialTransform();
-    
 
 
     }
 
+    /// <summary>
+    /// Instantiates the patent at the pose returned by the AR plane raycast,
+    /// aligning it to the detected surface.
+    /// </summary>
+    /// <param name="hitPose">The world-space pose of the first AR plane hit.</param>
     void spawnWithRaycast(Pose hitPose)
     {
         if (PatentManager.Instance.ActivePatent == null)
@@ -107,17 +141,29 @@ public class ObjectSpawnerAR : MonoBehaviour
     //     Debug.Log(scaleAmount);
     // }
 
+    /// <summary>
+    /// Assigns the given downloaded model as the patent prefab to be instantiated on next tap.
+    /// </summary>
+    /// <param name="downloaded_patent">The downloaded model GameObject.</param>
     public void SetActivePatent(GameObject downloaded_patent)
     {
         patent = downloaded_patent;
         Debug.Log("settedddd");
     }
-    
+
+    /// <summary>
+    /// Returns the currently instantiated patent instance in the AR scene.
+    /// </summary>
+    /// <returns>The active patent <see cref="GameObject"/>, or <c>null</c> if none.</returns>
     public GameObject getActivePatent()
     {
         return activePatent;
     }
 
+    /// <summary>
+    /// Resets the patent's scale to <see cref="Vector3.one"/> and repositions it
+    /// using <see cref="PivotSetter.ChangeToOneOneMode"/>.
+    /// </summary>
     public void ResetPatentTransform()
     {
         if (patent == null) return;

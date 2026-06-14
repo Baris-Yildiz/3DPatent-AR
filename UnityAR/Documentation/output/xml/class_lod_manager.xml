@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_lod_manager" kind="class" language="C#" prot="public">
+    <compoundname>LodManager</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_lod_manager_1a7b53a9812b68f5c9c310b539d2960a44" prot="private" static="no" mutable="no">
+        <type><ref refid="class_popup_menu_manager" kindref="compound">PopupMenuManager</ref></type>
+        <definition>PopupMenuManager LodManager.popupMenuManager</definition>
+        <argsstring></argsstring>
+        <name>popupMenuManager</name>
+        <qualifiedname>LodManager.popupMenuManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LodManager.cs" line="10" column="31" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LodManager.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_lod_manager_1ab3dcffbc8941d1338d04e2a26072fd34" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void LodManager.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <qualifiedname>LodManager.Start</qualifiedname>
+        <briefdescription>
+<para>Subscribes to PopupMenuManager.OnLodChange. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LodManager.cs" line="13" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LodManager.cs" bodystart="13" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="class_lod_manager_1ae291ed4d85fa75d361e18628521e4f66" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void LodManager.OnDestroy</definition>
+        <argsstring>()</argsstring>
+        <name>OnDestroy</name>
+        <qualifiedname>LodManager.OnDestroy</qualifiedname>
+        <briefdescription>
+<para>Unsubscribes from PopupMenuManager.OnLodChange to prevent dangling callbacks. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LodManager.cs" line="22" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LodManager.cs" bodystart="22" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="class_lod_manager_1a77e9d3f250e938b5db165d43029c0cb4" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void LodManager.OnLodChange</definition>
+        <argsstring>(bool isOn)</argsstring>
+        <name>OnLodChange</name>
+        <qualifiedname>LodManager.OnLodChange</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>isOn</declname>
+        </param>
+        <briefdescription>
+<para>Forces every LODGroup in the active patent to LOD 1 (simplified) when <emphasis>isOn</emphasis>  is <computeroutput>true</computeroutput>, or LOD 0 (full quality) when <computeroutput>false</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>isOn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>true</computeroutput> to enable the lower-quality LOD.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LodManager.cs" line="33" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LodManager.cs" bodystart="33" bodyend="41"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Listens to PopupMenuManager.OnLodChange and forces all LODGroup components in the active patent to a specific LOD level. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>LOD 0 = full quality; LOD 1 = simplified mesh generated by GenerateLOD. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>LodManager</label>
+        <link refid="class_lod_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>LodManager</label>
+        <link refid="class_lod_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>popupMenuManager</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="3">
+        <label>PopupMenuManager</label>
+        <link refid="class_popup_menu_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>Instance</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>boundingBoxPopup</edgelabel>
+          <edgelabel>descriptionPopup</edgelabel>
+          <edgelabel>lightPopup</edgelabel>
+          <edgelabel>lodToggle</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>UIToggle</label>
+        <link refid="class_u_i_toggle"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LodManager.cs" line="8" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LodManager.cs" bodystart="9" bodyend="42"/>
+    <listofallmembers>
+      <member refid="class_lod_manager_1ae291ed4d85fa75d361e18628521e4f66" prot="private" virt="non-virtual"><scope>LodManager</scope><name>OnDestroy</name></member>
+      <member refid="class_lod_manager_1a77e9d3f250e938b5db165d43029c0cb4" prot="private" virt="non-virtual"><scope>LodManager</scope><name>OnLodChange</name></member>
+      <member refid="class_lod_manager_1a7b53a9812b68f5c9c310b539d2960a44" prot="private" virt="non-virtual"><scope>LodManager</scope><name>popupMenuManager</name></member>
+      <member refid="class_lod_manager_1ab3dcffbc8941d1338d04e2a26072fd34" prot="private" virt="non-virtual"><scope>LodManager</scope><name>Start</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

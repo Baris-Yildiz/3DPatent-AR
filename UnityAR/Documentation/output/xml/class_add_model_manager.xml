@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_add_model_manager" kind="class" language="C#" prot="public">
+    <compoundname>AddModelManager</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_add_model_manager_1a10693bc00e3a3548b73fff22e70560c0" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject AddModelManager.m_AddModelPopupWindow</definition>
+        <argsstring></argsstring>
+        <name>m_AddModelPopupWindow</name>
+        <qualifiedname>AddModelManager.m_AddModelPopupWindow</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/AddModelManager.cs" line="13" column="24" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/AddModelManager.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_add_model_manager_1af68384c034b2279dd2fbcd7f214af698" prot="private" static="no" mutable="no">
+        <type>Button</type>
+        <definition>Button AddModelManager.m_AddModelButton</definition>
+        <argsstring></argsstring>
+        <name>m_AddModelButton</name>
+        <qualifiedname>AddModelManager.m_AddModelButton</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/AddModelManager.cs" line="15" column="20" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/AddModelManager.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_add_model_manager_1a7fad1788a3dc049bd6530eaf82c0e292" prot="private" static="no" mutable="no">
+        <type>Image</type>
+        <definition>Image AddModelManager.m_ButtonIcon</definition>
+        <argsstring></argsstring>
+        <name>m_ButtonIcon</name>
+        <qualifiedname>AddModelManager.m_ButtonIcon</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/AddModelManager.cs" line="23" column="19" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/AddModelManager.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_add_model_manager_1a60865a59abbe1adc055ba64babf8ec04" prot="public" static="no" mutable="no">
+        <type>Sprite</type>
+        <definition>Sprite AddModelManager.CancelSprite</definition>
+        <argsstring></argsstring>
+        <name>CancelSprite</name>
+        <qualifiedname>AddModelManager.CancelSprite</qualifiedname>
+        <briefdescription>
+<para>Icon sprite shown when the button will cancel an active QR scan. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/AddModelManager.cs" line="18" column="19" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/AddModelManager.cs" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_add_model_manager_1a83c2d0622b4bae2684c6225d6013bd67" prot="public" static="no" mutable="no">
+        <type>Sprite</type>
+        <definition>Sprite AddModelManager.AddSprite</definition>
+        <argsstring></argsstring>
+        <name>AddSprite</name>
+        <qualifiedname>AddModelManager.AddSprite</qualifiedname>
+        <briefdescription>
+<para>Icon sprite shown when the button will start a new QR scan. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/AddModelManager.cs" line="21" column="19" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/AddModelManager.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_add_model_manager_1a9ae798873752a1a14975b0710ab8d9f2" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AddModelManager.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <qualifiedname>AddModelManager.Start</qualifiedname>
+        <briefdescription>
+<para>Resolves the button and icon image, configures initial state, and wires state-machine callbacks so the button resets and disables appropriately. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/AddModelManager.cs" line="29" column="10" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/AddModelManager.cs" bodystart="29" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_add_model_manager_1aa51683ff536b5e80f82bd950f2e444e5" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AddModelManager.SetButtonToDisplayAddModelPopup</definition>
+        <argsstring>()</argsstring>
+        <name>SetButtonToDisplayAddModelPopup</name>
+        <qualifiedname>AddModelManager.SetButtonToDisplayAddModelPopup</qualifiedname>
+        <briefdescription>
+<para>Configures the button to show the &quot;add model&quot; confirmation popup: sets the add icon and replaces any existing click listener. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/AddModelManager.cs" line="52" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/AddModelManager.cs" bodystart="52" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="class_add_model_manager_1aad3d660a9cde77057e8686061e012eb2" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AddModelManager.SetButtonToCancelQRScan</definition>
+        <argsstring>()</argsstring>
+        <name>SetButtonToCancelQRScan</name>
+        <qualifiedname>AddModelManager.SetButtonToCancelQRScan</qualifiedname>
+        <briefdescription>
+<para>Configures the button to cancel an in-progress QR scan: sets the cancel icon and replaces the click listener with a stop-scanner action. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/AddModelManager.cs" line="64" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/AddModelManager.cs" bodystart="64" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="class_add_model_manager_1ac205344c4dbfb8626a39182eea949312" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AddModelManager.DisplayAddModelPopup</definition>
+        <argsstring>()</argsstring>
+        <name>DisplayAddModelPopup</name>
+        <qualifiedname>AddModelManager.DisplayAddModelPopup</qualifiedname>
+        <briefdescription>
+<para>Shows the &quot;add model&quot; confirmation popup, creating it on first call and reusing it on subsequent calls. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/AddModelManager.cs" line="79" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/AddModelManager.cs" bodystart="79" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="class_add_model_manager_1a96e148c2a534c506bfd2592b1cd89c19" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AddModelManager.OnAddModelPopupOK</definition>
+        <argsstring>()</argsstring>
+        <name>OnAddModelPopupOK</name>
+        <qualifiedname>AddModelManager.OnAddModelPopupOK</qualifiedname>
+        <briefdescription>
+<para>Confirms the add-model action: transitions to QR scan state, hides the popup, and reconfigures the button to act as a scan-cancel button. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/AddModelManager.cs" line="104" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/AddModelManager.cs" bodystart="104" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="class_add_model_manager_1a478560755f0bdcec59ebf9faad3a6ce2" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AddModelManager.OnAddModelPopupCancel</definition>
+        <argsstring>()</argsstring>
+        <name>OnAddModelPopupCancel</name>
+        <qualifiedname>AddModelManager.OnAddModelPopupCancel</qualifiedname>
+        <briefdescription>
+<para>Cancels the add-model flow and restores button interactivity. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/AddModelManager.cs" line="112" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/AddModelManager.cs" bodystart="112" bodyend="116"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Manages the Add Model button that allows the user to scan a new QR code. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The button toggles between an &quot;add&quot; icon (shows a confirmation popup) and a &quot;cancel&quot; icon (cancels an in-progress QR scan). Reacts to StateMachine state changes to keep its state consistent. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>AddModelManager</label>
+        <link refid="class_add_model_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>AddModelManager</label>
+        <link refid="class_add_model_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/AddModelManager.cs" line="11" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/AddModelManager.cs" bodystart="12" bodyend="117"/>
+    <listofallmembers>
+      <member refid="class_add_model_manager_1a83c2d0622b4bae2684c6225d6013bd67" prot="public" virt="non-virtual"><scope>AddModelManager</scope><name>AddSprite</name></member>
+      <member refid="class_add_model_manager_1a60865a59abbe1adc055ba64babf8ec04" prot="public" virt="non-virtual"><scope>AddModelManager</scope><name>CancelSprite</name></member>
+      <member refid="class_add_model_manager_1ac205344c4dbfb8626a39182eea949312" prot="private" virt="non-virtual"><scope>AddModelManager</scope><name>DisplayAddModelPopup</name></member>
+      <member refid="class_add_model_manager_1af68384c034b2279dd2fbcd7f214af698" prot="private" virt="non-virtual"><scope>AddModelManager</scope><name>m_AddModelButton</name></member>
+      <member refid="class_add_model_manager_1a10693bc00e3a3548b73fff22e70560c0" prot="private" virt="non-virtual"><scope>AddModelManager</scope><name>m_AddModelPopupWindow</name></member>
+      <member refid="class_add_model_manager_1a7fad1788a3dc049bd6530eaf82c0e292" prot="private" virt="non-virtual"><scope>AddModelManager</scope><name>m_ButtonIcon</name></member>
+      <member refid="class_add_model_manager_1a478560755f0bdcec59ebf9faad3a6ce2" prot="private" virt="non-virtual"><scope>AddModelManager</scope><name>OnAddModelPopupCancel</name></member>
+      <member refid="class_add_model_manager_1a96e148c2a534c506bfd2592b1cd89c19" prot="private" virt="non-virtual"><scope>AddModelManager</scope><name>OnAddModelPopupOK</name></member>
+      <member refid="class_add_model_manager_1aad3d660a9cde77057e8686061e012eb2" prot="private" virt="non-virtual"><scope>AddModelManager</scope><name>SetButtonToCancelQRScan</name></member>
+      <member refid="class_add_model_manager_1aa51683ff536b5e80f82bd950f2e444e5" prot="private" virt="non-virtual"><scope>AddModelManager</scope><name>SetButtonToDisplayAddModelPopup</name></member>
+      <member refid="class_add_model_manager_1a9ae798873752a1a14975b0710ab8d9f2" prot="private" virt="non-virtual"><scope>AddModelManager</scope><name>Start</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

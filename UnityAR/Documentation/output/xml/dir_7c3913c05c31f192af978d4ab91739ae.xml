@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="dir_7c3913c05c31f192af978d4ab91739ae" kind="dir">
+    <compoundname>C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI</compoundname>
+    <innerdir refid="dir_6318bd51d34e3a62cc8fad03cfd5c11b">C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI</innerdir>
+    <innerfile refid="_log_manager_8cs">LogManager.cs</innerfile>
+    <innerfile refid="_log_text_8cs">LogText.cs</innerfile>
+    <innerfile refid="_pivot_setting_manager_8cs">PivotSettingManager.cs</innerfile>
+    <innerfile refid="_plane_detection_controller_8cs">PlaneDetectionController.cs</innerfile>
+    <innerfile refid="_reset_patent_button_8cs">ResetPatentButton.cs</innerfile>
+    <innerfile refid="_scene_transition_button_8cs">SceneTransitionButton.cs</innerfile>
+    <innerfile refid="_u_i_manager_8cs">UIManager.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/"/>
+  </compounddef>
+</doxygen>

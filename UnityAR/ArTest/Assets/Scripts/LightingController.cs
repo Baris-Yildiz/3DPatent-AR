@@ -5,6 +5,12 @@ using UnityEngine.Rendering.Universal;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
+/// <summary>
+/// Toggles AR lighting estimation and URP main-light rendering in response to
+/// <see cref="PopupMenuManager.OnEnableLightning"/>. Uses reflection to set
+/// the private <c>m_MainLightRenderingMode</c> field on the URP asset because
+/// no public API is available in URP 17.
+/// </summary>
 public class LightingController : MonoBehaviour
 {
     [SerializeField] private PopupMenuManager popupMenuManager;
@@ -15,6 +21,10 @@ public class LightingController : MonoBehaviour
     private AmbientMode _savedAmbientMode;
     private Color _savedAmbientLight;
 
+    /// <summary>
+    /// Subscribes to the lighting toggle event, snapshots the current URP and
+    /// ambient lighting settings for later restoration, and disables lighting by default.
+    /// </summary>
     private void Start()
     {
         if (popupMenuManager != null)
@@ -34,12 +44,18 @@ public class LightingController : MonoBehaviour
         SetLighting(false);
     }
 
+    /// <summary>Unsubscribes from the lighting toggle event.</summary>
     private void OnDestroy()
     {
         if (popupMenuManager != null)
             popupMenuManager.OnEnableLightning -= SetLighting;
     }
 
+    /// <summary>
+    /// Enables or disables per-pixel main-light rendering on the URP asset via
+    /// reflection, and toggles AR camera light estimation and ambient lighting.
+    /// </summary>
+    /// <param name="enable"><c>true</c> to enable full lighting; <c>false</c> to disable it.</param>
     private void SetLighting(bool enable)
     {
         var urpAsset = GraphicsSettings.currentRenderPipeline as UniversalRenderPipelineAsset;

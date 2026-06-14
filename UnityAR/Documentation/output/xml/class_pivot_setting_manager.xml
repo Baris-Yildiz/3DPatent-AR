@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_pivot_setting_manager" kind="class" language="C#" prot="public">
+    <compoundname>PivotSettingManager</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="property">
+      <memberdef kind="property" id="class_pivot_setting_manager_1a61d905464ec356d66116e9a4dc2760fa" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="yes" protectedsettable="no">
+        <type><ref refid="class_pivot_setting_manager" kindref="compound">PivotSettingManager</ref></type>
+        <definition>PivotSettingManager PivotSettingManager.Instance</definition>
+        <argsstring></argsstring>
+        <name>Instance</name>
+        <qualifiedname>PivotSettingManager.Instance</qualifiedname>
+        <briefdescription>
+<para>The single active instance of PivotSettingManager. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/PivotSettingManager.cs" line="14" column="39" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/PivotSettingManager.cs" bodystart="14" bodyend="14"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="event">
+      <memberdef kind="event" id="class_pivot_setting_manager_1a8bf112e3026c5cbafdb6facf84df637d" prot="public" static="no" add="no" remove="no" raise="no">
+        <type>UnityAction&lt; bool &gt;</type>
+        <definition>UnityAction&lt;bool&gt; PivotSettingManager.OnPivotUseChange</definition>
+        <argsstring></argsstring>
+        <name>OnPivotUseChange</name>
+        <qualifiedname>PivotSettingManager.OnPivotUseChange</qualifiedname>
+        <briefdescription>
+<para>Fired when the pivot-use preference changes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Parameter is <computeroutput>true</computeroutput> when the pivot should be used. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/PivotSettingManager.cs" line="20" column="30" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/PivotSettingManager.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_pivot_setting_manager_1a7a001de3c469c2b843e74aff6f6d56e8" prot="private" static="no" mutable="no">
+        <type><ref refid="class_u_i_toggle" kindref="compound">UIToggle</ref></type>
+        <definition>UIToggle PivotSettingManager.m_UIToggleComponent</definition>
+        <argsstring></argsstring>
+        <name>m_UIToggleComponent</name>
+        <qualifiedname>PivotSettingManager.m_UIToggleComponent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/PivotSettingManager.cs" line="22" column="22" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/PivotSettingManager.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_pivot_setting_manager_1a366ca4472bbc2ba2d071cdbdf249e5d2" prot="private" static="no" mutable="no">
+        <type>Toggle</type>
+        <definition>Toggle PivotSettingManager.pivotToggle</definition>
+        <argsstring></argsstring>
+        <name>pivotToggle</name>
+        <qualifiedname>PivotSettingManager.pivotToggle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/PivotSettingManager.cs" line="23" column="20" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/PivotSettingManager.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_pivot_setting_manager_1a4249080bfbf1598ed0a5d24c1be1ed15" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PivotSettingManager.Awake</definition>
+        <argsstring>()</argsstring>
+        <name>Awake</name>
+        <qualifiedname>PivotSettingManager.Awake</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/PivotSettingManager.cs" line="25" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/PivotSettingManager.cs" bodystart="25" bodyend="36"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_pivot_setting_manager_1acccf208aa8b7cbe97cf4bc9ef04d4a0b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PivotSettingManager.Initialize</definition>
+        <argsstring>()</argsstring>
+        <name>Initialize</name>
+        <qualifiedname>PivotSettingManager.Initialize</qualifiedname>
+        <briefdescription>
+<para>Wires up the toggle listener and state-machine callbacks. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Call once after all singleton instances are ready. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/PivotSettingManager.cs" line="42" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/PivotSettingManager.cs" bodystart="42" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pivot_setting_manager_1a76d996d132156a616042731dabf27447" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PivotSettingManager.SetUsePivot</definition>
+        <argsstring>(bool value)</argsstring>
+        <name>SetUsePivot</name>
+        <qualifiedname>PivotSettingManager.SetUsePivot</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Programmatically sets the pivot-use preference and fires OnPivotUseChange. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>true</computeroutput> to use the transform pivot; <computeroutput>false</computeroutput> for bounds center.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/PivotSettingManager.cs" line="62" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/PivotSettingManager.cs" bodystart="62" bodyend="65"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Singleton manager for the pivot-use toggle. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>When enabled, model rotation and positioning use the object&apos;s transform origin as the pivot; when disabled the bounds center is used instead. Must be initialised by calling Initialize (done by MiscOptionsManager). </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>PivotSettingManager</label>
+        <link refid="class_pivot_setting_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>PivotSettingManager</label>
+        <link refid="class_pivot_setting_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_UIToggleComponent</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>UIToggle</label>
+        <link refid="class_u_i_toggle"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/PivotSettingManager.cs" line="11" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/PivotSettingManager.cs" bodystart="12" bodyend="68"/>
+    <listofallmembers>
+      <member refid="class_pivot_setting_manager_1a4249080bfbf1598ed0a5d24c1be1ed15" prot="private" virt="non-virtual"><scope>PivotSettingManager</scope><name>Awake</name></member>
+      <member refid="class_pivot_setting_manager_1acccf208aa8b7cbe97cf4bc9ef04d4a0b" prot="public" virt="non-virtual"><scope>PivotSettingManager</scope><name>Initialize</name></member>
+      <member refid="class_pivot_setting_manager_1a61d905464ec356d66116e9a4dc2760fa" prot="public" virt="non-virtual"><scope>PivotSettingManager</scope><name>Instance</name></member>
+      <member refid="class_pivot_setting_manager_1a7a001de3c469c2b843e74aff6f6d56e8" prot="private" virt="non-virtual"><scope>PivotSettingManager</scope><name>m_UIToggleComponent</name></member>
+      <member refid="class_pivot_setting_manager_1a8bf112e3026c5cbafdb6facf84df637d" prot="public" virt="non-virtual"><scope>PivotSettingManager</scope><name>OnPivotUseChange</name></member>
+      <member refid="class_pivot_setting_manager_1a366ca4472bbc2ba2d071cdbdf249e5d2" prot="private" virt="non-virtual"><scope>PivotSettingManager</scope><name>pivotToggle</name></member>
+      <member refid="class_pivot_setting_manager_1a76d996d132156a616042731dabf27447" prot="public" virt="non-virtual"><scope>PivotSettingManager</scope><name>SetUsePivot</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

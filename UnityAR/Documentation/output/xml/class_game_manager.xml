@@ -1,0 +1,260 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_game_manager" kind="class" language="C#" prot="public">
+    <compoundname>GameManager</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_game_manager_1a7666e8468dac197b9eb32dd32128524f" prot="public" static="yes" mutable="no">
+        <type><ref refid="class_game_manager" kindref="compound">GameManager</ref></type>
+        <definition>GameManager GameManager.instance</definition>
+        <argsstring></argsstring>
+        <name>instance</name>
+        <qualifiedname>GameManager.instance</qualifiedname>
+        <briefdescription>
+<para>The single active instance of GameManager. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/GameManager.cs" line="24" column="31" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/GameManager.cs" bodystart="24" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_game_manager_1ae4522c217d10ae18823063ea82311ce4" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject GameManager.qrScene</definition>
+        <argsstring></argsstring>
+        <name>qrScene</name>
+        <qualifiedname>GameManager.qrScene</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/GameManager.cs" line="26" column="25" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/GameManager.cs" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_manager_1a4e1f66fb7bbe1b8cbe3951ce3d6f4751" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject GameManager.patentScene</definition>
+        <argsstring></argsstring>
+        <name>patentScene</name>
+        <qualifiedname>GameManager.patentScene</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/GameManager.cs" line="28" column="25" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/GameManager.cs" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_manager_1aab20c4f9bbc31538619e7860162f12cb" prot="private" static="no" mutable="no">
+        <type><ref refid="class_raycast_handler" kindref="compound">RaycastHandler</ref></type>
+        <definition>RaycastHandler GameManager.raycastHandler</definition>
+        <argsstring></argsstring>
+        <name>raycastHandler</name>
+        <qualifiedname>GameManager.raycastHandler</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/GameManager.cs" line="29" column="28" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/GameManager.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_manager_1a9c973c401e07c35a72514585eac2af97" prot="private" static="no" mutable="no">
+        <type><ref refid="_game_manager_8cs_1a4c6ba9790ff5172cfa66b51a94656be1" kindref="member">ArMode</ref></type>
+        <definition>ArMode GameManager.currMode</definition>
+        <argsstring></argsstring>
+        <name>currMode</name>
+        <qualifiedname>GameManager.currMode</qualifiedname>
+        <initializer>= <ref refid="_game_manager_8cs_1a4c6ba9790ff5172cfa66b51a94656be1a48e635c5e05ea5ab0389fb26424b8487" kindref="member">ArMode.Qr</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/GameManager.cs" line="30" column="20" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/GameManager.cs" bodystart="30" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_game_manager_1a2959177ee51ac31badbf8b1bc8f7f637" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameManager.Awake</definition>
+        <argsstring>()</argsstring>
+        <name>Awake</name>
+        <qualifiedname>GameManager.Awake</qualifiedname>
+        <briefdescription>
+<para>Initialises the singleton instance. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/GameManager.cs" line="33" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/GameManager.cs" bodystart="33" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_manager_1a5ccfacd027ad08eeb4ff1f25a7f59c98" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameManager.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <qualifiedname>GameManager.Start</qualifiedname>
+        <briefdescription>
+<para>Locates the RaycastHandler, wires state-machine enter callbacks, and starts the app in QR mode. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/GameManager.cs" line="51" column="10" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/GameManager.cs" bodystart="51" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_manager_1ac68d06321520b6b17beb92a3cfa29ffa" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameManager.OnEnable</definition>
+        <argsstring>()</argsstring>
+        <name>OnEnable</name>
+        <qualifiedname>GameManager.OnEnable</qualifiedname>
+        <briefdescription>
+<para>Reserved for future enable-time setup. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/GameManager.cs" line="62" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/GameManager.cs" bodystart="62" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_manager_1a8b94a29e855b89ee5fd58a2163687079" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameManager.ActivateQrParts</definition>
+        <argsstring>()</argsstring>
+        <name>ActivateQrParts</name>
+        <qualifiedname>GameManager.ActivateQrParts</qualifiedname>
+        <briefdescription>
+<para>Hides the patent scene, disables plane detection, shows the QR scene, and sets the current mode to ArMode.Qr. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/GameManager.cs" line="93" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/GameManager.cs" bodystart="93" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_manager_1ae5551e8ba18b969d38a6ae0f6684228a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameManager.ActivatePatentParts</definition>
+        <argsstring>()</argsstring>
+        <name>ActivatePatentParts</name>
+        <qualifiedname>GameManager.ActivatePatentParts</qualifiedname>
+        <briefdescription>
+<para>Hides the QR scene, enables patent scripts, shows the patent scene, and sets the current mode to ArMode.Patent. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/GameManager.cs" line="106" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/GameManager.cs" bodystart="106" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_manager_1af74e4d938436eef1959d64ec7b0533c1" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameManager.setPatentScripts</definition>
+        <argsstring>(bool active)</argsstring>
+        <name>setPatentScripts</name>
+        <qualifiedname>GameManager.setPatentScripts</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>active</declname>
+        </param>
+        <briefdescription>
+<para>Enables or disables the RaycastHandler component to prevent AR raycasts from firing outside of patent-viewing mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>active</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>true</computeroutput> to enable; <computeroutput>false</computeroutput> to disable.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/GameManager.cs" line="119" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/GameManager.cs" bodystart="119" bodyend="123"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_game_manager_1a5c8c21ceaa1857c94b243b741d33a229" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameManager.ChangeMode</definition>
+        <argsstring>()</argsstring>
+        <name>ChangeMode</name>
+        <qualifiedname>GameManager.ChangeMode</qualifiedname>
+        <briefdescription>
+<para>Toggles between QR and patent modes based on the current ArMode. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/GameManager.cs" line="77" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/GameManager.cs" bodystart="77" bodyend="87"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Singleton bootstrap manager that routes the app between QR scanning and AR patent-viewing by toggling scene root GameObjects and wiring up StateMachine state-enter callbacks. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>GameManager</label>
+        <link refid="class_game_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>GameManager</label>
+        <link refid="class_game_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1" relation="usage">
+          <edgelabel>instance</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>raycastHandler</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="3">
+        <label>RaycastHandler</label>
+        <link refid="class_raycast_handler"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/GameManager.cs" line="21" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/GameManager.cs" bodystart="22" bodyend="125"/>
+    <listofallmembers>
+      <member refid="class_game_manager_1ae5551e8ba18b969d38a6ae0f6684228a" prot="private" virt="non-virtual"><scope>GameManager</scope><name>ActivatePatentParts</name></member>
+      <member refid="class_game_manager_1a8b94a29e855b89ee5fd58a2163687079" prot="private" virt="non-virtual"><scope>GameManager</scope><name>ActivateQrParts</name></member>
+      <member refid="class_game_manager_1a2959177ee51ac31badbf8b1bc8f7f637" prot="private" virt="non-virtual"><scope>GameManager</scope><name>Awake</name></member>
+      <member refid="class_game_manager_1a5c8c21ceaa1857c94b243b741d33a229" prot="public" virt="non-virtual"><scope>GameManager</scope><name>ChangeMode</name></member>
+      <member refid="class_game_manager_1a9c973c401e07c35a72514585eac2af97" prot="private" virt="non-virtual"><scope>GameManager</scope><name>currMode</name></member>
+      <member refid="class_game_manager_1a7666e8468dac197b9eb32dd32128524f" prot="public" virt="non-virtual"><scope>GameManager</scope><name>instance</name></member>
+      <member refid="class_game_manager_1ac68d06321520b6b17beb92a3cfa29ffa" prot="private" virt="non-virtual"><scope>GameManager</scope><name>OnEnable</name></member>
+      <member refid="class_game_manager_1a4e1f66fb7bbe1b8cbe3951ce3d6f4751" prot="private" virt="non-virtual"><scope>GameManager</scope><name>patentScene</name></member>
+      <member refid="class_game_manager_1ae4522c217d10ae18823063ea82311ce4" prot="private" virt="non-virtual"><scope>GameManager</scope><name>qrScene</name></member>
+      <member refid="class_game_manager_1aab20c4f9bbc31538619e7860162f12cb" prot="private" virt="non-virtual"><scope>GameManager</scope><name>raycastHandler</name></member>
+      <member refid="class_game_manager_1af74e4d938436eef1959d64ec7b0533c1" prot="private" virt="non-virtual"><scope>GameManager</scope><name>setPatentScripts</name></member>
+      <member refid="class_game_manager_1a5ccfacd027ad08eeb4ff1f25a7f59c98" prot="private" virt="non-virtual"><scope>GameManager</scope><name>Start</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
