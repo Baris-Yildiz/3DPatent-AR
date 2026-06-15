@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_reset_patent_button" kind="class" language="C#" prot="public">
+    <compoundname>ResetPatentButton</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_reset_patent_button_1af4abbb48053c620861798276fb44eedb" prot="private" static="no" mutable="no">
+        <type>Button</type>
+        <definition>Button ResetPatentButton.btn</definition>
+        <argsstring></argsstring>
+        <name>btn</name>
+        <qualifiedname>ResetPatentButton.btn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/ResetPatentButton.cs" line="12" column="20" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/ResetPatentButton.cs" bodystart="12" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="event">
+      <memberdef kind="event" id="class_reset_patent_button_1ad0e0eb619eb36b097c660843f6b1ebd0" prot="public" static="no" add="no" remove="no" raise="no">
+        <type>Action</type>
+        <definition>Action ResetPatentButton.resetPatentTransformAction</definition>
+        <argsstring></argsstring>
+        <name>resetPatentTransformAction</name>
+        <qualifiedname>ResetPatentButton.resetPatentTransformAction</qualifiedname>
+        <briefdescription>
+<para>Fired when the button is clicked to request a transform reset. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/ResetPatentButton.cs" line="15" column="25" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/ResetPatentButton.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_reset_patent_button_1a50fadb413e978716ea69ff770bff0208" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ResetPatentButton.Awake</definition>
+        <argsstring>()</argsstring>
+        <name>Awake</name>
+        <qualifiedname>ResetPatentButton.Awake</qualifiedname>
+        <briefdescription>
+<para>Caches the Button component. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/ResetPatentButton.cs" line="18" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/ResetPatentButton.cs" bodystart="18" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_reset_patent_button_1ade116a730fabe22d4017ed05dce6b78f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ResetPatentButton.OnEnable</definition>
+        <argsstring>()</argsstring>
+        <name>OnEnable</name>
+        <qualifiedname>ResetPatentButton.OnEnable</qualifiedname>
+        <briefdescription>
+<para>Registers the click listener when the object becomes active. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/ResetPatentButton.cs" line="25" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/ResetPatentButton.cs" bodystart="25" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_reset_patent_button_1a8f15a4e9ee70f061e7f20e6b2b6e24c9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ResetPatentButton.OnDisable</definition>
+        <argsstring>()</argsstring>
+        <name>OnDisable</name>
+        <qualifiedname>ResetPatentButton.OnDisable</qualifiedname>
+        <briefdescription>
+<para>Removes the click listener when the object is deactivated. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/ResetPatentButton.cs" line="31" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/ResetPatentButton.cs" bodystart="31" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="class_reset_patent_button_1a25cb807080ceaf74b8196356bfaf6e02" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ResetPatentButton.ResetTransform</definition>
+        <argsstring>()</argsstring>
+        <name>ResetTransform</name>
+        <qualifiedname>ResetPatentButton.ResetTransform</qualifiedname>
+        <briefdescription>
+<para>Fires resetPatentTransformAction in response to a button click. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/ResetPatentButton.cs" line="37" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/ResetPatentButton.cs" bodystart="37" bodyend="40"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Legacy UI button that fires resetPatentTransformAction when clicked, allowing subscribers to reset the patent&apos;s transform. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Part of the older UI layer in <computeroutput>Scripts/UI/</computeroutput>; prefer ModelTransformManager in new UI code. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>ResetPatentButton</label>
+        <link refid="class_reset_patent_button"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>ResetPatentButton</label>
+        <link refid="class_reset_patent_button"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/ResetPatentButton.cs" line="10" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/ResetPatentButton.cs" bodystart="11" bodyend="41"/>
+    <listofallmembers>
+      <member refid="class_reset_patent_button_1a50fadb413e978716ea69ff770bff0208" prot="private" virt="non-virtual"><scope>ResetPatentButton</scope><name>Awake</name></member>
+      <member refid="class_reset_patent_button_1af4abbb48053c620861798276fb44eedb" prot="private" virt="non-virtual"><scope>ResetPatentButton</scope><name>btn</name></member>
+      <member refid="class_reset_patent_button_1a8f15a4e9ee70f061e7f20e6b2b6e24c9" prot="private" virt="non-virtual"><scope>ResetPatentButton</scope><name>OnDisable</name></member>
+      <member refid="class_reset_patent_button_1ade116a730fabe22d4017ed05dce6b78f" prot="private" virt="non-virtual"><scope>ResetPatentButton</scope><name>OnEnable</name></member>
+      <member refid="class_reset_patent_button_1ad0e0eb619eb36b097c660843f6b1ebd0" prot="public" virt="non-virtual"><scope>ResetPatentButton</scope><name>resetPatentTransformAction</name></member>
+      <member refid="class_reset_patent_button_1a25cb807080ceaf74b8196356bfaf6e02" prot="private" virt="non-virtual"><scope>ResetPatentButton</scope><name>ResetTransform</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

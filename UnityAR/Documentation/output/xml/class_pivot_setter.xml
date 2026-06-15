@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_pivot_setter" kind="class" language="C#" prot="public">
+    <compoundname>PivotSetter</compoundname>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_pivot_setter_1a2ba93b3c2ee0b518eeaa1694f7835b1d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Vector3</type>
+        <definition>static Vector3 PivotSetter.ChangeToOneOneMode</definition>
+        <argsstring>(GameObject patent, Transform camTransform, float offSet)</argsstring>
+        <name>ChangeToOneOneMode</name>
+        <qualifiedname>PivotSetter.ChangeToOneOneMode</qualifiedname>
+        <param>
+          <type>GameObject</type>
+          <declname>patent</declname>
+        </param>
+        <param>
+          <type>Transform</type>
+          <declname>camTransform</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>offSet</declname>
+        </param>
+        <briefdescription>
+<para>Repositions <emphasis>patent</emphasis>  so its bounding box no longer overlaps the camera position in the XZ plane, pushing it along the camera&apos;s forward direction when the camera is inside the model bounds. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Used when switching to 1:1 real-world scale mode.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>patent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The root GameObject of the patent model.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>camTransform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The AR camera transform.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>offSet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Extra clearance distance in metres beyond the model edge.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The calculated offset vector (currently always Vector3.zero), or Vector3.positiveInfinity if <emphasis>patent</emphasis>  is null. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PivotSetter.cs" line="22" column="27" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PivotSetter.cs" bodystart="22" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pivot_setter_1a639cf16e9b918517162dcfca3432021c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Bounds</type>
+        <definition>static Bounds PivotSetter.GetSpawnBounds</definition>
+        <argsstring>(GameObject patent)</argsstring>
+        <name>GetSpawnBounds</name>
+        <qualifiedname>PivotSetter.GetSpawnBounds</qualifiedname>
+        <param>
+          <type>GameObject</type>
+          <declname>patent</declname>
+        </param>
+        <briefdescription>
+<para>Computes the world-space axis-aligned bounding box that encapsulates all MeshRenderer components in <emphasis>patent</emphasis> &apos;s hierarchy. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>patent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The root GameObject whose renderers are measured.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The encapsulating Bounds in world space, or a zero-size bounds at the object&apos;s position if no renderers are found. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PivotSetter.cs" line="91" column="26" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PivotSetter.cs" bodystart="91" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pivot_setter_1a10446c1260fc67247e5c00af3917c223" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Bounds</type>
+        <definition>static Bounds PivotSetter.GetBounds</definition>
+        <argsstring>(GameObject patent)</argsstring>
+        <name>GetBounds</name>
+        <qualifiedname>PivotSetter.GetBounds</qualifiedname>
+        <param>
+          <type>GameObject</type>
+          <declname>patent</declname>
+        </param>
+        <briefdescription>
+<para>Computes the local-space axis-aligned bounding box of <emphasis>patent</emphasis>  by transforming all mesh-corner vertices into the root object&apos;s local space. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>More accurate than GetSpawnBounds for rotated hierarchies.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>patent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The root GameObject whose mesh filters are measured.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The local-space Bounds, or a small default if no meshes exist.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PivotSetter.cs" line="115" column="26" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PivotSetter.cs" bodystart="115" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pivot_setter_1a315511afac34fb1335e32d90b150307f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void PivotSetter.SnapToYOffset</definition>
+        <argsstring>(GameObject patent, bool toGround, bool usePivot)</argsstring>
+        <name>SnapToYOffset</name>
+        <qualifiedname>PivotSetter.SnapToYOffset</qualifiedname>
+        <param>
+          <type>GameObject</type>
+          <declname>patent</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>toGround</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>usePivot</declname>
+        </param>
+        <briefdescription>
+<para>Adjusts the Y position of <emphasis>patent</emphasis>  so its bottom face sits on the detected AR plane (when <emphasis>toGround</emphasis>  is <computeroutput>true</computeroutput>) or its center aligns with the spawn Y coordinate. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Also re-centres the XZ pivot relative to the bounds center.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>patent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The root GameObject to reposition.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>toGround</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>true</computeroutput> to snap the bottom of the model to the plane surface; <computeroutput>false</computeroutput> to align the center. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>usePivot</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>true</computeroutput> to treat the transform position as the pivot point; <computeroutput>false</computeroutput> to use the bounds center. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PivotSetter.cs" line="166" column="24" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PivotSetter.cs" bodystart="166" bodyend="180"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Static utility class providing pivot calculation, bounds computation, and model-positioning helpers used when placing or scaling a patent in AR. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PivotSetter.cs" line="7" column="15" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/PivotSetter.cs" bodystart="8" bodyend="184"/>
+    <listofallmembers>
+      <member refid="class_pivot_setter_1a2ba93b3c2ee0b518eeaa1694f7835b1d" prot="public" virt="non-virtual"><scope>PivotSetter</scope><name>ChangeToOneOneMode</name></member>
+      <member refid="class_pivot_setter_1a10446c1260fc67247e5c00af3917c223" prot="public" virt="non-virtual"><scope>PivotSetter</scope><name>GetBounds</name></member>
+      <member refid="class_pivot_setter_1a639cf16e9b918517162dcfca3432021c" prot="public" virt="non-virtual"><scope>PivotSetter</scope><name>GetSpawnBounds</name></member>
+      <member refid="class_pivot_setter_1a315511afac34fb1335e32d90b150307f" prot="public" virt="non-virtual"><scope>PivotSetter</scope><name>SnapToYOffset</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

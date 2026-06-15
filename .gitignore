@@ -144,3 +144,9 @@ InitTestScene*.unity*
 /UnityAR/ArTest/PlasticSCM/
 
 converter/fbx/
+# Platform-specific build caches
+/UnityAR/ArTest/[Ll]ibrary/Artifacts/
+/UnityAR/ArTest/.utmp
+
+UnityAR/ArTest/Assets/UMS_LODs/
+*.mesh

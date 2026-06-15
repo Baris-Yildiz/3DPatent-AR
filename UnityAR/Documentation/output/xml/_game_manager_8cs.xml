@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="_game_manager_8cs" kind="file" language="C#">
+    <compoundname>GameManager.cs</compoundname>
+    <innerclass refid="class_game_manager" prot="public">GameManager</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="_game_manager_8cs_1a4c6ba9790ff5172cfa66b51a94656be1" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ArMode</name>
+        <enumvalue id="_game_manager_8cs_1a4c6ba9790ff5172cfa66b51a94656be1a092ade8847d7c0575bae2ecb87ffcbc4" prot="public">
+          <name>Patent</name>
+          <briefdescription>
+<para>The AR patent-viewing mode is active. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_game_manager_8cs_1a4c6ba9790ff5172cfa66b51a94656be1a48e635c5e05ea5ab0389fb26424b8487" prot="public">
+          <name>Qr</name>
+          <briefdescription>
+<para>The QR-code scanning mode is active. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Internal enum representing which high-level mode the app is currently in. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/GameManager.cs" line="7" column="1" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/GameManager.cs" bodystart="8" bodyend="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">using<sp/></highlight><highlight class="normal">System;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">UnityEngine;</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="_game_manager_8cs_1a4c6ba9790ff5172cfa66b51a94656be1" kindref="member">ArMode</ref></highlight></codeline>
+<codeline lineno="8"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_game_manager_8cs_1a4c6ba9790ff5172cfa66b51a94656be1a092ade8847d7c0575bae2ecb87ffcbc4" kindref="member">Patent</ref>,</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_game_manager_8cs_1a4c6ba9790ff5172cfa66b51a94656be1a48e635c5e05ea5ab0389fb26424b8487" kindref="member">Qr</ref></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="class_game_manager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_game_manager" kindref="compound">GameManager</ref><sp/>:<sp/>MonoBehaviour</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="class_game_manager" kindref="compound">GameManager</ref><sp/><ref refid="class_game_manager_1a7666e8468dac197b9eb32dd32128524f" kindref="member">instance</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>[SerializeField]<sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>GameObject<sp/><ref refid="class_game_manager_1ae4522c217d10ae18823063ea82311ce4" kindref="member">qrScene</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>[SerializeField]<sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>GameObject<sp/><ref refid="class_game_manager_1a4e1f66fb7bbe1b8cbe3951ce3d6f4751" kindref="member">patentScene</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/><ref refid="class_raycast_handler" kindref="compound">RaycastHandler</ref><sp/><ref refid="class_game_manager_1aab20c4f9bbc31538619e7860162f12cb" kindref="member">raycastHandler</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/><ref refid="_game_manager_8cs_1a4c6ba9790ff5172cfa66b51a94656be1" kindref="member">ArMode</ref><sp/><ref refid="class_game_manager_1a9c973c401e07c35a72514585eac2af97" kindref="member">currMode</ref><sp/>=<sp/><ref refid="_game_manager_8cs_1a4c6ba9790ff5172cfa66b51a94656be1" kindref="member">ArMode</ref>.Qr;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_game_manager_1a2959177ee51ac31badbf8b1bc8f7f637" kindref="member">Awake</ref>()</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_game_manager_1a7666e8468dac197b9eb32dd32128524f" kindref="member">instance</ref><sp/>==<sp/></highlight><highlight class="keyword">null</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_game_manager_1a7666e8468dac197b9eb32dd32128524f" kindref="member">instance</ref><sp/>=<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_game_manager_1a7666e8468dac197b9eb32dd32128524f" kindref="member">instance</ref><sp/>!=<sp/></highlight><highlight class="keyword">null</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Destroy(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_game_manager_1a5ccfacd027ad08eeb4ff1f25a7f59c98" kindref="member">Start</ref>()</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_game_manager_1aab20c4f9bbc31538619e7860162f12cb" kindref="member">raycastHandler</ref><sp/>=<sp/>FindAnyObjectByType&lt;RaycastHandler&gt;();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_state_machine" kindref="compound">StateMachine</ref>.<ref refid="class_state_machine_1ae5cbc71c07f182b79e34cb653c0192a9" kindref="member">Instance</ref>.<ref refid="class_state_machine_1a9ff5cbac71cdc7b0c7f944c1d85c7bc9" kindref="member">GetState</ref>(<ref refid="class_state_machine" kindref="compound">StateMachine</ref>.<ref refid="class_state_machine_1a905d1c2a570856577ca5bca4274217f6" kindref="member">States</ref>.MODEL_VIEW_STATE).<ref refid="class_state_1a8cea1a06337b876a31f9185e7d4c7abb" kindref="member">OnStateEnter</ref><sp/>+=<sp/><ref refid="class_game_manager_1ae5551e8ba18b969d38a6ae0f6684228a" kindref="member">ActivatePatentParts</ref>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_state_machine" kindref="compound">StateMachine</ref>.<ref refid="class_state_machine_1ae5cbc71c07f182b79e34cb653c0192a9" kindref="member">Instance</ref>.<ref refid="class_state_machine_1a9ff5cbac71cdc7b0c7f944c1d85c7bc9" kindref="member">GetState</ref>(<ref refid="class_state_machine" kindref="compound">StateMachine</ref>.<ref refid="class_state_machine_1a905d1c2a570856577ca5bca4274217f6" kindref="member">States</ref>.NO_MODEL_VIEW_STATE).<ref refid="class_state_1a8cea1a06337b876a31f9185e7d4c7abb" kindref="member">OnStateEnter</ref><sp/>+=<sp/><ref refid="class_game_manager_1a8b94a29e855b89ee5fd58a2163687079" kindref="member">ActivateQrParts</ref>;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_state_machine" kindref="compound">StateMachine</ref>.<ref refid="class_state_machine_1ae5cbc71c07f182b79e34cb653c0192a9" kindref="member">Instance</ref>.<ref refid="class_state_machine_1a9ff5cbac71cdc7b0c7f944c1d85c7bc9" kindref="member">GetState</ref>(<ref refid="class_state_machine" kindref="compound">StateMachine</ref>.<ref refid="class_state_machine_1a905d1c2a570856577ca5bca4274217f6" kindref="member">States</ref>.QR_SCAN_STATE).<ref refid="class_state_1a8cea1a06337b876a31f9185e7d4c7abb" kindref="member">OnStateEnter</ref><sp/>+=<sp/><ref refid="class_game_manager_1a8b94a29e855b89ee5fd58a2163687079" kindref="member">ActivateQrParts</ref>;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_game_manager_1a8b94a29e855b89ee5fd58a2163687079" kindref="member">ActivateQrParts</ref>();</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_game_manager_1ac68d06321520b6b17beb92a3cfa29ffa" kindref="member">OnEnable</ref>()</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>private<sp/>void<sp/>OnDisable()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>StateMachine.Instance.GetState(StateMachine.States.MODEL_VIEW_STATE).OnStateEnter<sp/>-=<sp/>ActivatePatentParts;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>StateMachine.Instance.GetState(StateMachine.States.NO_MODEL_VIEW_STATE).OnStateEnter<sp/>-=<sp/>ActivateQrParts;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_game_manager_1a5c8c21ceaa1857c94b243b741d33a229" kindref="member">ChangeMode</ref>()</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_game_manager_1a9c973c401e07c35a72514585eac2af97" kindref="member">currMode</ref><sp/>==<sp/><ref refid="_game_manager_8cs_1a4c6ba9790ff5172cfa66b51a94656be1" kindref="member">ArMode</ref>.Patent)</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_game_manager_1a8b94a29e855b89ee5fd58a2163687079" kindref="member">ActivateQrParts</ref>();</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_game_manager_1a9c973c401e07c35a72514585eac2af97" kindref="member">currMode</ref><sp/>==<sp/><ref refid="_game_manager_8cs_1a4c6ba9790ff5172cfa66b51a94656be1" kindref="member">ArMode</ref>.Qr)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_game_manager_1ae5551e8ba18b969d38a6ae0f6684228a" kindref="member">ActivatePatentParts</ref>();</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_game_manager_1a8b94a29e855b89ee5fd58a2163687079" kindref="member">ActivateQrParts</ref>()</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_game_manager_1a4e1f66fb7bbe1b8cbe3951ce3d6f4751" kindref="member">patentScene</ref>.SetActive(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_game_manager_1af74e4d938436eef1959d64ec7b0533c1" kindref="member">setPatentScripts</ref>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_game_manager_1aab20c4f9bbc31538619e7860162f12cb" kindref="member">raycastHandler</ref>.changePlaneDetection(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_game_manager_1ae4522c217d10ae18823063ea82311ce4" kindref="member">qrScene</ref>.SetActive(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_game_manager_1a9c973c401e07c35a72514585eac2af97" kindref="member">currMode</ref><sp/>=<sp/><ref refid="_game_manager_8cs_1a4c6ba9790ff5172cfa66b51a94656be1" kindref="member">ArMode</ref>.Qr;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_game_manager_1ae5551e8ba18b969d38a6ae0f6684228a" kindref="member">ActivatePatentParts</ref>()</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_game_manager_1ae4522c217d10ae18823063ea82311ce4" kindref="member">qrScene</ref>.SetActive(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_game_manager_1af74e4d938436eef1959d64ec7b0533c1" kindref="member">setPatentScripts</ref>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_game_manager_1a4e1f66fb7bbe1b8cbe3951ce3d6f4751" kindref="member">patentScene</ref>.SetActive(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_game_manager_1a9c973c401e07c35a72514585eac2af97" kindref="member">currMode</ref><sp/>=<sp/><ref refid="_game_manager_8cs_1a4c6ba9790ff5172cfa66b51a94656be1" kindref="member">ArMode</ref>.Patent;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_game_manager_1af74e4d938436eef1959d64ec7b0533c1" kindref="member">setPatentScripts</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>active)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>raycastHandler.changePlaneDetection(active);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>raycastHandler.enabled<sp/>=<sp/>active;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/GameManager.cs"/>
+  </compounddef>
+</doxygen>

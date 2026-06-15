@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_generate_l_o_d" kind="class" language="C#" prot="public">
+    <compoundname>GenerateLOD</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_generate_l_o_d_1a9a795dddec1ef8aa09964994263e36d8" prot="private" static="no" mutable="no">
+        <type>LODLevel[]</type>
+        <definition>LODLevel [] GenerateLOD.m_LodLevels</definition>
+        <argsstring></argsstring>
+        <name>m_LodLevels</name>
+        <qualifiedname>GenerateLOD.m_LodLevels</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LOD/GenerateLOD.cs" line="13" column="22" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LOD/GenerateLOD.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_generate_l_o_d_1a21d9f8cc7aaf2ffee0a45941227b53a7" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool GenerateLOD.m_AutoCollectRenderers</definition>
+        <argsstring></argsstring>
+        <name>m_AutoCollectRenderers</name>
+        <qualifiedname>GenerateLOD.m_AutoCollectRenderers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LOD/GenerateLOD.cs" line="14" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LOD/GenerateLOD.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_generate_l_o_d_1a7e49f4c5763b05c35b6ee6f0255d777a" prot="private" static="no" mutable="no">
+        <type>SimplificationOptions</type>
+        <definition>SimplificationOptions GenerateLOD.m_SimplificationOptions</definition>
+        <argsstring></argsstring>
+        <name>m_SimplificationOptions</name>
+        <qualifiedname>GenerateLOD.m_SimplificationOptions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LOD/GenerateLOD.cs" line="15" column="35" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LOD/GenerateLOD.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_generate_l_o_d_1a22b6a1b68d0281a4ffb366c4cde1c8e3" prot="private" static="no" mutable="no">
+        <type>float[]</type>
+        <definition>float [] GenerateLOD.m_LODQualities</definition>
+        <argsstring></argsstring>
+        <name>m_LODQualities</name>
+        <qualifiedname>GenerateLOD.m_LODQualities</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LOD/GenerateLOD.cs" line="16" column="19" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LOD/GenerateLOD.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_generate_l_o_d_1aa023dde3ec28f2183390919a55facfd5" prot="private" static="no" mutable="no">
+        <type>float[]</type>
+        <definition>float [] GenerateLOD.m_LODTransitionHeights</definition>
+        <argsstring></argsstring>
+        <name>m_LODTransitionHeights</name>
+        <qualifiedname>GenerateLOD.m_LODTransitionHeights</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LOD/GenerateLOD.cs" line="19" column="19" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LOD/GenerateLOD.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_generate_l_o_d_1ad21a98971e7f230308556a1feef044bc" prot="private" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int GenerateLOD.LOD_COUNT</definition>
+        <argsstring></argsstring>
+        <name>LOD_COUNT</name>
+        <qualifiedname>GenerateLOD.LOD_COUNT</qualifiedname>
+        <initializer>= 2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LOD/GenerateLOD.cs" line="17" column="23" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LOD/GenerateLOD.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_generate_l_o_d_1ab2532faa2d79090aee88465fd70666a3" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GenerateLOD.Awake</definition>
+        <argsstring>()</argsstring>
+        <name>Awake</name>
+        <qualifiedname>GenerateLOD.Awake</qualifiedname>
+        <briefdescription>
+<para>Configures LOD quality ratios, screen-height transition thresholds, and simplification options, then immediately calls Generate. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LOD/GenerateLOD.cs" line="25" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LOD/GenerateLOD.cs" bodystart="25" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="class_generate_l_o_d_1a71863110ee5489969b10817244b64041" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GenerateLOD.AttachLODCollider</definition>
+        <argsstring>()</argsstring>
+        <name>AttachLODCollider</name>
+        <qualifiedname>GenerateLOD.AttachLODCollider</qualifiedname>
+        <briefdescription>
+<para>Attaches a convex MeshCollider to the Level01 mesh child generated by LODGenerator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Currently unused — kept for future collision support without re-deriving the child path logic. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LOD/GenerateLOD.cs" line="78" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LOD/GenerateLOD.cs" bodystart="78" bodyend="94"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_generate_l_o_d_1a7dd5ad762feee5696174952c22d6f87a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GenerateLOD.Generate</definition>
+        <argsstring>()</argsstring>
+        <name>Generate</name>
+        <qualifiedname>GenerateLOD.Generate</qualifiedname>
+        <briefdescription>
+<para>Runs LODGenerator.GenerateLODs with the configured levels and attaches a LODGroup to this GameObject. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LOD/GenerateLOD.cs" line="66" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LOD/GenerateLOD.cs" bodystart="66" bodyend="71"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>MonoBehaviour that automatically generates two LOD levels for its GameObject using UnityMeshSimplifier&apos;s LODGenerator on Awake. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>LOD 0 keeps full-quality geometry; LOD 1 uses 65 % mesh quality with combined meshes for better performance. The last LOD is culled by default. Added dynamically to downloaded patent models by QRNetworkHandler. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>GenerateLOD</label>
+        <link refid="class_generate_l_o_d"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>GenerateLOD</label>
+        <link refid="class_generate_l_o_d"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LOD/GenerateLOD.cs" line="11" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LOD/GenerateLOD.cs" bodystart="12" bodyend="95"/>
+    <listofallmembers>
+      <member refid="class_generate_l_o_d_1a71863110ee5489969b10817244b64041" prot="private" virt="non-virtual"><scope>GenerateLOD</scope><name>AttachLODCollider</name></member>
+      <member refid="class_generate_l_o_d_1ab2532faa2d79090aee88465fd70666a3" prot="private" virt="non-virtual"><scope>GenerateLOD</scope><name>Awake</name></member>
+      <member refid="class_generate_l_o_d_1a7dd5ad762feee5696174952c22d6f87a" prot="public" virt="non-virtual"><scope>GenerateLOD</scope><name>Generate</name></member>
+      <member refid="class_generate_l_o_d_1ad21a98971e7f230308556a1feef044bc" prot="private" virt="non-virtual"><scope>GenerateLOD</scope><name>LOD_COUNT</name></member>
+      <member refid="class_generate_l_o_d_1a21d9f8cc7aaf2ffee0a45941227b53a7" prot="private" virt="non-virtual"><scope>GenerateLOD</scope><name>m_AutoCollectRenderers</name></member>
+      <member refid="class_generate_l_o_d_1a9a795dddec1ef8aa09964994263e36d8" prot="private" virt="non-virtual"><scope>GenerateLOD</scope><name>m_LodLevels</name></member>
+      <member refid="class_generate_l_o_d_1a22b6a1b68d0281a4ffb366c4cde1c8e3" prot="private" virt="non-virtual"><scope>GenerateLOD</scope><name>m_LODQualities</name></member>
+      <member refid="class_generate_l_o_d_1aa023dde3ec28f2183390919a55facfd5" prot="private" virt="non-virtual"><scope>GenerateLOD</scope><name>m_LODTransitionHeights</name></member>
+      <member refid="class_generate_l_o_d_1a7e49f4c5763b05c35b6ee6f0255d777a" prot="private" virt="non-virtual"><scope>GenerateLOD</scope><name>m_SimplificationOptions</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

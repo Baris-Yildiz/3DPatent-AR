@@ -1,0 +1,437 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_raycast_handler" kind="class" language="C#" prot="public">
+    <compoundname>RaycastHandler</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_raycast_handler_1ab9f73fbe8ecbd0546996ca345c048304" prot="private" static="no" mutable="no">
+        <type>TextMeshProUGUI</type>
+        <definition>TextMeshProUGUI RaycastHandler.text</definition>
+        <argsstring></argsstring>
+        <name>text</name>
+        <qualifiedname>RaycastHandler.text</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" line="19" column="30" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raycast_handler_1a6e14758a4802a1fe43ce16c47f9934a9" prot="private" static="no" mutable="no">
+        <type>InputActionProperty</type>
+        <definition>InputActionProperty RaycastHandler.tapAction</definition>
+        <argsstring></argsstring>
+        <name>tapAction</name>
+        <qualifiedname>RaycastHandler.tapAction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" line="20" column="34" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raycast_handler_1a0822163a2cefe6b1608db54f73a0bd04" prot="private" static="no" mutable="no">
+        <type>InputActionProperty</type>
+        <definition>InputActionProperty RaycastHandler.positionAction</definition>
+        <argsstring></argsstring>
+        <name>positionAction</name>
+        <qualifiedname>RaycastHandler.positionAction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" line="21" column="34" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raycast_handler_1a7b42530e5f59ee396e7c9de7af63b283" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RaycastHandler.usePlaneDetection</definition>
+        <argsstring></argsstring>
+        <name>usePlaneDetection</name>
+        <qualifiedname>RaycastHandler.usePlaneDetection</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" line="22" column="19" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raycast_handler_1afd4f9aa238cb4ec30f2990fc586b06f9" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RaycastHandler.showDetectedPlanes</definition>
+        <argsstring></argsstring>
+        <name>showDetectedPlanes</name>
+        <qualifiedname>RaycastHandler.showDetectedPlanes</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" line="23" column="19" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raycast_handler_1a9fd53a5a8fbbd42afc42cd102255b02e" prot="private" static="no" mutable="no">
+        <type>ARRaycastManager</type>
+        <definition>ARRaycastManager RaycastHandler.raycastManager</definition>
+        <argsstring></argsstring>
+        <name>raycastManager</name>
+        <qualifiedname>RaycastHandler.raycastManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" line="24" column="30" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raycast_handler_1a08737f9c6dcf47cd9afb20b25cce500a" prot="private" static="no" mutable="no">
+        <type>ARPlaneManager</type>
+        <definition>ARPlaneManager RaycastHandler.planeManager</definition>
+        <argsstring></argsstring>
+        <name>planeManager</name>
+        <qualifiedname>RaycastHandler.planeManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" line="25" column="28" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raycast_handler_1a0acf5503f518b58a4e583aceb432d25f" prot="private" static="no" mutable="no">
+        <type>List&lt; ARRaycastHit &gt;</type>
+        <definition>List&lt;ARRaycastHit&gt; RaycastHandler.hits</definition>
+        <argsstring></argsstring>
+        <name>hits</name>
+        <qualifiedname>RaycastHandler.hits</qualifiedname>
+        <initializer>= new List&lt;ARRaycastHit&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" line="26" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raycast_handler_1adc2b619f270282d16b466d7ae781a3b6" prot="private" static="no" mutable="no">
+        <type>Vector2</type>
+        <definition>Vector2 RaycastHandler.touchPosition</definition>
+        <argsstring></argsstring>
+        <name>touchPosition</name>
+        <qualifiedname>RaycastHandler.touchPosition</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" line="35" column="21" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raycast_handler_1a63bd8c92c50740b3d9b1bf0f5c98c0eb" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RaycastHandler.touched</definition>
+        <argsstring></argsstring>
+        <name>touched</name>
+        <qualifiedname>RaycastHandler.touched</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" line="36" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_raycast_handler_1af609843044dc2d332bddd91a3e2d25af" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RaycastHandler.touchCount</definition>
+        <argsstring></argsstring>
+        <name>touchCount</name>
+        <qualifiedname>RaycastHandler.touchCount</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" line="37" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" bodystart="37" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="event">
+      <memberdef kind="event" id="class_raycast_handler_1aaf90faa24cf10e2daeaa7cce70323eb5" prot="public" static="yes" add="no" remove="no" raise="no">
+        <type>Action&lt; List&lt; ARRaycastHit &gt; &gt;</type>
+        <definition>Action&lt;List&lt;ARRaycastHit&gt; &gt; RaycastHandler.clickEvent</definition>
+        <argsstring></argsstring>
+        <name>clickEvent</name>
+        <qualifiedname>RaycastHandler.clickEvent</qualifiedname>
+        <briefdescription>
+<para>Raised each time a valid tap is processed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Passes the list of ARRaycastHit results, or <computeroutput>null</computeroutput> when plane-detection is disabled. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" line="33" column="32" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" bodystart="33" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_raycast_handler_1a25898611ea46c9573e026a7a1d6495a5" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RaycastHandler.Awake</definition>
+        <argsstring>()</argsstring>
+        <name>Awake</name>
+        <qualifiedname>RaycastHandler.Awake</qualifiedname>
+        <briefdescription>
+<para>Caches the ARRaycastManager and ARPlaneManager components and sets initial plane-detection visibility. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" line="42" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" bodystart="42" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raycast_handler_1a38d4b30c64339c82052689226ab0f493" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RaycastHandler.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <qualifiedname>RaycastHandler.Start</qualifiedname>
+        <briefdescription>
+<para>Subscribes to scaling-mode and plane-detection change events, then disables plane detection by default. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" line="55" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" bodystart="55" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raycast_handler_1a5ed14d70b009d92ebbd6ce4542c46bdf" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RaycastHandler.OnEnable</definition>
+        <argsstring>()</argsstring>
+        <name>OnEnable</name>
+        <qualifiedname>RaycastHandler.OnEnable</qualifiedname>
+        <briefdescription>
+<para>Subscribes the tap input action callback. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" line="72" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" bodystart="72" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raycast_handler_1a5ebfd23ce3e85688a1c0de2bbc306b5a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RaycastHandler.OnDisable</definition>
+        <argsstring>()</argsstring>
+        <name>OnDisable</name>
+        <qualifiedname>RaycastHandler.OnDisable</qualifiedname>
+        <briefdescription>
+<para>Unsubscribes the tap input action callback. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" line="79" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raycast_handler_1afa2b9729e908c5b524a284628589850b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RaycastHandler.Update</definition>
+        <argsstring>()</argsstring>
+        <name>Update</name>
+        <qualifiedname>RaycastHandler.Update</qualifiedname>
+        <briefdescription>
+<para>Each frame, flushes any pending tap into a raycast event. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" line="96" column="10" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" bodystart="96" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raycast_handler_1a98987656c1dc72cf12a88359fb409c69" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RaycastHandler.HandleClick</definition>
+        <argsstring>()</argsstring>
+        <name>HandleClick</name>
+        <qualifiedname>RaycastHandler.HandleClick</qualifiedname>
+        <briefdescription>
+<para>Consumes a buffered tap flag and triggers RaiseClickEvent. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Decoupling input capture from processing ensures raycasts run on the main thread. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" line="105" column="10" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" bodystart="105" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raycast_handler_1ae61b5965c59efd43a1b1dd3d6af4cf1f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RaycastHandler.CheckInput</definition>
+        <argsstring>(InputAction.CallbackContext ctx)</argsstring>
+        <name>CheckInput</name>
+        <qualifiedname>RaycastHandler.CheckInput</qualifiedname>
+        <param>
+          <type>InputAction.CallbackContext</type>
+          <declname>ctx</declname>
+        </param>
+        <briefdescription>
+<para>Input action callback that records the tap position and sets the <computeroutput>touched</computeroutput> flag, while ignoring taps that land on UI elements. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ctx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The input callback context from the tap action.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" line="120" column="10" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" bodystart="120" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raycast_handler_1a4f41116351ae8e690449da51bb38c70a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RaycastHandler.RaiseClickEvent</definition>
+        <argsstring>()</argsstring>
+        <name>RaiseClickEvent</name>
+        <qualifiedname>RaycastHandler.RaiseClickEvent</qualifiedname>
+        <briefdescription>
+<para>Performs an AR raycast at the buffered touch position and fires clickEvent with hits when plane detection is on, or with <computeroutput>null</computeroutput> when plane detection is off. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" line="156" column="10" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" bodystart="156" bodyend="168"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_raycast_handler_1a9a507eeb321e480b8f2b77a6c2d96239" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RaycastHandler.OnModeChange</definition>
+        <argsstring>(bool isOneToOne)</argsstring>
+        <name>OnModeChange</name>
+        <qualifiedname>RaycastHandler.OnModeChange</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>isOneToOne</declname>
+        </param>
+        <briefdescription>
+<para>Called when the scaling mode changes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Reserved for future plane-detection adjustments based on whether the 1:1 mode is active.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>isOneToOne</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>true</computeroutput> when 1:1 scale mode is active.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" line="89" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" bodystart="89" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="class_raycast_handler_1a04641cf1f8fa39003020e87892eb562f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RaycastHandler.changePlaneDetection</definition>
+        <argsstring>(bool isOn)</argsstring>
+        <name>changePlaneDetection</name>
+        <qualifiedname>RaycastHandler.changePlaneDetection</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>isOn</declname>
+        </param>
+        <briefdescription>
+<para>Enables or disables horizontal AR plane detection and toggles the visibility of all currently tracked planes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>isOn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>true</computeroutput> to enable plane detection; <computeroutput>false</computeroutput> to disable.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" line="175" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" bodystart="175" bodyend="194"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Handles AR screen-tap input and fires clickEvent with raycast results against detected AR planes. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Also manages ARPlaneManager detection state, toggling it on or off in response to ScalingModeController and ModelPlaneDetectionManager events. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>RaycastHandler</label>
+        <link refid="class_raycast_handler"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>RaycastHandler</label>
+        <link refid="class_raycast_handler"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" line="17" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/RaycastHandler.cs" bodystart="18" bodyend="198"/>
+    <listofallmembers>
+      <member refid="class_raycast_handler_1a25898611ea46c9573e026a7a1d6495a5" prot="private" virt="non-virtual"><scope>RaycastHandler</scope><name>Awake</name></member>
+      <member refid="class_raycast_handler_1a04641cf1f8fa39003020e87892eb562f" prot="public" virt="non-virtual"><scope>RaycastHandler</scope><name>changePlaneDetection</name></member>
+      <member refid="class_raycast_handler_1ae61b5965c59efd43a1b1dd3d6af4cf1f" prot="private" virt="non-virtual"><scope>RaycastHandler</scope><name>CheckInput</name></member>
+      <member refid="class_raycast_handler_1aaf90faa24cf10e2daeaa7cce70323eb5" prot="public" virt="non-virtual"><scope>RaycastHandler</scope><name>clickEvent</name></member>
+      <member refid="class_raycast_handler_1a98987656c1dc72cf12a88359fb409c69" prot="private" virt="non-virtual"><scope>RaycastHandler</scope><name>HandleClick</name></member>
+      <member refid="class_raycast_handler_1a0acf5503f518b58a4e583aceb432d25f" prot="private" virt="non-virtual"><scope>RaycastHandler</scope><name>hits</name></member>
+      <member refid="class_raycast_handler_1a5ebfd23ce3e85688a1c0de2bbc306b5a" prot="private" virt="non-virtual"><scope>RaycastHandler</scope><name>OnDisable</name></member>
+      <member refid="class_raycast_handler_1a5ed14d70b009d92ebbd6ce4542c46bdf" prot="private" virt="non-virtual"><scope>RaycastHandler</scope><name>OnEnable</name></member>
+      <member refid="class_raycast_handler_1a9a507eeb321e480b8f2b77a6c2d96239" prot="public" virt="non-virtual"><scope>RaycastHandler</scope><name>OnModeChange</name></member>
+      <member refid="class_raycast_handler_1a08737f9c6dcf47cd9afb20b25cce500a" prot="private" virt="non-virtual"><scope>RaycastHandler</scope><name>planeManager</name></member>
+      <member refid="class_raycast_handler_1a0822163a2cefe6b1608db54f73a0bd04" prot="private" virt="non-virtual"><scope>RaycastHandler</scope><name>positionAction</name></member>
+      <member refid="class_raycast_handler_1a4f41116351ae8e690449da51bb38c70a" prot="private" virt="non-virtual"><scope>RaycastHandler</scope><name>RaiseClickEvent</name></member>
+      <member refid="class_raycast_handler_1a9fd53a5a8fbbd42afc42cd102255b02e" prot="private" virt="non-virtual"><scope>RaycastHandler</scope><name>raycastManager</name></member>
+      <member refid="class_raycast_handler_1afd4f9aa238cb4ec30f2990fc586b06f9" prot="private" virt="non-virtual"><scope>RaycastHandler</scope><name>showDetectedPlanes</name></member>
+      <member refid="class_raycast_handler_1a38d4b30c64339c82052689226ab0f493" prot="private" virt="non-virtual"><scope>RaycastHandler</scope><name>Start</name></member>
+      <member refid="class_raycast_handler_1a6e14758a4802a1fe43ce16c47f9934a9" prot="private" virt="non-virtual"><scope>RaycastHandler</scope><name>tapAction</name></member>
+      <member refid="class_raycast_handler_1ab9f73fbe8ecbd0546996ca345c048304" prot="private" virt="non-virtual"><scope>RaycastHandler</scope><name>text</name></member>
+      <member refid="class_raycast_handler_1af609843044dc2d332bddd91a3e2d25af" prot="private" virt="non-virtual"><scope>RaycastHandler</scope><name>touchCount</name></member>
+      <member refid="class_raycast_handler_1a63bd8c92c50740b3d9b1bf0f5c98c0eb" prot="private" virt="non-virtual"><scope>RaycastHandler</scope><name>touched</name></member>
+      <member refid="class_raycast_handler_1adc2b619f270282d16b466d7ae781a3b6" prot="private" virt="non-virtual"><scope>RaycastHandler</scope><name>touchPosition</name></member>
+      <member refid="class_raycast_handler_1afa2b9729e908c5b524a284628589850b" prot="private" virt="non-virtual"><scope>RaycastHandler</scope><name>Update</name></member>
+      <member refid="class_raycast_handler_1a7b42530e5f59ee396e7c9de7af63b283" prot="private" virt="non-virtual"><scope>RaycastHandler</scope><name>usePlaneDetection</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

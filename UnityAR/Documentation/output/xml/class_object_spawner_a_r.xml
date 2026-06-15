@@ -1,0 +1,347 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_object_spawner_a_r" kind="class" language="C#" prot="public">
+    <compoundname>ObjectSpawnerAR</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_object_spawner_a_r_1a79777e4d531d67db2b73854e5195e23f" prot="private" static="no" mutable="no">
+        <type><ref refid="_object_spawner_a_r_8cs_1aaf159fca6c090cbe566a9e3ddc897c7b" kindref="member">PlacementMode</ref></type>
+        <definition>PlacementMode ObjectSpawnerAR._placementMode</definition>
+        <argsstring></argsstring>
+        <name>_placementMode</name>
+        <qualifiedname>ObjectSpawnerAR._placementMode</qualifiedname>
+        <initializer>= <ref refid="_object_spawner_a_r_8cs_1aaf159fca6c090cbe566a9e3ddc897c7ba5835bab1ade0060909e31a06af2e2cde" kindref="member">PlacementMode.Front</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" line="27" column="28" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_object_spawner_a_r_1a3fdb28c956a273062b1c847209f5269d" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject ObjectSpawnerAR.patent</definition>
+        <argsstring></argsstring>
+        <name>patent</name>
+        <qualifiedname>ObjectSpawnerAR.patent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" line="28" column="25" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_object_spawner_a_r_1a28510201d5bf9b01385ef0a9daec5137" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float ObjectSpawnerAR.centerPlacementY</definition>
+        <argsstring></argsstring>
+        <name>centerPlacementY</name>
+        <qualifiedname>ObjectSpawnerAR.centerPlacementY</qualifiedname>
+        <initializer>= 1.1f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" line="29" column="20" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_object_spawner_a_r_1a5812492ff6245b4bd4d16a21f7deb3ea" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float ObjectSpawnerAR.frontPlacementZ</definition>
+        <argsstring></argsstring>
+        <name>frontPlacementZ</name>
+        <qualifiedname>ObjectSpawnerAR.frontPlacementZ</qualifiedname>
+        <initializer>= 2f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" line="30" column="20" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_object_spawner_a_r_1a632207d69bafb70e0e6339459e1e8328" prot="private" static="no" mutable="no">
+        <type>TextMeshProUGUI</type>
+        <definition>TextMeshProUGUI ObjectSpawnerAR.scaleText</definition>
+        <argsstring></argsstring>
+        <name>scaleText</name>
+        <qualifiedname>ObjectSpawnerAR.scaleText</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" line="31" column="30" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_object_spawner_a_r_1a9a2cfd8af76a57960294cc2b5b14beef" prot="private" static="no" mutable="no">
+        <type>TextMeshProUGUI</type>
+        <definition>TextMeshProUGUI ObjectSpawnerAR.positionText</definition>
+        <argsstring></argsstring>
+        <name>positionText</name>
+        <qualifiedname>ObjectSpawnerAR.positionText</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" line="32" column="30" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_object_spawner_a_r_1a0b3bc24314d7553db6cc8603ba2ee1e5" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject ObjectSpawnerAR.activePatent</definition>
+        <argsstring></argsstring>
+        <name>activePatent</name>
+        <qualifiedname>ObjectSpawnerAR.activePatent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" line="40" column="24" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" bodystart="40" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="event">
+      <memberdef kind="event" id="class_object_spawner_a_r_1a356de22d47b73bb484dc61df09fdede6" prot="public" static="yes" add="no" remove="no" raise="no">
+        <type>Action&lt; bool &gt;</type>
+        <definition>Action&lt;bool&gt; ObjectSpawnerAR.objectSpawnedEvent</definition>
+        <argsstring></argsstring>
+        <name>objectSpawnedEvent</name>
+        <qualifiedname>ObjectSpawnerAR.objectSpawnedEvent</qualifiedname>
+        <briefdescription>
+<para>Fired after a patent is spawned. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The <computeroutput>bool</computeroutput> parameter is <computeroutput>true</computeroutput> when placed on a detected AR plane, <computeroutput>false</computeroutput> otherwise. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" line="38" column="32" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" bodystart="38" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_object_spawner_a_r_1aeb2deeb05ac974b92a0db137203d1808" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ObjectSpawnerAR.spawnWithinScreen</definition>
+        <argsstring></argsstring>
+        <name>spawnWithinScreen</name>
+        <qualifiedname>ObjectSpawnerAR.spawnWithinScreen</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+<para>When <computeroutput>true</computeroutput>, applies screen-fit scaling after spawning. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" line="43" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" bodystart="43" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_object_spawner_a_r_1a355feb596dfbb097d4ca817d144b83c0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ObjectSpawnerAR.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <qualifiedname>ObjectSpawnerAR.Start</qualifiedname>
+        <briefdescription>
+<para>Subscribes to RaycastHandler.clickEvent to receive tap notifications. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" line="60" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" bodystart="60" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="class_object_spawner_a_r_1afcbb5fbba3132156e66a13c0de7ca803" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ObjectSpawnerAR.SpawnObject</definition>
+        <argsstring>(List&lt; ARRaycastHit &gt; hits)</argsstring>
+        <name>SpawnObject</name>
+        <qualifiedname>ObjectSpawnerAR.SpawnObject</qualifiedname>
+        <param>
+          <type>List&lt; ARRaycastHit &gt;</type>
+          <declname>hits</declname>
+        </param>
+        <briefdescription>
+<para>Handles a tap event: ignores it if no patent is loaded or one is already placed, then delegates to spawnWithNoRaycast or spawnWithRaycast depending on whether plane hits were detected. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hits</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>AR plane raycast hits, or <computeroutput>null</computeroutput> when plane detection is off.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" line="71" column="10" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" bodystart="71" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="class_object_spawner_a_r_1a044894a0e5750cad7d8128f1dc03d80e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ObjectSpawnerAR.spawnWithNoRaycast</definition>
+        <argsstring>()</argsstring>
+        <name>spawnWithNoRaycast</name>
+        <qualifiedname>ObjectSpawnerAR.spawnWithNoRaycast</qualifiedname>
+        <briefdescription>
+<para>Instantiates the patent at a camera-relative position (center offset or directly in front) when no AR plane was detected. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" line="91" column="10" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" bodystart="91" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="class_object_spawner_a_r_1a0b8495cac298010d20176ad0778fa85d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ObjectSpawnerAR.spawnWithRaycast</definition>
+        <argsstring>(Pose hitPose)</argsstring>
+        <name>spawnWithRaycast</name>
+        <qualifiedname>ObjectSpawnerAR.spawnWithRaycast</qualifiedname>
+        <param>
+          <type>Pose</type>
+          <declname>hitPose</declname>
+        </param>
+        <briefdescription>
+<para>Instantiates the patent at the pose returned by the AR plane raycast, aligning it to the detected surface. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hitPose</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The world-space pose of the first AR plane hit.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" line="123" column="10" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" bodystart="123" bodyend="133"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_object_spawner_a_r_1a6a41a4dd8c002dce875f01291ebef798" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ObjectSpawnerAR.SetActivePatent</definition>
+        <argsstring>(GameObject downloaded_patent)</argsstring>
+        <name>SetActivePatent</name>
+        <qualifiedname>ObjectSpawnerAR.SetActivePatent</qualifiedname>
+        <param>
+          <type>GameObject</type>
+          <declname>downloaded_patent</declname>
+        </param>
+        <briefdescription>
+<para>Assigns the given downloaded model as the patent prefab to be instantiated on next tap. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>downloaded_patent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The downloaded model GameObject.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" line="148" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" bodystart="148" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="class_object_spawner_a_r_1a7e310e75d1747922dd0c3a5816d66fdc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>GameObject</type>
+        <definition>GameObject ObjectSpawnerAR.getActivePatent</definition>
+        <argsstring>()</argsstring>
+        <name>getActivePatent</name>
+        <qualifiedname>ObjectSpawnerAR.getActivePatent</qualifiedname>
+        <briefdescription>
+<para>Returns the currently instantiated patent instance in the AR scene. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The active patent GameObject, or <computeroutput>null</computeroutput> if none.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" line="158" column="23" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" bodystart="158" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="class_object_spawner_a_r_1a8e20b522fe13542ae6c38bcb57799056" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ObjectSpawnerAR.ResetPatentTransform</definition>
+        <argsstring>()</argsstring>
+        <name>ResetPatentTransform</name>
+        <qualifiedname>ObjectSpawnerAR.ResetPatentTransform</qualifiedname>
+        <briefdescription>
+<para>Resets the patent&apos;s scale to Vector3.one and repositions it using PivotSetter.ChangeToOneOneMode. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" line="167" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" bodystart="167" bodyend="174"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Listens for RaycastHandler.clickEvent and instantiates the downloaded patent model into the AR scene, either at a detected plane pose or at a fixed camera-relative position when no plane is available. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Raises objectSpawnedEvent after placement. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>ObjectSpawnerAR</label>
+        <link refid="class_object_spawner_a_r"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>ObjectSpawnerAR</label>
+        <link refid="class_object_spawner_a_r"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" line="25" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ObjectSpawnerAR.cs" bodystart="26" bodyend="179"/>
+    <listofallmembers>
+      <member refid="class_object_spawner_a_r_1a79777e4d531d67db2b73854e5195e23f" prot="private" virt="non-virtual"><scope>ObjectSpawnerAR</scope><name>_placementMode</name></member>
+      <member refid="class_object_spawner_a_r_1a0b3bc24314d7553db6cc8603ba2ee1e5" prot="private" virt="non-virtual"><scope>ObjectSpawnerAR</scope><name>activePatent</name></member>
+      <member refid="class_object_spawner_a_r_1a28510201d5bf9b01385ef0a9daec5137" prot="private" virt="non-virtual"><scope>ObjectSpawnerAR</scope><name>centerPlacementY</name></member>
+      <member refid="class_object_spawner_a_r_1a5812492ff6245b4bd4d16a21f7deb3ea" prot="private" virt="non-virtual"><scope>ObjectSpawnerAR</scope><name>frontPlacementZ</name></member>
+      <member refid="class_object_spawner_a_r_1a7e310e75d1747922dd0c3a5816d66fdc" prot="public" virt="non-virtual"><scope>ObjectSpawnerAR</scope><name>getActivePatent</name></member>
+      <member refid="class_object_spawner_a_r_1a356de22d47b73bb484dc61df09fdede6" prot="public" virt="non-virtual"><scope>ObjectSpawnerAR</scope><name>objectSpawnedEvent</name></member>
+      <member refid="class_object_spawner_a_r_1a3fdb28c956a273062b1c847209f5269d" prot="private" virt="non-virtual"><scope>ObjectSpawnerAR</scope><name>patent</name></member>
+      <member refid="class_object_spawner_a_r_1a9a2cfd8af76a57960294cc2b5b14beef" prot="private" virt="non-virtual"><scope>ObjectSpawnerAR</scope><name>positionText</name></member>
+      <member refid="class_object_spawner_a_r_1a8e20b522fe13542ae6c38bcb57799056" prot="public" virt="non-virtual"><scope>ObjectSpawnerAR</scope><name>ResetPatentTransform</name></member>
+      <member refid="class_object_spawner_a_r_1a632207d69bafb70e0e6339459e1e8328" prot="private" virt="non-virtual"><scope>ObjectSpawnerAR</scope><name>scaleText</name></member>
+      <member refid="class_object_spawner_a_r_1a6a41a4dd8c002dce875f01291ebef798" prot="public" virt="non-virtual"><scope>ObjectSpawnerAR</scope><name>SetActivePatent</name></member>
+      <member refid="class_object_spawner_a_r_1afcbb5fbba3132156e66a13c0de7ca803" prot="private" virt="non-virtual"><scope>ObjectSpawnerAR</scope><name>SpawnObject</name></member>
+      <member refid="class_object_spawner_a_r_1aeb2deeb05ac974b92a0db137203d1808" prot="public" virt="non-virtual"><scope>ObjectSpawnerAR</scope><name>spawnWithinScreen</name></member>
+      <member refid="class_object_spawner_a_r_1a044894a0e5750cad7d8128f1dc03d80e" prot="private" virt="non-virtual"><scope>ObjectSpawnerAR</scope><name>spawnWithNoRaycast</name></member>
+      <member refid="class_object_spawner_a_r_1a0b8495cac298010d20176ad0778fa85d" prot="private" virt="non-virtual"><scope>ObjectSpawnerAR</scope><name>spawnWithRaycast</name></member>
+      <member refid="class_object_spawner_a_r_1a355feb596dfbb097d4ca817d144b83c0" prot="private" virt="non-virtual"><scope>ObjectSpawnerAR</scope><name>Start</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

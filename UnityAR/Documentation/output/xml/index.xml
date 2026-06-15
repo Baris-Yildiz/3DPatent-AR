@@ -1,0 +1,644 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.17.0" xml:lang="en-US">
+  <compound refid="class_add_model_manager" kind="class"><name>AddModelManager</name>
+    <member refid="class_add_model_manager_1a10693bc00e3a3548b73fff22e70560c0" kind="variable"><name>m_AddModelPopupWindow</name></member>
+    <member refid="class_add_model_manager_1af68384c034b2279dd2fbcd7f214af698" kind="variable"><name>m_AddModelButton</name></member>
+    <member refid="class_add_model_manager_1a7fad1788a3dc049bd6530eaf82c0e292" kind="variable"><name>m_ButtonIcon</name></member>
+    <member refid="class_add_model_manager_1a60865a59abbe1adc055ba64babf8ec04" kind="variable"><name>CancelSprite</name></member>
+    <member refid="class_add_model_manager_1a83c2d0622b4bae2684c6225d6013bd67" kind="variable"><name>AddSprite</name></member>
+    <member refid="class_add_model_manager_1a9ae798873752a1a14975b0710ab8d9f2" kind="function"><name>Start</name></member>
+    <member refid="class_add_model_manager_1aa51683ff536b5e80f82bd950f2e444e5" kind="function"><name>SetButtonToDisplayAddModelPopup</name></member>
+    <member refid="class_add_model_manager_1aad3d660a9cde77057e8686061e012eb2" kind="function"><name>SetButtonToCancelQRScan</name></member>
+    <member refid="class_add_model_manager_1ac205344c4dbfb8626a39182eea949312" kind="function"><name>DisplayAddModelPopup</name></member>
+    <member refid="class_add_model_manager_1a96e148c2a534c506bfd2592b1cd89c19" kind="function"><name>OnAddModelPopupOK</name></member>
+    <member refid="class_add_model_manager_1a478560755f0bdcec59ebf9faad3a6ce2" kind="function"><name>OnAddModelPopupCancel</name></member>
+  </compound>
+  <compound refid="class_a_r_plane_area_calculator" kind="class"><name>ARPlaneAreaCalculator</name>
+    <member refid="class_a_r_plane_area_calculator_1a7e7ca60b33e050651d7ff5954d55338c" kind="variable"><name>planeManager</name></member>
+    <member refid="class_a_r_plane_area_calculator_1af4d1150312a1779b6cee1fd8d855b882" kind="function"><name>Awake</name></member>
+    <member refid="class_a_r_plane_area_calculator_1a7f8a06871abc67b9caed03d87cc58f82" kind="function"><name>calculateArea</name></member>
+  </compound>
+  <compound refid="class_bounding_box_visualizer" kind="class"><name>BoundingBoxVisualizer</name>
+    <member refid="class_bounding_box_visualizer_1aa6cff18d71efcddd559214c67fe14fcb" kind="variable"><name>boxColor</name></member>
+    <member refid="class_bounding_box_visualizer_1afd41c12b6736af832c8173a58d06ebd0" kind="variable"><name>popupMenuManager</name></member>
+    <member refid="class_bounding_box_visualizer_1ae9f1e097296b3993a6e1cfa09706181c" kind="variable"><name>lineShader</name></member>
+    <member refid="class_bounding_box_visualizer_1afb2433b987fe129958b6b13afdf9dd02" kind="variable"><name>_edges</name></member>
+    <member refid="class_bounding_box_visualizer_1a2264dad7dc95e43837653889e4d638ed" kind="variable"><name>_material</name></member>
+    <member refid="class_bounding_box_visualizer_1a1695dc05387d2e1bdb1c5ee6ea3aa516" kind="variable"><name>_isVisible</name></member>
+    <member refid="class_bounding_box_visualizer_1a03c40dbe906ff5cb8ba19100372abcf5" kind="variable"><name>_worldCorners</name></member>
+    <member refid="class_bounding_box_visualizer_1a2bf83aaad1421ba3f36cda5e28e4d698" kind="variable"><name>EdgePairs</name></member>
+    <member refid="class_bounding_box_visualizer_1a6a863d588bac5b1d34d037c50a15cc9d" kind="function"><name>Start</name></member>
+    <member refid="class_bounding_box_visualizer_1a0aae3379ca2c074778478428c2904ded" kind="function"><name>OnDestroy</name></member>
+    <member refid="class_bounding_box_visualizer_1a3f097a08412b7e8bcd28ee030bd741f0" kind="function"><name>SetVisible</name></member>
+    <member refid="class_bounding_box_visualizer_1a96bc4f298ff31ab5ac973ebc4a87ae82" kind="function"><name>OnPatentDeleted</name></member>
+    <member refid="class_bounding_box_visualizer_1a29ac405a7cb8467140eb471faacd474c" kind="function"><name>Update</name></member>
+    <member refid="class_bounding_box_visualizer_1afb3c1f88e13c559dadf6045f0c3bdcab" kind="function"><name>SetEdgesActive</name></member>
+    <member refid="class_bounding_box_visualizer_1a93bb7e3fabb7f252ccb5ea5bca15d4d2" kind="function"><name>RefreshEdges</name></member>
+    <member refid="class_bounding_box_visualizer_1a9b4a640f2d96c7e66d7f6d925eb77279" kind="function"><name>ComputeLocalBounds</name></member>
+  </compound>
+  <compound refid="class_dont_destroy_objects" kind="class"><name>DontDestroyObjects</name>
+    <member refid="class_dont_destroy_objects_1a9c5a9b13e6636441e0365c219926de8e" kind="function"><name>Awake</name></member>
+  </compound>
+  <compound refid="class_game_manager" kind="class"><name>GameManager</name>
+    <member refid="class_game_manager_1a7666e8468dac197b9eb32dd32128524f" kind="variable"><name>instance</name></member>
+    <member refid="class_game_manager_1ae4522c217d10ae18823063ea82311ce4" kind="variable"><name>qrScene</name></member>
+    <member refid="class_game_manager_1a4e1f66fb7bbe1b8cbe3951ce3d6f4751" kind="variable"><name>patentScene</name></member>
+    <member refid="class_game_manager_1aab20c4f9bbc31538619e7860162f12cb" kind="variable"><name>raycastHandler</name></member>
+    <member refid="class_game_manager_1a9c973c401e07c35a72514585eac2af97" kind="variable"><name>currMode</name></member>
+    <member refid="class_game_manager_1a2959177ee51ac31badbf8b1bc8f7f637" kind="function"><name>Awake</name></member>
+    <member refid="class_game_manager_1a5ccfacd027ad08eeb4ff1f25a7f59c98" kind="function"><name>Start</name></member>
+    <member refid="class_game_manager_1ac68d06321520b6b17beb92a3cfa29ffa" kind="function"><name>OnEnable</name></member>
+    <member refid="class_game_manager_1a8b94a29e855b89ee5fd58a2163687079" kind="function"><name>ActivateQrParts</name></member>
+    <member refid="class_game_manager_1ae5551e8ba18b969d38a6ae0f6684228a" kind="function"><name>ActivatePatentParts</name></member>
+    <member refid="class_game_manager_1af74e4d938436eef1959d64ec7b0533c1" kind="function"><name>setPatentScripts</name></member>
+    <member refid="class_game_manager_1a5c8c21ceaa1857c94b243b741d33a229" kind="function"><name>ChangeMode</name></member>
+  </compound>
+  <compound refid="class_generate_l_o_d" kind="class"><name>GenerateLOD</name>
+    <member refid="class_generate_l_o_d_1a9a795dddec1ef8aa09964994263e36d8" kind="variable"><name>m_LodLevels</name></member>
+    <member refid="class_generate_l_o_d_1a21d9f8cc7aaf2ffee0a45941227b53a7" kind="variable"><name>m_AutoCollectRenderers</name></member>
+    <member refid="class_generate_l_o_d_1a7e49f4c5763b05c35b6ee6f0255d777a" kind="variable"><name>m_SimplificationOptions</name></member>
+    <member refid="class_generate_l_o_d_1a22b6a1b68d0281a4ffb366c4cde1c8e3" kind="variable"><name>m_LODQualities</name></member>
+    <member refid="class_generate_l_o_d_1aa023dde3ec28f2183390919a55facfd5" kind="variable"><name>m_LODTransitionHeights</name></member>
+    <member refid="class_generate_l_o_d_1ad21a98971e7f230308556a1feef044bc" kind="variable"><name>LOD_COUNT</name></member>
+    <member refid="class_generate_l_o_d_1ab2532faa2d79090aee88465fd70666a3" kind="function"><name>Awake</name></member>
+    <member refid="class_generate_l_o_d_1a71863110ee5489969b10817244b64041" kind="function"><name>AttachLODCollider</name></member>
+    <member refid="class_generate_l_o_d_1a7dd5ad762feee5696174952c22d6f87a" kind="function"><name>Generate</name></member>
+  </compound>
+  <compound refid="class_lighting_controller" kind="class"><name>LightingController</name>
+    <member refid="class_lighting_controller_1a63b00827b6509ff6eb2b36a2216e2237" kind="variable"><name>popupMenuManager</name></member>
+    <member refid="class_lighting_controller_1ad992728aa0bbdc984b9ea06cc86e1555" kind="variable"><name>arCameraManager</name></member>
+    <member refid="class_lighting_controller_1a3f0594c06d485aabb46b2c575ed2aa42" kind="variable"><name>_savedLightEstimation</name></member>
+    <member refid="class_lighting_controller_1a19ced060e752d276303cfdde3a4229c1" kind="variable"><name>_savedFacingDirection</name></member>
+    <member refid="class_lighting_controller_1a7b4e93dc94ebd88a465b0b82860cf49b" kind="variable"><name>_savedAmbientMode</name></member>
+    <member refid="class_lighting_controller_1af1d5ef8bdda4d69057eafb546d6e2258" kind="variable"><name>_savedAmbientLight</name></member>
+    <member refid="class_lighting_controller_1ab943b4a6295465df296b5d8c1e24a151" kind="function"><name>Start</name></member>
+    <member refid="class_lighting_controller_1a32fec80c545bff5758944f4f16cb6a71" kind="function"><name>OnDestroy</name></member>
+    <member refid="class_lighting_controller_1a435e6f9d8a448330b321f2ce03be0848" kind="function"><name>SetLighting</name></member>
+  </compound>
+  <compound refid="class_lod_manager" kind="class"><name>LodManager</name>
+    <member refid="class_lod_manager_1a7b53a9812b68f5c9c310b539d2960a44" kind="variable"><name>popupMenuManager</name></member>
+    <member refid="class_lod_manager_1ab3dcffbc8941d1338d04e2a26072fd34" kind="function"><name>Start</name></member>
+    <member refid="class_lod_manager_1ae291ed4d85fa75d361e18628521e4f66" kind="function"><name>OnDestroy</name></member>
+    <member refid="class_lod_manager_1a77e9d3f250e938b5db165d43029c0cb4" kind="function"><name>OnLodChange</name></member>
+  </compound>
+  <compound refid="class_log_manager" kind="class"><name>LogManager</name>
+    <member refid="class_log_manager_1a0b4874dc14a10b6ce812049c007c6f59" kind="property"><name>Instance</name></member>
+    <member refid="class_log_manager_1a682f2614675e4a12bfc7427a256d7ed9" kind="property"><name>NotificationsEnabled</name></member>
+    <member refid="class_log_manager_1a326fcc1a9c732d9adc1194e658fd7197" kind="variable"><name>poolSize</name></member>
+    <member refid="class_log_manager_1ab24618266cd10cf4fa0d345208960c52" kind="variable"><name>logPrefab</name></member>
+    <member refid="class_log_manager_1a033d307fa77b3e8990b7d8490b2d2885" kind="variable"><name>logPool</name></member>
+    <member refid="class_log_manager_1a5fdb0105b5de6c651f5eb7a81f3cbf5a" kind="variable"><name>activeLogs</name></member>
+    <member refid="class_log_manager_1af6f45ec5beb110af8272378eced55e1e" kind="variable"><name>logDistanceY</name></member>
+    <member refid="class_log_manager_1ac49c0a19fb41ca90c3a3582276741271" kind="variable"><name>startPoint</name></member>
+    <member refid="class_log_manager_1ac13665273bf72e395c7afe82f1976006" kind="variable"><name>endPoint</name></member>
+    <member refid="class_log_manager_1a275a6da8739e9d31aa7b78fd4eb04216" kind="function"><name>Awake</name></member>
+    <member refid="class_log_manager_1a5a399684ee27c89dfd55715b75d804d0" kind="function"><name>InitializeLogPool</name></member>
+    <member refid="class_log_manager_1aa47e69b70c787e6669d4df8a018e220d" kind="function"><name>UpdateLogs</name></member>
+    <member refid="class_log_manager_1a091f6562f9a4ee3a628d744766e11f20" kind="function"><name>Update</name></member>
+    <member refid="class_log_manager_1adb2d552fe384ba1cad6eb0d0f6416337" kind="function"><name>EnqueueLog</name></member>
+    <member refid="class_log_manager_1ac2a8dc8e31b2f4fd333bb0d0df092fb8" kind="function"><name>SetNotificationsEnabled</name></member>
+    <member refid="class_log_manager_1acfaf554affaf0335416858b7bd4aac96" kind="function"><name>DequeueLog</name></member>
+  </compound>
+  <compound refid="class_log_text" kind="class"><name>LogText</name>
+    <member refid="class_log_text_1a776d60770db4f8d8eec4b21647c4d66e" kind="variable"><name>text</name></member>
+    <member refid="class_log_text_1ab36072da78992e4ed2d947ee8a9cc405" kind="variable"><name>dropSpeed</name></member>
+    <member refid="class_log_text_1a83a406bc9bb41bd7c5fa9d2d068a5671" kind="variable"><name>stayDuration</name></member>
+    <member refid="class_log_text_1a3ce6f1cf134e96c4ab004d33f649c0db" kind="variable"><name>fadeSpeedMultiplier</name></member>
+    <member refid="class_log_text_1a9046ac59fe18cbf18bdeeccb6b12c431" kind="variable"><name>errorColor</name></member>
+    <member refid="class_log_text_1adfb7ef0be775241e667e5cd2e0bdc381" kind="variable"><name>normalColor</name></member>
+    <member refid="class_log_text_1a11724b64f5973b2f3e24d6326c39163a" kind="variable"><name>endPointThreshold</name></member>
+    <member refid="class_log_text_1a342084654dc5bc351c63ca59b57e7ada" kind="variable"><name>startPoint</name></member>
+    <member refid="class_log_text_1adca9c66acb5573757a70ec6eae9ced8a" kind="variable"><name>endPoint</name></member>
+    <member refid="class_log_text_1ae6082f1632cb02bd3d0bacb23526a2d5" kind="variable"><name>isStarted</name></member>
+    <member refid="class_log_text_1a81bdd38b4d6762d99ade9c88a1e094a8" kind="variable"><name>fadeSpeed</name></member>
+    <member refid="class_log_text_1a29a7574d628e9b830ca6620f73a66aad" kind="variable"><name>remainingStayDuration</name></member>
+    <member refid="class_log_text_1a9524659ed64b32d093ca903279358928" kind="variable"><name>targetPos</name></member>
+    <member refid="class_log_text_1a868bacefcfdafa5126253b36160112fd" kind="variable"><name>currentColor</name></member>
+    <member refid="class_log_text_1a6ba912db111ebd98a743292a981755c0" kind="function"><name>StartLog</name></member>
+    <member refid="class_log_text_1ad6ddb5df5d85ce4f2d933993bbcceed4" kind="function"><name>SetText</name></member>
+    <member refid="class_log_text_1a723a91cde8b7091313d2f77fdf7810f3" kind="function"><name>UpdateLog</name></member>
+    <member refid="class_log_text_1a378edf54584da6a42e18758a5c3a454d" kind="function"><name>MoveLog</name></member>
+  </compound>
+  <compound refid="class_mini_model_display_manager" kind="class"><name>MiniModelDisplayManager</name>
+    <member refid="class_mini_model_display_manager_1a7673f17908c7f9093ca3652c23d93bbe" kind="variable"><name>m_MiniDisplayImage</name></member>
+    <member refid="class_mini_model_display_manager_1ac386524a3fac15e39556d2c5342cbb05" kind="variable"><name>m_DisplayWidth</name></member>
+    <member refid="class_mini_model_display_manager_1aa4445490e618f02cfb2e3c9e35c20dd7" kind="variable"><name>m_DisplayHeight</name></member>
+    <member refid="class_mini_model_display_manager_1a43686266cac1f4ebf1e984de6f626a48" kind="variable"><name>m_DefaultSprite</name></member>
+    <member refid="class_mini_model_display_manager_1adcc55c2781de9ad313397771010aebf2" kind="variable"><name>ModelImageLayer</name></member>
+    <member refid="class_mini_model_display_manager_1ab352126157dfd086e38e57a46f03ee14" kind="function"><name>Start</name></member>
+    <member refid="class_mini_model_display_manager_1a7deff82884ce4cb16b5a244d9d388741" kind="function"><name>ResetDisplay</name></member>
+    <member refid="class_mini_model_display_manager_1a64af2ad762b78466efb79398f8f006f8" kind="function"><name>DisplayMiniObject</name></member>
+  </compound>
+  <compound refid="class_misc_options_manager" kind="class"><name>MiscOptionsManager</name>
+    <member refid="class_misc_options_manager_1a44ae37c6d20b7c80ee291d22ac2b226e" kind="function"><name>Start</name></member>
+  </compound>
+  <compound refid="class_model_plane_detection_manager" kind="class"><name>ModelPlaneDetectionManager</name>
+    <member refid="class_model_plane_detection_manager_1a9f7cb8d2dbef722eaa52bc0c5ccf14c1" kind="variable"><name>m_Parent</name></member>
+    <member refid="class_model_plane_detection_manager_1aedbc30718a84814fb18cc81eb6f4c8b9" kind="variable"><name>m_UIToggleComponent</name></member>
+    <member refid="class_model_plane_detection_manager_1afe09004aa752bc5ab0f4bc667f2fa845" kind="variable"><name>planeToggle</name></member>
+    <member refid="class_model_plane_detection_manager_1ac7428924f691cb90dab9c94338686df6" kind="variable"><name>userPreference</name></member>
+    <member refid="class_model_plane_detection_manager_1a78b026a92cdf72efdaf9933d1fa20110" kind="property"><name>Instance</name></member>
+    <member refid="class_model_plane_detection_manager_1a79d5d3c9556c987e5be05e06fb8329d5" kind="event"><name>OnPlaneDetectionChange</name></member>
+    <member refid="class_model_plane_detection_manager_1a709a1be7025c0539e7161a184c11deac" kind="function"><name>Awake</name></member>
+    <member refid="class_model_plane_detection_manager_1ab90e6403809244eb3e58e7026a11f75a" kind="function"><name>ChangeButtonState</name></member>
+    <member refid="class_model_plane_detection_manager_1a7e97139a542e92509ad921cfcf527a7b" kind="function"><name>Initialize</name></member>
+  </compound>
+  <compound refid="class_model_transform_manager" kind="class"><name>ModelTransformManager</name>
+    <member refid="class_model_transform_manager_1ad28d7eee6a172f9c5f81c68832c429fb" kind="variable"><name>LockModelUIToggle</name></member>
+    <member refid="class_model_transform_manager_1aff0c0f0507a52b75c34e98eaa49c91fd" kind="variable"><name>ResetModelTransformButton</name></member>
+    <member refid="class_model_transform_manager_1a5002fd95f751ea16684e38e5e2290daf" kind="variable"><name>DeleteModelTransformButton</name></member>
+    <member refid="class_model_transform_manager_1a253b305ff9ad526e6fcbb40cda8fbc2c" kind="variable"><name>LockModelTransformToggle</name></member>
+    <member refid="class_model_transform_manager_1a5fcc58b117c1c4947316238d3ac285c9" kind="property"><name>Instance</name></member>
+    <member refid="class_model_transform_manager_1a240a574c5db935bf3730314d650a249c" kind="event"><name>OnLockModel</name></member>
+    <member refid="class_model_transform_manager_1a7a68541b4c0d509f5b12db2b3cdf1aca" kind="event"><name>OnResetModelTransform</name></member>
+    <member refid="class_model_transform_manager_1a2fdb3d8b69209918ead01f384cf2e12e" kind="event"><name>OnDeleteModel</name></member>
+    <member refid="class_model_transform_manager_1a2d29c1d92fb65d9d129c20862c22d25c" kind="variable"><name>m_ResetTransformPopupWindow</name></member>
+    <member refid="class_model_transform_manager_1a89c31bad71e013e701cbdb52a7fd77db" kind="variable"><name>m_DeleteModelPopupWindow</name></member>
+    <member refid="class_model_transform_manager_1a98752d7d53b6369011ce1ab659f52705" kind="function"><name>Awake</name></member>
+    <member refid="class_model_transform_manager_1a6a50e92abb40b1cb3bdc50535a93ab9f" kind="function"><name>Start</name></member>
+    <member refid="class_model_transform_manager_1a76f1916748e4d0c359bbbbd521c45b10" kind="function"><name>LockLockToggle</name></member>
+    <member refid="class_model_transform_manager_1a22e1e2fc6fa38496b54e423007e633d3" kind="function"><name>LockResetButton</name></member>
+    <member refid="class_model_transform_manager_1a00fa62a325070b186d003c70b15de907" kind="function"><name>DisplayResetTransformPopup</name></member>
+    <member refid="class_model_transform_manager_1a9cdc27804f372a6028c7db6b08ac6605" kind="function"><name>OnResetTransformPopupOK</name></member>
+    <member refid="class_model_transform_manager_1a7106bd73666d39cf33589182e31ab710" kind="function"><name>OnResetTransformPopupCancel</name></member>
+    <member refid="class_model_transform_manager_1a6560b6653a21a6371c3fedd8821403bc" kind="function"><name>DisplayDeleteModelPopup</name></member>
+    <member refid="class_model_transform_manager_1ae9813ddcf8f0d6ccfbd7e5cb6279cbba" kind="function"><name>OnDeleteModelPopupOK</name></member>
+    <member refid="class_model_transform_manager_1aad8f13eac824236d53ba43f07dabafab" kind="function"><name>OnDeleteModelPopupCancel</name></member>
+  </compound>
+  <compound refid="class_model_view_manager" kind="class"><name>ModelViewManager</name>
+    <member refid="class_model_view_manager_1aa38b57ad12f7a33ec46074be84679fe1" kind="variable"><name>NormalViewUIToggle</name></member>
+    <member refid="class_model_view_manager_1ad3c37d98b0f524ba87c2d0f12b52d544" kind="variable"><name>OneToOneViewUIToggle</name></member>
+    <member refid="class_model_view_manager_1a3914a8400b8190cddb2decb1235f0381" kind="variable"><name>NormalViewToggle</name></member>
+    <member refid="class_model_view_manager_1afb56eeadb0ee90992be2233439d0e946" kind="variable"><name>OneToOneViewToggle</name></member>
+    <member refid="class_model_view_manager_1a7df19ac8d4557cddeb7acd07cf0c1f18" kind="property"><name>Instance</name></member>
+    <member refid="class_model_view_manager_1a0feef1de4ee8865a067b1ae70ac785e1" kind="event"><name>OnNormalViewToggle</name></member>
+    <member refid="class_model_view_manager_1a5728c37cc36e9952ce7cc7f150024910" kind="event"><name>OnOneToOneViewToggle</name></member>
+    <member refid="class_model_view_manager_1a6d05a55058baf37a63ad7337124ca091" kind="function"><name>Awake</name></member>
+    <member refid="class_model_view_manager_1aebe04b6b48188b607094a1e18c8956b4" kind="function"><name>Start</name></member>
+    <member refid="class_model_view_manager_1a6a550a229d0395107dcc1945d9c67ba6" kind="function"><name>SetNormalView</name></member>
+    <member refid="class_model_view_manager_1a5dcbb637e5b784fd1764e30e0eb6c82b" kind="function"><name>SetOneToOneView</name></member>
+  </compound>
+  <compound refid="class_object_spawner_a_r" kind="class"><name>ObjectSpawnerAR</name>
+    <member refid="class_object_spawner_a_r_1a79777e4d531d67db2b73854e5195e23f" kind="variable"><name>_placementMode</name></member>
+    <member refid="class_object_spawner_a_r_1a3fdb28c956a273062b1c847209f5269d" kind="variable"><name>patent</name></member>
+    <member refid="class_object_spawner_a_r_1a28510201d5bf9b01385ef0a9daec5137" kind="variable"><name>centerPlacementY</name></member>
+    <member refid="class_object_spawner_a_r_1a5812492ff6245b4bd4d16a21f7deb3ea" kind="variable"><name>frontPlacementZ</name></member>
+    <member refid="class_object_spawner_a_r_1a632207d69bafb70e0e6339459e1e8328" kind="variable"><name>scaleText</name></member>
+    <member refid="class_object_spawner_a_r_1a9a2cfd8af76a57960294cc2b5b14beef" kind="variable"><name>positionText</name></member>
+    <member refid="class_object_spawner_a_r_1a0b3bc24314d7553db6cc8603ba2ee1e5" kind="variable"><name>activePatent</name></member>
+    <member refid="class_object_spawner_a_r_1a356de22d47b73bb484dc61df09fdede6" kind="event"><name>objectSpawnedEvent</name></member>
+    <member refid="class_object_spawner_a_r_1aeb2deeb05ac974b92a0db137203d1808" kind="variable"><name>spawnWithinScreen</name></member>
+    <member refid="class_object_spawner_a_r_1a355feb596dfbb097d4ca817d144b83c0" kind="function"><name>Start</name></member>
+    <member refid="class_object_spawner_a_r_1afcbb5fbba3132156e66a13c0de7ca803" kind="function"><name>SpawnObject</name></member>
+    <member refid="class_object_spawner_a_r_1a044894a0e5750cad7d8128f1dc03d80e" kind="function"><name>spawnWithNoRaycast</name></member>
+    <member refid="class_object_spawner_a_r_1a0b8495cac298010d20176ad0778fa85d" kind="function"><name>spawnWithRaycast</name></member>
+    <member refid="class_object_spawner_a_r_1a6a41a4dd8c002dce875f01291ebef798" kind="function"><name>SetActivePatent</name></member>
+    <member refid="class_object_spawner_a_r_1a7e310e75d1747922dd0c3a5816d66fdc" kind="function"><name>getActivePatent</name></member>
+    <member refid="class_object_spawner_a_r_1a8e20b522fe13542ae6c38bcb57799056" kind="function"><name>ResetPatentTransform</name></member>
+  </compound>
+  <compound refid="class_patent_manager" kind="class"><name>PatentManager</name>
+    <member refid="class_patent_manager_1a32e0d55c3bfa88a1ba6e49830a12eb5c" kind="variable"><name>Instance</name></member>
+    <member refid="class_patent_manager_1aa31fdb92d7972456bd15890493d4b2d3" kind="variable"><name>patent</name></member>
+    <member refid="class_patent_manager_1a63c5ee8b98214b88fb507b0bd29f8c19" kind="variable"><name>activePatent</name></member>
+    <member refid="class_patent_manager_1a2d59940de6ed8c4552d7b68301d95b69" kind="event"><name>patentDeletedEvent</name></member>
+    <member refid="class_patent_manager_1a14a5dd227d77e7b0fb75b150d6c8fb75" kind="event"><name>patentSpawnedEvent</name></member>
+    <member refid="class_patent_manager_1ae3c9220fb7f5540c2967695de7fce6a6" kind="property"><name>initialScale</name></member>
+    <member refid="class_patent_manager_1afb7c2d1fcc4f72c1d78df2325cc0b966" kind="property"><name>initialRotation</name></member>
+    <member refid="class_patent_manager_1a77ec300d988239f22ae9ddefe4c75acf" kind="property"><name>initialPosition</name></member>
+    <member refid="class_patent_manager_1a916bb09ce8ae8e7d029c62915d6a8f2c" kind="property"><name>ActivePatent</name></member>
+    <member refid="class_patent_manager_1a54be3951a1569e3bd3e433b488c71384" kind="property"><name>Patent</name></member>
+    <member refid="class_patent_manager_1aebd8a9ce66bee77b81b0621e49873162" kind="function"><name>Awake</name></member>
+    <member refid="class_patent_manager_1a4b92a491df836bd2ec9f17f8e7b42045" kind="function"><name>Start</name></member>
+    <member refid="class_patent_manager_1ad129b092f1b6513de6bcc5ea6f26e2f1" kind="function"><name>DeleteActivePatent</name></member>
+    <member refid="class_patent_manager_1a2692101fadff96f5e58670515c5b165f" kind="function"><name>OnScanEnter</name></member>
+    <member refid="class_patent_manager_1ae9c0aff883001cfbd651779d30c3bff4" kind="function"><name>SetInitialTransform</name></member>
+    <member refid="class_patent_manager_1a54321502ca55cc380c55a25b2db7149a" kind="function"><name>InvokePatentSpawned</name></member>
+  </compound>
+  <compound refid="class_patent_transformer" kind="class"><name>PatentTransformer</name>
+    <member refid="class_patent_transformer_1acb00add6fe38bc66376e5dbbbc118d82" kind="variable"><name>patentManager</name></member>
+    <member refid="class_patent_transformer_1ad5e4cd80e8969cf764a6be06e4000f1b" kind="variable"><name>dragDeltaAction</name></member>
+    <member refid="class_patent_transformer_1adbd2baff795f1ab89f0f1830995ca601" kind="variable"><name>pinchDeltaAction</name></member>
+    <member refid="class_patent_transformer_1ab4950b4472314b786bd5c474b25cd978" kind="variable"><name>twistDeltaAction</name></member>
+    <member refid="class_patent_transformer_1ab878d31f27e8df0b679f115110dd38dc" kind="variable"><name>dragRotationSpeed</name></member>
+    <member refid="class_patent_transformer_1a2d7b54c70db2340c478d13fbc953cb91" kind="variable"><name>twistRotationSpeed</name></member>
+    <member refid="class_patent_transformer_1a7fe41477a79d426925a6026a517eb5d5" kind="variable"><name>pinchScaleSpeed</name></member>
+    <member refid="class_patent_transformer_1aec988a6ae6cc622274b62b36dc2f88ff" kind="variable"><name>minScale</name></member>
+    <member refid="class_patent_transformer_1a0492caecfa9fc43131d17fca688bd97d" kind="variable"><name>maxScale</name></member>
+    <member refid="class_patent_transformer_1aa0d9d73114ecf817686d0afd745a7a2e" kind="variable"><name>useMouseFallback</name></member>
+    <member refid="class_patent_transformer_1a1bd24db4f7d33fae2468d3428dfb96b7" kind="variable"><name>mouseDragToRotate</name></member>
+    <member refid="class_patent_transformer_1a7d869a2e55e3f005dacc350c6713976b" kind="variable"><name>mouseScrollToScale</name></member>
+    <member refid="class_patent_transformer_1ab36ab329560b68ddca18fe16bccafdfa" kind="variable"><name>smoothSpeed</name></member>
+    <member refid="class_patent_transformer_1a4c4bf649aa3195ddceebb6ec4c9d38c3" kind="variable"><name>usePivot</name></member>
+    <member refid="class_patent_transformer_1af1a97da836ece9a7c20c451ad1a3c0c3" kind="variable"><name>targetRotation</name></member>
+    <member refid="class_patent_transformer_1a32ba0f2e016e8b3169f1500b434eb245" kind="variable"><name>targetScale</name></member>
+    <member refid="class_patent_transformer_1a3de7898a722ad3de8beb38ccf88d406a" kind="function"><name>GetRotationCenter</name></member>
+    <member refid="class_patent_transformer_1a4f450a2a9e863bb6cf8b40e55ff028cb" kind="function"><name>Start</name></member>
+    <member refid="class_patent_transformer_1a3d61b308560779a365a66279e42b24ef" kind="function"><name>Update</name></member>
+    <member refid="class_patent_transformer_1a4e661b57025437c96e39649562dba7b5" kind="function"><name>OnEnable</name></member>
+    <member refid="class_patent_transformer_1a66d720d5064f5ed300ec0b1cadc87696" kind="function"><name>OnDisable</name></member>
+    <member refid="class_patent_transformer_1a3a85eaa574cf79e44ab43a0f00d4a4a6" kind="function"><name>EnableTransformInputs</name></member>
+    <member refid="class_patent_transformer_1aaba293d84060f60b6f9764ac0e54761c" kind="function"><name>UsePivot</name></member>
+    <member refid="class_patent_transformer_1ac9efc4bd262d186f438301f16163e5da" kind="function"><name>DisableTransformInputs</name></member>
+    <member refid="class_patent_transformer_1a1dd387d2d10c160b9bfc13341ce26d8e" kind="function"><name>UpdateMouseRotation</name></member>
+    <member refid="class_patent_transformer_1add320202fd02647f42c3065411e55186" kind="function"><name>EnableControllers</name></member>
+    <member refid="class_patent_transformer_1ab23aacc8edde933b228ee4598d9cc383" kind="function"><name>DisableControllers</name></member>
+    <member refid="class_patent_transformer_1aba8c1a106ab27d8a2303e1a45ed014f3" kind="function"><name>ChangeTransformInputState</name></member>
+    <member refid="class_patent_transformer_1aa928f4d0a9303cb839388ad2fba42198" kind="function"><name>OnDragDelta</name></member>
+    <member refid="class_patent_transformer_1aad9a12ec9b68e20b2d0001d960f76d46" kind="function"><name>OnPinchDelta</name></member>
+    <member refid="class_patent_transformer_1a366a2716ec836503e17efc4359411ded" kind="function"><name>SyncTargets</name></member>
+    <member refid="class_patent_transformer_1a01354282b140178040f68033bcdf9864" kind="function"><name>OnModeChange</name></member>
+    <member refid="class_patent_transformer_1a765720931fc1cbbfd5dd75162d4b8cc4" kind="function"><name>HandleSpawnPosition</name></member>
+    <member refid="class_patent_transformer_1a15313b149dc006a302dd6ef8f3904a38" kind="function"><name>ResetRotation</name></member>
+    <member refid="class_patent_transformer_1aefce817c12136ffd7c9dfacacae60540" kind="function"><name>FitToScreenScale</name></member>
+    <member refid="class_patent_transformer_1a9eb91598ce01ce54256d7a404328d6fc" kind="function"><name>OneToOneScale</name></member>
+  </compound>
+  <compound refid="class_pivot_setter" kind="class"><name>PivotSetter</name>
+    <member refid="class_pivot_setter_1a2ba93b3c2ee0b518eeaa1694f7835b1d" kind="function"><name>ChangeToOneOneMode</name></member>
+    <member refid="class_pivot_setter_1a639cf16e9b918517162dcfca3432021c" kind="function"><name>GetSpawnBounds</name></member>
+    <member refid="class_pivot_setter_1a10446c1260fc67247e5c00af3917c223" kind="function"><name>GetBounds</name></member>
+    <member refid="class_pivot_setter_1a315511afac34fb1335e32d90b150307f" kind="function"><name>SnapToYOffset</name></member>
+  </compound>
+  <compound refid="class_pivot_setting_manager" kind="class"><name>PivotSettingManager</name>
+    <member refid="class_pivot_setting_manager_1a61d905464ec356d66116e9a4dc2760fa" kind="property"><name>Instance</name></member>
+    <member refid="class_pivot_setting_manager_1a8bf112e3026c5cbafdb6facf84df637d" kind="event"><name>OnPivotUseChange</name></member>
+    <member refid="class_pivot_setting_manager_1a7a001de3c469c2b843e74aff6f6d56e8" kind="variable"><name>m_UIToggleComponent</name></member>
+    <member refid="class_pivot_setting_manager_1a366ca4472bbc2ba2d071cdbdf249e5d2" kind="variable"><name>pivotToggle</name></member>
+    <member refid="class_pivot_setting_manager_1a4249080bfbf1598ed0a5d24c1be1ed15" kind="function"><name>Awake</name></member>
+    <member refid="class_pivot_setting_manager_1acccf208aa8b7cbe97cf4bc9ef04d4a0b" kind="function"><name>Initialize</name></member>
+    <member refid="class_pivot_setting_manager_1a76d996d132156a616042731dabf27447" kind="function"><name>SetUsePivot</name></member>
+  </compound>
+  <compound refid="class_plane_detection_controller" kind="class"><name>PlaneDetectionController</name>
+    <member refid="class_plane_detection_controller_1ae610dee195582ebf7fccd2dd8b08b523" kind="variable"><name>toggleText</name></member>
+    <member refid="class_plane_detection_controller_1afdf99493c25b5edff5e4b2c57128bfed" kind="variable"><name>toggle</name></member>
+    <member refid="class_plane_detection_controller_1ad41c6d784e00069f273283b6a6e17303" kind="event"><name>planeDetectionToggleChange</name></member>
+    <member refid="class_plane_detection_controller_1aea044d44854e67077de9da5124e7fa36" kind="function"><name>Awake</name></member>
+    <member refid="class_plane_detection_controller_1a232ecc40fbfadfd0428981c6ffd714f9" kind="function"><name>OnPlaneDetectionToggleChange</name></member>
+  </compound>
+  <compound refid="class_popup_builder" kind="class"><name>PopupBuilder</name>
+    <member refid="class_popup_builder_1a7d122c409e2fc6e2eda6c05bf0511e42" kind="variable"><name>m_PopupWindowPrefab</name></member>
+    <member refid="class_popup_builder_1ab4e23ee073ba56dfb47e45ce9ec6a0fc" kind="variable"><name>m_PopupWindowScript</name></member>
+    <member refid="class_popup_builder_1a9fe7bfc9bc200867166bbce98ffab72c" kind="variable"><name>m_PopupWindowPrefabPath</name></member>
+    <member refid="class_popup_builder_1a35410b9ed427b69bc2d41079e487ee5f" kind="function"><name>Create</name></member>
+    <member refid="class_popup_builder_1a34d13e5b7244a1ccb862e40b3f27609c" kind="function"><name>PopupBuilder</name></member>
+    <member refid="class_popup_builder_1acfedae9085a381dcbc365391833c7f8f" kind="function"><name>WithContentText</name></member>
+    <member refid="class_popup_builder_1a46e393293841d8085140e8caf35438c2" kind="function"><name>WithHeader</name></member>
+    <member refid="class_popup_builder_1a29c8e234156607b4bab7df3c4643d09e" kind="function"><name>WithFooterButton</name></member>
+    <member refid="class_popup_builder_1a9fbc0b4cc4a6d2bad2ed20390552928f" kind="function"><name>WithContent</name></member>
+    <member refid="class_popup_builder_1aa429464b1a6320d60cd4a761b6f900bb" kind="function"><name>Get</name></member>
+  </compound>
+  <compound refid="class_popup_layer_manager" kind="class"><name>PopupLayerManager</name>
+    <member refid="class_popup_layer_manager_1a4d63cc22cc92ba25489c4ef13f51b826" kind="function"><name>Awake</name></member>
+  </compound>
+  <compound refid="class_popup_menu_handler" kind="class"><name>PopupMenuHandler</name>
+    <member refid="class_popup_menu_handler_1adb75ef89d4a80d30136b312725fd34e6" kind="variable"><name>popupMenu</name></member>
+    <member refid="class_popup_menu_handler_1a4953d15481ebb75a42a2c71ef6f08f77" kind="variable"><name>button</name></member>
+    <member refid="class_popup_menu_handler_1aa127019735e2ddae863c20dcee630a9d" kind="variable"><name>isOpen</name></member>
+    <member refid="class_popup_menu_handler_1ab5adeedda48c5a74df17f563525e252f" kind="function"><name>Start</name></member>
+    <member refid="class_popup_menu_handler_1ace2dbc98c0bba86a7ba9faff6b1fc28b" kind="function"><name>EnablePopupMenu</name></member>
+  </compound>
+  <compound refid="class_popup_menu_manager" kind="class"><name>PopupMenuManager</name>
+    <member refid="class_popup_menu_manager_1a691a42ad40618e38c113869f05a27176" kind="variable"><name>Instance</name></member>
+    <member refid="class_popup_menu_manager_1a342ae1348f9c8a5aef206f2487598672" kind="variable"><name>boundingBoxPopup</name></member>
+    <member refid="class_popup_menu_manager_1aad98bdcf7e3b36e614833fc311c5bcb2" kind="variable"><name>lightPopup</name></member>
+    <member refid="class_popup_menu_manager_1ac3189da806b6cca57b17e9f0c06b723c" kind="variable"><name>descriptionPopup</name></member>
+    <member refid="class_popup_menu_manager_1a2c8753566eea896aadd6ca30b9e069e8" kind="variable"><name>lodToggle</name></member>
+    <member refid="class_popup_menu_manager_1a9bd5a0f961d37e707cea0f351c887edb" kind="variable"><name>descriptions</name></member>
+    <member refid="class_popup_menu_manager_1a72b78c24a7745af1bf75e863b25e9d78" kind="event"><name>OnEnableBoundingBox</name></member>
+    <member refid="class_popup_menu_manager_1aca0f2df7d85a48b2e0866f26a00a2afb" kind="event"><name>OnEnableLightning</name></member>
+    <member refid="class_popup_menu_manager_1a3ad8d58fe88c5d2d67f94afd3aa09f63" kind="event"><name>OnEnableDescriptions</name></member>
+    <member refid="class_popup_menu_manager_1adb44b173097b7cc73b1f9c82ac1b3d56" kind="event"><name>OnLodChange</name></member>
+    <member refid="class_popup_menu_manager_1a393894d6a84f0c0cea7377df3dd3ef11" kind="function"><name>Awake</name></member>
+    <member refid="class_popup_menu_manager_1a7f4da7ce1361f305b31c6c3554eab1e0" kind="function"><name>Start</name></member>
+    <member refid="class_popup_menu_manager_1a459f9668e60ebce7bfc748c0f36b81af" kind="function"><name>OnEnable</name></member>
+    <member refid="class_popup_menu_manager_1a944bb716c3902326493b0457f1d91803" kind="function"><name>OnDisable</name></member>
+    <member refid="class_popup_menu_manager_1aeb0016909a4be55583679d32557d945b" kind="function"><name>OnLodChangeToggle</name></member>
+    <member refid="class_popup_menu_manager_1a07631a9b347227bb11e3b526623b08dd" kind="function"><name>EnableBoundingBox</name></member>
+    <member refid="class_popup_menu_manager_1a066e9412b5cb4e3225b19a0d382fc8b4" kind="function"><name>EnableLightning</name></member>
+    <member refid="class_popup_menu_manager_1aabfe5ae14b8f5054499e562b7fb9d340" kind="function"><name>EnableDescriptions</name></member>
+  </compound>
+  <compound refid="class_popup_window" kind="class"><name>PopupWindow</name>
+    <member refid="class_popup_window_1a40b4b9a606082deb622fbbd73ec56bb6" kind="variable"><name>m_Content</name></member>
+    <member refid="class_popup_window_1a4086aed5aec0a454679b3c1ae09907a9" kind="variable"><name>m_Header</name></member>
+    <member refid="class_popup_window_1a09803bf1173f3e98733832284af6b508" kind="variable"><name>m_Footer</name></member>
+    <member refid="class_popup_window_1a0bdc607db1335b9ce1f68614ed8592cc" kind="variable"><name>m_ButtonSample</name></member>
+    <member refid="class_popup_window_1a35ef32f09355def48d9115a64fe0a4cd" kind="variable"><name>BUTTON_COLOR_CANCEL</name></member>
+    <member refid="class_popup_window_1aa0554650c0ca9b74629c735eadbfe7bc" kind="variable"><name>BUTTON_COLOR_OK</name></member>
+    <member refid="class_popup_window_1aa5d8d2f834667e1ed73c7f08d5a36c51" kind="variable"><name>PopupLayer</name></member>
+    <member refid="class_popup_window_1a8f73bd75aa471d7f9a4a3862e52bf304" kind="function"><name>OnEnable</name></member>
+    <member refid="class_popup_window_1a4173c35d5745e65f57cca53409d2a6a7" kind="function"><name>OnDisable</name></member>
+    <member refid="class_popup_window_1a11ed0b5449ec16e4fa93ec5f062148c0" kind="function"><name>AddContentText</name></member>
+    <member refid="class_popup_window_1aab4020f9c6b5b949c5d45ea31afd3752" kind="function"><name>AddHeader</name></member>
+    <member refid="class_popup_window_1a4e68742145362eff1461b5f7c03bf96a" kind="function"><name>AddContent</name></member>
+    <member refid="class_popup_window_1afc4151b996d8497c9b1613bb2380a38f" kind="function"><name>AddFooterButton</name></member>
+  </compound>
+  <compound refid="class_q_r_network_handler" kind="class"><name>QRNetworkHandler</name>
+    <member refid="class_q_r_network_handler_1aa59b5e8948258cd85792b53eb300f889" kind="variable"><name>m_QRModelDownloadScreen</name></member>
+    <member refid="class_q_r_network_handler_1ae76f7a962bcfba8ae6236c883d3eabb4" kind="variable"><name>m_StateMachine</name></member>
+    <member refid="class_q_r_network_handler_1a9ec4331b4909cf0180fc3803c1a24af6" kind="variable"><name>_objectSpawnerAR</name></member>
+    <member refid="class_q_r_network_handler_1a2d6db55bb0d166913296845eee3f6c27" kind="variable"><name>m_ProgressBarPrefab</name></member>
+    <member refid="class_q_r_network_handler_1a83028ff7ab89b8a060045f0692551e24" kind="variable"><name>LoadedModel</name></member>
+    <member refid="class_q_r_network_handler_1a284313853276da2956605279f816e4ad" kind="variable"><name>ModelLoadTransform</name></member>
+    <member refid="class_q_r_network_handler_1a86a6ae0787143b0fcaaf12e314e983ff" kind="variable"><name>ProgressBarPath</name></member>
+    <member refid="class_q_r_network_handler_1a6fcef1ceb671c940aadc1c0e61c6b8e1" kind="property"><name>Instance</name></member>
+    <member refid="class_q_r_network_handler_1a06c32f6381df882fbc006fd556f4ed26" kind="function"><name>Awake</name></member>
+    <member refid="class_q_r_network_handler_1a0728954a211b86d0e891115647e545c2" kind="function"><name>Start</name></member>
+    <member refid="class_q_r_network_handler_1a1984e4485241c23db5d27f90ea6ba4aa" kind="function"><name>CancelDownload</name></member>
+    <member refid="class_q_r_network_handler_1acc1b05a7d1567d2497cc14143af7010a" kind="function"><name>OnDownloadProgress</name></member>
+    <member refid="class_q_r_network_handler_1ab634c090ef1dcbed4d35ec3ec5de90c5" kind="function"><name>ResetNetworkHandler</name></member>
+    <member refid="class_q_r_network_handler_1addf321775dcfe6087ed06c686257cc7f" kind="function"><name>LoadGLBObject</name></member>
+    <member refid="class_q_r_network_handler_1a3a1d1d4d8c9c678fa5fb6f1dd8139b94" kind="function"><name>OnDownloadError</name></member>
+    <member refid="class_q_r_network_handler_1a38ad8606240832c388f9befd15693a07" kind="function"><name>DownloadModel</name></member>
+    <member refid="class_q_r_network_handler_1a7d51e69d03a9ce2a50c3a389e823770d" kind="function"><name>DisplayModelDownloadScreen</name></member>
+    <member refid="class_q_r_network_handler_1a4407ab23cc53704c181c514f9ad2b067" kind="function"><name>StartDownloadingModel</name></member>
+  </compound>
+  <compound refid="class_q_r_progress_bar_manager" kind="class"><name>QRProgressBarManager</name>
+    <member refid="class_q_r_progress_bar_manager_1a96e7ef7bb2d7e9f2bc06ae0c35610fc5" kind="variable"><name>Slider</name></member>
+    <member refid="class_q_r_progress_bar_manager_1aa8b879a2415b889f6788ca649f7b0e65" kind="variable"><name>ProgressText</name></member>
+  </compound>
+  <compound refid="class_q_r_scanner" kind="class"><name>QRScanner</name>
+    <member refid="class_q_r_scanner_1a9d90eeb77042284eca18d04c91627c92" kind="variable"><name>currentFrame</name></member>
+    <member refid="class_q_r_scanner_1a4804f6e7e2370790a9d0979bf7e1fb44" kind="variable"><name>width</name></member>
+    <member refid="class_q_r_scanner_1aba5de01f325721aaaa04ecc96abb474e" kind="variable"><name>height</name></member>
+    <member refid="class_q_r_scanner_1a7cb430068115e3d7613790a81e06f4a7" kind="variable"><name>m_BarcodeReader</name></member>
+    <member refid="class_q_r_scanner_1a8e571b3225925ee269d55ec56e899c73" kind="property"><name>QrCode</name></member>
+    <member refid="class_q_r_scanner_1aa5b8c183936f10d45ed8f3676d23e99f" kind="property"><name>Instance</name></member>
+    <member refid="class_q_r_scanner_1a18a525a2b90e410e0f8b28c4b06dee01" kind="function"><name>Awake</name></member>
+    <member refid="class_q_r_scanner_1a9252002b3d5cc5c53cb794c34c99a290" kind="function"><name>Start</name></member>
+    <member refid="class_q_r_scanner_1a25a69ec4f6837a2380bf101b6fa00dd2" kind="function"><name>ResetScanner</name></member>
+    <member refid="class_q_r_scanner_1ad5993be8a67d64f5ea080a3c716afaf0" kind="function"><name>ScanScreen</name></member>
+    <member refid="class_q_r_scanner_1a8caf94359fd829932f3d58d6fa565e97" kind="function"><name>ScanFrameForQRCode</name></member>
+    <member refid="class_q_r_scanner_1a37ed1a302223afc148cfac35779d1a42" kind="function"><name>StartScanner</name></member>
+    <member refid="class_q_r_scanner_1aaad6f6480476d9c4254d17ceac953d5e" kind="function"><name>StopScanner</name></member>
+  </compound>
+  <compound refid="class_raycast_handler" kind="class"><name>RaycastHandler</name>
+    <member refid="class_raycast_handler_1ab9f73fbe8ecbd0546996ca345c048304" kind="variable"><name>text</name></member>
+    <member refid="class_raycast_handler_1a6e14758a4802a1fe43ce16c47f9934a9" kind="variable"><name>tapAction</name></member>
+    <member refid="class_raycast_handler_1a0822163a2cefe6b1608db54f73a0bd04" kind="variable"><name>positionAction</name></member>
+    <member refid="class_raycast_handler_1a7b42530e5f59ee396e7c9de7af63b283" kind="variable"><name>usePlaneDetection</name></member>
+    <member refid="class_raycast_handler_1afd4f9aa238cb4ec30f2990fc586b06f9" kind="variable"><name>showDetectedPlanes</name></member>
+    <member refid="class_raycast_handler_1a9fd53a5a8fbbd42afc42cd102255b02e" kind="variable"><name>raycastManager</name></member>
+    <member refid="class_raycast_handler_1a08737f9c6dcf47cd9afb20b25cce500a" kind="variable"><name>planeManager</name></member>
+    <member refid="class_raycast_handler_1a0acf5503f518b58a4e583aceb432d25f" kind="variable"><name>hits</name></member>
+    <member refid="class_raycast_handler_1adc2b619f270282d16b466d7ae781a3b6" kind="variable"><name>touchPosition</name></member>
+    <member refid="class_raycast_handler_1a63bd8c92c50740b3d9b1bf0f5c98c0eb" kind="variable"><name>touched</name></member>
+    <member refid="class_raycast_handler_1af609843044dc2d332bddd91a3e2d25af" kind="variable"><name>touchCount</name></member>
+    <member refid="class_raycast_handler_1aaf90faa24cf10e2daeaa7cce70323eb5" kind="event"><name>clickEvent</name></member>
+    <member refid="class_raycast_handler_1a25898611ea46c9573e026a7a1d6495a5" kind="function"><name>Awake</name></member>
+    <member refid="class_raycast_handler_1a38d4b30c64339c82052689226ab0f493" kind="function"><name>Start</name></member>
+    <member refid="class_raycast_handler_1a5ed14d70b009d92ebbd6ce4542c46bdf" kind="function"><name>OnEnable</name></member>
+    <member refid="class_raycast_handler_1a5ebfd23ce3e85688a1c0de2bbc306b5a" kind="function"><name>OnDisable</name></member>
+    <member refid="class_raycast_handler_1afa2b9729e908c5b524a284628589850b" kind="function"><name>Update</name></member>
+    <member refid="class_raycast_handler_1a98987656c1dc72cf12a88359fb409c69" kind="function"><name>HandleClick</name></member>
+    <member refid="class_raycast_handler_1ae61b5965c59efd43a1b1dd3d6af4cf1f" kind="function"><name>CheckInput</name></member>
+    <member refid="class_raycast_handler_1a4f41116351ae8e690449da51bb38c70a" kind="function"><name>RaiseClickEvent</name></member>
+    <member refid="class_raycast_handler_1a9a507eeb321e480b8f2b77a6c2d96239" kind="function"><name>OnModeChange</name></member>
+    <member refid="class_raycast_handler_1a04641cf1f8fa39003020e87892eb562f" kind="function"><name>changePlaneDetection</name></member>
+  </compound>
+  <compound refid="class_reset_patent_button" kind="class"><name>ResetPatentButton</name>
+    <member refid="class_reset_patent_button_1af4abbb48053c620861798276fb44eedb" kind="variable"><name>btn</name></member>
+    <member refid="class_reset_patent_button_1ad0e0eb619eb36b097c660843f6b1ebd0" kind="event"><name>resetPatentTransformAction</name></member>
+    <member refid="class_reset_patent_button_1a50fadb413e978716ea69ff770bff0208" kind="function"><name>Awake</name></member>
+    <member refid="class_reset_patent_button_1ade116a730fabe22d4017ed05dce6b78f" kind="function"><name>OnEnable</name></member>
+    <member refid="class_reset_patent_button_1a8f15a4e9ee70f061e7f20e6b2b6e24c9" kind="function"><name>OnDisable</name></member>
+    <member refid="class_reset_patent_button_1a25cb807080ceaf74b8196356bfaf6e02" kind="function"><name>ResetTransform</name></member>
+  </compound>
+  <compound refid="class_scaling_mode_controller" kind="class"><name>ScalingModeController</name>
+    <member refid="class_scaling_mode_controller_1a74aae71a573e367c1c2963a5bafb3822" kind="variable"><name>Instance</name></member>
+    <member refid="class_scaling_mode_controller_1ad1ecd8313e79a8d0c535aeb9c5665a1e" kind="variable"><name>mode</name></member>
+    <member refid="class_scaling_mode_controller_1ab4edc2ae2c82eeca67a12ee06073e5a9" kind="event"><name>modeChanged</name></member>
+    <member refid="class_scaling_mode_controller_1afcc1e1cbc47ba215881093995bea29f1" kind="function"><name>Awake</name></member>
+    <member refid="class_scaling_mode_controller_1afd45bf5d58985968a4f8b0a46ffb65c9" kind="function"><name>Start</name></member>
+    <member refid="class_scaling_mode_controller_1a9b8e3eb73e88c59d40a51ce11c410ea7" kind="function"><name>ChangeModeToOneToOne</name></member>
+    <member refid="class_scaling_mode_controller_1ab0ac181d35d336696d008cf302ab887f" kind="function"><name>ChangeModeToNormalView</name></member>
+    <member refid="class_scaling_mode_controller_1aa710a4c1dc3cbc37173a3e06b1a8bf9f" kind="function"><name>ChangeMode</name></member>
+  </compound>
+  <compound refid="class_scene_manager_ar" kind="class"><name>SceneManagerAr</name>
+    <member refid="class_scene_manager_ar_1a86f909e4c43cdb12c0bd8b4389cb7964" kind="variable"><name>instance</name></member>
+    <member refid="class_scene_manager_ar_1a27f36566e085f7cfd64fac9fe1012bca" kind="function"><name>Awake</name></member>
+    <member refid="class_scene_manager_ar_1a6b33450ce8e820d346af5d25e323f2dc" kind="function"><name>GoToNextScene</name></member>
+  </compound>
+  <compound refid="class_scene_transition_button" kind="class"><name>SceneTransitionButton</name>
+    <member refid="class_scene_transition_button_1ab639b82a6cf6403facb20ed0b15ae7d5" kind="function"><name>OnSceneChangeClicked</name></member>
+  </compound>
+  <compound refid="class_screen_scaler" kind="class"><name>ScreenScaler</name>
+    <member refid="class_screen_scaler_1a5e8746a9ce859027597b630b1d6acdde" kind="variable"><name>instance</name></member>
+    <member refid="class_screen_scaler_1ae42b1237130d421ccb1818242c565379" kind="variable"><name>txt</name></member>
+    <member refid="class_screen_scaler_1a8f8a46a770b556720a242fa3b4e1947c" kind="variable"><name>cam</name></member>
+    <member refid="class_screen_scaler_1a8582259e81d9274f1d73e19cbc1e074d" kind="variable"><name>originalSize</name></member>
+    <member refid="class_screen_scaler_1a6de57ed7931b3e266c3eb49937a6ed01" kind="variable"><name>originalCenter</name></member>
+    <member refid="class_screen_scaler_1af3e27f7c85da0e32b7e6a22aab97038f" kind="variable"><name>isScreenFitOn</name></member>
+    <member refid="class_screen_scaler_1a49c701838f9dfe4b8e4b2efc915eda21" kind="variable"><name>scaleAmount</name></member>
+    <member refid="class_screen_scaler_1a7dfee10e36894cfb3ea7b4d46c06f64c" kind="variable"><name>slider</name></member>
+    <member refid="class_screen_scaler_1a558ebaded43f55d0fdf7ea1dc3090783" kind="function"><name>Awake</name></member>
+    <member refid="class_screen_scaler_1a6f6e43b450e2ebd4080d8fb199225517" kind="function"><name>SetScreenFit</name></member>
+    <member refid="class_screen_scaler_1a21643cb05cd9eed8d45363c23c1653fa" kind="function"><name>FitScreen</name></member>
+  </compound>
+  <compound refid="class_state" kind="class"><name>State</name>
+    <member refid="class_state_1a8cea1a06337b876a31f9185e7d4c7abb" kind="event"><name>OnStateEnter</name></member>
+    <member refid="class_state_1a2dcdc16514721de35bbf050d4602592f" kind="event"><name>OnStateUpdate</name></member>
+    <member refid="class_state_1a581414155196a3b54833411374f0b2c1" kind="event"><name>OnStateExit</name></member>
+    <member refid="class_state_1ad87ccd878c836f29ae798c75497d0de4" kind="function"><name>Enter</name></member>
+    <member refid="class_state_1a9d1918be2d47e3e04b53eab5508b0b3b" kind="function"><name>Exit</name></member>
+    <member refid="class_state_1a773cbe1d4b02916a0877652cef1ab5c6" kind="function"><name>Update</name></member>
+  </compound>
+  <compound refid="class_state_machine" kind="class"><name>StateMachine</name>
+    <member refid="class_state_machine_1a905d1c2a570856577ca5bca4274217f6" kind="enum"><name>States</name></member>
+    <member refid="class_state_machine_1a905d1c2a570856577ca5bca4274217f6abe052136ab838ccd8421f741c8df2c76" kind="enumvalue"><name>NO_MODEL_VIEW_STATE</name></member>
+    <member refid="class_state_machine_1a905d1c2a570856577ca5bca4274217f6a44802a9df0677c0b0a3b31b0d8ae089d" kind="enumvalue"><name>QR_SCAN_STATE</name></member>
+    <member refid="class_state_machine_1a905d1c2a570856577ca5bca4274217f6ac5f2f756d4045535c1f17b3372db867b" kind="enumvalue"><name>QR_SCAN_COMPLETE_STATE</name></member>
+    <member refid="class_state_machine_1a905d1c2a570856577ca5bca4274217f6ae65ce883120c5c45b801ae21913a3030" kind="enumvalue"><name>MODEL_VIEW_STATE</name></member>
+    <member refid="class_state_machine_1ae5cbc71c07f182b79e34cb653c0192a9" kind="property"><name>Instance</name></member>
+    <member refid="class_state_machine_1a7607927f9e86c9b9afad717ddd86b3d1" kind="variable"><name>m_StateMap</name></member>
+    <member refid="class_state_machine_1a04f0ae228c1b0f262f90e693a076ea38" kind="variable"><name>m_CurrentState</name></member>
+    <member refid="class_state_machine_1a6ac87358624e91d53e2c42c4a9a3c986" kind="variable"><name>CurrentStateName</name></member>
+    <member refid="class_state_machine_1a7f058b06236c4041de603f51e491f7bd" kind="function"><name>Awake</name></member>
+    <member refid="class_state_machine_1a05bed5cc15584111832fe7e3d0eaf400" kind="function"><name>Update</name></member>
+    <member refid="class_state_machine_1a85081eed003af3b884051559ae3bf035" kind="function"><name>SetState</name></member>
+    <member refid="class_state_machine_1a9ff5cbac71cdc7b0c7f944c1d85c7bc9" kind="function"><name>GetState</name></member>
+  </compound>
+  <compound refid="class_u_i_manager" kind="class"><name>UIManager</name>
+    <member refid="class_u_i_manager_1a840b4c7cfdc0bd1060d7728f15e260e4" kind="variable"><name>planeDetectionController</name></member>
+    <member refid="class_u_i_manager_1ad57a1e7bb8526bceb91d5b886bed0e67" kind="variable"><name>screenFitController</name></member>
+    <member refid="class_u_i_manager_1af7df7506178318201b60e08b6a1507dc" kind="variable"><name>_resetPatentButton</name></member>
+    <member refid="class_u_i_manager_1afea2580fcc2b76d12ce6b9f81650f610" kind="variable"><name>raycastHandler</name></member>
+    <member refid="class_u_i_manager_1a128ad3a9cd06e2e943a04ddf83219654" kind="variable"><name>_objectSpawnerAR</name></member>
+    <member refid="class_u_i_manager_1acc416c0efeedcaf946f3f278127dc241" kind="function"><name>Awake</name></member>
+    <member refid="class_u_i_manager_1a9e092f39ae3ca11fd392f93a40844cf4" kind="function"><name>OnEnable</name></member>
+    <member refid="class_u_i_manager_1a671473bc7b35ae3f8efa9785e6d1f678" kind="function"><name>OnDisable</name></member>
+    <member refid="class_u_i_manager_1a7e43fe0923125e2ecf35d15a5d4e2214" kind="function"><name>HandlePlaneDetectionChange</name></member>
+    <member refid="class_u_i_manager_1a4961522a2aca4c3f2ff00196d1afc3f3" kind="function"><name>ResetPatentTransform</name></member>
+    <member refid="class_u_i_manager_1a21ef31df74a821fe6a31760f8c770a6e" kind="function"><name>HandleScreenFitDetectionChange</name></member>
+  </compound>
+  <compound refid="class_u_i_toggle" kind="class"><name>UIToggle</name>
+    <member refid="class_u_i_toggle_1a1aa12dcfa2a17c7a64fd7a4850a24c1b" kind="variable"><name>m_Toggle</name></member>
+    <member refid="class_u_i_toggle_1a16b13733514ce6c4da7218a74f81ccfc" kind="variable"><name>m_Image</name></member>
+    <member refid="class_u_i_toggle_1ab46667b5470eafeea508ed3029af81dc" kind="variable"><name>m_DefaultColor</name></member>
+    <member refid="class_u_i_toggle_1a7d6dfe99f6942da800f8ae363914bcae" kind="event"><name>OnToggleValueChanged</name></member>
+    <member refid="class_u_i_toggle_1a10b68760dcb88835821bded36162c97e" kind="function"><name>Awake</name></member>
+    <member refid="class_u_i_toggle_1aad063dd73b2002d52e4f23e13db82097" kind="function"><name>OnTogglePress</name></member>
+    <member refid="class_u_i_toggle_1ac885ba232b45b8c9c5a2e2649b246778" kind="function"><name>ChangeColor</name></member>
+  </compound>
+  <compound refid="class_u_i_visibility_manager" kind="class"><name>UIVisibilityManager</name>
+    <member refid="class_u_i_visibility_manager_1a7a99f8752c5bebd2d5db3adc234628ad" kind="variable"><name>m_ObjectsToModifyVisibility</name></member>
+    <member refid="class_u_i_visibility_manager_1a567b4856dccadde62e0e8fdc92f827f0" kind="variable"><name>m_UIToggleComponent</name></member>
+    <member refid="class_u_i_visibility_manager_1a66757115e564efdcfa4379270128c880" kind="function"><name>Initialize</name></member>
+    <member refid="class_u_i_visibility_manager_1a5eeada8c697bd19796d17ac84f9a6874" kind="function"><name>SetUIObjectVisibility</name></member>
+  </compound>
+  <compound refid="namespace_g_l_t_fast" kind="namespace"><name>GLTFast</name>
+  </compound>
+  <compound refid="namespace_g_l_t_fast_1_1_logging" kind="namespace"><name>GLTFast::Logging</name>
+  </compound>
+  <compound refid="namespace_n_unit_1_1_framework" kind="namespace"><name>NUnit::Framework</name>
+  </compound>
+  <compound refid="namespace_system" kind="namespace"><name>System</name>
+  </compound>
+  <compound refid="namespace_system_1_1_collections" kind="namespace"><name>System::Collections</name>
+  </compound>
+  <compound refid="namespace_system_1_1_collections_1_1_generic" kind="namespace"><name>System::Collections::Generic</name>
+  </compound>
+  <compound refid="namespace_system_1_1_i_o" kind="namespace"><name>System::IO</name>
+  </compound>
+  <compound refid="namespace_system_1_1_reflection" kind="namespace"><name>System::Reflection</name>
+  </compound>
+  <compound refid="namespace_system_1_1_runtime_1_1_compiler_services" kind="namespace"><name>System::Runtime::CompilerServices</name>
+  </compound>
+  <compound refid="namespace_system_1_1_threading_1_1_tasks" kind="namespace"><name>System::Threading::Tasks</name>
+  </compound>
+  <compound refid="namespace_t_m_pro" kind="namespace"><name>TMPro</name>
+  </compound>
+  <compound refid="namespace_unity_1_1_x_r_1_1_core_utils" kind="namespace"><name>Unity::XR::CoreUtils</name>
+  </compound>
+  <compound refid="namespace_unity_editor" kind="namespace"><name>UnityEditor</name>
+  </compound>
+  <compound refid="namespace_unity_engine" kind="namespace"><name>UnityEngine</name>
+  </compound>
+  <compound refid="namespace_unity_engine_1_1_events" kind="namespace"><name>UnityEngine::Events</name>
+  </compound>
+  <compound refid="namespace_unity_engine_1_1_event_systems" kind="namespace"><name>UnityEngine::EventSystems</name>
+  </compound>
+  <compound refid="namespace_unity_engine_1_1_input_system" kind="namespace"><name>UnityEngine::InputSystem</name>
+  </compound>
+  <compound refid="namespace_unity_engine_1_1_networking" kind="namespace"><name>UnityEngine::Networking</name>
+  </compound>
+  <compound refid="namespace_unity_engine_1_1_rendering" kind="namespace"><name>UnityEngine::Rendering</name>
+  </compound>
+  <compound refid="namespace_unity_engine_1_1_rendering_1_1_universal" kind="namespace"><name>UnityEngine::Rendering::Universal</name>
+  </compound>
+  <compound refid="namespace_unity_engine_1_1_scene_management" kind="namespace"><name>UnityEngine::SceneManagement</name>
+  </compound>
+  <compound refid="namespace_unity_engine_1_1_u_i" kind="namespace"><name>UnityEngine::UI</name>
+  </compound>
+  <compound refid="namespace_unity_engine_1_1_x_r_1_1_a_r_foundation" kind="namespace"><name>UnityEngine::XR::ARFoundation</name>
+  </compound>
+  <compound refid="namespace_unity_engine_1_1_x_r_1_1_a_r_subsystems" kind="namespace"><name>UnityEngine::XR::ARSubsystems</name>
+  </compound>
+  <compound refid="namespace_unity_mesh_simplifier" kind="namespace"><name>UnityMeshSimplifier</name>
+  </compound>
+  <compound refid="namespace_z_xing" kind="namespace"><name>ZXing</name>
+  </compound>
+  <compound refid="namespace_z_xing_1_1_qr_code" kind="namespace"><name>ZXing::QrCode</name>
+  </compound>
+  <compound refid="_a_r_plane_area_calculator_8cs" kind="file"><name>ARPlaneAreaCalculator.cs</name>
+  </compound>
+  <compound refid="_bounding_box_visualizer_8cs" kind="file"><name>BoundingBoxVisualizer.cs</name>
+  </compound>
+  <compound refid="_dont_destroy_objects_8cs" kind="file"><name>DontDestroyObjects.cs</name>
+  </compound>
+  <compound refid="_game_manager_8cs" kind="file"><name>GameManager.cs</name>
+    <member refid="_game_manager_8cs_1a4c6ba9790ff5172cfa66b51a94656be1" kind="enum"><name>ArMode</name></member>
+    <member refid="_game_manager_8cs_1a4c6ba9790ff5172cfa66b51a94656be1a092ade8847d7c0575bae2ecb87ffcbc4" kind="enumvalue"><name>Patent</name></member>
+    <member refid="_game_manager_8cs_1a4c6ba9790ff5172cfa66b51a94656be1a48e635c5e05ea5ab0389fb26424b8487" kind="enumvalue"><name>Qr</name></member>
+  </compound>
+  <compound refid="_lighting_controller_8cs" kind="file"><name>LightingController.cs</name>
+  </compound>
+  <compound refid="_generate_l_o_d_8cs" kind="file"><name>GenerateLOD.cs</name>
+  </compound>
+  <compound refid="_lod_manager_8cs" kind="file"><name>LodManager.cs</name>
+  </compound>
+  <compound refid="_model_plane_detection_manager_8cs" kind="file"><name>ModelPlaneDetectionManager.cs</name>
+  </compound>
+  <compound refid="_model_transform_manager_8cs" kind="file"><name>ModelTransformManager.cs</name>
+  </compound>
+  <compound refid="_model_view_manager_8cs" kind="file"><name>ModelViewManager.cs</name>
+  </compound>
+  <compound refid="_object_spawner_a_r_8cs" kind="file"><name>ObjectSpawnerAR.cs</name>
+    <member refid="_object_spawner_a_r_8cs_1aaf159fca6c090cbe566a9e3ddc897c7b" kind="enum"><name>PlacementMode</name></member>
+    <member refid="_object_spawner_a_r_8cs_1aaf159fca6c090cbe566a9e3ddc897c7ba5835bab1ade0060909e31a06af2e2cde" kind="enumvalue"><name>Front</name></member>
+    <member refid="_object_spawner_a_r_8cs_1aaf159fca6c090cbe566a9e3ddc897c7ba4f1f6016fc9f3f2353c0cc7c67b292bd" kind="enumvalue"><name>Center</name></member>
+  </compound>
+  <compound refid="_patent_manager_8cs" kind="file"><name>PatentManager.cs</name>
+  </compound>
+  <compound refid="_patent_transformer_8cs" kind="file"><name>PatentTransformer.cs</name>
+  </compound>
+  <compound refid="_pivot_setter_8cs" kind="file"><name>PivotSetter.cs</name>
+  </compound>
+  <compound refid="_q_r_network_handler_8cs" kind="file"><name>QRNetworkHandler.cs</name>
+  </compound>
+  <compound refid="_q_r_progress_bar_manager_8cs" kind="file"><name>QRProgressBarManager.cs</name>
+  </compound>
+  <compound refid="_q_r_scanner_8cs" kind="file"><name>QRScanner.cs</name>
+  </compound>
+  <compound refid="_raycast_handler_8cs" kind="file"><name>RaycastHandler.cs</name>
+  </compound>
+  <compound refid="_scaling_mode_controller_8cs" kind="file"><name>ScalingModeController.cs</name>
+    <member refid="_scaling_mode_controller_8cs_1a78c7b1502744aa251556cfc2b75485f0" kind="enum"><name>ScalingMode</name></member>
+    <member refid="_scaling_mode_controller_8cs_1a78c7b1502744aa251556cfc2b75485f0a78f0f0023518665aa87869c617a3ff20" kind="enumvalue"><name>FitScreen</name></member>
+    <member refid="_scaling_mode_controller_8cs_1a78c7b1502744aa251556cfc2b75485f0a7dae9a7e25f8b6e3ee6af9a505bd6cee" kind="enumvalue"><name>OneToOne</name></member>
+  </compound>
+  <compound refid="_scene_manager_ar_8cs" kind="file"><name>SceneManagerAr.cs</name>
+  </compound>
+  <compound refid="_screen_scaler_8cs" kind="file"><name>ScreenScaler.cs</name>
+  </compound>
+  <compound refid="_state_8cs" kind="file"><name>State.cs</name>
+  </compound>
+  <compound refid="_state_machine_8cs" kind="file"><name>StateMachine.cs</name>
+  </compound>
+  <compound refid="_log_manager_8cs" kind="file"><name>LogManager.cs</name>
+  </compound>
+  <compound refid="_log_text_8cs" kind="file"><name>LogText.cs</name>
+  </compound>
+  <compound refid="_add_model_manager_8cs" kind="file"><name>AddModelManager.cs</name>
+  </compound>
+  <compound refid="_mini_model_display_manager_8cs" kind="file"><name>MiniModelDisplayManager.cs</name>
+  </compound>
+  <compound refid="_misc_options_manager_8cs" kind="file"><name>MiscOptionsManager.cs</name>
+  </compound>
+  <compound refid="_popup_builder_8cs" kind="file"><name>PopupBuilder.cs</name>
+  </compound>
+  <compound refid="_popup_layer_manager_8cs" kind="file"><name>PopupLayerManager.cs</name>
+  </compound>
+  <compound refid="_popup_menu_handler_8cs" kind="file"><name>PopupMenuHandler.cs</name>
+  </compound>
+  <compound refid="_popup_menu_manager_8cs" kind="file"><name>PopupMenuManager.cs</name>
+  </compound>
+  <compound refid="_popup_window_8cs" kind="file"><name>PopupWindow.cs</name>
+  </compound>
+  <compound refid="_u_i_toggle_8cs" kind="file"><name>UIToggle.cs</name>
+  </compound>
+  <compound refid="_pivot_setting_manager_8cs" kind="file"><name>PivotSettingManager.cs</name>
+  </compound>
+  <compound refid="_plane_detection_controller_8cs" kind="file"><name>PlaneDetectionController.cs</name>
+  </compound>
+  <compound refid="_reset_patent_button_8cs" kind="file"><name>ResetPatentButton.cs</name>
+  </compound>
+  <compound refid="_scene_transition_button_8cs" kind="file"><name>SceneTransitionButton.cs</name>
+  </compound>
+  <compound refid="_u_i_manager_8cs" kind="file"><name>UIManager.cs</name>
+  </compound>
+  <compound refid="_u_i_visibility_manager_8cs" kind="file"><name>UIVisibilityManager.cs</name>
+  </compound>
+  <compound refid="dir_3a099727cce9118a7d79a39b93e1b261" kind="dir"><name>C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest</name>
+  </compound>
+  <compound refid="dir_b01be55b1f70a95dc90b35b8fe555785" kind="dir"><name>C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets</name>
+  </compound>
+  <compound refid="dir_ea6502c0847e632f9d16cff6ca691097" kind="dir"><name>C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LOD</name>
+  </compound>
+  <compound refid="dir_6318bd51d34e3a62cc8fad03cfd5c11b" kind="dir"><name>C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI</name>
+  </compound>
+  <compound refid="dir_0dcda981a25a85a4afd959425ea199d7" kind="dir"><name>C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR</name>
+  </compound>
+  <compound refid="dir_cfec7ee81d3419b9a9b6e408e3be3ca4" kind="dir"><name>C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts</name>
+  </compound>
+  <compound refid="dir_7c3913c05c31f192af978d4ab91739ae" kind="dir"><name>C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI</name>
+  </compound>
+</doxygenindex>

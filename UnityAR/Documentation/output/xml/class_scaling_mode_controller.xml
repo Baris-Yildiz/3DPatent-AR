@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_scaling_mode_controller" kind="class" language="C#" prot="public">
+    <compoundname>ScalingModeController</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_scaling_mode_controller_1a74aae71a573e367c1c2963a5bafb3822" prot="public" static="yes" mutable="no">
+        <type><ref refid="class_scaling_mode_controller" kindref="compound">ScalingModeController</ref></type>
+        <definition>ScalingModeController ScalingModeController.Instance</definition>
+        <argsstring></argsstring>
+        <name>Instance</name>
+        <qualifiedname>ScalingModeController.Instance</qualifiedname>
+        <briefdescription>
+<para>The single active instance of ScalingModeController. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScalingModeController.cs" line="24" column="41" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScalingModeController.cs" bodystart="24" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_scaling_mode_controller_1ad1ecd8313e79a8d0c535aeb9c5665a1e" prot="private" static="no" mutable="no">
+        <type><ref refid="_scaling_mode_controller_8cs_1a78c7b1502744aa251556cfc2b75485f0" kindref="member">ScalingMode</ref></type>
+        <definition>ScalingMode ScalingModeController.mode</definition>
+        <argsstring></argsstring>
+        <name>mode</name>
+        <qualifiedname>ScalingModeController.mode</qualifiedname>
+        <initializer>= <ref refid="_scaling_mode_controller_8cs_1a78c7b1502744aa251556cfc2b75485f0a78f0f0023518665aa87869c617a3ff20" kindref="member">ScalingMode.FitScreen</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScalingModeController.cs" line="26" column="26" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScalingModeController.cs" bodystart="26" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="event">
+      <memberdef kind="event" id="class_scaling_mode_controller_1ab4edc2ae2c82eeca67a12ee06073e5a9" prot="public" static="no" add="no" remove="no" raise="no">
+        <type>Action&lt; bool &gt;</type>
+        <definition>Action&lt;bool&gt; ScalingModeController.modeChanged</definition>
+        <argsstring></argsstring>
+        <name>modeChanged</name>
+        <qualifiedname>ScalingModeController.modeChanged</qualifiedname>
+        <briefdescription>
+<para>Fired whenever the scaling mode changes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The <computeroutput>bool</computeroutput> parameter is <computeroutput>true</computeroutput> for ScalingMode.OneToOne and <computeroutput>false</computeroutput> for ScalingMode.FitScreen. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScalingModeController.cs" line="33" column="25" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScalingModeController.cs" bodystart="33" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_scaling_mode_controller_1afcc1e1cbc47ba215881093995bea29f1" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ScalingModeController.Awake</definition>
+        <argsstring>()</argsstring>
+        <name>Awake</name>
+        <qualifiedname>ScalingModeController.Awake</qualifiedname>
+        <briefdescription>
+<para>Initialises the singleton instance. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScalingModeController.cs" line="36" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScalingModeController.cs" bodystart="36" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_scaling_mode_controller_1afd45bf5d58985968a4f8b0a46ffb65c9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ScalingModeController.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <qualifiedname>ScalingModeController.Start</qualifiedname>
+        <briefdescription>
+<para>Subscribes to ModelViewManager toggle events so mode changes from the UI are forwarded to modeChanged subscribers. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScalingModeController.cs" line="52" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScalingModeController.cs" bodystart="52" bodyend="61"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_scaling_mode_controller_1a9b8e3eb73e88c59d40a51ce11c410ea7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ScalingModeController.ChangeModeToOneToOne</definition>
+        <argsstring>()</argsstring>
+        <name>ChangeModeToOneToOne</name>
+        <qualifiedname>ScalingModeController.ChangeModeToOneToOne</qualifiedname>
+        <briefdescription>
+<para>Switches the scaling mode to ScalingMode.OneToOne. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScalingModeController.cs" line="64" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScalingModeController.cs" bodystart="64" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="class_scaling_mode_controller_1ab0ac181d35d336696d008cf302ab887f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ScalingModeController.ChangeModeToNormalView</definition>
+        <argsstring>()</argsstring>
+        <name>ChangeModeToNormalView</name>
+        <qualifiedname>ScalingModeController.ChangeModeToNormalView</qualifiedname>
+        <briefdescription>
+<para>Switches the scaling mode to ScalingMode.FitScreen. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScalingModeController.cs" line="70" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScalingModeController.cs" bodystart="70" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="class_scaling_mode_controller_1aa710a4c1dc3cbc37173a3e06b1a8bf9f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ScalingModeController.ChangeMode</definition>
+        <argsstring>(bool isOneToOne)</argsstring>
+        <name>ChangeMode</name>
+        <qualifiedname>ScalingModeController.ChangeMode</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>isOneToOne</declname>
+        </param>
+        <briefdescription>
+<para>Changes the scaling mode and fires modeChanged if the mode actually changed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>isOneToOne</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>true</computeroutput> to switch to ScalingMode.OneToOne; <computeroutput>false</computeroutput> to switch to ScalingMode.FitScreen. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScalingModeController.cs" line="82" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScalingModeController.cs" bodystart="82" bodyend="95"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Singleton controller that tracks and broadcasts the active scaling mode. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Subscribes to ModelViewManager toggle events and raises modeChanged so other systems can react to mode switches. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>ScalingModeController</label>
+        <link refid="class_scaling_mode_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>ScalingModeController</label>
+        <link refid="class_scaling_mode_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1" relation="usage">
+          <edgelabel>Instance</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScalingModeController.cs" line="21" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ScalingModeController.cs" bodystart="22" bodyend="96"/>
+    <listofallmembers>
+      <member refid="class_scaling_mode_controller_1afcc1e1cbc47ba215881093995bea29f1" prot="private" virt="non-virtual"><scope>ScalingModeController</scope><name>Awake</name></member>
+      <member refid="class_scaling_mode_controller_1aa710a4c1dc3cbc37173a3e06b1a8bf9f" prot="public" virt="non-virtual"><scope>ScalingModeController</scope><name>ChangeMode</name></member>
+      <member refid="class_scaling_mode_controller_1ab0ac181d35d336696d008cf302ab887f" prot="public" virt="non-virtual"><scope>ScalingModeController</scope><name>ChangeModeToNormalView</name></member>
+      <member refid="class_scaling_mode_controller_1a9b8e3eb73e88c59d40a51ce11c410ea7" prot="public" virt="non-virtual"><scope>ScalingModeController</scope><name>ChangeModeToOneToOne</name></member>
+      <member refid="class_scaling_mode_controller_1a74aae71a573e367c1c2963a5bafb3822" prot="public" virt="non-virtual"><scope>ScalingModeController</scope><name>Instance</name></member>
+      <member refid="class_scaling_mode_controller_1ad1ecd8313e79a8d0c535aeb9c5665a1e" prot="private" virt="non-virtual"><scope>ScalingModeController</scope><name>mode</name></member>
+      <member refid="class_scaling_mode_controller_1ab4edc2ae2c82eeca67a12ee06073e5a9" prot="public" virt="non-virtual"><scope>ScalingModeController</scope><name>modeChanged</name></member>
+      <member refid="class_scaling_mode_controller_1afd45bf5d58985968a4f8b0a46ffb65c9" prot="private" virt="non-virtual"><scope>ScalingModeController</scope><name>Start</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

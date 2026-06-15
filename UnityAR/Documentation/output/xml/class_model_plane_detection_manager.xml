@@ -1,0 +1,214 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_model_plane_detection_manager" kind="class" language="C#" prot="public">
+    <compoundname>ModelPlaneDetectionManager</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_model_plane_detection_manager_1a9f7cb8d2dbef722eaa52bc0c5ccf14c1" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject ModelPlaneDetectionManager.m_Parent</definition>
+        <argsstring></argsstring>
+        <name>m_Parent</name>
+        <qualifiedname>ModelPlaneDetectionManager.m_Parent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelPlaneDetectionManager.cs" line="14" column="16" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelPlaneDetectionManager.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_model_plane_detection_manager_1aedbc30718a84814fb18cc81eb6f4c8b9" prot="private" static="no" mutable="no">
+        <type><ref refid="class_u_i_toggle" kindref="compound">UIToggle</ref></type>
+        <definition>UIToggle ModelPlaneDetectionManager.m_UIToggleComponent</definition>
+        <argsstring></argsstring>
+        <name>m_UIToggleComponent</name>
+        <qualifiedname>ModelPlaneDetectionManager.m_UIToggleComponent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelPlaneDetectionManager.cs" line="25" column="22" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelPlaneDetectionManager.cs" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_model_plane_detection_manager_1afe09004aa752bc5ab0f4bc667f2fa845" prot="private" static="no" mutable="no">
+        <type>Toggle</type>
+        <definition>Toggle ModelPlaneDetectionManager.planeToggle</definition>
+        <argsstring></argsstring>
+        <name>planeToggle</name>
+        <qualifiedname>ModelPlaneDetectionManager.planeToggle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelPlaneDetectionManager.cs" line="26" column="20" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelPlaneDetectionManager.cs" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_model_plane_detection_manager_1ac7428924f691cb90dab9c94338686df6" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ModelPlaneDetectionManager.userPreference</definition>
+        <argsstring></argsstring>
+        <name>userPreference</name>
+        <qualifiedname>ModelPlaneDetectionManager.userPreference</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelPlaneDetectionManager.cs" line="27" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelPlaneDetectionManager.cs" bodystart="27" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="property">
+      <memberdef kind="property" id="class_model_plane_detection_manager_1a78b026a92cdf72efdaf9933d1fa20110" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="yes" protectedsettable="no">
+        <type><ref refid="class_model_plane_detection_manager" kindref="compound">ModelPlaneDetectionManager</ref></type>
+        <definition>ModelPlaneDetectionManager ModelPlaneDetectionManager.Instance</definition>
+        <argsstring></argsstring>
+        <name>Instance</name>
+        <qualifiedname>ModelPlaneDetectionManager.Instance</qualifiedname>
+        <briefdescription>
+<para>The single active instance of ModelPlaneDetectionManager. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelPlaneDetectionManager.cs" line="17" column="46" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelPlaneDetectionManager.cs" bodystart="17" bodyend="17"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="event">
+      <memberdef kind="event" id="class_model_plane_detection_manager_1a79d5d3c9556c987e5be05e06fb8329d5" prot="public" static="no" add="no" remove="no" raise="no">
+        <type>UnityAction&lt; bool &gt;</type>
+        <definition>UnityAction&lt;bool&gt; ModelPlaneDetectionManager.OnPlaneDetectionChange</definition>
+        <argsstring></argsstring>
+        <name>OnPlaneDetectionChange</name>
+        <qualifiedname>ModelPlaneDetectionManager.OnPlaneDetectionChange</qualifiedname>
+        <briefdescription>
+<para>Fired when plane detection is toggled on or off. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The <computeroutput>bool</computeroutput> parameter is <computeroutput>true</computeroutput> when detection is enabled. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelPlaneDetectionManager.cs" line="23" column="30" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelPlaneDetectionManager.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_model_plane_detection_manager_1a709a1be7025c0539e7161a184c11deac" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ModelPlaneDetectionManager.Awake</definition>
+        <argsstring>()</argsstring>
+        <name>Awake</name>
+        <qualifiedname>ModelPlaneDetectionManager.Awake</qualifiedname>
+        <briefdescription>
+<para>Initialises the singleton instance. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelPlaneDetectionManager.cs" line="30" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelPlaneDetectionManager.cs" bodystart="30" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_model_plane_detection_manager_1ab90e6403809244eb3e58e7026a11f75a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ModelPlaneDetectionManager.ChangeButtonState</definition>
+        <argsstring>(bool isOff)</argsstring>
+        <name>ChangeButtonState</name>
+        <qualifiedname>ModelPlaneDetectionManager.ChangeButtonState</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>isOff</declname>
+        </param>
+        <briefdescription>
+<para>Reacts to scaling-mode changes by enabling or disabling the plane-detection toggle and restoring the user&apos;s saved preference when possible. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>isOff</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>true</computeroutput> when 1:1 mode is active (toggle must be disabled); <computeroutput>false</computeroutput> when FitScreen mode is active. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelPlaneDetectionManager.cs" line="68" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelPlaneDetectionManager.cs" bodystart="68" bodyend="74"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_model_plane_detection_manager_1a7e97139a542e92509ad921cfcf527a7b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ModelPlaneDetectionManager.Initialize</definition>
+        <argsstring>()</argsstring>
+        <name>Initialize</name>
+        <qualifiedname>ModelPlaneDetectionManager.Initialize</qualifiedname>
+        <briefdescription>
+<para>Wires up toggle listeners and state-machine callbacks. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Call once after all singleton instances are ready. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelPlaneDetectionManager.cs" line="39" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelPlaneDetectionManager.cs" bodystart="39" bodyend="58"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Singleton manager for the in-AR plane-detection toggle. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Tracks the user&apos;s plane-detection preference and disables the toggle automatically when 1:1 scale mode is active. Must be initialised by calling Initialize (done by MiscOptionsManager). </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>ModelPlaneDetectionManager</label>
+        <link refid="class_model_plane_detection_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>ModelPlaneDetectionManager</label>
+        <link refid="class_model_plane_detection_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_UIToggleComponent</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="3">
+        <label>UIToggle</label>
+        <link refid="class_u_i_toggle"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelPlaneDetectionManager.cs" line="12" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelPlaneDetectionManager.cs" bodystart="13" bodyend="75"/>
+    <listofallmembers>
+      <member refid="class_model_plane_detection_manager_1a709a1be7025c0539e7161a184c11deac" prot="private" virt="non-virtual"><scope>ModelPlaneDetectionManager</scope><name>Awake</name></member>
+      <member refid="class_model_plane_detection_manager_1ab90e6403809244eb3e58e7026a11f75a" prot="private" virt="non-virtual"><scope>ModelPlaneDetectionManager</scope><name>ChangeButtonState</name></member>
+      <member refid="class_model_plane_detection_manager_1a7e97139a542e92509ad921cfcf527a7b" prot="public" virt="non-virtual"><scope>ModelPlaneDetectionManager</scope><name>Initialize</name></member>
+      <member refid="class_model_plane_detection_manager_1a78b026a92cdf72efdaf9933d1fa20110" prot="public" virt="non-virtual"><scope>ModelPlaneDetectionManager</scope><name>Instance</name></member>
+      <member refid="class_model_plane_detection_manager_1a9f7cb8d2dbef722eaa52bc0c5ccf14c1" prot="private" virt="non-virtual"><scope>ModelPlaneDetectionManager</scope><name>m_Parent</name></member>
+      <member refid="class_model_plane_detection_manager_1aedbc30718a84814fb18cc81eb6f4c8b9" prot="private" virt="non-virtual"><scope>ModelPlaneDetectionManager</scope><name>m_UIToggleComponent</name></member>
+      <member refid="class_model_plane_detection_manager_1a79d5d3c9556c987e5be05e06fb8329d5" prot="public" virt="non-virtual"><scope>ModelPlaneDetectionManager</scope><name>OnPlaneDetectionChange</name></member>
+      <member refid="class_model_plane_detection_manager_1afe09004aa752bc5ab0f4bc667f2fa845" prot="private" virt="non-virtual"><scope>ModelPlaneDetectionManager</scope><name>planeToggle</name></member>
+      <member refid="class_model_plane_detection_manager_1ac7428924f691cb90dab9c94338686df6" prot="private" virt="non-virtual"><scope>ModelPlaneDetectionManager</scope><name>userPreference</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

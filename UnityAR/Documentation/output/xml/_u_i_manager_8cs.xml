@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="_u_i_manager_8cs" kind="file" language="C#">
+    <compoundname>UIManager.cs</compoundname>
+    <innerclass refid="class_u_i_manager" prot="public">UIManager</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">using<sp/></highlight><highlight class="normal">System;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">UnityEngine;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="class_u_i_manager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_u_i_manager" kindref="compound">UIManager</ref><sp/>:<sp/>MonoBehaviour</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>[SerializeField]<sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/><ref refid="class_plane_detection_controller" kindref="compound">PlaneDetectionController</ref><sp/><ref refid="class_u_i_manager_1a840b4c7cfdc0bd1060d7728f15e260e4" kindref="member">planeDetectionController</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>[SerializeField]<sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/><ref refid="class_plane_detection_controller" kindref="compound">PlaneDetectionController</ref><sp/><ref refid="class_u_i_manager_1ad57a1e7bb8526bceb91d5b886bed0e67" kindref="member">screenFitController</ref>;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>[SerializeField]<sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/><ref refid="class_reset_patent_button" kindref="compound">ResetPatentButton</ref><sp/><ref refid="class_u_i_manager_1af7df7506178318201b60e08b6a1507dc" kindref="member">_resetPatentButton</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/><ref refid="class_raycast_handler" kindref="compound">RaycastHandler</ref><sp/><ref refid="class_u_i_manager_1afea2580fcc2b76d12ce6b9f81650f610" kindref="member">raycastHandler</ref>;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/><ref refid="class_object_spawner_a_r" kindref="compound">ObjectSpawnerAR</ref><sp/><ref refid="class_u_i_manager_1a128ad3a9cd06e2e943a04ddf83219654" kindref="member">_objectSpawnerAR</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_u_i_manager_1acc416c0efeedcaf946f3f278127dc241" kindref="member">Awake</ref>()</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_u_i_manager_1afea2580fcc2b76d12ce6b9f81650f610" kindref="member">raycastHandler</ref><sp/>=<sp/>FindFirstObjectByType&lt;RaycastHandler&gt;();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_u_i_manager_1a128ad3a9cd06e2e943a04ddf83219654" kindref="member">_objectSpawnerAR</ref><sp/>=<sp/>FindFirstObjectByType&lt;ObjectSpawnerAR&gt;();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_u_i_manager_1a9e092f39ae3ca11fd392f93a40844cf4" kindref="member">OnEnable</ref>()</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>planeDetectionController.planeDetectionToggleChange<sp/>+=<sp/><ref refid="class_u_i_manager_1a7e43fe0923125e2ecf35d15a5d4e2214" kindref="member">HandlePlaneDetectionChange</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>screenFitController.planeDetectionToggleChange<sp/>+=<sp/><ref refid="class_u_i_manager_1a21ef31df74a821fe6a31760f8c770a6e" kindref="member">HandleScreenFitDetectionChange</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_resetPatentButton.resetPatentTransformAction<sp/>+=<sp/><ref refid="class_u_i_manager_1a4961522a2aca4c3f2ff00196d1afc3f3" kindref="member">ResetPatentTransform</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_u_i_manager_1a671473bc7b35ae3f8efa9785e6d1f678" kindref="member">OnDisable</ref>()</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>planeDetectionController.planeDetectionToggleChange<sp/>-=<sp/><ref refid="class_u_i_manager_1a7e43fe0923125e2ecf35d15a5d4e2214" kindref="member">HandlePlaneDetectionChange</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>screenFitController.planeDetectionToggleChange<sp/>-=<sp/><ref refid="class_u_i_manager_1a21ef31df74a821fe6a31760f8c770a6e" kindref="member">HandleScreenFitDetectionChange</ref>;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_resetPatentButton.resetPatentTransformAction<sp/>-=<sp/><ref refid="class_u_i_manager_1a4961522a2aca4c3f2ff00196d1afc3f3" kindref="member">ResetPatentTransform</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_u_i_manager_1a7e43fe0923125e2ecf35d15a5d4e2214" kindref="member">HandlePlaneDetectionChange</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isOn)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Debug.Log(</highlight><highlight class="stringliteral">&quot;hello<sp/>from<sp/>canvasbaba&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_u_i_manager_1afea2580fcc2b76d12ce6b9f81650f610" kindref="member">raycastHandler</ref>.changePlaneDetection(isOn);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_u_i_manager_1a4961522a2aca4c3f2ff00196d1afc3f3" kindref="member">ResetPatentTransform</ref>()</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_u_i_manager_1a128ad3a9cd06e2e943a04ddf83219654" kindref="member">_objectSpawnerAR</ref>.ResetPatentTransform();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_u_i_manager_1a21ef31df74a821fe6a31760f8c770a6e" kindref="member">HandleScreenFitDetectionChange</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isOn)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_screen_scaler" kindref="compound">ScreenScaler</ref>.<ref refid="class_screen_scaler_1a5e8746a9ce859027597b630b1d6acdde" kindref="member">instance</ref>.<ref refid="class_screen_scaler_1a6f6e43b450e2ebd4080d8fb199225517" kindref="member">SetScreenFit</ref>(isOn);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/UIManager.cs"/>
+  </compounddef>
+</doxygen>

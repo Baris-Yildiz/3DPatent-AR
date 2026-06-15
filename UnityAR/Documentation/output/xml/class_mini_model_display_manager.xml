@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_mini_model_display_manager" kind="class" language="C#" prot="public">
+    <compoundname>MiniModelDisplayManager</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_mini_model_display_manager_1a7673f17908c7f9093ca3652c23d93bbe" prot="private" static="no" mutable="no">
+        <type>Image</type>
+        <definition>Image MiniModelDisplayManager.m_MiniDisplayImage</definition>
+        <argsstring></argsstring>
+        <name>m_MiniDisplayImage</name>
+        <qualifiedname>MiniModelDisplayManager.m_MiniDisplayImage</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/MiniModelDisplayManager.cs" line="14" column="19" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/MiniModelDisplayManager.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mini_model_display_manager_1ac386524a3fac15e39556d2c5342cbb05" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MiniModelDisplayManager.m_DisplayWidth</definition>
+        <argsstring></argsstring>
+        <name>m_DisplayWidth</name>
+        <qualifiedname>MiniModelDisplayManager.m_DisplayWidth</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/MiniModelDisplayManager.cs" line="15" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/MiniModelDisplayManager.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mini_model_display_manager_1aa4445490e618f02cfb2e3c9e35c20dd7" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MiniModelDisplayManager.m_DisplayHeight</definition>
+        <argsstring></argsstring>
+        <name>m_DisplayHeight</name>
+        <qualifiedname>MiniModelDisplayManager.m_DisplayHeight</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/MiniModelDisplayManager.cs" line="16" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/MiniModelDisplayManager.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mini_model_display_manager_1a43686266cac1f4ebf1e984de6f626a48" prot="private" static="no" mutable="no">
+        <type>Sprite</type>
+        <definition>Sprite MiniModelDisplayManager.m_DefaultSprite</definition>
+        <argsstring></argsstring>
+        <name>m_DefaultSprite</name>
+        <qualifiedname>MiniModelDisplayManager.m_DefaultSprite</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/MiniModelDisplayManager.cs" line="21" column="20" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/MiniModelDisplayManager.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_mini_model_display_manager_1adcc55c2781de9ad313397771010aebf2" prot="public" static="no" mutable="no">
+        <type>LayerMask</type>
+        <definition>LayerMask MiniModelDisplayManager.ModelImageLayer</definition>
+        <argsstring></argsstring>
+        <name>ModelImageLayer</name>
+        <qualifiedname>MiniModelDisplayManager.ModelImageLayer</qualifiedname>
+        <briefdescription>
+<para>Layer mask used to isolate the model for the preview camera. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/MiniModelDisplayManager.cs" line="19" column="22" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/MiniModelDisplayManager.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_mini_model_display_manager_1ab352126157dfd086e38e57a46f03ee14" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void MiniModelDisplayManager.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <qualifiedname>MiniModelDisplayManager.Start</qualifiedname>
+        <briefdescription>
+<para>Subscribes to state-machine events and caches the image component, default sprite, and display dimensions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/MiniModelDisplayManager.cs" line="27" column="10" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/MiniModelDisplayManager.cs" bodystart="27" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mini_model_display_manager_1a7deff82884ce4cb16b5a244d9d388741" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void MiniModelDisplayManager.ResetDisplay</definition>
+        <argsstring>()</argsstring>
+        <name>ResetDisplay</name>
+        <qualifiedname>MiniModelDisplayManager.ResetDisplay</qualifiedname>
+        <briefdescription>
+<para>Restores the default placeholder sprite, clearing any model preview. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/MiniModelDisplayManager.cs" line="44" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/MiniModelDisplayManager.cs" bodystart="44" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mini_model_display_manager_1a64af2ad762b78466efb79398f8f006f8" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void MiniModelDisplayManager.DisplayMiniObject</definition>
+        <argsstring>()</argsstring>
+        <name>DisplayMiniObject</name>
+        <qualifiedname>MiniModelDisplayManager.DisplayMiniObject</qualifiedname>
+        <briefdescription>
+<para>Renders the loaded model&apos;s embedded camera into a RenderTexture, reads the pixels into a Texture2D, and assigns it as a Sprite to the display image. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/MiniModelDisplayManager.cs" line="54" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/MiniModelDisplayManager.cs" bodystart="54" bodyend="83"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Renders a miniature preview of the loaded patent model into a RenderTexture and displays the result in the UI as a Sprite. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Triggered when entering StateMachine.States.MODEL_VIEW_STATE and reset on QR scan. Requires a Camera component inside the loaded model&apos;s hierarchy. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>MiniModelDisplayManager</label>
+        <link refid="class_mini_model_display_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>MiniModelDisplayManager</label>
+        <link refid="class_mini_model_display_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/MiniModelDisplayManager.cs" line="12" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/MiniModelDisplayManager.cs" bodystart="13" bodyend="84"/>
+    <listofallmembers>
+      <member refid="class_mini_model_display_manager_1a64af2ad762b78466efb79398f8f006f8" prot="private" virt="non-virtual"><scope>MiniModelDisplayManager</scope><name>DisplayMiniObject</name></member>
+      <member refid="class_mini_model_display_manager_1a43686266cac1f4ebf1e984de6f626a48" prot="private" virt="non-virtual"><scope>MiniModelDisplayManager</scope><name>m_DefaultSprite</name></member>
+      <member refid="class_mini_model_display_manager_1aa4445490e618f02cfb2e3c9e35c20dd7" prot="private" virt="non-virtual"><scope>MiniModelDisplayManager</scope><name>m_DisplayHeight</name></member>
+      <member refid="class_mini_model_display_manager_1ac386524a3fac15e39556d2c5342cbb05" prot="private" virt="non-virtual"><scope>MiniModelDisplayManager</scope><name>m_DisplayWidth</name></member>
+      <member refid="class_mini_model_display_manager_1a7673f17908c7f9093ca3652c23d93bbe" prot="private" virt="non-virtual"><scope>MiniModelDisplayManager</scope><name>m_MiniDisplayImage</name></member>
+      <member refid="class_mini_model_display_manager_1adcc55c2781de9ad313397771010aebf2" prot="public" virt="non-virtual"><scope>MiniModelDisplayManager</scope><name>ModelImageLayer</name></member>
+      <member refid="class_mini_model_display_manager_1a7deff82884ce4cb16b5a244d9d388741" prot="private" virt="non-virtual"><scope>MiniModelDisplayManager</scope><name>ResetDisplay</name></member>
+      <member refid="class_mini_model_display_manager_1ab352126157dfd086e38e57a46f03ee14" prot="private" virt="non-virtual"><scope>MiniModelDisplayManager</scope><name>Start</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

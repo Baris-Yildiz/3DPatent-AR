@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.unity.cloud.draco": "5.4.3",
     "com.unity.cloud.gltfast": "6.14.0",
     "com.unity.collab-proxy": "2.9.3",
     "com.unity.feature.development": "1.0.2",
@@ -13,6 +14,7 @@
     "com.unity.xr.arkit": "6.1.0",
     "com.unity.xr.interaction.toolkit": "3.1.1",
     "com.unity.xr.management": "4.5.0",
+    "com.whinarn.unitymeshsimplifier": "https://github.com/Whinarn/UnityMeshSimplifier.git",
     "com.unity.modules.accessibility": "1.0.0",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",

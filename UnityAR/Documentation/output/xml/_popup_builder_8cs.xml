@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="_popup_builder_8cs" kind="file" language="C#">
+    <compoundname>PopupBuilder.cs</compoundname>
+    <innerclass refid="class_popup_builder" prot="public">PopupBuilder</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">using<sp/></highlight><highlight class="normal">UnityEngine;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">UnityEngine.Events;</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="class_popup_builder" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_popup_builder_1a34d13e5b7244a1ccb862e40b3f27609c" kindref="member">PopupBuilder</ref></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>GameObject<sp/><ref refid="class_popup_builder_1a7d122c409e2fc6e2eda6c05bf0511e42" kindref="member">m_PopupWindowPrefab</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/><ref refid="class_popup_window" kindref="compound">PopupWindow</ref><sp/><ref refid="class_popup_builder_1ab4e23ee073ba56dfb47e45ce9ec6a0fc" kindref="member">m_PopupWindowScript</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="class_popup_builder_1a9fe7bfc9bc200867166bbce98ffab72c" kindref="member">m_PopupWindowPrefabPath</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Popup<sp/>Window&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="class_popup_builder_1a34d13e5b7244a1ccb862e40b3f27609c" kindref="member">PopupBuilder</ref><sp/><ref refid="class_popup_builder_1a35410b9ed427b69bc2d41079e487ee5f" kindref="member">Create</ref>()</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_popup_builder_1a34d13e5b7244a1ccb862e40b3f27609c" kindref="member">PopupBuilder</ref>();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/><ref refid="class_popup_builder_1a34d13e5b7244a1ccb862e40b3f27609c" kindref="member">PopupBuilder</ref>()</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_popup_builder_1a7d122c409e2fc6e2eda6c05bf0511e42" kindref="member">m_PopupWindowPrefab</ref><sp/>=<sp/>Resources.Load&lt;GameObject&gt;(<ref refid="class_popup_builder_1a9fe7bfc9bc200867166bbce98ffab72c" kindref="member">m_PopupWindowPrefabPath</ref>);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_popup_builder_1a7d122c409e2fc6e2eda6c05bf0511e42" kindref="member">m_PopupWindowPrefab</ref><sp/>=<sp/>GameObject.Instantiate(<ref refid="class_popup_builder_1a7d122c409e2fc6e2eda6c05bf0511e42" kindref="member">m_PopupWindowPrefab</ref>,<sp/>GameObject.FindWithTag(</highlight><highlight class="stringliteral">&quot;PopupParent&quot;</highlight><highlight class="normal">).transform);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_popup_builder_1ab4e23ee073ba56dfb47e45ce9ec6a0fc" kindref="member">m_PopupWindowScript</ref><sp/>=<sp/><ref refid="class_popup_builder_1a7d122c409e2fc6e2eda6c05bf0511e42" kindref="member">m_PopupWindowPrefab</ref>.GetComponent&lt;<ref refid="class_popup_window" kindref="compound">PopupWindow</ref>&gt;();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_popup_window_1aa5d8d2f834667e1ed73c7f08d5a36c51" kindref="member">PopupWindow.PopupLayer</ref><sp/>=<sp/>GameObject.FindWithTag(</highlight><highlight class="stringliteral">&quot;PopupLayer&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_popup_builder_1a34d13e5b7244a1ccb862e40b3f27609c" kindref="member">PopupBuilder</ref><sp/><ref refid="class_popup_builder_1acfedae9085a381dcbc365391833c7f8f" kindref="member">WithContentText</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>text)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_popup_builder_1ab4e23ee073ba56dfb47e45ce9ec6a0fc" kindref="member">m_PopupWindowScript</ref>.AddContentText(text);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_popup_builder_1a34d13e5b7244a1ccb862e40b3f27609c" kindref="member">PopupBuilder</ref><sp/><ref refid="class_popup_builder_1a46e393293841d8085140e8caf35438c2" kindref="member">WithHeader</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>text)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_popup_builder_1ab4e23ee073ba56dfb47e45ce9ec6a0fc" kindref="member">m_PopupWindowScript</ref>.AddHeader(text);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_popup_builder_1a34d13e5b7244a1ccb862e40b3f27609c" kindref="member">PopupBuilder</ref><sp/><ref refid="class_popup_builder_1a29c8e234156607b4bab7df3c4643d09e" kindref="member">WithFooterButton</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>buttonText,<sp/>Color<sp/>color,<sp/>UnityAction<sp/>callback)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_popup_builder_1ab4e23ee073ba56dfb47e45ce9ec6a0fc" kindref="member">m_PopupWindowScript</ref>.AddFooterButton(buttonText,<sp/>color,<sp/>callback);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_popup_builder_1a34d13e5b7244a1ccb862e40b3f27609c" kindref="member">PopupBuilder</ref><sp/><ref refid="class_popup_builder_1a9fbc0b4cc4a6d2bad2ed20390552928f" kindref="member">WithContent</ref>(GameObject<sp/>content)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_popup_builder_1ab4e23ee073ba56dfb47e45ce9ec6a0fc" kindref="member">m_PopupWindowScript</ref>.AddContent(content);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>GameObject<sp/><ref refid="class_popup_builder_1aa429464b1a6320d60cd4a761b6f900bb" kindref="member">Get</ref>()</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_popup_builder_1a7d122c409e2fc6e2eda6c05bf0511e42" kindref="member">m_PopupWindowPrefab</ref>;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/New UI/PopupBuilder.cs"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,278 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_u_i_manager" kind="class" language="C#" prot="public">
+    <compoundname>UIManager</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_u_i_manager_1a840b4c7cfdc0bd1060d7728f15e260e4" prot="private" static="no" mutable="no">
+        <type><ref refid="class_plane_detection_controller" kindref="compound">PlaneDetectionController</ref></type>
+        <definition>PlaneDetectionController UIManager.planeDetectionController</definition>
+        <argsstring></argsstring>
+        <name>planeDetectionController</name>
+        <qualifiedname>UIManager.planeDetectionController</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/UIManager.cs" line="15" column="39" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/UIManager.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_u_i_manager_1ad57a1e7bb8526bceb91d5b886bed0e67" prot="private" static="no" mutable="no">
+        <type><ref refid="class_plane_detection_controller" kindref="compound">PlaneDetectionController</ref></type>
+        <definition>PlaneDetectionController UIManager.screenFitController</definition>
+        <argsstring></argsstring>
+        <name>screenFitController</name>
+        <qualifiedname>UIManager.screenFitController</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/UIManager.cs" line="16" column="39" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/UIManager.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_u_i_manager_1af7df7506178318201b60e08b6a1507dc" prot="private" static="no" mutable="no">
+        <type><ref refid="class_reset_patent_button" kindref="compound">ResetPatentButton</ref></type>
+        <definition>ResetPatentButton UIManager._resetPatentButton</definition>
+        <argsstring></argsstring>
+        <name>_resetPatentButton</name>
+        <qualifiedname>UIManager._resetPatentButton</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/UIManager.cs" line="17" column="32" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/UIManager.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_u_i_manager_1afea2580fcc2b76d12ce6b9f81650f610" prot="private" static="no" mutable="no">
+        <type><ref refid="class_raycast_handler" kindref="compound">RaycastHandler</ref></type>
+        <definition>RaycastHandler UIManager.raycastHandler</definition>
+        <argsstring></argsstring>
+        <name>raycastHandler</name>
+        <qualifiedname>UIManager.raycastHandler</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/UIManager.cs" line="18" column="28" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/UIManager.cs" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_u_i_manager_1a128ad3a9cd06e2e943a04ddf83219654" prot="private" static="no" mutable="no">
+        <type><ref refid="class_object_spawner_a_r" kindref="compound">ObjectSpawnerAR</ref></type>
+        <definition>ObjectSpawnerAR UIManager._objectSpawnerAR</definition>
+        <argsstring></argsstring>
+        <name>_objectSpawnerAR</name>
+        <qualifiedname>UIManager._objectSpawnerAR</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/UIManager.cs" line="19" column="29" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/UIManager.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_u_i_manager_1acc416c0efeedcaf946f3f278127dc241" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void UIManager.Awake</definition>
+        <argsstring>()</argsstring>
+        <name>Awake</name>
+        <qualifiedname>UIManager.Awake</qualifiedname>
+        <briefdescription>
+<para>Locates and caches the RaycastHandler and ObjectSpawnerAR singletons. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/UIManager.cs" line="22" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/UIManager.cs" bodystart="22" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="class_u_i_manager_1a9e092f39ae3ca11fd392f93a40844cf4" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void UIManager.OnEnable</definition>
+        <argsstring>()</argsstring>
+        <name>OnEnable</name>
+        <qualifiedname>UIManager.OnEnable</qualifiedname>
+        <briefdescription>
+<para>Subscribes to all legacy UI control events. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/UIManager.cs" line="29" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/UIManager.cs" bodystart="29" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="class_u_i_manager_1a671473bc7b35ae3f8efa9785e6d1f678" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void UIManager.OnDisable</definition>
+        <argsstring>()</argsstring>
+        <name>OnDisable</name>
+        <qualifiedname>UIManager.OnDisable</qualifiedname>
+        <briefdescription>
+<para>Unsubscribes from all legacy UI control events. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/UIManager.cs" line="37" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/UIManager.cs" bodystart="37" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="class_u_i_manager_1a7e43fe0923125e2ecf35d15a5d4e2214" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void UIManager.HandlePlaneDetectionChange</definition>
+        <argsstring>(bool isOn)</argsstring>
+        <name>HandlePlaneDetectionChange</name>
+        <qualifiedname>UIManager.HandlePlaneDetectionChange</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>isOn</declname>
+        </param>
+        <briefdescription>
+<para>Forwards the plane-detection toggle state to RaycastHandler.changePlaneDetection. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>isOn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New toggle state.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/UIManager.cs" line="46" column="10" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/UIManager.cs" bodystart="46" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="class_u_i_manager_1a4961522a2aca4c3f2ff00196d1afc3f3" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void UIManager.ResetPatentTransform</definition>
+        <argsstring>()</argsstring>
+        <name>ResetPatentTransform</name>
+        <qualifiedname>UIManager.ResetPatentTransform</qualifiedname>
+        <briefdescription>
+<para>Delegates to ObjectSpawnerAR.ResetPatentTransform. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/UIManager.cs" line="53" column="10" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/UIManager.cs" bodystart="53" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="class_u_i_manager_1a21ef31df74a821fe6a31760f8c770a6e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void UIManager.HandleScreenFitDetectionChange</definition>
+        <argsstring>(bool isOn)</argsstring>
+        <name>HandleScreenFitDetectionChange</name>
+        <qualifiedname>UIManager.HandleScreenFitDetectionChange</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>isOn</declname>
+        </param>
+        <briefdescription>
+<para>Forwards the screen-fit toggle state to ScreenScaler.SetScreenFit. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>isOn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New toggle state.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/UIManager.cs" line="60" column="10" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/UIManager.cs" bodystart="60" bodyend="63"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Legacy coordinator for the older UI layer. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Bridges PlaneDetectionController toggles and ResetPatentButton clicks to RaycastHandler, ScreenScaler, and ObjectSpawnerAR. Superseded by the New UI system in <computeroutput>Scripts/UI/New UI/</computeroutput>. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="1">
+        <label>UIManager</label>
+        <link refid="class_u_i_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="6">
+        <label>ObjectSpawnerAR</label>
+        <link refid="class_object_spawner_a_r"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>PlaneDetectionController</label>
+        <link refid="class_plane_detection_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>RaycastHandler</label>
+        <link refid="class_raycast_handler"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ResetPatentButton</label>
+        <link refid="class_reset_patent_button"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>UIManager</label>
+        <link refid="class_u_i_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>planeDetectionController</edgelabel>
+          <edgelabel>screenFitController</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>_resetPatentButton</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>raycastHandler</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>_objectSpawnerAR</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/UIManager.cs" line="12" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/UIManager.cs" bodystart="13" bodyend="64"/>
+    <listofallmembers>
+      <member refid="class_u_i_manager_1a128ad3a9cd06e2e943a04ddf83219654" prot="private" virt="non-virtual"><scope>UIManager</scope><name>_objectSpawnerAR</name></member>
+      <member refid="class_u_i_manager_1af7df7506178318201b60e08b6a1507dc" prot="private" virt="non-virtual"><scope>UIManager</scope><name>_resetPatentButton</name></member>
+      <member refid="class_u_i_manager_1acc416c0efeedcaf946f3f278127dc241" prot="private" virt="non-virtual"><scope>UIManager</scope><name>Awake</name></member>
+      <member refid="class_u_i_manager_1a7e43fe0923125e2ecf35d15a5d4e2214" prot="private" virt="non-virtual"><scope>UIManager</scope><name>HandlePlaneDetectionChange</name></member>
+      <member refid="class_u_i_manager_1a21ef31df74a821fe6a31760f8c770a6e" prot="private" virt="non-virtual"><scope>UIManager</scope><name>HandleScreenFitDetectionChange</name></member>
+      <member refid="class_u_i_manager_1a671473bc7b35ae3f8efa9785e6d1f678" prot="private" virt="non-virtual"><scope>UIManager</scope><name>OnDisable</name></member>
+      <member refid="class_u_i_manager_1a9e092f39ae3ca11fd392f93a40844cf4" prot="private" virt="non-virtual"><scope>UIManager</scope><name>OnEnable</name></member>
+      <member refid="class_u_i_manager_1a840b4c7cfdc0bd1060d7728f15e260e4" prot="private" virt="non-virtual"><scope>UIManager</scope><name>planeDetectionController</name></member>
+      <member refid="class_u_i_manager_1afea2580fcc2b76d12ce6b9f81650f610" prot="private" virt="non-virtual"><scope>UIManager</scope><name>raycastHandler</name></member>
+      <member refid="class_u_i_manager_1a4961522a2aca4c3f2ff00196d1afc3f3" prot="private" virt="non-virtual"><scope>UIManager</scope><name>ResetPatentTransform</name></member>
+      <member refid="class_u_i_manager_1ad57a1e7bb8526bceb91d5b886bed0e67" prot="private" virt="non-virtual"><scope>UIManager</scope><name>screenFitController</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

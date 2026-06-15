@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_dont_destroy_objects" kind="class" language="C#" prot="public">
+    <compoundname>DontDestroyObjects</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_dont_destroy_objects_1a9c5a9b13e6636441e0365c219926de8e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void DontDestroyObjects.Awake</definition>
+        <argsstring>()</argsstring>
+        <name>Awake</name>
+        <qualifiedname>DontDestroyObjects.Awake</qualifiedname>
+        <briefdescription>
+<para>Calls UnityEngine.Object.DontDestroyOnLoad so this object survives scene loads. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/DontDestroyObjects.cs" line="12" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/DontDestroyObjects.cs" bodystart="12" bodyend="15"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Marks this GameObject to persist across scene loads by calling UnityEngine.Object.DontDestroyOnLoad on itself during Awake. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Attach to any root object that must survive scene transitions. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>DontDestroyObjects</label>
+        <link refid="class_dont_destroy_objects"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>DontDestroyObjects</label>
+        <link refid="class_dont_destroy_objects"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/DontDestroyObjects.cs" line="9" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/DontDestroyObjects.cs" bodystart="10" bodyend="16"/>
+    <listofallmembers>
+      <member refid="class_dont_destroy_objects_1a9c5a9b13e6636441e0365c219926de8e" prot="private" virt="non-virtual"><scope>DontDestroyObjects</scope><name>Awake</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="_model_plane_detection_manager_8cs" kind="file" language="C#">
+    <compoundname>ModelPlaneDetectionManager.cs</compoundname>
+    <innerclass refid="class_model_plane_detection_manager" prot="public">ModelPlaneDetectionManager</innerclass>
+    <innernamespace refid="namespace_unity_engine_1_1_events">UnityEngine::Events</innernamespace>
+    <innernamespace refid="namespace_unity_engine_1_1_u_i">UnityEngine::UI</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">using<sp/></highlight><highlight class="normal">System;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">UnityEngine;</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">UnityEngine.Events;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">UnityEngine.UI;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="class_model_plane_detection_manager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_model_plane_detection_manager" kindref="compound">ModelPlaneDetectionManager</ref><sp/>:<sp/>MonoBehaviour</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>GameObject<sp/><ref refid="class_model_plane_detection_manager_1a9f7cb8d2dbef722eaa52bc0c5ccf14c1" kindref="member">m_Parent</ref>;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="class_model_plane_detection_manager" kindref="compound">ModelPlaneDetectionManager</ref><sp/><ref refid="class_model_plane_detection_manager_1a78b026a92cdf72efdaf9933d1fa20110" kindref="member">Instance</ref><sp/>{<sp/></highlight><highlight class="keyword">get</highlight><highlight class="normal">;<sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal"><sp/>UnityAction&lt;bool&gt;<sp/><ref refid="class_model_plane_detection_manager_1a79d5d3c9556c987e5be05e06fb8329d5" kindref="member">OnPlaneDetectionChange</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/><ref refid="class_u_i_toggle" kindref="compound">UIToggle</ref><sp/><ref refid="class_model_plane_detection_manager_1aedbc30718a84814fb18cc81eb6f4c8b9" kindref="member">m_UIToggleComponent</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>Toggle<sp/><ref refid="class_model_plane_detection_manager_1afe09004aa752bc5ab0f4bc667f2fa845" kindref="member">planeToggle</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_model_plane_detection_manager_1ac7428924f691cb90dab9c94338686df6" kindref="member">userPreference</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_plane_detection_manager_1a709a1be7025c0539e7161a184c11deac" kindref="member">Awake</ref>()</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_model_plane_detection_manager_1a78b026a92cdf72efdaf9933d1fa20110" kindref="member">Instance</ref><sp/>=<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_plane_detection_manager_1a7e97139a542e92509ad921cfcf527a7b" kindref="member">Initialize</ref>()</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_model_plane_detection_manager_1afe09004aa752bc5ab0f4bc667f2fa845" kindref="member">planeToggle</ref><sp/>=<sp/>GetComponent&lt;Toggle&gt;();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_model_plane_detection_manager_1aedbc30718a84814fb18cc81eb6f4c8b9" kindref="member">m_UIToggleComponent</ref><sp/>=<sp/>GetComponent&lt;UIToggle&gt;();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_UIToggleComponent.OnToggleValueChanged<sp/>+=<sp/>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isOn)<sp/>=&gt;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_model_plane_detection_manager_1a79d5d3c9556c987e5be05e06fb8329d5" kindref="member">OnPlaneDetectionChange</ref>?.Invoke(isOn);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_model_plane_detection_manager_1ac7428924f691cb90dab9c94338686df6" kindref="member">userPreference</ref><sp/>=<sp/>!<ref refid="class_model_plane_detection_manager_1ac7428924f691cb90dab9c94338686df6" kindref="member">userPreference</ref>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_model_plane_detection_manager_1a79d5d3c9556c987e5be05e06fb8329d5" kindref="member">OnPlaneDetectionChange</ref><sp/>+=<sp/>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isOn)<sp/>=&gt;<sp/>{<sp/>print(</highlight><highlight class="stringliteral">&quot;plane<sp/>detection<sp/>pressed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Debug.Log(</highlight><highlight class="stringliteral">&quot;user<sp/>preference<sp/>is<sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="class_model_plane_detection_manager_1ac7428924f691cb90dab9c94338686df6" kindref="member">userPreference</ref>);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_state_machine" kindref="compound">StateMachine</ref>.<ref refid="class_state_machine_1ae5cbc71c07f182b79e34cb653c0192a9" kindref="member">Instance</ref>.<ref refid="class_state_machine_1a9ff5cbac71cdc7b0c7f944c1d85c7bc9" kindref="member">GetState</ref>(<ref refid="class_state_machine" kindref="compound">StateMachine</ref>.<ref refid="class_state_machine_1a905d1c2a570856577ca5bca4274217f6" kindref="member">States</ref>.MODEL_VIEW_STATE)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="class_state_1a8cea1a06337b876a31f9185e7d4c7abb" kindref="member">OnStateEnter</ref><sp/>+=<sp/>()<sp/>=&gt;<sp/>{<sp/>planeToggle.isOn<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/>};</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ScalingModeController.Instance.modeChanged<sp/>+=<sp/><ref refid="class_model_plane_detection_manager_1ab90e6403809244eb3e58e7026a11f75a" kindref="member">ChangeButtonState</ref>;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_model_plane_detection_manager_1ab90e6403809244eb3e58e7026a11f75a" kindref="member">ChangeButtonState</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isOff)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Debug.Log(!isOff<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="class_model_plane_detection_manager_1ac7428924f691cb90dab9c94338686df6" kindref="member">userPreference</ref>);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_model_plane_detection_manager_1afe09004aa752bc5ab0f4bc667f2fa845" kindref="member">planeToggle</ref>.SetIsOnWithoutNotify(!isOff<sp/>&amp;&amp;<sp/><ref refid="class_model_plane_detection_manager_1ac7428924f691cb90dab9c94338686df6" kindref="member">userPreference</ref>);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>planeToggle.interactable<sp/>=<sp/>!isOff;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_model_plane_detection_manager_1a79d5d3c9556c987e5be05e06fb8329d5" kindref="member">OnPlaneDetectionChange</ref>?.Invoke(!isOff<sp/>&amp;&amp;<sp/><ref refid="class_model_plane_detection_manager_1ac7428924f691cb90dab9c94338686df6" kindref="member">userPreference</ref>);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelPlaneDetectionManager.cs"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="dir_cfec7ee81d3419b9a9b6e408e3be3ca4" kind="dir">
+    <compoundname>C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts</compoundname>
+    <innerdir refid="dir_ea6502c0847e632f9d16cff6ca691097">C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/LOD</innerdir>
+    <innerdir refid="dir_0dcda981a25a85a4afd959425ea199d7">C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/QR</innerdir>
+    <innerdir refid="dir_7c3913c05c31f192af978d4ab91739ae">C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI</innerdir>
+    <innerfile refid="_a_r_plane_area_calculator_8cs">ARPlaneAreaCalculator.cs</innerfile>
+    <innerfile refid="_bounding_box_visualizer_8cs">BoundingBoxVisualizer.cs</innerfile>
+    <innerfile refid="_dont_destroy_objects_8cs">DontDestroyObjects.cs</innerfile>
+    <innerfile refid="_game_manager_8cs">GameManager.cs</innerfile>
+    <innerfile refid="_lighting_controller_8cs">LightingController.cs</innerfile>
+    <innerfile refid="_lod_manager_8cs">LodManager.cs</innerfile>
+    <innerfile refid="_model_plane_detection_manager_8cs">ModelPlaneDetectionManager.cs</innerfile>
+    <innerfile refid="_model_transform_manager_8cs">ModelTransformManager.cs</innerfile>
+    <innerfile refid="_model_view_manager_8cs">ModelViewManager.cs</innerfile>
+    <innerfile refid="_object_spawner_a_r_8cs">ObjectSpawnerAR.cs</innerfile>
+    <innerfile refid="_patent_manager_8cs">PatentManager.cs</innerfile>
+    <innerfile refid="_patent_transformer_8cs">PatentTransformer.cs</innerfile>
+    <innerfile refid="_pivot_setter_8cs">PivotSetter.cs</innerfile>
+    <innerfile refid="_raycast_handler_8cs">RaycastHandler.cs</innerfile>
+    <innerfile refid="_scaling_mode_controller_8cs">ScalingModeController.cs</innerfile>
+    <innerfile refid="_scene_manager_ar_8cs">SceneManagerAr.cs</innerfile>
+    <innerfile refid="_screen_scaler_8cs">ScreenScaler.cs</innerfile>
+    <innerfile refid="_state_8cs">State.cs</innerfile>
+    <innerfile refid="_state_machine_8cs">StateMachine.cs</innerfile>
+    <innerfile refid="_u_i_visibility_manager_8cs">UIVisibilityManager.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/"/>
+  </compounddef>
+</doxygen>

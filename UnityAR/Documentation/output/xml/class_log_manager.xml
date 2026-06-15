@@ -1,0 +1,352 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_log_manager" kind="class" language="C#" prot="public">
+    <compoundname>LogManager</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="property">
+      <memberdef kind="property" id="class_log_manager_1a0b4874dc14a10b6ce812049c007c6f59" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="yes" protectedsettable="no">
+        <type><ref refid="class_log_manager" kindref="compound">LogManager</ref></type>
+        <definition>LogManager LogManager.Instance</definition>
+        <argsstring></argsstring>
+        <name>Instance</name>
+        <qualifiedname>LogManager.Instance</qualifiedname>
+        <briefdescription>
+<para>The single active instance of LogManager. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" line="13" column="30" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" bodystart="13" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="property" id="class_log_manager_1a682f2614675e4a12bfc7427a256d7ed9" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="yes" protectedsettable="no">
+        <type>bool</type>
+        <definition>bool LogManager.NotificationsEnabled</definition>
+        <argsstring></argsstring>
+        <name>NotificationsEnabled</name>
+        <qualifiedname>LogManager.NotificationsEnabled</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+<para>Whether log notifications are currently shown. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Defaults to <computeroutput>true</computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" line="80" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" bodystart="80" bodyend="80"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_log_manager_1a326fcc1a9c732d9adc1194e658fd7197" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int LogManager.poolSize</definition>
+        <argsstring></argsstring>
+        <name>poolSize</name>
+        <qualifiedname>LogManager.poolSize</qualifiedname>
+        <initializer>= 5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" line="15" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_log_manager_1ab24618266cd10cf4fa0d345208960c52" prot="private" static="no" mutable="no">
+        <type><ref refid="class_log_text" kindref="compound">LogText</ref></type>
+        <definition>LogText LogManager.logPrefab</definition>
+        <argsstring></argsstring>
+        <name>logPrefab</name>
+        <qualifiedname>LogManager.logPrefab</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" line="16" column="22" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_log_manager_1a033d307fa77b3e8990b7d8490b2d2885" prot="private" static="no" mutable="no">
+        <type>Queue&lt; <ref refid="class_log_text" kindref="compound">LogText</ref> &gt;</type>
+        <definition>Queue&lt;LogText&gt; LogManager.logPool</definition>
+        <argsstring></argsstring>
+        <name>logPool</name>
+        <qualifiedname>LogManager.logPool</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" line="18" column="19" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_log_manager_1a5fdb0105b5de6c651f5eb7a81f3cbf5a" prot="private" static="no" mutable="no">
+        <type>List&lt; <ref refid="class_log_text" kindref="compound">LogText</ref> &gt;</type>
+        <definition>List&lt;LogText&gt; LogManager.activeLogs</definition>
+        <argsstring></argsstring>
+        <name>activeLogs</name>
+        <qualifiedname>LogManager.activeLogs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" line="19" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_log_manager_1af6f45ec5beb110af8272378eced55e1e" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float LogManager.logDistanceY</definition>
+        <argsstring></argsstring>
+        <name>logDistanceY</name>
+        <qualifiedname>LogManager.logDistanceY</qualifiedname>
+        <initializer>= 0.5f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" line="22" column="20" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_log_manager_1ac49c0a19fb41ca90c3a3582276741271" prot="private" static="no" mutable="no">
+        <type>Vector2</type>
+        <definition>Vector2 LogManager.startPoint</definition>
+        <argsstring></argsstring>
+        <name>startPoint</name>
+        <qualifiedname>LogManager.startPoint</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" line="23" column="22" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_log_manager_1ac13665273bf72e395c7afe82f1976006" prot="private" static="no" mutable="no">
+        <type>Vector2</type>
+        <definition>Vector2 LogManager.endPoint</definition>
+        <argsstring></argsstring>
+        <name>endPoint</name>
+        <qualifiedname>LogManager.endPoint</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" line="24" column="22" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" bodystart="24" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_log_manager_1a275a6da8739e9d31aa7b78fd4eb04216" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void LogManager.Awake</definition>
+        <argsstring>()</argsstring>
+        <name>Awake</name>
+        <qualifiedname>LogManager.Awake</qualifiedname>
+        <briefdescription>
+<para>Initialises the singleton and allocates the pool and active-log collections. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" line="31" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" bodystart="31" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="class_log_manager_1a5a399684ee27c89dfd55715b75d804d0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void LogManager.InitializeLogPool</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeLogPool</name>
+        <qualifiedname>LogManager.InitializeLogPool</qualifiedname>
+        <briefdescription>
+<para>Instantiates poolSize inactive LogText prefabs and enqueues them into <computeroutput>logPool</computeroutput> for later reuse. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" line="50" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" bodystart="50" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="class_log_manager_1aa47e69b70c787e6669d4df8a018e220d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void LogManager.UpdateLogs</definition>
+        <argsstring>()</argsstring>
+        <name>UpdateLogs</name>
+        <qualifiedname>LogManager.UpdateLogs</qualifiedname>
+        <briefdescription>
+<para>Calls LogText.UpdateLog on every currently active log element. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" line="107" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" bodystart="107" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="class_log_manager_1a091f6562f9a4ee3a628d744766e11f20" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void LogManager.Update</definition>
+        <argsstring>()</argsstring>
+        <name>Update</name>
+        <qualifiedname>LogManager.Update</qualifiedname>
+        <briefdescription>
+<para>Each frame, advances all active log animations via UpdateLogs. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" line="116" column="10" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" bodystart="116" bodyend="119"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_log_manager_1adb2d552fe384ba1cad6eb0d0f6416337" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void LogManager.EnqueueLog</definition>
+        <argsstring>(LogText log)</argsstring>
+        <name>EnqueueLog</name>
+        <qualifiedname>LogManager.EnqueueLog</qualifiedname>
+        <param>
+          <type><ref refid="class_log_text" kindref="compound">LogText</ref></type>
+          <declname>log</declname>
+        </param>
+        <briefdescription>
+<para>Returns a finished LogText to the pool so it can be reused. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Called automatically by LogText when its animation completes.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>log</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The LogText to recycle.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" line="65" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" bodystart="65" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="class_log_manager_1ac2a8dc8e31b2f4fd333bb0d0df092fb8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void LogManager.SetNotificationsEnabled</definition>
+        <argsstring>(bool enabled)</argsstring>
+        <name>SetNotificationsEnabled</name>
+        <qualifiedname>LogManager.SetNotificationsEnabled</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>enabled</declname>
+        </param>
+        <briefdescription>
+<para>Enables or disables all log notifications globally. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>enabled</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>true</computeroutput> to show notifications; <computeroutput>false</computeroutput> to suppress them.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" line="86" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" bodystart="86" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="class_log_manager_1acfaf554affaf0335416858b7bd4aac96" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void LogManager.DequeueLog</definition>
+        <argsstring>(String logText)</argsstring>
+        <name>DequeueLog</name>
+        <qualifiedname>LogManager.DequeueLog</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>logText</declname>
+        </param>
+        <briefdescription>
+<para>Dequeues a pooled LogText, positions it, and starts its animation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Does nothing if notifications are disabled or the pool is empty.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>logText</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The message string to display.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" line="96" column="17" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" bodystart="96" bodyend="103"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Singleton object-pool manager for LogText notification elements. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Pre-allocates a fixed pool and recycles entries when their animations finish. Notifications can be suppressed globally with SetNotificationsEnabled. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>LogManager</label>
+        <link refid="class_log_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>LogManager</label>
+        <link refid="class_log_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>logPrefab</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>LogText</label>
+        <link refid="class_log_text"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" line="10" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/UI/LogManager.cs" bodystart="11" bodyend="120"/>
+    <listofallmembers>
+      <member refid="class_log_manager_1a5fdb0105b5de6c651f5eb7a81f3cbf5a" prot="private" virt="non-virtual"><scope>LogManager</scope><name>activeLogs</name></member>
+      <member refid="class_log_manager_1a275a6da8739e9d31aa7b78fd4eb04216" prot="private" virt="non-virtual"><scope>LogManager</scope><name>Awake</name></member>
+      <member refid="class_log_manager_1acfaf554affaf0335416858b7bd4aac96" prot="public" virt="non-virtual"><scope>LogManager</scope><name>DequeueLog</name></member>
+      <member refid="class_log_manager_1ac13665273bf72e395c7afe82f1976006" prot="private" virt="non-virtual"><scope>LogManager</scope><name>endPoint</name></member>
+      <member refid="class_log_manager_1adb2d552fe384ba1cad6eb0d0f6416337" prot="public" virt="non-virtual"><scope>LogManager</scope><name>EnqueueLog</name></member>
+      <member refid="class_log_manager_1a5a399684ee27c89dfd55715b75d804d0" prot="private" virt="non-virtual"><scope>LogManager</scope><name>InitializeLogPool</name></member>
+      <member refid="class_log_manager_1a0b4874dc14a10b6ce812049c007c6f59" prot="public" virt="non-virtual"><scope>LogManager</scope><name>Instance</name></member>
+      <member refid="class_log_manager_1af6f45ec5beb110af8272378eced55e1e" prot="private" virt="non-virtual"><scope>LogManager</scope><name>logDistanceY</name></member>
+      <member refid="class_log_manager_1a033d307fa77b3e8990b7d8490b2d2885" prot="private" virt="non-virtual"><scope>LogManager</scope><name>logPool</name></member>
+      <member refid="class_log_manager_1ab24618266cd10cf4fa0d345208960c52" prot="private" virt="non-virtual"><scope>LogManager</scope><name>logPrefab</name></member>
+      <member refid="class_log_manager_1a682f2614675e4a12bfc7427a256d7ed9" prot="public" virt="non-virtual"><scope>LogManager</scope><name>NotificationsEnabled</name></member>
+      <member refid="class_log_manager_1a326fcc1a9c732d9adc1194e658fd7197" prot="private" virt="non-virtual"><scope>LogManager</scope><name>poolSize</name></member>
+      <member refid="class_log_manager_1ac2a8dc8e31b2f4fd333bb0d0df092fb8" prot="public" virt="non-virtual"><scope>LogManager</scope><name>SetNotificationsEnabled</name></member>
+      <member refid="class_log_manager_1ac49c0a19fb41ca90c3a3582276741271" prot="private" virt="non-virtual"><scope>LogManager</scope><name>startPoint</name></member>
+      <member refid="class_log_manager_1a091f6562f9a4ee3a628d744766e11f20" prot="private" virt="non-virtual"><scope>LogManager</scope><name>Update</name></member>
+      <member refid="class_log_manager_1aa47e69b70c787e6669d4df8a018e220d" prot="private" virt="non-virtual"><scope>LogManager</scope><name>UpdateLogs</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

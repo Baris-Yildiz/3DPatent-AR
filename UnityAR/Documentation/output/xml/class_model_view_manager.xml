@@ -1,0 +1,260 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="class_model_view_manager" kind="class" language="C#" prot="public">
+    <compoundname>ModelViewManager</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_model_view_manager_1aa38b57ad12f7a33ec46074be84679fe1" prot="public" static="no" mutable="no">
+        <type><ref refid="class_u_i_toggle" kindref="compound">UIToggle</ref></type>
+        <definition>UIToggle ModelViewManager.NormalViewUIToggle</definition>
+        <argsstring></argsstring>
+        <name>NormalViewUIToggle</name>
+        <qualifiedname>ModelViewManager.NormalViewUIToggle</qualifiedname>
+        <briefdescription>
+<para>The UIToggle component for the normal (FitScreen) view button. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelViewManager.cs" line="13" column="21" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelViewManager.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_model_view_manager_1ad3c37d98b0f524ba87c2d0f12b52d544" prot="public" static="no" mutable="no">
+        <type><ref refid="class_u_i_toggle" kindref="compound">UIToggle</ref></type>
+        <definition>UIToggle ModelViewManager.OneToOneViewUIToggle</definition>
+        <argsstring></argsstring>
+        <name>OneToOneViewUIToggle</name>
+        <qualifiedname>ModelViewManager.OneToOneViewUIToggle</qualifiedname>
+        <briefdescription>
+<para>The UIToggle component for the 1:1 real-world scale view button. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelViewManager.cs" line="16" column="21" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelViewManager.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_model_view_manager_1a3914a8400b8190cddb2decb1235f0381" prot="private" static="no" mutable="no">
+        <type>Toggle</type>
+        <definition>Toggle ModelViewManager.NormalViewToggle</definition>
+        <argsstring></argsstring>
+        <name>NormalViewToggle</name>
+        <qualifiedname>ModelViewManager.NormalViewToggle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelViewManager.cs" line="18" column="20" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelViewManager.cs" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_model_view_manager_1afb56eeadb0ee90992be2233439d0e946" prot="private" static="no" mutable="no">
+        <type>Toggle</type>
+        <definition>Toggle ModelViewManager.OneToOneViewToggle</definition>
+        <argsstring></argsstring>
+        <name>OneToOneViewToggle</name>
+        <qualifiedname>ModelViewManager.OneToOneViewToggle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelViewManager.cs" line="19" column="20" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelViewManager.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="property">
+      <memberdef kind="property" id="class_model_view_manager_1a7df19ac8d4557cddeb7acd07cf0c1f18" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="yes" protectedsettable="no">
+        <type><ref refid="class_model_view_manager" kindref="compound">ModelViewManager</ref></type>
+        <definition>ModelViewManager ModelViewManager.Instance</definition>
+        <argsstring></argsstring>
+        <name>Instance</name>
+        <qualifiedname>ModelViewManager.Instance</qualifiedname>
+        <briefdescription>
+<para>The single active instance of ModelViewManager. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelViewManager.cs" line="22" column="36" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelViewManager.cs" bodystart="22" bodyend="22"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="event">
+      <memberdef kind="event" id="class_model_view_manager_1a0feef1de4ee8865a067b1ae70ac785e1" prot="public" static="no" add="no" remove="no" raise="no">
+        <type>Action</type>
+        <definition>Action ModelViewManager.OnNormalViewToggle</definition>
+        <argsstring></argsstring>
+        <name>OnNormalViewToggle</name>
+        <qualifiedname>ModelViewManager.OnNormalViewToggle</qualifiedname>
+        <briefdescription>
+<para>Fired when the user switches to Normal (FitScreen) view. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelViewManager.cs" line="25" column="25" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelViewManager.cs" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="event" id="class_model_view_manager_1a5728c37cc36e9952ce7cc7f150024910" prot="public" static="no" add="no" remove="no" raise="no">
+        <type>Action</type>
+        <definition>Action ModelViewManager.OnOneToOneViewToggle</definition>
+        <argsstring></argsstring>
+        <name>OnOneToOneViewToggle</name>
+        <qualifiedname>ModelViewManager.OnOneToOneViewToggle</qualifiedname>
+        <briefdescription>
+<para>Fired when the user switches to 1:1 real-world scale view. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelViewManager.cs" line="28" column="25" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelViewManager.cs" bodystart="28" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_model_view_manager_1a6d05a55058baf37a63ad7337124ca091" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ModelViewManager.Awake</definition>
+        <argsstring>()</argsstring>
+        <name>Awake</name>
+        <qualifiedname>ModelViewManager.Awake</qualifiedname>
+        <briefdescription>
+<para>Initialises the singleton instance. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelViewManager.cs" line="31" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelViewManager.cs" bodystart="31" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="class_model_view_manager_1aebe04b6b48188b607094a1e18c8956b4" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ModelViewManager.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <qualifiedname>ModelViewManager.Start</qualifiedname>
+        <briefdescription>
+<para>Resolves the underlying Toggle components, wires toggle callbacks, and hides the panel until the model-view state is active. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelViewManager.cs" line="40" column="10" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelViewManager.cs" bodystart="40" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="class_model_view_manager_1a6a550a229d0395107dcc1945d9c67ba6" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ModelViewManager.SetNormalView</definition>
+        <argsstring>(bool isOn)</argsstring>
+        <name>SetNormalView</name>
+        <qualifiedname>ModelViewManager.SetNormalView</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>isOn</declname>
+        </param>
+        <briefdescription>
+<para>Activates Normal view: turns off the 1:1 toggle, fires OnNormalViewToggle, and adjusts toggle interactability so only one can be active at a time. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>isOn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>true</computeroutput> when this toggle was just turned on.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelViewManager.cs" line="62" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelViewManager.cs" bodystart="62" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="class_model_view_manager_1a5dcbb637e5b784fd1764e30e0eb6c82b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ModelViewManager.SetOneToOneView</definition>
+        <argsstring>(bool isOn)</argsstring>
+        <name>SetOneToOneView</name>
+        <qualifiedname>ModelViewManager.SetOneToOneView</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>isOn</declname>
+        </param>
+        <briefdescription>
+<para>Activates 1:1 view: turns off the Normal toggle, fires OnOneToOneViewToggle, and adjusts toggle interactability so only one can be active at a time. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>isOn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>true</computeroutput> when this toggle was just turned on.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelViewManager.cs" line="78" column="18" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelViewManager.cs" bodystart="78" bodyend="87"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Singleton manager that controls the model-view mode toggles (Normal vs 1:1 scale). </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Exposes OnNormalViewToggle and OnOneToOneViewToggle events that other systems subscribe to in order to react to view-mode changes. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>ModelViewManager</label>
+        <link refid="class_model_view_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>ModelViewManager</label>
+        <link refid="class_model_view_manager"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>NormalViewUIToggle</edgelabel>
+          <edgelabel>OneToOneViewUIToggle</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="3">
+        <label>UIToggle</label>
+        <link refid="class_u_i_toggle"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelViewManager.cs" line="10" column="7" bodyfile="C:/Users/said cetin/Desktop/Github/3DPatent-AR/UnityAR/ArTest/Assets/Scripts/ModelViewManager.cs" bodystart="11" bodyend="88"/>
+    <listofallmembers>
+      <member refid="class_model_view_manager_1a6d05a55058baf37a63ad7337124ca091" prot="private" virt="non-virtual"><scope>ModelViewManager</scope><name>Awake</name></member>
+      <member refid="class_model_view_manager_1a7df19ac8d4557cddeb7acd07cf0c1f18" prot="public" virt="non-virtual"><scope>ModelViewManager</scope><name>Instance</name></member>
+      <member refid="class_model_view_manager_1a3914a8400b8190cddb2decb1235f0381" prot="private" virt="non-virtual"><scope>ModelViewManager</scope><name>NormalViewToggle</name></member>
+      <member refid="class_model_view_manager_1aa38b57ad12f7a33ec46074be84679fe1" prot="public" virt="non-virtual"><scope>ModelViewManager</scope><name>NormalViewUIToggle</name></member>
+      <member refid="class_model_view_manager_1afb56eeadb0ee90992be2233439d0e946" prot="private" virt="non-virtual"><scope>ModelViewManager</scope><name>OneToOneViewToggle</name></member>
+      <member refid="class_model_view_manager_1ad3c37d98b0f524ba87c2d0f12b52d544" prot="public" virt="non-virtual"><scope>ModelViewManager</scope><name>OneToOneViewUIToggle</name></member>
+      <member refid="class_model_view_manager_1a0feef1de4ee8865a067b1ae70ac785e1" prot="public" virt="non-virtual"><scope>ModelViewManager</scope><name>OnNormalViewToggle</name></member>
+      <member refid="class_model_view_manager_1a5728c37cc36e9952ce7cc7f150024910" prot="public" virt="non-virtual"><scope>ModelViewManager</scope><name>OnOneToOneViewToggle</name></member>
+      <member refid="class_model_view_manager_1a6a550a229d0395107dcc1945d9c67ba6" prot="private" virt="non-virtual"><scope>ModelViewManager</scope><name>SetNormalView</name></member>
+      <member refid="class_model_view_manager_1a5dcbb637e5b784fd1764e30e0eb6c82b" prot="private" virt="non-virtual"><scope>ModelViewManager</scope><name>SetOneToOneView</name></member>
+      <member refid="class_model_view_manager_1aebe04b6b48188b607094a1e18c8956b4" prot="private" virt="non-virtual"><scope>ModelViewManager</scope><name>Start</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

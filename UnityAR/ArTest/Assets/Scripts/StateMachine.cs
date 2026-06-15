@@ -1,31 +1,72 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Singleton finite state machine that drives the overall app flow.
+/// Subscribe to individual <see cref="State"/> events via
+/// <see cref="GetState"/> and trigger transitions with <see cref="SetState"/>.
+/// </summary>
 public class StateMachine : MonoBehaviour
 {
+
+    /// <summary>The single active instance of <see cref="StateMachine"/>.</summary>
+    public static StateMachine Instance
+    {
+        get; private set;
+    }
+
+    /// <summary>
+    /// Enumeration of all application states.
+    /// </summary>
     public enum States
     {
-        IDLE_STATE,
+        /// <summary>Default state: no model loaded, QR scanner inactive.</summary>
+        NO_MODEL_VIEW_STATE,
+
+        /// <summary>Camera is actively scanning for a QR code.</summary>
         QR_SCAN_STATE,
-        QR_SCAN_COMPLETE_STATE
+
+        /// <summary>QR code decoded; model download in progress.</summary>
+        QR_SCAN_COMPLETE_STATE,
+
+        /// <summary>Model placed in AR scene; interaction enabled.</summary>
+        MODEL_VIEW_STATE
     }
 
-    private Dictionary<States, IState> m_StateMap = new();
+    private Dictionary<States, State> m_StateMap = new();
 
-    private IState m_CurrentState;
+    private State m_CurrentState;
 
+    /// <summary>The name of the currently active state.</summary>
     public States CurrentStateName;
 
-    void Start()
+    /// <summary>
+    /// Initialises the singleton, creates a <see cref="State"/> object for each
+    /// <see cref="States"/> value, and enters <see cref="States.NO_MODEL_VIEW_STATE"/>.
+    /// </summary>
+    private void Awake()
     {
-        m_StateMap[States.IDLE_STATE] = new IdleState();
-        m_StateMap[States.QR_SCAN_STATE] = new QRScanState();
-        m_StateMap[States.QR_SCAN_COMPLETE_STATE] = new QRScanCompleteState();
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else if (Instance != null)
+        {
+            Destroy(this);
+        }
 
-        SetState(States.IDLE_STATE);
-        
+        m_StateMap[States.NO_MODEL_VIEW_STATE] = new State();
+        m_StateMap[States.QR_SCAN_STATE] = new State();
+        m_StateMap[States.QR_SCAN_COMPLETE_STATE] = new State();
+        m_StateMap[States.MODEL_VIEW_STATE] = new State();
+
+        SetState(States.NO_MODEL_VIEW_STATE);
     }
 
+    /// <summary>
+    /// Exits the current state and enters <paramref name="stateName"/>.
+    /// </summary>
+    /// <param name="stateName">The state to transition into.</param>
     public void SetState(States stateName)
     {
         m_CurrentState?.Exit();
@@ -34,12 +75,22 @@ public class StateMachine : MonoBehaviour
         CurrentStateName = stateName;
 
         m_CurrentState.Enter();
-
     }
 
+    /// <summary>
+    /// Returns the <see cref="State"/> object associated with <paramref name="stateName"/>
+    /// so callers can subscribe to its lifecycle events.
+    /// </summary>
+    /// <param name="stateName">The state whose object should be retrieved.</param>
+    /// <returns>The <see cref="State"/> for the given <paramref name="stateName"/>.</returns>
+    public State GetState(States stateName)
+    {
+        return m_StateMap[stateName];
+    }
+
+    /// <summary>Forwards Unity's Update tick to the currently active <see cref="State"/>.</summary>
     void Update()
     {
-
         m_CurrentState.Update();
     }
 }
