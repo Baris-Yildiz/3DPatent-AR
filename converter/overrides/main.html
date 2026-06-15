@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block tabs %}
+  {% if not page.is_homepage %}
+    {{ super() }}
+  {% endif %}
+{% endblock %}
+
+{% block extrahead %}
+  {% if page.is_homepage %}
+    <style>.md-search { display: none !important; }</style>
+  {% endif %}
+{% endblock %}

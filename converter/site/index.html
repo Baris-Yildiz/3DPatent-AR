@@ -6,13 +6,13 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="FBX / OBJ / STL / GLB / STEP / IGES to GLB converter with DRACO compression.">
+        <meta name="description" content="Documentation for the 3DPatent AR platform.">
       
       
       
       
       
-        <link rel="next" href="architecture/">
+        <link rel="next" href="converter/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>3D Model Converter</title>
+        <title>3DPatent AR</title>
       
     
     
@@ -54,6 +54,10 @@
 
     
     
+  
+    <style>.md-search { display: none !important; }</style>
+  
+
   </head>
   
   
@@ -66,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#3d-model-converter-module" class="md-skip">
+        <a href="#3dpatent-ar-documentation" class="md-skip">
           Skip to content
         </a>
       
@@ -80,7 +84,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="3D Model Converter" class="md-header__button md-logo" aria-label="3D Model Converter" data-md-component="logo">
+    <a href="." title="3DPatent AR" class="md-header__button md-logo" aria-label="3DPatent AR" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -94,7 +98,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            3D Model Converter
+            3DPatent AR
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -160,127 +164,8 @@
     <div class="md-container" data-md-component="container">
       
       
-        
-          
-            
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-    
-  
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
-        
-  
-  
-    
-  
-  Home
-
-      </a>
-    </li>
   
 
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="architecture/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Architecture
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="classes/AbstractConverter/" class="md-tabs__link">
-          
-  
-  
-  API Reference
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="deployment/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Deployment
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="maintenance/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Maintenance
-
-      </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-          
-        
-      
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
@@ -297,13 +182,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="3D Model Converter" class="md-nav__button md-logo" aria-label="3D Model Converter" data-md-component="logo">
+    <a href="." title="3DPatent AR" class="md-nav__button md-logo" aria-label="3DPatent AR" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    3D Model Converter
+    3DPatent AR
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -324,24 +209,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Home
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="." class="md-nav__link md-nav__link--active">
         
   
@@ -359,64 +226,92 @@
 
       </a>
       
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#supported-formats" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Supported formats
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage-in-the-platform" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Usage in the Platform
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Next steps
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
     
       
       
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3D Model Converter
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3D Model Converter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="converter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
   
   
   
@@ -438,6 +333,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1171,47 +1074,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#supported-formats" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Supported formats
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage-in-the-platform" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Usage in the Platform
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Next steps
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1227,68 +1089,21 @@
 
 
 
-<h1 id="3d-model-converter-module">3D Model Converter Module</h1>
-<p>Python module that converts 3D model files to the GLB format. Also applies DRACO compression. Used to convert
-model files uploaded to our <strong>platform</strong> so that they are suitable for viewing from our AR mobile application. </p>
-<h2 id="supported-formats">Supported formats</h2>
-<table>
-<thead>
-<tr>
-<th>Input format</th>
-<th>Extension(s)</th>
-<th>Conversion Pipeline</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>OBJ</td>
-<td><code>.obj</code></td>
-<td><code>bpy</code> Python library</td>
-</tr>
-<tr>
-<td>STL</td>
-<td><code>.stl</code></td>
-<td><code>bpy</code> Python library</td>
-</tr>
-<tr>
-<td>FBX</td>
-<td><code>.fbx</code></td>
-<td><code>ufbx</code> , <code>bpy</code> Python libraries</td>
-</tr>
-<tr>
-<td>GLB / GLTF</td>
-<td><code>.glb</code>, <code>.gltf</code></td>
-<td><code>bpy</code> library</td>
-</tr>
-<tr>
-<td>STEP</td>
-<td><code>.stp</code>, <code>.step</code></td>
-<td>headless FreeCAD + <code>FreeCAD</code> , <code>bpy</code> Python libraries</td>
-</tr>
-<tr>
-<td>IGES</td>
-<td><code>.igs</code>, <code>.iges</code></td>
-<td>headless FreeCAD + <code>FreeCAD</code>, <code>bpy</code> Python libraries</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition note">
-<p class="admonition-title">GLB format </p>
-<p>Native GLB format files are still taken in for several reasons:</p>
+<h1 id="3dpatent-ar-documentation">3DPatent AR Documentation</h1>
+<div class="grid cards">
 <ul>
-<li><strong>For completeness:</strong> Our web platform sends uploaded files to this module. By also providing a GLB endpoint we decouple file format related decisions from the web platform and make this module the only responsible structure for conversion. We also make the web platform more simple by not introducing GLB-specific storing logic.   </li>
-<li><strong>For flexibility:</strong> Later we may need to also modify these files instead of just storing them. For this purpose the module is easily extendable. </li>
-<li><strong>For DRACO compression:</strong> Since all other files are exported with DRACO compression, applying a DRACO compression to a native GLB file is needed for completeness.   </li>
+<li>
+<p><strong>3D Model Converter</strong></p>
+<p>Python module that converts FBX, OBJ, STL, GLB, STEP, and IGES files to GLB format with DRACO compression.</p>
+<p><a class="md-button md-button--primary" href="converter/">View Docs</a></p>
+</li>
+<li>
+<p><strong>Unity AR</strong></p>
+<p>Unity AR application for viewing converted 3D models in augmented reality.</p>
+<p><a class="md-button md-button--primary" href="unity-ar-docs/">View Docs</a></p>
+</li>
 </ul>
 </div>
-<h2 id="usage-in-the-platform">Usage in the Platform</h2>
-<p>The module is run inside a Docker Container, managed by the web platform. The Docker Container is a Ubuntu 24.04 OS that includes source code of the module, dependencies of the source code and installations of Blender 5.0.0 and FreeCAD 1.0.0. The module is mainly designed to be a running process in the container and <strong>may not be configured properly for local usage</strong>. More details in the <a href="deployment/">Deployment</a> section.</p>
-<h2 id="next-steps">Next steps</h2>
-<ul>
-<li><a href="architecture/">Architecture</a> — data flow, conversion pipelines, and class hierarchy</li>
-<li><a href="deployment/">Deployment</a> — local setup and Docker build</li>
-<li><a href="maintenance/">Maintenance</a> — intentional design decisions for future maintainers</li>
-</ul>
 
 
 

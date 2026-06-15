@@ -1,8 +1,9 @@
-site_name: 3D Model Converter
-site_description: FBX / OBJ / STL / GLB / STEP / IGES to GLB converter with DRACO compression.
+site_name: 3DPatent AR
+site_description: Documentation for the 3DPatent AR platform.
 
 theme:
   name: material
+  custom_dir: overrides
   features:
     - navigation.tabs
     - navigation.sections
@@ -39,10 +40,14 @@ markdown_extensions:
       anchor_linenums: true
   - pymdownx.inlinehilite
   - tables
+  - attr_list
+  - md_in_html
 
 nav:
   - Home: index.md
-  - Architecture: architecture.md
+  - 3D Model Converter:
+    - Overview: converter.md
+    - Architecture: architecture.md
   - API Reference:
     - Classes:
       - AbstractConverter: classes/AbstractConverter.md
