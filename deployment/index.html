@@ -1438,6 +1438,10 @@
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># example:</span>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>python<span class="w"> </span>main.py<span class="w"> </span><span class="s2">&quot;car.fbx&quot;</span><span class="w"> </span><span class="s2">&quot;m&quot;</span>
 </code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The program may print messages such as <code>Windows fatal exception: access violation</code> or <code>Fatal Python error</code>. These are printed by <code>faulthandler</code> and do not indicate actual issues. Python already handles garbage collection and the output file is still created as <code>output.glb</code>.</p>
+</div>
 </li>
 </ul>
 
