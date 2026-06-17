@@ -81,8 +81,24 @@ pip install -r local_python_requirements.txt
 
     Download and install FreeCAD 1.0.0 from the [FreeCAD releases page](https://github.com/FreeCAD/FreeCAD/releases/tag/1.0.0). Use the Windows installer (`FreeCAD_1.0.0-conda-Windows-x86_64-installer-1.exe`). The default install path is `C:\Program Files\FreeCAD 1.0`.
 
-    After installing, create a `freecad.pth` file inside your venv's `site-packages` folder so Python can find FreeCAD at import time. The content of `freecad.pth` should be the installation path:
+    After installing, create a `freecad.pth` file inside your venv's `site-packages` folder so Python can find FreeCAD at import time.
+
+    Open Notepad, type exactly `C:\Program Files\FreeCAD 1.0\bin`, and save it as `freecad.pth` inside `venv\Lib\site-packages\` (set "Save as type" to "All Files").
+
+    Or run this in PowerShell from the converter directory:
+
+    ```powershell
+    "C:\Program Files\FreeCAD 1.0\bin" | Out-File -FilePath "venv\Lib\site-packages\freecad.pth" -Encoding ascii
+    ```
+
+* Run the module
 
     ```bash
-    echo C:\Program Files\FreeCAD 1.0\bin > venv\Lib\site-packages\freecad.pth
+    python main.py <file> <scale>
+
+    # example:
+    python main.py "car.fbx" "m"
     ```
+
+    !!! warning
+        The program may print messages such as `Windows fatal exception: access violation` or `Fatal Python error`. These are printed by `faulthandler` and do not indicate actual issues. Python already handles garbage collection and the output file is still created as `output.glb`.

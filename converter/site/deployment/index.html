@@ -1425,9 +1425,23 @@
 <li>
 <p>Install <strong>FreeCAD</strong> (for Windows)</p>
 <p>Download and install FreeCAD 1.0.0 from the <a href="https://github.com/FreeCAD/FreeCAD/releases/tag/1.0.0">FreeCAD releases page</a>. Use the Windows installer (<code>FreeCAD_1.0.0-conda-Windows-x86_64-installer-1.exe</code>). The default install path is <code>C:\Program Files\FreeCAD 1.0</code>.</p>
-<p>After installing, create a <code>freecad.pth</code> file inside your venv's <code>site-packages</code> folder so Python can find FreeCAD at import time. The content of <code>freecad.pth</code> should be the installation path:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">echo</span><span class="w"> </span>C:<span class="se">\P</span>rogram<span class="w"> </span>Files<span class="se">\F</span>reeCAD<span class="w"> </span><span class="m">1</span>.0<span class="se">\b</span>in<span class="w"> </span>&gt;<span class="w"> </span>venv<span class="se">\L</span>ib<span class="se">\s</span>ite-packages<span class="se">\f</span>reecad.pth
+<p>After installing, create a <code>freecad.pth</code> file inside your venv's <code>site-packages</code> folder so Python can find FreeCAD at import time.</p>
+<p>Open Notepad, type exactly <code>C:\Program Files\FreeCAD 1.0\bin</code>, and save it as <code>freecad.pth</code> inside <code>venv\Lib\site-packages\</code> (set "Save as type" to "All Files").</p>
+<p>Or run this in PowerShell from the converter directory:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="s2">&quot;C:\Program Files\FreeCAD 1.0\bin&quot;</span> <span class="p">|</span> <span class="nb">Out-File</span> <span class="n">-FilePath</span> <span class="s2">&quot;venv\Lib\site-packages\freecad.pth&quot;</span> <span class="n">-Encoding</span> <span class="n">ascii</span>
 </code></pre></div>
+</li>
+<li>
+<p>Run the module</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>&lt;file&gt;<span class="w"> </span>&lt;scale&gt;
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># example:</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>python<span class="w"> </span>main.py<span class="w"> </span><span class="s2">&quot;car.fbx&quot;</span><span class="w"> </span><span class="s2">&quot;m&quot;</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The program may print messages such as <code>Windows fatal exception: access violation</code> or <code>Fatal Python error</code>. These are printed by <code>faulthandler</code> and do not indicate actual issues. Python already handles garbage collection and the output file is still created as <code>output.glb</code>.</p>
+</div>
 </li>
 </ul>
 
