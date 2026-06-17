@@ -14,4 +14,10 @@
 
     [View Docs](unity-ar-docs/index.html){ .md-button .md-button--primary }
 
+-   **ARDesign Webserver**
+
+    FastAPI + Celery backend: design registration, conversion and image-to-3D pipelines, expert review workflow, and model serving.
+
+    [View Docs](ardesign-webserver/index.html){ .md-button .md-button--primary }
+
 </div>
